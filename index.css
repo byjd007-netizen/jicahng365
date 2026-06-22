@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Color Palette - YunGui Light Tech */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8fafc;
+  /* Color Palette - YunGui Neon Light Tech */
+  --bg-primary: #f4f7fb;
+  --bg-secondary: #ffffff;
   --text-primary: #0f172a;
-  --text-secondary: #64748b;
-  --accent-primary: #3b82f6;
-  --accent-secondary: #8b5cf6;
-  --border-color: #f1f5f9;
+  --text-secondary: #475569;
+  --accent-primary: #00d2ff; /* Neon blue */
+  --accent-secondary: #3a7bd5; /* Deep blue */
+  --border-color: #e2e8f0;
   --card-border: #e2e8f0;
+  --neon-glow: 0 0 15px rgba(0, 210, 255, 0.4), 0 0 30px rgba(0, 210, 255, 0.2);
   
   /* Layout */
   --container-width: 1200px;
@@ -143,9 +144,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: var(--header-height);
   padding: 80px 0 60px;
   position: relative;
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 50%, #faf5ff 100%);
+  background: radial-gradient(circle at 50% 0%, rgba(0, 210, 255, 0.1) 0%, rgba(255, 255, 255, 0) 60%), var(--bg-primary);
   text-align: center;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid rgba(0, 210, 255, 0.15);
   overflow: hidden;
 }
 
@@ -230,6 +231,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .search-btn:hover {
   background: var(--accent-primary);
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
 }
 
 /* Small Module Cards Layout */
@@ -259,8 +261,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .kb-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.04);
-  border-color: #cbd5e1;
+  box-shadow: var(--neon-glow);
+  border-color: var(--accent-primary);
 }
 
 /* Icon block */
