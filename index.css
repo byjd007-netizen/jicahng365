@@ -259,6 +259,60 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
 }
 
+/* Large Airport Blocks in Recommend */
+#recommend .kb-grid {
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#recommend .kb-card {
+  padding: 40px 30px;
+  min-height: 260px;
+}
+
+#recommend .kb-card h3 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+#recommend .kb-card p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Background Differentiation */
+.card-bg-1 {
+  background: linear-gradient(145deg, #f8fafc, #f1f5f9) !important;
+}
+
+.card-bg-2 {
+  background: #ffffff !important;
+}
+
+.card-bg-3 {
+  background: linear-gradient(145deg, #fdfbf7, #f5f5f4) !important;
+}
+
+#recommend .kb-card.highlighted {
+  transform: scale(1.05);
+  z-index: 2;
+  border-width: 2px;
+}
+
+#recommend .kb-card.highlighted:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+
+@media (max-width: 768px) {
+  #recommend .kb-card.highlighted {
+    transform: none;
+  }
+  #recommend .kb-card.highlighted:hover {
+    transform: translateY(-5px);
+  }
+}
+
 .kb-card.highlighted {
   border-color: var(--accent-primary);
   box-shadow: 0 0 20px rgba(0, 210, 255, 0.15);
