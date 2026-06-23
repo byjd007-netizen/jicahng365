@@ -340,12 +340,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .ranking-header {
   display: flex;
-  background: #1e293b; /* Dark header matching screenshot */
+  background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+  box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
   padding: 15px 30px;
   font-weight: 600;
   font-size: 0.95rem;
   color: white;
   border-bottom: none;
+  position: relative;
+  z-index: 2;
 }
 
 .ranking-category {
@@ -460,7 +463,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .action-btn {
   display: inline-block;
-  background: #1e293b;
+  background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+  box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
   color: white;
   border: none;
   padding: 10px 24px;
@@ -472,17 +476,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .action-btn:hover {
-  background: #334155;
+  box-shadow: 0 6px 20px rgba(0, 210, 255, 0.5);
+  transform: translateY(-2px);
   color: white;
 }
 
 .action-btn.primary {
-  background: #1e293b;
+  background: linear-gradient(135deg, #00d2ff, #3a7bd5);
   color: white;
 }
 
 .action-btn.primary:hover {
-  background: #334155;
+  box-shadow: 0 6px 20px rgba(0, 210, 255, 0.5);
 }
 
 @media (max-width: 768px) {
