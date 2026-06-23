@@ -115,60 +115,14 @@
   </main>
 
   <!-- Airport Recommendations Section -->
-  <section class="container" id="recommend" style="padding-top: 80px; margin-top: -20px;">
-    <h2 class="section-title">机场推荐 <span style="font-size: 0.5em; color: var(--accent-primary); vertical-align: middle;">精选专线</span></h2>
-    <div class="recommend-grid">
-      <!-- EdgeNova (Featured) -->
-      <a href="articles/edgenova.html" class="airport-card featured">
-        <div class="badge-hot">重点推荐</div>
-        <div class="card-header">
-          <div class="icon-placeholder" style="background: linear-gradient(135deg, #00d2ff, #3a7bd5);">EN</div>
-          <h3>EdgeNova</h3>
-        </div>
-        <p>全线顶级专线，晚高峰无缝秒开流媒体视频。极致低延迟，适合重度流媒体及高端外贸商务用户。</p>
-        <div class="card-footer">
-          <span class="tag">高级专线</span>
-          <span class="tag">全区解锁</span>
-        </div>
-      </a>
-
-      <!-- 极连云 -->
-      <a href="articles/jilianyun.html" class="airport-card">
-        <div class="card-header">
-          <div class="icon-placeholder bg-purple">极</div>
-          <h3>极连云</h3>
-        </div>
-        <p>高性价比 BGP 中转机场，节点覆盖全球 30+ 地区。稳定可靠，支持超大流量套餐，日常冲浪首选。</p>
-        <div class="card-footer">
-          <span class="tag">BGP中转</span>
-          <span class="tag">大流量</span>
-        </div>
-      </a>
-
-      <!-- 光年梯 -->
-      <a href="articles/guangnianti.html" class="airport-card">
-        <div class="card-header">
-          <div class="icon-placeholder bg-orange">光</div>
-          <h3>光年梯</h3>
-        </div>
-        <p>专为极客打造的轻量级代理，支持最新 Hysteria2 及 VLESS 协议。抗封锁能力极强，晚高峰依然坚挺。</p>
-        <div class="card-footer">
-          <span class="tag">Hysteria2</span>
-          <span class="tag">强力抗封</span>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- Airport Rankings Section -->
-  <section class="container" id="ranking" style="padding-top: 80px; margin-top: -20px; margin-bottom: 80px;">
-    <h2 class="section-title">顶级推荐榜单 <span style="font-size: 0.5em; color: var(--accent-secondary); vertical-align: middle;">Leaderboard</span></h2>
+  <section class="container" id="recommend" style="padding-top: 80px; margin-top: -20px; margin-bottom: 40px;">
+    <h2 class="section-title">机场推荐 <span style="font-size: 0.5em; color: var(--accent-primary); vertical-align: middle;">顶级专线精选</span></h2>
     <div class="podium-ranking">
       
-      <!-- Rank 2: 极连云 -->
+      <!-- Recommend 2: 极连云 -->
       <div class="podium-card rank-2">
         <div class="medal-icon">🥈</div>
-        <div class="rank-badge">#2</div>
+        <div class="rank-badge">Top 2</div>
         <h3>极连云</h3>
         <div class="stats-list">
           <div class="stat-row"><span>峰值速率</span><span class="value speed">1500 Mbps</span></div>
@@ -179,11 +133,11 @@
         <a href="articles/jilianyun.html" class="podium-btn">查看评测 &rarr;</a>
       </div>
 
-      <!-- Rank 1: EdgeNova (Center) -->
+      <!-- Recommend 1: EdgeNova (Center) -->
       <div class="podium-card rank-1">
-        <div class="crown-badge">👑 冠军</div>
+        <div class="crown-badge">👑 重点推荐</div>
         <div class="medal-icon">🥇</div>
-        <div class="rank-badge">#1</div>
+        <div class="rank-badge">Top 1</div>
         <h3>EdgeNova</h3>
         <div class="stats-list">
           <div class="stat-row"><span>峰值速率</span><span class="value speed highlight">3000 Mbps</span></div>
@@ -194,10 +148,10 @@
         <a href="articles/edgenova.html" class="podium-btn primary">访问评测 &rarr;</a>
       </div>
 
-      <!-- Rank 3: 光年梯 -->
+      <!-- Recommend 3: 光年梯 -->
       <div class="podium-card rank-3">
         <div class="medal-icon">🥉</div>
-        <div class="rank-badge">#3</div>
+        <div class="rank-badge">Top 3</div>
         <h3>光年梯</h3>
         <div class="stats-list">
           <div class="stat-row"><span>峰值速率</span><span class="value speed">1000 Mbps</span></div>
@@ -208,6 +162,49 @@
         <a href="articles/guangnianti.html" class="podium-btn">查看评测 &rarr;</a>
       </div>
 
+    </div>
+  </section>
+
+  <!-- Airport Rankings Section -->
+  <section class="container" id="ranking" style="padding-top: 80px; margin-top: -20px; margin-bottom: 80px;">
+    <h2 class="section-title">全网性能排行 <span style="font-size: 0.5em; color: var(--accent-secondary); vertical-align: middle;">Leaderboard</span></h2>
+    <div class="recommend-grid">
+      <!-- Rank 1 -->
+      <a href="articles/edgenova.html" class="airport-card featured">
+        <div class="badge-hot">#1 冠军</div>
+        <div class="card-header">
+          <div class="icon-placeholder" style="background: linear-gradient(135deg, #00d2ff, #3a7bd5);">EN</div>
+          <h3>EdgeNova</h3>
+        </div>
+        <p>综合评分最高，全线顶级专线，极低延迟。年度最佳稳定性表现。</p>
+        <div class="card-footer">
+          <span class="tag">评分: 99.5</span>
+        </div>
+      </a>
+
+      <!-- Rank 2 -->
+      <a href="articles/jilianyun.html" class="airport-card">
+        <div class="card-header">
+          <div class="icon-placeholder bg-purple">极</div>
+          <h3>极连云</h3>
+        </div>
+        <p>综合性能优异，高性价比 BGP 中转机场，日常冲浪与大流量用户首选。</p>
+        <div class="card-footer">
+          <span class="tag">评分: 95.0</span>
+        </div>
+      </a>
+
+      <!-- Rank 3 -->
+      <a href="articles/guangnianti.html" class="airport-card">
+        <div class="card-header">
+          <div class="icon-placeholder bg-orange">光</div>
+          <h3>光年梯</h3>
+        </div>
+        <p>轻量级极客代理，全面支持 Hysteria2 及 VLESS，抗封锁性能优异。</p>
+        <div class="card-footer">
+          <span class="tag">评分: 92.5</span>
+        </div>
+      </a>
     </div>
   </section>
 
