@@ -340,21 +340,21 @@ h1, h2, h3, h4, h5, h6 {
 
 .ranking-header {
   display: flex;
-  background: #f8fafc;
+  background: #1e293b; /* Dark header matching screenshot */
   padding: 15px 30px;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.95rem;
-  color: var(--text-secondary);
-  border-bottom: 1px solid var(--border-color);
+  color: white;
+  border-bottom: none;
 }
 
 .ranking-category {
-  padding: 12px 30px;
-  background: #fdfdfd;
+  padding: 15px 30px;
+  background: #fcfcfd;
   border-bottom: 1px solid var(--border-color);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }
 
 .ranking-row {
@@ -381,22 +381,26 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  font-size: 1rem;
-  background: #f1f5f9;
-  color: var(--text-secondary);
+  font-size: 1.1rem;
+  background: transparent;
+  color: #94a3b8;
   margin-right: 34px;
   flex-shrink: 0;
-  transition: transform var(--transition-fast);
 }
 
-.ranking-row:hover .rank-num {
-  transform: scale(1.1);
+.ranking-row.rank-1 .rank-num {
+  background: #fef08a; /* Pastel Yellow */
+  color: #854d0e;
 }
 
-.ranking-row.top-3 .rank-num {
-  background: linear-gradient(135deg, #00d2ff, #3a7bd5);
-  color: white;
-  box-shadow: 0 4px 10px rgba(0, 210, 255, 0.3);
+.ranking-row.rank-2 .rank-num {
+  background: #e0f2fe; /* Pastel Blue */
+  color: #0369a1;
+}
+
+.ranking-row.rank-3 .rank-num {
+  background: #ffedd5; /* Pastel Orange */
+  color: #c2410c;
 }
 
 .rank-info {
@@ -456,11 +460,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .action-btn {
   display: inline-block;
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  border: 1px solid var(--border-color);
-  padding: 8px 24px;
-  border-radius: 20px;
+  background: #1e293b;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px; /* Slightly rounded block */
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
@@ -468,19 +472,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .action-btn:hover {
-  background: var(--bg-secondary);
-  border-color: var(--text-secondary);
+  background: #334155;
+  color: white;
 }
 
 .action-btn.primary {
-  background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+  background: #1e293b;
   color: white;
-  border: none;
 }
 
 .action-btn.primary:hover {
-  box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
-  transform: translateY(-2px);
+  background: #334155;
 }
 
 @media (max-width: 768px) {
