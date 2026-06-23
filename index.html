@@ -18,7 +18,7 @@
       <nav class="nav-menu" id="navMenu">
         <a href="index.html" class="nav-link active">首页探索</a>
         <a href="#recommend" class="nav-link">机场推荐</a>
-        <a href="#ranking" class="nav-link">机场排行</a>
+        <a href="ranking.html" class="nav-link">机场排行</a>
         <a href="#kb" class="nav-link">使用教程</a>
       </nav>
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">☰</button>
@@ -34,6 +34,36 @@
         <input type="text" class="search-input" placeholder="搜索教程，如 'Clash 配置'...">
         <button class="search-btn">搜索</button>
       </div>
+    </div>
+  </section>
+
+  <!-- Airport Recommendations Section -->
+  <section class="container" id="recommend" style="padding-top: 80px; margin-top: -20px; margin-bottom: 60px;">
+    <h2 class="section-title">机场推荐 <span style="font-size: 0.5em; color: var(--accent-primary); vertical-align: middle;">顶级专线精选</span></h2>
+    <div class="kb-grid">
+      
+      <!-- Recommend: 极连云 (Moved to Left) -->
+      <a href="articles/jilianyun.html" class="kb-card card-bg-1">
+        <div class="kb-icon" style="font-size: 2rem;">☁️</div>
+        <h3>极连云</h3>
+        <p>高性价比 BGP 中转机场，节点覆盖全球 30+ 地区。稳定可靠，支持超大流量套餐，日常冲浪首选。</p>
+      </a>
+
+      <!-- Recommend: EdgeNova (Moved to Center) -->
+      <a href="articles/edgenova.html" class="kb-card highlighted card-bg-2" style="position: relative;">
+        <span style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #00d2ff, #3a7bd5); color: white; padding: 4px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0, 210, 255, 0.3); white-space: nowrap;">👑 重点推荐</span>
+        <div class="kb-icon" style="font-size: 2rem; background: rgba(0, 210, 255, 0.1);">🚀</div>
+        <h3 style="color: var(--accent-primary);">EdgeNova</h3>
+        <p>全线顶级专线，晚高峰无缝秒开流媒体视频。极致低延迟，适合重度流媒体及高端外贸商务用户。</p>
+      </a>
+
+      <!-- Recommend: 光年梯 (Right) -->
+      <a href="articles/guangnianti.html" class="kb-card card-bg-3">
+        <div class="kb-icon" style="font-size: 2rem;">⚡</div>
+        <h3>光年梯</h3>
+        <p>专为极客打造的轻量级代理，支持最新 Hysteria2 及 VLESS 协议。抗封锁能力极强，晚高峰依然坚挺。</p>
+      </a>
+
     </div>
   </section>
 
@@ -114,122 +144,7 @@
     </div>
   </main>
 
-  <!-- Airport Recommendations Section -->
-  <section class="container" id="recommend" style="padding-top: 80px; margin-top: -20px; margin-bottom: 60px;">
-    <h2 class="section-title">机场推荐 <span style="font-size: 0.5em; color: var(--accent-primary); vertical-align: middle;">顶级专线精选</span></h2>
-    <div class="kb-grid">
-      
-      <!-- Recommend: 极连云 (Moved to Left) -->
-      <a href="articles/jilianyun.html" class="kb-card card-bg-1">
-        <div class="kb-icon" style="font-size: 2rem;">☁️</div>
-        <h3>极连云</h3>
-        <p>高性价比 BGP 中转机场，节点覆盖全球 30+ 地区。稳定可靠，支持超大流量套餐，日常冲浪首选。</p>
-      </a>
 
-      <!-- Recommend: EdgeNova (Moved to Center) -->
-      <a href="articles/edgenova.html" class="kb-card highlighted card-bg-2" style="position: relative;">
-        <span style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #00d2ff, #3a7bd5); color: white; padding: 4px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0, 210, 255, 0.3); white-space: nowrap;">👑 重点推荐</span>
-        <div class="kb-icon" style="font-size: 2rem; background: rgba(0, 210, 255, 0.1);">🚀</div>
-        <h3 style="color: var(--accent-primary);">EdgeNova</h3>
-        <p>全线顶级专线，晚高峰无缝秒开流媒体视频。极致低延迟，适合重度流媒体及高端外贸商务用户。</p>
-      </a>
-
-      <!-- Recommend: 光年梯 (Right) -->
-      <a href="articles/guangnianti.html" class="kb-card card-bg-3">
-        <div class="kb-icon" style="font-size: 2rem;">⚡</div>
-        <h3>光年梯</h3>
-        <p>专为极客打造的轻量级代理，支持最新 Hysteria2 及 VLESS 协议。抗封锁能力极强，晚高峰依然坚挺。</p>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- Airport Rankings Section -->
-  <section class="container" id="ranking" style="padding-top: 80px; margin-top: -20px; margin-bottom: 80px;">
-    <h2 class="section-title">全网性能排行 <span style="font-size: 0.5em; color: var(--accent-secondary); vertical-align: middle;">Leaderboard</span></h2>
-    <div class="kb-grid">
-      <!-- Rank 1: EdgeNova -->
-      <a href="articles/edgenova.html" class="kb-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <div class="kb-icon">🥇</div>
-          <span style="font-size: 2rem; font-weight: 900; color: var(--accent-primary); opacity: 0.3;">#1</span>
-        </div>
-        <h3>EdgeNova</h3>
-        <p>综合评分：99.5 | 延迟：极低<br><br>年度最佳专线体验，全区解锁，商务与流媒体首选。</p>
-      </a>
-
-      <!-- Rank 2: 极连云 -->
-      <a href="articles/jilianyun.html" class="kb-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <div class="kb-icon">🥈</div>
-          <span style="font-size: 2rem; font-weight: 900; color: var(--text-secondary); opacity: 0.3;">#2</span>
-        </div>
-        <h3>极连云</h3>
-        <p>综合评分：95.0 | 延迟：中等<br><br>高性价比 BGP 中转，海量节点，大流量冲浪必备。</p>
-      </a>
-
-      <!-- Rank 3: 光年梯 -->
-      <a href="articles/guangnianti.html" class="kb-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <div class="kb-icon">🥉</div>
-          <span style="font-size: 2rem; font-weight: 900; color: var(--text-secondary); opacity: 0.3;">#3</span>
-        </div>
-        <h3>光年梯</h3>
-        <p>综合评分：92.5 | 延迟：低<br><br>前沿 Hysteria2 协议支持，极客首选，抗封锁专家。</p>
-      </a>
-
-      <!-- Rank 4 -->
-      <a href="articles/kuaili.html" class="kb-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <div class="kb-icon">🦊</div>
-          <span style="font-size: 2rem; font-weight: 900; color: var(--text-secondary); opacity: 0.3;">#4</span>
-        </div>
-        <h3>快狸</h3>
-        <p>综合评分：90.0 | 延迟：极低<br><br>优质专线接入，速度快如闪电，适合追求极速体验的用户。</p>
-      </a>
-
-      <!-- Rank 5 -->
-      <a href="articles/huanyuyun.html" class="kb-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <div class="kb-icon">🌍</div>
-          <span style="font-size: 2rem; font-weight: 900; color: var(--text-secondary); opacity: 0.3;">#5</span>
-        </div>
-        <h3>寰宇云</h3>
-        <p>综合评分：88.5 | 延迟：中等<br><br>老牌稳定机场，节点多，解锁各大流媒体平台无压力。</p>
-      </a>
-
-      <!-- Rank 6 -->
-      <a href="articles/shunyun.html" class="kb-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <div class="kb-icon">💨</div>
-          <span style="font-size: 2rem; font-weight: 900; color: var(--text-secondary); opacity: 0.3;">#6</span>
-        </div>
-        <h3>瞬云</h3>
-        <p>综合评分：86.0 | 延迟：极低<br><br>主打低延迟游戏加速与瞬间加载，轻量级用户的性价比之选。</p>
-      </a>
-
-      <!-- Rank 7 -->
-      <a href="articles/sujie.html" class="kb-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <div class="kb-icon">🚀</div>
-          <span style="font-size: 2rem; font-weight: 900; color: var(--text-secondary); opacity: 0.3;">#7</span>
-        </div>
-        <h3>速界</h3>
-        <p>综合评分：84.5 | 延迟：中等<br><br>全平台客户端支持，一键傻瓜式连接，新手小白最爱。</p>
-      </a>
-
-      <!-- Rank 8 -->
-      <a href="articles/kexinyun.html" class="kb-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <div class="kb-icon">🛡️</div>
-          <span style="font-size: 2rem; font-weight: 900; color: var(--text-secondary); opacity: 0.3;">#8</span>
-        </div>
-        <h3>可信云</h3>
-        <p>综合评分：82.0 | 延迟：中等<br><br>数据加密安全传输，注重隐私保护的商业级代理服务。</p>
-      </a>
-
-    </div>
-  </section>
 
   <!-- Footer -->
   <footer class="footer">
