@@ -26,14 +26,62 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="container hero-content">
-      <h1 class="gradient-text">构建您的数字边界</h1>
-      <p>汇集 2026 年最新网络测速、代理工具下载及硬核运维教程。无论您是新手还是极客，这里都有您需要的解决方案。</p>
-      <div class="search-bar">
-        <input type="text" class="search-input" placeholder="搜索教程，如 'Clash 配置'...">
-        <button class="search-btn">搜索</button>
+  <section class="hero" style="padding: 100px 20px 80px; position: relative; overflow: hidden; background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); border-bottom: 1px solid var(--border-color);">
+    <!-- Decorative background elements -->
+    <div style="position: absolute; top: -150px; right: -50px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(14,165,233,0.1) 0%, rgba(56,189,248,0) 70%); filter: blur(50px); z-index: 0; pointer-events: none;"></div>
+    <div style="position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(2,132,199,0.05) 0%, rgba(2,132,199,0) 70%); filter: blur(50px); z-index: 0; pointer-events: none;"></div>
+    
+    <div class="container" style="position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 60px;">
+      
+      <!-- Left side: Text and Buttons -->
+      <div style="flex: 1 1 500px; max-width: 650px; text-align: left;">
+        <h1 style="font-size: 2.8rem; line-height: 1.35; color: var(--text-primary); margin-bottom: 25px; font-weight: 800; letter-spacing: -0.5px;">2026 最新机场推荐与<span style="color: var(--accent-primary);">科学上网教程导航</span></h1>
+        <p style="font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 40px; line-height: 1.7;">专注机场评测、节点测速、Clash 教程、Shadowrocket 配置、流媒体解锁与新手避坑指南，帮你快速找到稳定、好用、适合自己的网络工具。</p>
+        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+          <a href="airports.html" class="action-btn primary" style="padding: 14px 36px; font-size: 1.1rem; border-radius: 50px; box-shadow: 0 8px 20px rgba(14, 165, 233, 0.25); text-decoration: none;">查看机场推荐</a>
+          <a href="knowledge.html" class="action-btn" style="padding: 14px 36px; font-size: 1.1rem; border-radius: 50px; background: white; color: var(--text-primary); border: 1px solid var(--border-color); box-shadow: 0 4px 10px rgba(0,0,0,0.03); text-decoration: none; transition: all 0.2s;">新手入门教程</a>
+        </div>
       </div>
+
+      <!-- Right side: Data Panel / Card -->
+      <div style="flex: 1 1 350px; max-width: 450px;">
+        <div style="background: white; border-radius: 20px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.06); border: 1px solid rgba(14,165,233,0.1); position: relative; overflow: hidden;">
+          <!-- Top subtle glowing bar -->
+          <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #0ea5e9, #38bdf8);"></div>
+          
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 25px;">
+            <li style="display: flex; align-items: center; gap: 18px;">
+              <div style="width: 46px; height: 46px; border-radius: 12px; background: #f0f9ff; color: #0ea5e9; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">🚀</div>
+              <div>
+                <strong style="display: block; color: var(--text-primary); font-size: 1.1rem; margin-bottom: 2px;">2026 最新整理</strong>
+                <span style="color: var(--text-secondary); font-size: 0.95rem;">全网一手评测数据，拒绝信息差</span>
+              </div>
+            </li>
+            <li style="display: flex; align-items: center; gap: 18px;">
+              <div style="width: 46px; height: 46px; border-radius: 12px; background: #f0fdf4; color: #22c55e; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">👶</div>
+              <div>
+                <strong style="display: block; color: var(--text-primary); font-size: 1.1rem; margin-bottom: 2px;">新手友好</strong>
+                <span style="color: var(--text-secondary); font-size: 0.95rem;">从零开始的保姆级图文配置指南</span>
+              </div>
+            </li>
+            <li style="display: flex; align-items: center; gap: 18px;">
+              <div style="width: 46px; height: 46px; border-radius: 12px; background: #faf5ff; color: #a855f7; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">💻</div>
+              <div>
+                <strong style="display: block; color: var(--text-primary); font-size: 1.1rem; margin-bottom: 2px;">多平台教程</strong>
+                <span style="color: var(--text-secondary); font-size: 0.95rem;">涵盖 Win / Mac / iOS / Android</span>
+              </div>
+            </li>
+            <li style="display: flex; align-items: center; gap: 18px;">
+              <div style="width: 46px; height: 46px; border-radius: 12px; background: #fff7ed; color: #f97316; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">⚡</div>
+              <div>
+                <strong style="display: block; color: var(--text-primary); font-size: 1.1rem; margin-bottom: 2px;">持续更新</strong>
+                <span style="color: var(--text-secondary); font-size: 0.95rem;">定期过滤跑路机场，严选高速专线</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
     </div>
   </section>
 
