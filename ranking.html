@@ -27,88 +27,182 @@
 
 
   <!-- Airport Rankings Section -->
-  <section class="container" id="ranking" style="padding-top: 80px; margin-top: -20px; margin-bottom: 80px;">
+  <section class="container" style="padding-top: 80px; margin-bottom: 80px;">
     <h2 class="section-title">全网性能排行 <span style="font-size: 0.5em; color: var(--accent-secondary); vertical-align: middle;">Leaderboard</span></h2>
-    <div class="kb-grid">
-      <!-- Rank 1: EdgeNova -->
-      <a href="articles/edgenova.html" class="kb-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <div class="kb-icon">🥇</div>
-          <span style="font-size: 2rem; font-weight: 900; color: var(--accent-primary); opacity: 0.3;">#1</span>
-        </div>
-        <h3>EdgeNova</h3>
-        <p>综合评分：99.5 | 延迟：极低<br><br>年度最佳专线体验，全区解锁，商务与流媒体首选。</p>
-      </a>
+    
+    <div class="ranking-list">
+      <!-- Header -->
+      <div class="ranking-header">
+        <div style="width: 70px;">#</div>
+        <div style="flex-grow: 1;">机场名称 / 特色</div>
+        <div style="min-width: 120px; text-align: right; margin-right: 40px;">参考价格</div>
+        <div style="min-width: 100px; text-align: center;">操作</div>
+      </div>
 
-      <!-- Rank 2: 极连云 -->
-      <a href="articles/jilianyun.html" class="kb-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <div class="kb-icon">🥈</div>
-          <span style="font-size: 2rem; font-weight: 900; color: var(--text-secondary); opacity: 0.3;">#2</span>
-        </div>
-        <h3>极连云</h3>
-        <p>综合评分：95.0 | 延迟：中等<br><br>高性价比 BGP 中转，海量节点，大流量冲浪必备。</p>
-      </a>
+      <!-- Category 1 -->
+      <div class="ranking-category">
+        <span style="color: var(--accent-primary);">★</span> 精选重点推荐
+      </div>
 
-      <!-- Rank 3: 光年梯 -->
-      <a href="articles/guangnianti.html" class="kb-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <div class="kb-icon">🥉</div>
-          <span style="font-size: 2rem; font-weight: 900; color: var(--text-secondary); opacity: 0.3;">#3</span>
+      <!-- Row 1: EdgeNova -->
+      <div class="ranking-row top-3">
+        <div class="rank-num">1</div>
+        <div class="rank-info">
+          <div class="rank-title">
+            <span class="icon">🚀</span>
+            <h3>EdgeNova</h3>
+          </div>
+          <div class="rank-tags">
+            <span class="tag tag-blue">编辑推荐</span>
+            <span class="tag tag-purple">顶级专线</span>
+            <span class="tag tag-green">全区解锁</span>
+          </div>
         </div>
-        <h3>光年梯</h3>
-        <p>综合评分：92.5 | 延迟：低<br><br>前沿 Hysteria2 协议支持，极客首选，抗封锁专家。</p>
-      </a>
+        <div class="rank-price">¥25 / 月起</div>
+        <div class="rank-action">
+          <a href="articles/edgenova.html" class="action-btn primary">查看评测</a>
+        </div>
+      </div>
 
-      <!-- Rank 4 -->
-      <a href="articles/kuaili.html" class="kb-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <div class="kb-icon">🦊</div>
-          <span style="font-size: 2rem; font-weight: 900; color: var(--text-secondary); opacity: 0.3;">#4</span>
+      <!-- Row 2: 极连云 -->
+      <div class="ranking-row top-3">
+        <div class="rank-num">2</div>
+        <div class="rank-info">
+          <div class="rank-title">
+            <span class="icon">☁️</span>
+            <h3>极连云</h3>
+          </div>
+          <div class="rank-tags">
+            <span class="tag tag-blue">BGP中转</span>
+            <span class="tag tag-orange">性价比首选</span>
+            <span class="tag tag-green">大流量</span>
+          </div>
         </div>
-        <h3>快狸</h3>
-        <p>综合评分：90.0 | 延迟：极低<br><br>优质专线接入，速度快如闪电，适合追求极速体验的用户。</p>
-      </a>
+        <div class="rank-price">¥12 / 月起</div>
+        <div class="rank-action">
+          <a href="articles/jilianyun.html" class="action-btn">查看评测</a>
+        </div>
+      </div>
 
-      <!-- Rank 5 -->
-      <a href="articles/huanyuyun.html" class="kb-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <div class="kb-icon">🌍</div>
-          <span style="font-size: 2rem; font-weight: 900; color: var(--text-secondary); opacity: 0.3;">#5</span>
+      <!-- Row 3: 光年梯 -->
+      <div class="ranking-row top-3">
+        <div class="rank-num">3</div>
+        <div class="rank-info">
+          <div class="rank-title">
+            <span class="icon">⚡</span>
+            <h3>光年梯</h3>
+          </div>
+          <div class="rank-tags">
+            <span class="tag tag-purple">Hysteria2</span>
+            <span class="tag tag-blue">VLESS</span>
+            <span class="tag tag-orange">极客优选</span>
+          </div>
         </div>
-        <h3>寰宇云</h3>
-        <p>综合评分：88.5 | 延迟：中等<br><br>老牌稳定机场，节点多，解锁各大流媒体平台无压力。</p>
-      </a>
+        <div class="rank-price">¥15 / 月起</div>
+        <div class="rank-action">
+          <a href="articles/guangnianti.html" class="action-btn">查看评测</a>
+        </div>
+      </div>
 
-      <!-- Rank 6 -->
-      <a href="articles/shunyun.html" class="kb-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <div class="kb-icon">💨</div>
-          <span style="font-size: 2rem; font-weight: 900; color: var(--text-secondary); opacity: 0.3;">#6</span>
-        </div>
-        <h3>瞬云</h3>
-        <p>综合评分：86.0 | 延迟：极低<br><br>主打低延迟游戏加速与瞬间加载，轻量级用户的性价比之选。</p>
-      </a>
+      <!-- Category 2 -->
+      <div class="ranking-category">
+        <span style="color: var(--text-secondary);">📄</span> 更多优质机场
+      </div>
 
-      <!-- Rank 7 -->
-      <a href="articles/sujie.html" class="kb-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <div class="kb-icon">🚀</div>
-          <span style="font-size: 2rem; font-weight: 900; color: var(--text-secondary); opacity: 0.3;">#7</span>
+      <!-- Row 4: 快狸 -->
+      <div class="ranking-row">
+        <div class="rank-num">4</div>
+        <div class="rank-info">
+          <div class="rank-title">
+            <span class="icon">🦊</span>
+            <h3>快狸</h3>
+          </div>
+          <div class="rank-tags">
+            <span class="tag tag-blue">优质接入</span>
+            <span class="tag tag-orange">低延迟</span>
+          </div>
         </div>
-        <h3>速界</h3>
-        <p>综合评分：84.5 | 延迟：中等<br><br>全平台客户端支持，一键傻瓜式连接，新手小白最爱。</p>
-      </a>
+        <div class="rank-price">¥10 / 月起</div>
+        <div class="rank-action">
+          <a href="articles/kuaili.html" class="action-btn">查看评测</a>
+        </div>
+      </div>
 
-      <!-- Rank 8 -->
-      <a href="articles/kexinyun.html" class="kb-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <div class="kb-icon">🛡️</div>
-          <span style="font-size: 2rem; font-weight: 900; color: var(--text-secondary); opacity: 0.3;">#8</span>
+      <!-- Row 5: 寰宇云 -->
+      <div class="ranking-row">
+        <div class="rank-num">5</div>
+        <div class="rank-info">
+          <div class="rank-title">
+            <span class="icon">🌍</span>
+            <h3>寰宇云</h3>
+          </div>
+          <div class="rank-tags">
+            <span class="tag tag-green">老牌稳定</span>
+            <span class="tag tag-purple">流媒体解锁</span>
+          </div>
         </div>
-        <h3>可信云</h3>
-        <p>综合评分：82.0 | 延迟：中等<br><br>数据加密安全传输，注重隐私保护的商业级代理服务。</p>
-      </a>
+        <div class="rank-price">¥18 / 月起</div>
+        <div class="rank-action">
+          <a href="articles/huanyuyun.html" class="action-btn">查看评测</a>
+        </div>
+      </div>
+
+      <!-- Row 6: 瞬云 -->
+      <div class="ranking-row">
+        <div class="rank-num">6</div>
+        <div class="rank-info">
+          <div class="rank-title">
+            <span class="icon">💨</span>
+            <h3>瞬云</h3>
+          </div>
+          <div class="rank-tags">
+            <span class="tag tag-orange">游戏加速</span>
+            <span class="tag tag-blue">瞬间加载</span>
+          </div>
+        </div>
+        <div class="rank-price">¥15 / 月起</div>
+        <div class="rank-action">
+          <a href="articles/shunyun.html" class="action-btn">查看评测</a>
+        </div>
+      </div>
+
+      <!-- Row 7: 速界 -->
+      <div class="ranking-row">
+        <div class="rank-num">7</div>
+        <div class="rank-info">
+          <div class="rank-title">
+            <span class="icon">🚀</span>
+            <h3>速界</h3>
+          </div>
+          <div class="rank-tags">
+            <span class="tag tag-blue">全平台支持</span>
+            <span class="tag tag-green">新手友好</span>
+          </div>
+        </div>
+        <div class="rank-price">¥12 / 月起</div>
+        <div class="rank-action">
+          <a href="articles/sujie.html" class="action-btn">查看评测</a>
+        </div>
+      </div>
+
+      <!-- Row 8: 可信云 -->
+      <div class="ranking-row">
+        <div class="rank-num">8</div>
+        <div class="rank-info">
+          <div class="rank-title">
+            <span class="icon">🛡️</span>
+            <h3>可信云</h3>
+          </div>
+          <div class="rank-tags">
+            <span class="tag tag-purple">数据加密</span>
+            <span class="tag tag-blue">隐私保护</span>
+          </div>
+        </div>
+        <div class="rank-price">¥20 / 月起</div>
+        <div class="rank-action">
+          <a href="articles/kexinyun.html" class="action-btn">查看评测</a>
+        </div>
+      </div>
 
     </div>
   </section>
