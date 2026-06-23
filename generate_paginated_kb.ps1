@@ -1,29 +1,19 @@
-﻿<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>知识库 - 云轨导航</title>
-  <meta name="description" content="云轨导航为您提供最新的网络协议解析、客户端配置教程及安全隐私指南。">
-  <link rel="stylesheet" href="index.css?v=3">
-</head>
-<body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <a href="index.html" class="logo-container">
-        <img src="assets/images/yungui_logo_1782127474781.png" alt="云轨导航 Logo" class="logo-img">
-        <span class="logo-text">云轨导航</span>
-      </a>
-      <nav class="nav-menu" id="navMenu">
-        <a href="index.html" class="nav-link">首页探索</a>
-        <a href="#recommend" class="nav-link">机场推荐</a>
-        <a href="ranking.html" class="nav-link">机场排行</a>
-        <a href="knowledge.html" class="nav-link active">知识库</a>
-      </nav>
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">☰</button>
-    </div>
-  </header>
+$index_path = ".\index.html"
+$kb_path = ".\knowledge.html"
+
+$content = [System.IO.File]::ReadAllText($index_path, [System.Text.Encoding]::UTF8)
+
+# Extract header
+$header = [regex]::Match($content, '(?s)(<!DOCTYPE html>.*?</header>)').Groups[1].Value
+$header = $header -replace '<a href="index.html" class="nav-link active">首页探索</a>', '<a href="index.html" class="nav-link">首页探索</a>'
+$header = $header -replace '<a href="knowledge.html" class="nav-link">知识库</a>', '<a href="knowledge.html" class="nav-link active">知识库</a>'
+$header = $header -replace '<title>云轨导航 - 专业的全球网络与协议指南</title>', '<title>知识库 - 云轨导航</title>'
+
+# Extract footer
+$footer = [regex]::Match($content, '(?s)(<!-- SEO Links Section -->.*</html>)').Groups[1].Value
+
+# Construct new main content
+$main = @"
   <style>
     .article-row {
       display: flex;
@@ -217,39 +207,8 @@
     }
   });
   </script>
-<!-- SEO Links Section -->
-  <section class="container" style="padding: 40px 20px; border-top: 1px solid var(--border-color); margin-top: 60px; margin-bottom: 20px;">
-    <h3 style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 15px;">🔗 快速导航与热门主题</h3>
-    <div style="display: flex; flex-wrap: wrap; gap: 15px; line-height: 1.5;">
-      <a href="/airport-recommend/" style="color: var(--text-secondary); font-size: 0.9rem; text-decoration: none; padding: 5px 12px; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; transition: all 0.2s;">优质机场推荐</a>
-      <a href="/airport-rank/" style="color: var(--text-secondary); font-size: 0.9rem; text-decoration: none; padding: 5px 12px; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; transition: all 0.2s;">全球机场排行</a>
-      <a href="/reviews/" style="color: var(--text-secondary); font-size: 0.9rem; text-decoration: none; padding: 5px 12px; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; transition: all 0.2s;">深度测速评测</a>
-      <a href="/tutorials/" style="color: var(--text-secondary); font-size: 0.9rem; text-decoration: none; padding: 5px 12px; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; transition: all 0.2s;">新手配置教程</a>
-      <a href="/clash-tutorial/" style="color: var(--text-secondary); font-size: 0.9rem; text-decoration: none; padding: 5px 12px; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; transition: all 0.2s;">Clash 导入教程</a>
-      <a href="/shadowrocket-tutorial/" style="color: var(--text-secondary); font-size: 0.9rem; text-decoration: none; padding: 5px 12px; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; transition: all 0.2s;">Shadowrocket 指南</a>
-      <a href="/client-download/" style="color: var(--text-secondary); font-size: 0.9rem; text-decoration: none; padding: 5px 12px; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; transition: all 0.2s;">客户端安全下载</a>
-      <a href="/avoid-scam/" style="color: var(--text-secondary); font-size: 0.9rem; text-decoration: none; padding: 5px 12px; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; transition: all 0.2s;">机场避坑防骗指南</a>
-    </div>
-  </section>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">
-          <img src="assets/images/yungui_logo_1782127474781.png" alt="云轨导航 Logo" class="logo-img" style="height: 30px;">
-          <span class="logo-text">云轨导航</span>
-        </div>
-        <div class="footer-links">
-          <a href="#">关于我们</a>
-          <a href="#">使用条款</a>
-          <a href="#">隐私政策</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        &copy; 2026 云轨导航. All Rights Reserved.
-      </div>
-    </div>
-  </footer>
+"@
 
-  <script src="script.js"></script>
-</body>
-</html>
+$kb_html = $header + "`n" + $main + "`n" + $footer
+[System.IO.File]::WriteAllText($kb_path, $kb_html, [System.Text.Encoding]::UTF8)
+Write-Host "Updated knowledge.html with paginated list UI"
