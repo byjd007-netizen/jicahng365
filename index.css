@@ -423,3 +423,195 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: 1fr;
   }
 }
+
+/* Airport Recommend Cards */
+.recommend-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.airport-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 30px 24px;
+  position: relative;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.airport-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--neon-glow);
+  border-color: var(--accent-primary);
+}
+
+.airport-card.featured {
+  border: 2px solid var(--accent-primary);
+  background: linear-gradient(180deg, #f0faff 0%, #ffffff 100%);
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 210, 255, 0.1);
+}
+
+.airport-card.featured:hover {
+  transform: scale(1.02) translateY(-5px);
+  box-shadow: var(--neon-glow);
+}
+
+.badge-hot {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 210, 255, 0.3);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.icon-placeholder {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.airport-card h3 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.airport-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.card-footer {
+  display: flex;
+  gap: 10px;
+}
+
+.card-footer .tag {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Unique Ranking List */
+.ranking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ranking-item {
+  display: flex;
+  align-items: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 20px 30px;
+  transition: all var(--transition-fast);
+}
+
+.ranking-item:hover {
+  transform: translateX(10px);
+  border-color: var(--accent-primary);
+  box-shadow: var(--neon-glow);
+}
+
+.rank-num {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--card-border);
+  margin-right: 30px;
+  min-width: 70px;
+  transition: all 0.3s ease;
+}
+
+.ranking-item:hover .rank-num {
+  -webkit-text-stroke: 1px var(--accent-primary);
+  text-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+}
+
+.rank-1 .rank-num { -webkit-text-stroke: 2px #3a7bd5; color: rgba(0, 210, 255, 0.1); }
+.rank-2 .rank-num { -webkit-text-stroke: 1px #94a3b8; }
+.rank-3 .rank-num { -webkit-text-stroke: 1px #cbd5e1; }
+
+.rank-info {
+  flex: 1;
+}
+
+.rank-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rank-info p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.rank-score {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 150px;
+}
+
+.score-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--bg-primary);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+}
+
+.score-bar .fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  border-radius: 4px;
+}
+
+.score-num {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .recommend-grid { grid-template-columns: 1fr; }
+  .ranking-item { flex-direction: column; align-items: flex-start; position: relative; }
+  .rank-num { position: absolute; top: 10px; right: 10px; opacity: 0.1; font-size: 5rem; }
+  .rank-score { width: 100%; margin-top: 15px; }
+}
