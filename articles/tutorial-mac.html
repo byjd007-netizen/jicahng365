@@ -8,16 +8,18 @@
 </head>
 <body class="article-page">
 <header class="header">
-  <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-    <a href="../index.html" class="logo-container" style="text-decoration: none;">
-      <span class="logo-text" style="font-size: 1.5rem; font-weight: bold; color: var(--accent-primary);">云轨导航</span>
+  <div class="container">
+    <a href="../index.html" class="logo-container">
+      <img src="../assets/images/yungui_logo_1782127474781.png" alt="云轨导航 Logo" class="logo-img">
+      <span class="logo-text">云轨导航</span>
     </a>
-    <nav class="nav-links" style="display: flex; gap: 20px;">
-      <a href="../index.html" style="text-decoration: none; color: var(--text-primary);">首页</a>
-      <a href="../airports.html" style="text-decoration: none; color: var(--text-primary);">机场推荐</a>
-      <a href="../knowledge.html" style="text-decoration: none; color: var(--text-primary); font-weight: bold;">科普指南</a>
-      <a href="../ranking.html" style="text-decoration: none; color: var(--text-primary);">排行榜</a>
+    <nav class="nav-menu" id="navMenu">
+      <a href="../index.html" class="nav-link">首页探索</a>
+      <a href="../airports.html" class="nav-link">机场推荐</a>
+      <a href="../ranking.html" class="nav-link">机场排行</a>
+      <a href="../knowledge.html" class="nav-link active">科普指南</a>
     </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">☰</button>
   </div>
 </header>
 
@@ -395,5 +397,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
+<script src="../script.js"></script>
 </body>
 </html>
