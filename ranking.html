@@ -1,232 +1,941 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>云轨导航 - 专业的全球网络与协议指南</title>
+  <title>机场推荐排名 - 云轨导航</title>
   <meta name="description" content="云轨导航为您提供最新的网络协议解析、客户端配置教程及安全隐私指南。">
-  <link rel="stylesheet" href="index.css?v=3">
+  <link rel="stylesheet" href="index.css?v=4">
+  <style>
+    body {
+      background-color: #f8fafc;
+    }
+    .ranking-hero {
+      text-align: center;
+      padding: 120px 20px 40px;
+      background: linear-gradient(180deg, #eff6ff 0%, #f8fafc 100%);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: #3b82f6;
+      color: white;
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+    .hero-title::before, .hero-title::after {
+      content: '«';
+      color: #3b82f6;
+      font-size: 2.5rem;
+      opacity: 0.5;
+    }
+    .hero-title::after {
+      content: '»';
+    }
+    .hero-subtitle {
+      color: #64748b;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    .hero-tags {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      color: #3b82f6;
+      font-size: 0.95rem;
+    }
+    .hero-tags span::before {
+      content: '✓';
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      background: #3b82f6;
+      color: white;
+      border-radius: 50%;
+      margin-right: 6px;
+      font-size: 0.7rem;
+    }
+
+    .feature-boxes {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+      flex-wrap: wrap;
+    }
+    .feature-box {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex: 1;
+      min-width: 200px;
+    }
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+    .feature-info h4 {
+      margin: 0 0 5px;
+      color: #1e293b;
+      font-size: 1.05rem;
+    }
+    .feature-info p {
+      margin: 0;
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+
+    .ranking-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .ranking-tabs-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .ranking-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .tab {
+      padding: 8px 20px;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      color: #64748b;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+    }
+    .tab.active {
+      background: #3b82f6;
+      color: white;
+      border-color: #3b82f6;
+    }
+    .update-time {
+      color: #64748b;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ranking-table-header {
+      display: grid;
+      grid-template-columns: 80px 2fr 3fr 1.5fr 1.5fr 1.5fr 150px;
+      padding: 15px 20px;
+      color: #64748b;
+      font-size: 0.9rem;
+      border-bottom: 2px solid #e2e8f0;
+      text-align: center;
+    }
+    .ranking-table-header > div:nth-child(2),
+    .ranking-table-header > div:nth-child(3) {
+      text-align: left;
+    }
+
+    .rank-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      margin-bottom: 15px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 80px 2fr 3fr 1.5fr 1.5fr 1.5fr 150px;
+      align-items: center;
+      transition: transform 0.2s;
+      text-align: center;
+    }
+    .rank-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.08);
+    }
+    .rank-card > div:nth-child(2),
+    .rank-card > div:nth-child(3) {
+      text-align: left;
+    }
+
+    /* Column 1: Rank Num */
+    .r-num {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #94a3b8;
+    }
+    .r-num.top-1, .r-num.top-2, .r-num.top-3 {
+      width: 48px;
+      height: 56px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%23f59e0b" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7L12 12L22 7L12 2Z"/><path d="M2 17L12 22L22 17M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center/contain;
+    }
+    .r-num.top-1 { color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
+    .r-num.top-2 { filter: hue-rotate(180deg) brightness(1.2); }
+    .r-num.top-3 { filter: hue-rotate(320deg) brightness(1.1); }
+
+    /* Column 2: Provider */
+    .r-provider {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .r-logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+    .r-provider-info h3 {
+      margin: 0 0 5px;
+      font-size: 1.2rem;
+      color: #1e293b;
+    }
+    .r-badge {
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 12px;
+      display: inline-block;
+    }
+    .badge-orange { background: #fef3c7; color: #d97706; }
+    .badge-blue { background: #e0f2fe; color: #0284c7; }
+    .badge-purple { background: #f3e8ff; color: #9333ea; }
+
+    /* Column 3: Features */
+    .r-features ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 10px;
+    }
+    .r-features li {
+      color: #475569;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+    .r-features li::before {
+      content: '✓';
+      color: #3b82f6;
+      margin-right: 6px;
+      font-weight: bold;
+    }
+    .r-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .r-tags span {
+      font-size: 0.75rem;
+      color: #3b82f6;
+      background: #eff6ff;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    /* Column 4: Rating */
+    .r-rating .stars {
+      color: #f59e0b;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+    .r-rating .score {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #ef4444;
+    }
+    .r-rating .user-score {
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+
+    /* Column 5: Price */
+    .r-price .amount {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #1e293b;
+    }
+    .r-price .unit {
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+    .r-price .discount {
+      display: inline-block;
+      font-size: 0.75rem;
+      color: #3b82f6;
+      background: #eff6ff;
+      padding: 2px 8px;
+      border-radius: 12px;
+      margin-top: 5px;
+    }
+
+    /* Column 6: Platforms */
+    .r-platforms {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+    .platform-icons {
+      display: flex;
+      gap: 10px;
+      color: #64748b;
+      font-size: 1.2rem;
+    }
+    .platform-text {
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+
+    /* Column 7: Actions */
+    .r-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .btn-visit {
+      background: #3b82f6;
+      color: white;
+      padding: 8px 0;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: background 0.3s;
+    }
+    .btn-visit:hover { background: #2563eb; }
+    .btn-review {
+      background: white;
+      color: #3b82f6;
+      border: 1px solid #bfdbfe;
+      padding: 8px 0;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+    }
+    .btn-review:hover {
+      background: #eff6ff;
+    }
+
+    /* Bottom Information Panels */
+    .info-panels {
+      display: flex;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .stats-panel {
+      flex: 2;
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-icon {
+      font-size: 2rem;
+      color: #3b82f6;
+      margin-bottom: 10px;
+    }
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #1e293b;
+      margin-bottom: 5px;
+    }
+    .stat-label {
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+
+    .advice-panel {
+      flex: 1;
+      background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
+      border-radius: 16px;
+      padding: 30px;
+      position: relative;
+    }
+    .advice-panel h4 {
+      margin: 0 0 15px;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .advice-panel ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+    .advice-panel ul li::marker {
+      color: #3b82f6;
+    }
+
+    .notice-bar {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      padding: 15px 20px;
+      border-radius: 12px;
+      color: #64748b;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+    .notice-bar span i {
+      color: #3b82f6;
+      margin-right: 8px;
+    }
+
+    @media (max-width: 1024px) {
+      .ranking-table-header {
+        display: none; /* Hide header on mobile */
+      }
+      .rank-card {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        text-align: center;
+        position: relative;
+        padding-top: 50px;
+      }
+      .r-num {
+        position: absolute;
+        top: 15px;
+        left: 20px;
+      }
+      .rank-card > div:nth-child(2),
+      .rank-card > div:nth-child(3) {
+        text-align: center;
+      }
+      .r-provider {
+        flex-direction: column;
+      }
+      .r-features ul li {
+        text-align: center;
+      }
+      .r-features li::before { display: none; }
+      .r-tags { justify-content: center; }
+      .info-panels { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
-  <!-- Header -->
   <header class="header">
-    <div class="container">
-      <a href="index.html" class="logo-container">
-        <img src="assets/images/yungui_logo_1782127474781.png" alt="云轨导航 Logo" class="logo-img">
-        <span class="logo-text">云轨导航</span>
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" class="logo-container" style="text-decoration: none;">
+        <span class="logo-text" style="font-size: 1.5rem; font-weight: bold; color: var(--accent-primary);">云轨导航</span>
       </a>
-      <nav class="nav-menu" id="navMenu">
-        <a href="index.html" class="nav-link">首页探索</a>
-        <a href="index.html#recommend" class="nav-link">机场推荐</a>
-        <a href="ranking.html" class="nav-link active">机场排行</a>
-        <a href="index.html#kb" class="nav-link">科普指南</a>
+      <nav class="nav-links" style="display: flex; gap: 20px;">
+        <a href="index.html" style="text-decoration: none; color: var(--text-primary);">首页</a>
+        <a href="airports.html" style="text-decoration: none; color: var(--text-primary);">机场推荐</a>
+        <a href="knowledge.html" style="text-decoration: none; color: var(--text-primary);">科普指南</a>
+        <a href="ranking.html" style="text-decoration: none; color: var(--accent-primary); font-weight: bold;">排行榜</a>
       </nav>
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">☰</button>
     </div>
   </header>
 
-
-  <!-- Airport Rankings Section -->
-  <section class="container" style="padding-top: 80px; margin-bottom: 80px;">
-    <h2 class="section-title">全网性能排行 <span style="font-size: 0.5em; color: var(--accent-secondary); vertical-align: middle;">Leaderboard</span></h2>
-    
-    <div class="ranking-list">
-      <!-- Header -->
-      <div class="ranking-header">
-        <div style="width: 70px;">#</div>
-        <div style="flex-grow: 1;">机场名称 / 特色</div>
-        <div style="min-width: 120px; text-align: right; margin-right: 40px;">参考价格</div>
-        <div style="min-width: 100px; text-align: center;">注册</div>
-      </div>
-
-      <!-- Category 1 -->
-      <div class="ranking-category">
-        <span style="color: var(--accent-primary);">★</span> 精选重点推荐
-      </div>
-
-      <!-- Row 1: EdgeNova -->
-      <div class="ranking-row rank-1">
-        <div class="rank-num">1</div>
-        <div class="rank-info">
-          <div class="rank-title">
-            <span class="icon"></span>
-            <h3>EdgeNova</h3>
-          </div>
-          <div class="rank-tags">
-            <span class="tag tag-blue">编辑推荐</span>
-            <span class="tag tag-purple">顶级专线</span>
-            <span class="tag tag-green">全区解锁</span>
-          </div>
-        </div>
-        <div class="rank-price">¥25 / 月起</div>
-        <div class="rank-action">
-          <a href="articles/edgenova.html" class="action-btn primary">点击注册</a>
-        </div>
-      </div>
-
-      <!-- Row 2: 极连云 -->
-      <div class="ranking-row rank-2">
-        <div class="rank-num">2</div>
-        <div class="rank-info">
-          <div class="rank-title">
-            <span class="icon"></span>
-            <h3>极连云</h3>
-          </div>
-          <div class="rank-tags">
-            <span class="tag tag-blue">BGP中转</span>
-            <span class="tag tag-orange">性价比首选</span>
-            <span class="tag tag-green">大流量</span>
-          </div>
-        </div>
-        <div class="rank-price">¥12 / 月起</div>
-        <div class="rank-action">
-          <a href="articles/jilianyun.html" class="action-btn">点击注册</a>
-        </div>
-      </div>
-
-      <!-- Row 3: 光年梯 -->
-      <div class="ranking-row rank-3">
-        <div class="rank-num">3</div>
-        <div class="rank-info">
-          <div class="rank-title">
-            <span class="icon"></span>
-            <h3>光年梯</h3>
-          </div>
-          <div class="rank-tags">
-            <span class="tag tag-purple">Hysteria2</span>
-            <span class="tag tag-blue">VLESS</span>
-            <span class="tag tag-orange">极客优选</span>
-          </div>
-        </div>
-        <div class="rank-price">¥15 / 月起</div>
-        <div class="rank-action">
-          <a href="articles/guangnianti.html" class="action-btn">点击注册</a>
-        </div>
-      </div>
-
-      <!-- Category 2 -->
-      <div class="ranking-category">
-        <span style="color: var(--text-secondary);">📄</span> 更多优质机场
-      </div>
-
-      <!-- Row 4: 快狸 -->
-      <div class="ranking-row">
-        <div class="rank-num">4</div>
-        <div class="rank-info">
-          <div class="rank-title">
-            <span class="icon">🦊</span>
-            <h3>快狸</h3>
-          </div>
-          <div class="rank-tags">
-            <span class="tag tag-blue">优质接入</span>
-            <span class="tag tag-orange">低延迟</span>
-          </div>
-        </div>
-        <div class="rank-price">¥10 / 月起</div>
-        <div class="rank-action">
-          <a href="articles/kuaili.html" class="action-btn">点击注册</a>
-        </div>
-      </div>
-
-      <!-- Row 5: 寰宇云 -->
-      <div class="ranking-row">
-        <div class="rank-num">5</div>
-        <div class="rank-info">
-          <div class="rank-title">
-            <span class="icon"></span>
-            <h3>寰宇云</h3>
-          </div>
-          <div class="rank-tags">
-            <span class="tag tag-green">老牌稳定</span>
-            <span class="tag tag-purple">流媒体解锁</span>
-          </div>
-        </div>
-        <div class="rank-price">¥18 / 月起</div>
-        <div class="rank-action">
-          <a href="articles/huanyuyun.html" class="action-btn">点击注册</a>
-        </div>
-      </div>
-
-      <!-- Row 6: 瞬云 -->
-      <div class="ranking-row">
-        <div class="rank-num">6</div>
-        <div class="rank-info">
-          <div class="rank-title">
-            <span class="icon">💨</span>
-            <h3>瞬云</h3>
-          </div>
-          <div class="rank-tags">
-            <span class="tag tag-orange">游戏加速</span>
-            <span class="tag tag-blue">瞬间加载</span>
-          </div>
-        </div>
-        <div class="rank-price">¥15 / 月起</div>
-        <div class="rank-action">
-          <a href="articles/shunyun.html" class="action-btn">点击注册</a>
-        </div>
-      </div>
-
-      <!-- Row 7: 速界 -->
-      <div class="ranking-row">
-        <div class="rank-num">7</div>
-        <div class="rank-info">
-          <div class="rank-title">
-            <span class="icon"></span>
-            <h3>速界</h3>
-          </div>
-          <div class="rank-tags">
-            <span class="tag tag-blue">全平台支持</span>
-            <span class="tag tag-green">新手友好</span>
-          </div>
-        </div>
-        <div class="rank-price">¥12 / 月起</div>
-        <div class="rank-action">
-          <a href="articles/sujie.html" class="action-btn">点击注册</a>
-        </div>
-      </div>
-
-      <!-- Row 8: 可信云 -->
-      <div class="ranking-row">
-        <div class="rank-num">8</div>
-        <div class="rank-info">
-          <div class="rank-title">
-            <span class="icon"></span>
-            <h3>可信云</h3>
-          </div>
-          <div class="rank-tags">
-            <span class="tag tag-purple">数据加密</span>
-            <span class="tag tag-blue">隐私保护</span>
-          </div>
-        </div>
-        <div class="rank-price">¥20 / 月起</div>
-        <div class="rank-action">
-          <a href="articles/kexinyun.html" class="action-btn">点击注册</a>
-        </div>
-      </div>
-
+  <div class="ranking-hero">
+    <div class="hero-badge">2026年最新榜单</div>
+    <div class="hero-title">网站推荐排名</div>
+    <div class="hero-subtitle">基于速度、稳定性、安全性、价格多维度综合评估</div>
+    <div class="hero-tags">
+      <span>真实测速</span>
+      <span>长期稳定</span>
+      <span>隐私安全</span>
+      <span>高性价比</span>
     </div>
-  </section>
+  </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">
-          <img src="assets/images/yungui_logo_1782127474781.png" alt="云轨导航 Logo" class="logo-img" style="height: 30px;">
-          <span class="logo-text">云轨导航</span>
-        </div>
-        <div class="footer-links">
-          <a href="#">关于我们</a>
-          <a href="#">使用条款</a>
-          <a href="#">隐私政策</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        &copy; 2026 云轨导航. All Rights Reserved.
+  <div class="feature-boxes">
+    <div class="feature-box">
+      <div class="feature-icon" style="background: #e0f2fe; color: #0284c7;">🚀</div>
+      <div class="feature-info">
+        <h4>极速稳定</h4>
+        <p>优质节点，极速连接</p>
       </div>
     </div>
+    <div class="feature-box">
+      <div class="feature-icon" style="background: #dcfce7; color: #16a34a;">🛡️</div>
+      <div class="feature-info">
+        <h4>安全可靠</h4>
+        <p>严格筛选，隐私保护</p>
+      </div>
+    </div>
+    <div class="feature-box">
+      <div class="feature-icon" style="background: #f3e8ff; color: #9333ea;">🎧</div>
+      <div class="feature-info">
+        <h4>优质服务</h4>
+        <p>7 x 24小时客服支持</p>
+      </div>
+    </div>
+    <div class="feature-box">
+      <div class="feature-icon" style="background: #ffedd5; color: #ea580c;">👍</div>
+      <div class="feature-info">
+        <h4>高性价比</h4>
+        <p>价格合理，物超所值</p>
+      </div>
+    </div>
+    <div class="feature-box">
+      <div class="feature-icon" style="background: #e0e7ff; color: #4f46e5;">👑</div>
+      <div class="feature-info">
+        <h4>口碑推荐</h4>
+        <p>用户真实评价推荐</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ranking-container">
+    <div class="ranking-tabs-wrap">
+      <div class="ranking-tabs">
+        <div class="tab active">综合推荐</div>
+        <div class="tab">速度最快</div>
+        <div class="tab">最稳定</div>
+        <div class="tab">性价比最高</div>
+        <div class="tab">适合新手</div>
+        <div class="tab">游戏加速</div>
+        <div class="tab">流媒体解锁</div>
+      </div>
+      <div class="update-time">
+        ↻ 数据更新时间: 2026-06-22
+      </div>
+    </div>
+
+    <div class="ranking-table-header">
+      <div>排名</div>
+      <div>服务商</div>
+      <div>核心优势</div>
+      <div>综合评分</div>
+      <div>价格</div>
+      <div>适用场景</div>
+      <div>操作</div>
+    </div>
+
+    <!-- Rank 1: EdgeNova -->
+    <div class="rank-card">
+      <div class="r-num top-1">1<br><span style="font-size:0.5rem">TOP</span></div>
+      <div class="r-provider">
+        <div class="r-logo" style="background: #0ea5e9;">⚡</div>
+        <div class="r-provider-info">
+          <h3>EdgeNova</h3>
+          <span class="r-badge badge-orange">官方推荐</span>
+        </div>
+      </div>
+      <div class="r-features">
+        <ul>
+          <li>全球优质节点覆盖，支持 4K 流媒体</li>
+          <li>多协议支持：SSR / V2Ray / Trojan</li>
+          <li>不限设备数，稳定不掉线</li>
+          <li>专业团队维护，售后无忧</li>
+        </ul>
+        <div class="r-tags">
+          <span>4K 流媒体</span>
+          <span>不限流量</span>
+          <span>全球节点</span>
+          <span>多端支持</span>
+        </div>
+      </div>
+      <div class="r-rating">
+        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px;">综合评分</div>
+        <div class="stars">★★★★★ <span class="score">9.8</span></div>
+        <div class="user-score">用户评分: 9.9</div>
+      </div>
+      <div class="r-price">
+        <span class="amount">¥25.00</span><span class="unit"> /月起</span><br>
+        <span class="discount">年付优惠20%</span>
+      </div>
+      <div class="r-platforms">
+        <div class="platform-icons">💻 🍎 📱 🐧</div>
+        <div class="platform-text">全平台支持</div>
+      </div>
+      <div class="r-actions">
+        <a href="articles/edgenova.html" class="btn-visit">立即访问</a>
+        <a href="articles/edgenova.html" class="btn-review">查看评测 →</a>
+      </div>
+    </div>
+
+    <!-- Rank 2: 极连云 -->
+    <div class="rank-card">
+      <div class="r-num top-2">2<br><span style="font-size:0.5rem">TOP</span></div>
+      <div class="r-provider">
+        <div class="r-logo" style="background: #2dd4bf;">✈️</div>
+        <div class="r-provider-info">
+          <h3>极连云</h3>
+          <span class="r-badge badge-blue">稳定优选</span>
+        </div>
+      </div>
+      <div class="r-features">
+        <ul>
+          <li>BGP中转节点，低延迟高带宽</li>
+          <li>游戏影音完美支持，延迟更低</li>
+          <li>智能路由，自动选择最优线路</li>
+          <li>大流量套餐，性价比极高</li>
+        </ul>
+        <div class="r-tags">
+          <span>BGP中转</span>
+          <span>低延迟</span>
+          <span>游戏加速</span>
+          <span>智能路由</span>
+        </div>
+      </div>
+      <div class="r-rating">
+        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px;">综合评分</div>
+        <div class="stars">★★★★★ <span class="score">9.6</span></div>
+        <div class="user-score">用户评分: 9.7</div>
+      </div>
+      <div class="r-price">
+        <span class="amount">¥12.00</span><span class="unit"> /月起</span><br>
+        <span class="discount">年付优惠15%</span>
+      </div>
+      <div class="r-platforms">
+        <div class="platform-icons">💻 🍎 📱</div>
+        <div class="platform-text">主流平台</div>
+      </div>
+      <div class="r-actions">
+        <a href="articles/jilianyun.html" class="btn-visit">立即访问</a>
+        <a href="articles/jilianyun.html" class="btn-review">查看评测 →</a>
+      </div>
+    </div>
+
+    <!-- Rank 3: 光年梯 -->
+    <div class="rank-card">
+      <div class="r-num top-3">3<br><span style="font-size:0.5rem">TOP</span></div>
+      <div class="r-provider">
+        <div class="r-logo" style="background: #a855f7;">✨</div>
+        <div class="r-provider-info">
+          <h3>光年梯</h3>
+          <span class="r-badge badge-purple">性价比高</span>
+        </div>
+      </div>
+      <div class="r-features">
+        <ul>
+          <li>高性价比机场，学生党首选</li>
+          <li>节点稳定，解锁能力强</li>
+          <li>支持 Netflix / Disney+ 解锁</li>
+          <li>支持 Hysteria2 及 VLESS</li>
+        </ul>
+        <div class="r-tags">
+          <span>性价比高</span>
+          <span>流媒体解锁</span>
+          <span>稳定可靠</span>
+          <span>极客首选</span>
+        </div>
+      </div>
+      <div class="r-rating">
+        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px;">综合评分</div>
+        <div class="stars">★★★★★ <span class="score">9.4</span></div>
+        <div class="user-score">用户评分: 9.5</div>
+      </div>
+      <div class="r-price">
+        <span class="amount">¥15.00</span><span class="unit"> /月起</span><br>
+        <span class="discount">年付优惠25%</span>
+      </div>
+      <div class="r-platforms">
+        <div class="platform-icons">💻 🍎 📱 🐧</div>
+        <div class="platform-text">全平台支持</div>
+      </div>
+      <div class="r-actions">
+        <a href="articles/guangnianti.html" class="btn-visit">立即访问</a>
+        <a href="articles/guangnianti.html" class="btn-review">查看评测 →</a>
+      </div>
+    </div>
+
+    <!-- Rank 4: 快狸 -->
+    <div class="rank-card">
+      <div class="r-num">4</div>
+      <div class="r-provider">
+        <div class="r-logo" style="background: #f97316;">🦊</div>
+        <div class="r-provider-info">
+          <h3>快狸</h3>
+          <span class="r-badge badge-blue">新锐推荐</span>
+        </div>
+      </div>
+      <div class="r-features">
+        <ul>
+          <li>新锐机场，技术先进</li>
+          <li>优质节点覆盖，体验优秀</li>
+          <li>高速稳定，性价比出众</li>
+          <li>专属客服，快速响应</li>
+        </ul>
+        <div class="r-tags">
+          <span>优质接入</span>
+          <span>高速稳定</span>
+          <span>优质体验</span>
+          <span>客服响应快</span>
+        </div>
+      </div>
+      <div class="r-rating">
+        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px;">综合评分</div>
+        <div class="stars">★★★★☆ <span class="score">9.2</span></div>
+        <div class="user-score">用户评分: 9.3</div>
+      </div>
+      <div class="r-price">
+        <span class="amount">¥10.00</span><span class="unit"> /月起</span><br>
+        <span class="discount">年付优惠18%</span>
+      </div>
+      <div class="r-platforms">
+        <div class="platform-icons">💻 🍎 📱</div>
+        <div class="platform-text">主流平台</div>
+      </div>
+      <div class="r-actions">
+        <a href="articles/kuaili.html" class="btn-visit">立即访问</a>
+        <a href="articles/kuaili.html" class="btn-review">查看评测 →</a>
+      </div>
+    </div>
+
+    <!-- Rank 5: 寰宇云 -->
+    <div class="rank-card">
+      <div class="r-num">5</div>
+      <div class="r-provider">
+        <div class="r-logo" style="background: #22c55e;">🌍</div>
+        <div class="r-provider-info">
+          <h3>寰宇云</h3>
+          <span class="r-badge badge-blue">稳定可靠</span>
+        </div>
+      </div>
+      <div class="r-features">
+        <ul>
+          <li>稳定运营多年，值得信赖</li>
+          <li>老牌优质线路，稳定保证</li>
+          <li>隐私保护，安全可靠</li>
+          <li>7 x 24 小时监控保障</li>
+        </ul>
+        <div class="r-tags">
+          <span>老牌机场</span>
+          <span>稳定运营</span>
+          <span>安全可靠</span>
+          <span>流媒体解锁</span>
+        </div>
+      </div>
+      <div class="r-rating">
+        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px;">综合评分</div>
+        <div class="stars">★★★★☆ <span class="score">9.0</span></div>
+        <div class="user-score">用户评分: 9.1</div>
+      </div>
+      <div class="r-price">
+        <span class="amount">¥18.00</span><span class="unit"> /月起</span><br>
+        <span class="discount">年付优惠20%</span>
+      </div>
+      <div class="r-platforms">
+        <div class="platform-icons">💻 🍎 📱 🐧</div>
+        <div class="platform-text">全平台支持</div>
+      </div>
+      <div class="r-actions">
+        <a href="articles/huanyuyun.html" class="btn-visit">立即访问</a>
+        <a href="articles/huanyuyun.html" class="btn-review">查看评测 →</a>
+      </div>
+    </div>
+
+    <!-- Rank 6: 瞬云 -->
+    <div class="rank-card">
+      <div class="r-num">6</div>
+      <div class="r-provider">
+        <div class="r-logo" style="background: #64748b;">💨</div>
+        <div class="r-provider-info">
+          <h3>瞬云</h3>
+        </div>
+      </div>
+      <div class="r-features">
+        <ul>
+          <li>专注于游戏加速，超低延迟</li>
+          <li>专线直连，拒绝丢包</li>
+          <li>瞬间加载，畅爽体验</li>
+        </ul>
+        <div class="r-tags">
+          <span>游戏加速</span>
+          <span>瞬间加载</span>
+          <span>低延迟</span>
+        </div>
+      </div>
+      <div class="r-rating">
+        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px;">综合评分</div>
+        <div class="stars">★★★★☆ <span class="score">8.8</span></div>
+        <div class="user-score">用户评分: 8.9</div>
+      </div>
+      <div class="r-price">
+        <span class="amount">¥15.00</span><span class="unit"> /月起</span>
+      </div>
+      <div class="r-platforms">
+        <div class="platform-icons">💻 🍎 📱</div>
+        <div class="platform-text">主流平台</div>
+      </div>
+      <div class="r-actions">
+        <a href="articles/shunyun.html" class="btn-visit">立即访问</a>
+        <a href="articles/shunyun.html" class="btn-review">查看评测 →</a>
+      </div>
+    </div>
+
+    <!-- Rank 7: 速界 -->
+    <div class="rank-card">
+      <div class="r-num">7</div>
+      <div class="r-provider">
+        <div class="r-logo" style="background: #f43f5e;">🌐</div>
+        <div class="r-provider-info">
+          <h3>速界</h3>
+        </div>
+      </div>
+      <div class="r-features">
+        <ul>
+          <li>多端客户端支持，一键连接</li>
+          <li>界面友好，适合新手使用</li>
+          <li>自动测速，智能选点</li>
+        </ul>
+        <div class="r-tags">
+          <span>全平台支持</span>
+          <span>新手友好</span>
+          <span>智能连接</span>
+        </div>
+      </div>
+      <div class="r-rating">
+        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px;">综合评分</div>
+        <div class="stars">★★★★☆ <span class="score">8.5</span></div>
+        <div class="user-score">用户评分: 8.7</div>
+      </div>
+      <div class="r-price">
+        <span class="amount">¥12.00</span><span class="unit"> /月起</span>
+      </div>
+      <div class="r-platforms">
+        <div class="platform-icons">💻 🍎 📱 🐧</div>
+        <div class="platform-text">全平台支持</div>
+      </div>
+      <div class="r-actions">
+        <a href="articles/sujie.html" class="btn-visit">立即访问</a>
+        <a href="articles/sujie.html" class="btn-review">查看评测 →</a>
+      </div>
+    </div>
+
+    <!-- Rank 8: 可信云 -->
+    <div class="rank-card">
+      <div class="r-num">8</div>
+      <div class="r-provider">
+        <div class="r-logo" style="background: #3b82f6;">🔒</div>
+        <div class="r-provider-info">
+          <h3>可信云</h3>
+        </div>
+      </div>
+      <div class="r-features">
+        <ul>
+          <li>高强度数据加密，无日志记录</li>
+          <li>极度保护用户隐私安全</li>
+          <li>支持匿名支付方式</li>
+        </ul>
+        <div class="r-tags">
+          <span>数据加密</span>
+          <span>隐私保护</span>
+          <span>无日志</span>
+        </div>
+      </div>
+      <div class="r-rating">
+        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px;">综合评分</div>
+        <div class="stars">★★★★☆ <span class="score">8.5</span></div>
+        <div class="user-score">用户评分: 8.6</div>
+      </div>
+      <div class="r-price">
+        <span class="amount">¥20.00</span><span class="unit"> /月起</span>
+      </div>
+      <div class="r-platforms">
+        <div class="platform-icons">💻 🍎 📱</div>
+        <div class="platform-text">主流平台</div>
+      </div>
+      <div class="r-actions">
+        <a href="articles/kexinyun.html" class="btn-visit">立即访问</a>
+        <a href="articles/kexinyun.html" class="btn-review">查看评测 →</a>
+      </div>
+    </div>
+
+
+    <div class="info-panels">
+      <div class="stats-panel">
+        <div class="stat-item">
+          <div class="stat-icon">📋</div>
+          <div class="stat-value">50+</div>
+          <div class="stat-label">优质服务商<br><span style="font-size: 0.8rem;">严选推荐</span></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">📍</div>
+          <div class="stat-value">1000+</div>
+          <div class="stat-label">全球节点<br><span style="font-size: 0.8rem;">覆盖国家和地区</span></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">⚡</div>
+          <div class="stat-value">99.9%</div>
+          <div class="stat-label">平均可用率<br><span style="font-size: 0.8rem;">稳定可靠</span></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">🕒</div>
+          <div class="stat-value">24/7</div>
+          <div class="stat-label">专业客服<br><span style="font-size: 0.8rem;">快速响应</span></div>
+        </div>
+      </div>
+
+      <div class="advice-panel">
+        <h4>💡 选择建议</h4>
+        <ul>
+          <li>追求速度：EdgeNova、极连云</li>
+          <li>注重性价比：光年梯、快狸</li>
+          <li>新手用户：优先选择提供试用的服务商</li>
+          <li>解锁流媒体：选择支持 Netflix / Disney+ 的服务商</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="notice-bar">
+      <span><i>ℹ️</i> 温馨提示：排名结果基于用户评价、速度测试、稳定性、价格等维度的综合评估，仅供参考；请根据自身需求选择合适的服务商。</span>
+      <span style="display: flex; align-items: center; gap: 10px;">
+        <span style="background: #10b981; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem;">用户评价 (4.9/5)</span>
+        <span style="color: #f59e0b;">★★★★★</span>
+      </span>
+    </div>
+
+  </div>
+
+  <footer style="text-align: center; padding: 40px; margin-top: 80px; color: #94a3b8; border-top: 1px solid #e2e8f0;">
+    <p>© 2026 云轨导航. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
