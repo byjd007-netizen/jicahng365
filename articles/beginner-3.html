@@ -63,12 +63,12 @@
     
     <main class="main-content">
         <div class="breadcrumbs">
-            <a href="../index.html">首页</a> &gt; <a href="../knowledge.html">科普指南</a> &gt; <span>新手入门</span> &gt; <span class="current">__H1_TITLE__</span>
+            <a href="../index.html">首页</a> &gt; <a href="../knowledge.html">科普指南</a> &gt; <span>新手入门</span> &gt; <span class="current">🔧 常见问题排查：连不上网怎...</span>
         </div>
         
         <article class="article-box">
             <header class="article-header">
-                <h1 class="article-title">__H1_TITLE__</h1>
+                <h1 class="article-title">🔧 常见问题排查：连不上网怎么办？</h1>
                 <div class="article-meta">
                     <span>作者: 技术编辑部</span>
                     <span>阅读时长: 约 10 分钟</span>
@@ -88,7 +88,24 @@
             </div>
             
             <div class="article-body" id="articleBody">
-<p>姝ｆ枃鍐呭鍔犺浇澶辫触銆?/p>
+
+<p>当你打开客户端却无法正常上网时，往往是配置、系统或网络层面的细节导致的。这里提供一套系统化的七步排查流程，帮助你快速定位并解决问题。</p>
+<h2>1️⃣ 系统时间同步</h2>
+<p>代理协议（尤其是 TLS）对时间戳极度敏感。系统时间偏差超过 5 分钟会导致证书验证失败、握手中断。请在系统设置中打开自动时间同步或手动校准至网络时间。</p>
+<h2>2️⃣ 订阅状态检查</h2>
+<p>大多数机场提供基于时间的订阅链接。打开客户端的订阅管理页面，确认最近一次更新成功且没有提示 "订阅已过期"。若已过期，请登录官网重新复制最新的订阅 URL。</p>
+<h2>3️⃣ 节点连通性测试</h2>
+<p>在客户端中手动切换每个节点，观察连接状态。如果全部显示 "连接失败"，可以打开终端执行 <code>ping</code> 或 <code>traceroute</code> 检查是否被本地防火墙或 ISP 屏蔽。</p>
+<h2>4️⃣ DNS 与系统代理冲突</h2>
+<p>代理软件通常会劫持 DNS 解析。如果系统同时启用了第三方 DNS 加速插件（如 DNSPod、Clash 的 DNS 模式），可能导致冲突。建议在系统网络设置中关闭手动 DNS，仅保留客户端的 DNS 代理。</p>
+<h2>5️⃣ 防火墙或安全软件拦截</h2>
+<p>Windows Defender、杀毒软件或企业防火墙可能将代理客户端视为风险程序。将客户端加入白名单或暂时关闭实时防护后再尝试连接。</p>
+<h2>6️⃣ 端口被 ISP 限制</h2>
+<p>部分运营商在校园网或企业网中会封锁常见代理端口（如 443、8443）。可以尝试更改节点的端口号（如 80、8080）或使用 TLS/HTTPS 隧道模式。</p>
+<h2>7️⃣ 客户端日志分析</h2>
+<p>打开客户端的日志面板，搜索关键字 "error"、"timeout" 或 "TLS"，定位具体报错信息。常见错误码对应的解决方案可在官方文档或社区帖子中快速查找。</p>
+<p>按照上述七步排查，大多数连不上网的问题都能得到解决。若仍无法恢复，请截取日志并提交给机场客服，提供节点名、时间戳以及错误信息，以便快速定位。</p>
+
             </div>
         </article>
     </main>

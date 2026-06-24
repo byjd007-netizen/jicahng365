@@ -63,12 +63,12 @@
     
     <main class="main-content">
         <div class="breadcrumbs">
-            <a href="../index.html">首页</a> &gt; <a href="../knowledge.html">科普指南</a> &gt; <span>新手入门</span> &gt; <span class="current">__H1_TITLE__</span>
+            <a href="../index.html">首页</a> &gt; <a href="../knowledge.html">科普指南</a> &gt; <span>新手入门</span> &gt; <span class="current">🛤️ 认识节点：专线、BGP...</span>
         </div>
         
         <article class="article-box">
             <header class="article-header">
-                <h1 class="article-title">__H1_TITLE__</h1>
+                <h1 class="article-title">🛤️ 认识节点：专线、BGP 与直连的区别</h1>
                 <div class="article-meta">
                     <span>作者: 技术编辑部</span>
                     <span>阅读时长: 约 10 分钟</span>
@@ -88,7 +88,20 @@
             </div>
             
             <div class="article-body" id="articleBody">
-<p>姝ｆ枃鍐呭鍔犺浇澶辫触銆?/p>
+
+<p>在代理网络中，节点的底层实现直接决定了其性能、稳定性以及收费模型。下面我们从技术原理、使用场景和成本三方面，对三种常见节点类型进行系统拆解。</p>
+<h2>🔹 专线（IPLC / IEPL）</h2>
+<p>专线是一种运营商层面的专属光纤链路，数据在两端之间不经过公网路由。它的核心优势是超低的 RTT（往往在 10‑30 ms 之间）和几乎为 0% 的丢包率。因为专线占用了运营商的物理资源，月租价位通常在几千到上万元不等，适合对网络质量有极致要求的企业或高端玩家。</p>
+<h2>🔸 BGP 中转</h2>
+<p>BGP 中转节点通过多家 ISP 的互联实现跨地区流量转发。它的优势是覆盖面广、成本适中（多数机场按流量计费），但因为流经公网，网络路径会因拥堵和运营商策略产生波动，RTT 常在 50‑150 ms 之间，丢包率在 0.1%‑1% 区间。</p>
+<h2>🔹 直连节点</h2>
+<p>直连节点直接使用公网 IP，部署成本最低，常见于个人租用的服务器或小型机场。它的优势是快速部署、费用低廉；缺点是受到运营商的流量监管和高峰期拥堵的影响，RTT 随网络情况波动大，丢包率相对较高。</p>
+<h2>📊 如何挑选合适的节点</h2>
+<p>1️⃣ <strong>业务需求</strong>：实时游戏或高帧率直播推荐专线；普通浏览、流媒体可选 BGP 中转；低流量、临时实验可用直连。</p>
+<p>2️⃣ <strong>预算考量</strong>：专线费用最高，BGP 中转性价比最佳，直连最省钱。</p>
+<p>3️⃣ <strong>健康监测</strong>：使用 Speedtest、PingPlotter 等工具定期测量 RTT 与丢包，将表现不佳的节点剔除。</p>
+<p>通过对这三类节点的特点有清晰认知，您可以在实际使用中快速匹配业务场景，构建最优的代理网络。</p>
+
             </div>
         </article>
     </main>

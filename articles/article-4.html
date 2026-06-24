@@ -63,12 +63,12 @@
     
     <main class="main-content">
         <div class="breadcrumbs">
-            <a href="../index.html">首页</a> &gt; <a href="../knowledge.html">科普指南</a> &gt; <span>科普指南</span> &gt; <span class="current">__H1_TITLE__</span>
+            <a href="../index.html">首页</a> &gt; <a href="../knowledge.html">科普指南</a> &gt; <span>科普指南</span> &gt; <span class="current">Apple 设备最佳实践：Sh...</span>
         </div>
         
         <article class="article-box">
             <header class="article-header">
-                <h1 class="article-title">__H1_TITLE__</h1>
+                <h1 class="article-title">Apple 设备最佳实践：Shadowrocket 与 QX 对比</h1>
                 <div class="article-meta">
                     <span>作者: 技术编辑部</span>
                     <span>阅读时长: 约 10 分钟</span>
@@ -84,11 +84,240 @@
             </header>
             
             <div class="article-intro">
-                在现代网络环境中，“代理”已成为连接全球互联网的重要技术手段。了解代理的原理与常见协议，是提升网络体验的关键一步。
+                
+        <strong style="display: block; text-align: center; font-size: 1.1rem;">到底是 Shadowrocket 更好用，还是 Quantumult X 更强？</strong>
+      
             </div>
             
             <div class="article-body" id="articleBody">
-<p>姝ｆ枃鍐呭鍔犺浇澶辫触銆?/p>
+
+      <p>在 iOS 生态中，Shadowrocket 与 Quantumult X（简称 QX）是两款非常常见的网络代理工具。</p>
+      <p>很多用户在选择时都会纠结一个问题：</p>
+      
+      
+      
+      <p>这两款工具虽然功能相似，但在设计理念、规则系统、学习成本以及使用场景上有明显区别。</p>
+      <p>本篇文章将从功能结构、性能表现、规则能力、易用性与适用人群五个维度进行全面对比，帮助你做出更合理的选择。</p>
+
+      <h2>一、Shadowrocket 与 QX 是什么？</h2>
+
+      <h3>1. Shadowrocket（小火箭）</h3>
+      <p>Shadowrocket 是 iOS 平台上最经典的代理工具之一，特点是：</p>
+      <ul>
+        <li>支持多协议节点（SS / VMess / Trojan 等）</li>
+        <li>支持订阅导入</li>
+        <li>支持规则分流</li>
+        <li>界面简洁，易上手</li>
+        <li>稳定性较高</li>
+      </ul>
+      <div class="highlight-box" style="text-align: center;">
+        <strong>本质是一个“轻量级代理控制器”</strong>
+      </div>
+
+      <h3>2. Quantumult X（QX）</h3>
+      <p>Quantumult X 是功能更高级的网络工具，特点是：</p>
+      <ul>
+        <li>强大的规则系统（Rewrite / Filter / Policy）</li>
+        <li>支持脚本（JS脚本）</li>
+        <li>支持复杂分流策略</li>
+        <li>可高度自定义</li>
+        <li>学习成本较高</li>
+      </ul>
+      <div class="highlight-box" style="text-align: center;">
+        <strong>本质是“高级网络规则引擎”</strong>
+      </div>
+
+      <h2>二、核心结构对比</h2>
+      <p>我们先看底层逻辑差异：</p>
+
+      <h3>Shadowrocket 结构</h3>
+      <p><strong>应用 -&gt; 代理规则 -&gt; 节点 -&gt; 目标网站</strong></p>
+      <p><strong>特点：</strong>结构简单，规则较直观，适合新手。</p>
+
+      <h3>Quantumult X 结构</h3>
+      <p><strong>应用 -&gt; 复杂规则系统 -&gt; 策略组 -&gt; 脚本处理 -&gt; 节点 -&gt; 目标网站</strong></p>
+      <p><strong>特点：</strong>多层处理，可编程规则，灵活性极高。</p>
+
+      <h2>三、功能对比（核心差异）</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>功能</th>
+            <th>Shadowrocket</th>
+            <th>Quantumult X</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>上手难度</td>
+            <td>简单</td>
+            <td>较复杂</td>
+          </tr>
+          <tr>
+            <td>规则系统</td>
+            <td>基础规则</td>
+            <td>高级规则（Rewrite）</td>
+          </tr>
+          <tr>
+            <td>脚本支持</td>
+            <td>无</td>
+            <td>支持JS脚本</td>
+          </tr>
+          <tr>
+            <td>订阅管理</td>
+            <td>简单清晰</td>
+            <td>高度自定义</td>
+          </tr>
+          <tr>
+            <td>稳定性</td>
+            <td>高</td>
+            <td>高</td>
+          </tr>
+          <tr>
+            <td>可玩性</td>
+            <td>中</td>
+            <td>极高</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>四、易用性对比（新手重点）</h2>
+
+      <h3>Shadowrocket</h3>
+      <p><strong>优点：</strong>界面直观，操作简单，一键导入订阅，不需要复杂配置。<br>
+      <strong>适合人群：</strong>新手 / 日常使用用户。</p>
+
+      <h3>Quantumult X</h3>
+      <p><strong>优点：</strong>功能极其强大，可定制程度高，支持复杂规则。<br>
+      <strong>缺点：</strong>学习成本高，配置复杂，不适合纯小白。<br>
+      <strong>适合人群：</strong>进阶用户 / 技术用户 / 重度使用者。</p>
+
+      <h2>五、规则系统对比（关键区别）</h2>
+
+      <h3>Shadowrocket 规则系统</h3>
+      <p>主要特点：DOMAIN规则、IP规则、简单分流。</p>
+      <p><strong>示例逻辑：</strong>Google -&gt; 代理，国内网站 -&gt; 直连。<br>
+      <strong>评价：</strong>易理解，但功能有限。</p>
+
+      <h3>Quantumult X 规则系统</h3>
+      <p>支持：Rewrite（请求重写）、Filter（过滤）、Script（脚本处理）、Policy Group（策略组）。</p>
+      <p><strong>可以实现：</strong></p>
+      <ul>
+        <li>广告屏蔽</li>
+        <li>高级分流</li>
+        <li>请求修改</li>
+        <li>自动策略切换</li>
+      </ul>
+
+      <h2>六、性能表现对比</h2>
+      <p>很多人误以为工具影响速度，其实：</p>
+      <div class="highlight-box" style="text-align: center;">
+        <strong>工具本身不决定速度，节点质量才是关键</strong>
+      </div>
+      <p>但工具仍然影响体验：</p>
+      <ul>
+        <li><strong>Shadowrocket：</strong>处理流程简单，CPU占用低，启动速度快。</li>
+        <li><strong>Quantumult X：</strong>规则处理多，功能调用多，极端情况下略高耗能。</li>
+      </ul>
+
+      <h2>七、稳定性对比</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>项目</th>
+            <th>Shadowrocket</th>
+            <th>Quantumult X</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>日常稳定性</td>
+            <td>很高</td>
+            <td>很高</td>
+          </tr>
+          <tr>
+            <td>崩溃概率</td>
+            <td>极低</td>
+            <td>低</td>
+          </tr>
+          <tr>
+            <td>复杂规则稳定性</td>
+            <td>一般</td>
+            <td>非常高</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>八、使用场景推荐</h2>
+
+      <h3>适合 Shadowrocket 的人</h3>
+      <ul>
+        <li>刚接触代理工具</li>
+        <li>只需要基础上网</li>
+        <li>不想折腾规则</li>
+        <li>只用订阅节点</li>
+      </ul>
+      <p><strong>一句话总结：</strong>简单稳定就选它。</p>
+
+      <h3>适合 Quantumult X 的人</h3>
+      <ul>
+        <li>想做精细规则</li>
+        <li>需要脚本功能</li>
+        <li>多策略分流用户</li>
+        <li>进阶网络玩家</li>
+      </ul>
+      <p><strong>一句话总结：</strong>想玩深度配置选它。</p>
+
+      <h2>九、为什么很多人最终会换 QX？</h2>
+      <p>主要原因：</p>
+      <ol>
+        <li><strong>可玩性更高：</strong>可以实现广告过滤、精准分流、自动切换策略。</li>
+        <li><strong>扩展能力强：</strong>支持 JS脚本、自定义规则链。</li>
+        <li><strong>长期使用更灵活：</strong>适合复杂网络环境。</li>
+      </ol>
+
+      <h2>十、常见误区（重要）</h2>
+      
+
+      <h2>十一、总结</h2>
+      <p>Shadowrocket 与 Quantumult X 的核心区别可以总结为：</p>
+      <table>
+        <thead>
+          <tr>
+            <th>项目</th>
+            <th>Shadowrocket</th>
+            <th>Quantumult X</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>定位</td>
+            <td>简单稳定工具</td>
+            <td>高级规则系统</td>
+          </tr>
+          <tr>
+            <td>难度</td>
+            <td>低</td>
+            <td>高</td>
+          </tr>
+          <tr>
+            <td>灵活性</td>
+            <td>中</td>
+            <td>极高</td>
+          </tr>
+          <tr>
+            <td>推荐人群</td>
+            <td>新手</td>
+            <td>进阶用户</td>
+          </tr>
+        </tbody>
+      </table>
+
+      
+
+      
+
+    
             </div>
         </article>
     </main>

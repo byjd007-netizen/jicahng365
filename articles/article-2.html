@@ -63,12 +63,12 @@
     
     <main class="main-content">
         <div class="breadcrumbs">
-            <a href="../index.html">首页</a> &gt; <a href="../knowledge.html">科普指南</a> &gt; <span>科普指南</span> &gt; <span class="current">__H1_TITLE__</span>
+            <a href="../index.html">首页</a> &gt; <a href="../knowledge.html">科普指南</a> &gt; <span>科普指南</span> &gt; <span class="current">Clash 系列全平台使用指南...</span>
         </div>
         
         <article class="article-box">
             <header class="article-header">
-                <h1 class="article-title">__H1_TITLE__</h1>
+                <h1 class="article-title">Clash 系列全平台使用指南与高级规则配置</h1>
                 <div class="article-meta">
                     <span>作者: 技术编辑部</span>
                     <span>阅读时长: 约 10 分钟</span>
@@ -84,11 +84,160 @@
             </header>
             
             <div class="article-intro">
-                在现代网络环境中，“代理”已成为连接全球互联网的重要技术手段。了解代理的原理与常见协议，是提升网络体验的关键一步。
+                
+        <strong style="display: block; text-align: center;">规则分流 + 多节点策略 + 自动选择最优线路</strong>
+      
             </div>
             
             <div class="article-body" id="articleBody">
-<p>姝ｆ枃鍐呭鍔犺浇澶辫触銆?/p>
+
+      <p>Clash 系列工具是目前跨平台使用最广泛的代理客户端之一，支持 Windows、macOS、Android、iOS 等多端使用，同时具备强大的规则系统与灵活的订阅管理能力。</p>
+      <p>相比传统代理工具，Clash 最大的优势在于：</p>
+      
+      <p>本篇文章将从基础使用到高级规则配置，系统讲解 Clash 系列工具的完整使用方法，帮助你快速掌握核心功能。</p>
+
+      <h2>一、Clash 是什么？</h2>
+      <p>Clash 本质上是一个网络代理规则引擎，它的作用是：</p>
+      
+      <p>简单来说就是：</p>
+      <ul>
+        <li>国内网站 -&gt; 直连</li>
+        <li>国外网站 -&gt; 代理节点</li>
+        <li>指定网站 -&gt; 特定节点</li>
+      </ul>
+      
+      <h3>Clash 的核心特点：</h3>
+      <ul>
+        <li>支持多协议（SS / VMess / Trojan / VLESS）</li>
+        <li>支持订阅自动更新</li>
+        <li>支持规则分流（Rule System）</li>
+        <li>支持策略组（Policy Group）</li>
+        <li>支持多平台统一配置</li>
+      </ul>
+
+      <h2>二、Clash 系列客户端分类</h2>
+      <p>不同平台对应不同客户端：</p>
+      <ul>
+        <li><strong>Windows：</strong>Clash Verge / Clash for Windows</li>
+        <li><strong>macOS：</strong>Clash Verge / Stash</li>
+        <li><strong>Android：</strong>Clash Meta / v2rayNG</li>
+        <li><strong>iOS：</strong>Stash / Shadowrocket</li>
+      </ul>
+
+      <h2>三、Clash 基础使用流程</h2>
+      <p>Clash 的使用流程非常固定：</p>
+      <div class="highlight-box" style="text-align: center;">
+        <strong>安装客户端 -&gt; 导入订阅 -&gt; 选择节点 -&gt; 开启代理</strong>
+      </div>
+
+      <h2>四、如何导入订阅（核心步骤）</h2>
+      
+      
+
+      <h3>方法一：URL导入（推荐）</h3>
+      <p>操作步骤：</p>
+      <ol>
+        <li>打开 Clash 客户端</li>
+        <li>进入 <strong>Profiles</strong>（配置）</li>
+        <li>点击 <strong>“+ 添加配置”</strong></li>
+        <li>选择 <strong>URL 导入</strong></li>
+        <li>粘贴订阅链接</li>
+        <li>点击确认</li>
+      </ol>
+      <p>等待几秒后节点自动加载。</p>
+
+      <h3>方法二：文件导入</h3>
+      <p>如果是 .yaml 文件：</p>
+      <ol>
+        <li>下载配置文件</li>
+        <li>点击 <strong>Import File</strong></li>
+        <li>选择 YAML 文件</li>
+        <li>导入完成</li>
+      </ol>
+
+      <h2>五、节点选择与代理模式</h2>
+      
+      <h3>1. 选择节点</h3>
+      <p>进入 <strong>Proxies</strong>（代理列表），常见节点：</p>
+      <ul>
+        <li>香港（低延迟）</li>
+        <li>日本（稳定）</li>
+        <li>美国（流媒体）</li>
+        <li>新加坡（均衡）</li>
+      </ul>
+
+      <h3>2. Clash 三种模式</h3>
+      
+      <p><strong>Rule 模式（推荐）</strong></p>
+      <p>智能分流模式：国内网站直连，国外网站代理。<br><strong>日常使用最佳选择。</strong></p>
+
+      <p><strong>Global 模式</strong></p>
+      <p>所有流量走代理。<br>适合：测试节点、特殊环境。<br>缺点：耗电、速度不稳定。</p>
+
+      <p><strong>Direct 模式</strong></p>
+      <p>关闭代理。<br>用于：排查问题、恢复网络。</p>
+
+      <h2>六、Clash 高级规则系统（核心重点）</h2>
+      <p>Clash 强大的原因就在于规则系统。</p>
+
+      <h3>1. Domain 规则（域名规则）</h3>
+      <code>DOMAIN,google.com,Proxy</code><br>
+      <code>DOMAIN,youtube.com,Proxy</code>
+      <p style="margin-top: 10px;">指定网站走代理。</p>
+
+      <h3>2. GeoIP 规则</h3>
+      <code>GEOIP,CN,DIRECT</code>
+      <p style="margin-top: 10px;">国内 IP 直连。</p>
+
+      <h3>3. FINAL 规则（兜底规则）</h3>
+      <code>FINAL,Proxy</code>
+      <p style="margin-top: 10px;">所有未匹配流量走代理。</p>
+
+      <h2>七、策略组（Policy Group）</h2>
+      <p>策略组是 Clash 的核心功能之一。</p>
+      <p><strong>常见策略组：</strong>自动选择（Auto）、手动选择（Select）、故障转移（Fallback）、负载均衡（Load Balance）。</p>
+      <p><strong>示例：</strong>游戏节点组、流媒体节点组、AI专用节点组。</p>
+
+      <h2>八、延迟测试与节点优化</h2>
+      <p>Clash 可以自动测试节点延迟：</p>
+      <ul>
+        <li>操作：点击节点 -&gt; 选择 “Test Delay”</li>
+      </ul>
+      
+
+      <h2>九、常见问题解决</h2>
+
+      <h3>1. 订阅无法加载？</h3>
+      <p><strong>原因：</strong>链接失效、网络无法访问。<br><strong>解决：</strong>更新订阅、更换网络。</p>
+
+      <h3>2. 节点无法连接？</h3>
+      <p><strong>原因：</strong>节点过期、配置错误。<br><strong>解决：</strong>更换节点、更新订阅。</p>
+
+      <h3>3. 可以上网但很慢？</h3>
+      <p><strong>原因：</strong>节点拥堵、路由不佳。<br><strong>解决：</strong>切换节点、使用延迟测试。</p>
+
+      <h2>十、Clash 使用建议（非常重要）</h2>
+      
+
+      <h2>十一、Clash 进阶玩法（提升体验）</h2>
+      
+      <h3>1. 分应用代理</h3>
+      <p>可以设置：浏览器走代理，软件直连。</p>
+
+      <h3>2. 自动切换节点</h3>
+      <p>选择 <strong>Fallback 模式</strong>，自动选择可用节点。</p>
+
+      <h3>3. 规则分组优化</h3>
+      <p>可建立：AI节点组、流媒体组、游戏组。</p>
+
+      <h2>十二、总结</h2>
+      <p>Clash 是目前最强大的代理规则系统工具之一，其核心优势在于：</p>
+      
+      <p>只要掌握三个步骤：<strong>导入订阅 -&gt; 选择节点 -&gt; 开启 Rule 模式</strong>，即可获得稳定使用体验。</p>
+
+      
+
+    
             </div>
         </article>
     </main>

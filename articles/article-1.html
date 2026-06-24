@@ -63,12 +63,12 @@
     
     <main class="main-content">
         <div class="breadcrumbs">
-            <a href="../index.html">首页</a> &gt; <a href="../knowledge.html">科普指南</a> &gt; <span>科普指南</span> &gt; <span class="current">__H1_TITLE__</span>
+            <a href="../index.html">首页</a> &gt; <a href="../knowledge.html">科普指南</a> &gt; <span>科普指南</span> &gt; <span class="current">翻墙基础原理与常见代理协议全面...</span>
         </div>
         
         <article class="article-box">
             <header class="article-header">
-                <h1 class="article-title">__H1_TITLE__</h1>
+                <h1 class="article-title">翻墙基础原理与常见代理协议全面解析</h1>
                 <div class="article-meta">
                     <span>作者: 技术编辑部</span>
                     <span>阅读时长: 约 10 分钟</span>
@@ -84,11 +84,173 @@
             </header>
             
             <div class="article-intro">
-                在现代网络环境中，“代理”已成为连接全球互联网的重要技术手段。了解代理的原理与常见协议，是提升网络体验的关键一步。
+                
+        <strong style="display: block; margin-bottom: 10px;">通过中间服务器转发网络请求，从而绕过访问限制或优化访问路径</strong>
+      
             </div>
             
             <div class="article-body" id="articleBody">
-<p>姝ｆ枃鍐呭鍔犺浇澶辫触銆?/p>
+
+      <p>在现代网络环境中，“代理工具”“节点加速”“机场订阅”等概念已经被越来越多用户接触到，但很多人并不清楚其背后的技术原理。</p>
+      <p>本篇文章将从零开始，系统讲解翻墙的基本原理、常见代理协议、网络转发方式以及它们之间的区别，帮助你真正理解这些工具是如何工作的。</p>
+
+      <h2>一、什么是“翻墙”本质？</h2>
+      <p>从技术角度来看，“翻墙”并不是改变网络本身，而是：</p>
+      
+      <p>简单来说结构是这样的：</p>
+      <p><strong>用户设备 -&gt; 代理服务器（节点）-&gt; 目标网站</strong></p>
+      <p>而不是直接访问：</p>
+      <p><strong>用户设备 -&gt; 目标网站（直连）</strong></p>
+      <p>核心变化只有一点：<strong>请求路径变长，但可控</strong>。</p>
+
+      <h2>二、为什么需要代理？</h2>
+      <p>使用代理（节点）的主要原因有：</p>
+      
+      <h3>1. 网络访问限制</h3>
+      <p>部分网站在某些网络环境下无法直接访问。</p>
+      
+      <h3>2. 网络加速</h3>
+      <p>通过优化线路，减少延迟，提高稳定性。</p>
+      
+      <h3>3. 隐私保护</h3>
+      <p>隐藏真实 IP 地址，提高匿名性。</p>
+      
+      <h3>4. 流量分流</h3>
+      <p>例如：国内网站直连，国外网站走代理。</p>
+
+      <h2>三、代理工具的基本结构</h2>
+      <p>任何代理系统，本质都是三层结构：</p>
+      <div class="highlight-box" style="text-align: center;">
+        <p style="margin-bottom: 10px;"><strong>客户端（Clash / Shadowrocket / v2rayNG）</strong></p>
+        <p style="margin-bottom: 10px;">↓</p>
+        <p style="margin-bottom: 10px;"><strong>中转服务器（节点 / 机场）</strong></p>
+        <p style="margin-bottom: 10px;">↓</p>
+        <p style="margin-bottom: 0;"><strong>目标网站（Google / YouTube 等）</strong></p>
+      </div>
+
+      <h2>四、常见代理协议解析</h2>
+      <p>目前主流代理协议主要有以下几种：</p>
+
+      <h3>1. HTTP / HTTPS 代理</h3>
+      <p>这是最基础的代理协议。</p>
+      <ul>
+        <li><strong>特点：</strong>仅支持网页流量，配置简单，安全性较低</li>
+        <li><strong>适用场景：</strong>浏览网页，基础网络访问</li>
+      </ul>
+
+      <h3>2. SOCKS5 协议</h3>
+      <p>比 HTTP 更通用的代理协议。</p>
+      <ul>
+        <li><strong>特点：</strong>支持更多应用（浏览器 / 软件），速度较快，不修改数据内容</li>
+        <li><strong>使用场景：</strong>下载工具，游戏加速，通用代理</li>
+      </ul>
+
+      <h3>3. Shadowsocks（SS）</h3>
+      <p>目前非常经典的轻量级代理协议。</p>
+      <ul>
+        <li><strong>特点：</strong>加密传输，抗干扰能力较强，配置简单</li>
+        <li><strong>优点：</strong>速度快，稳定性好，资源占用低</li>
+      </ul>
+
+      <h3>4. VMess（V2Ray核心协议）</h3>
+      <p>V2Ray体系核心协议之一。</p>
+      <ul>
+        <li><strong>特点：</strong>支持复杂路由规则，支持动态端口，安全性更高</li>
+        <li><strong>适用场景：</strong>企业级代理结构，高级用户</li>
+      </ul>
+
+      <h3>5. VLESS（新版协议）</h3>
+      <p>VMess 的升级版本。</p>
+      <ul>
+        <li><strong>特点：</strong>更轻量，性能更优，更灵活</li>
+      </ul>
+
+      <h3>6. Trojan 协议</h3>
+      <p>目前非常流行的高隐蔽协议。</p>
+      <ul>
+        <li><strong>特点：</strong>模拟 HTTPS 流量，更难被识别，稳定性强</li>
+      </ul>
+
+      <h2>五、主流客户端工具区别</h2>
+      <p>不同设备使用不同客户端：</p>
+      <ul>
+        <li><strong>Windows：</strong>Clash Verge / v2rayN</li>
+        <li><strong>macOS：</strong>Clash Verge / Stash</li>
+        <li><strong>iOS：</strong>Shadowrocket</li>
+        <li><strong>Android：</strong>v2rayNG</li>
+      </ul>
+
+      <h2>六、什么是“节点”？</h2>
+      <p>节点本质是：</p>
+      
+      <p>它负责：接收你的请求，转发到目标网站，再把结果返回给你。</p>
+      <p>节点常见类型：</p>
+      <ul>
+        <li>香港节点（延迟低）</li>
+        <li>日本节点（稳定）</li>
+        <li>美国节点（流媒体）</li>
+        <li>新加坡节点（均衡）</li>
+      </ul>
+
+      <h2>七、什么是“机场”？</h2>
+      <p>机场本质是：</p>
+      
+      <p>通常包含：多地区节点、自动订阅链接、客户端支持说明。</p>
+
+      <h2>八、什么是订阅链接？</h2>
+      <p>订阅链接就是：</p>
+      
+      <p>作用：自动更新节点，无需手动添加，多设备同步。</p>
+
+      <h2>九、代理模式说明（非常重要）</h2>
+      <p>在 Clash / Stash / v2rayNG 等工具中，有三种模式：</p>
+
+      <h3>1. 规则模式（推荐）</h3>
+      <p>自动分流：国内网站直连，国外网站走代理。</p>
+      <p><strong>最适合日常使用。</strong></p>
+
+      <h3>2. 全局模式</h3>
+      <p>所有流量走代理。</p>
+      <p><strong>适合：</strong>测试节点，特殊场景。</p>
+
+      <h3>3. 直连模式</h3>
+      <p>关闭代理。</p>
+      <p><strong>用于：</strong>排查问题，恢复网络。</p>
+
+      <h2>十、为什么延迟不等于速度？</h2>
+      <p>很多新手会误解：延迟低 = 网速快。</p>
+      <p>但实际上，影响速度的因素包括：</p>
+      <ul>
+        <li>节点带宽</li>
+        <li>路由线路</li>
+        <li>拥塞情况</li>
+        <li>协议类型</li>
+      </ul>
+      <p><strong>结论：</strong>延迟只是参考指标，不是唯一标准。</p>
+
+      <h2>十一、常见问题（FAQ）</h2>
+      
+      <h3>Q1：为什么节点有时候能用，有时候不能？</h3>
+      <p>因为节点属于共享资源，会受到：网络波动、服务器负载、路由变化的影响。</p>
+
+      <h3>Q2：为什么 YouTube 卡？</h3>
+      <p>可能原因：节点带宽不足、线路拥堵、地区选择不佳。</p>
+
+      <h3>Q3：为什么要更新订阅？</h3>
+      <p>因为节点是动态变化的，更新订阅可以获取最新节点。</p>
+
+      <h3>Q4：为什么不同节点速度差很多？</h3>
+      <p>因为：距离不同、运营商不同、带宽不同。</p>
+
+      <h2>十二、总结</h2>
+      <p>代理技术的本质非常简单：</p>
+      
+      <p>而所有工具（Clash / Shadowrocket / v2rayNG / Stash）只是不同的“控制面板”。</p>
+      <p>理解底层原理后，你会发现：<strong>工具只是界面，核心是节点与协议，体验取决于线路质量。</strong></p>
+
+      
+
+    
             </div>
         </article>
     </main>
