@@ -549,10 +549,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Article Page specific */
 .article-header {
-  margin-top: var(--header-height);
-  padding: 60px 0 40px;
-  background: var(--bg-secondary);
-  border-bottom: 1px solid var(--border-color);
+  background: transparent;
+  border-bottom: none;
 }
 
 .article-header h1 {
