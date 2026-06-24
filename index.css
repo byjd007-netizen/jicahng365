@@ -927,3 +927,20 @@ h1, h2, h3, h4, h5, h6 {
     .main-content { order: 1; }
     .sidebar-right { order: 3; }
 }
+
+/* --- Text Badges for Article Layout --- */
+.txt-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #475569;
+    background: #f1f5f9;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+    line-height: 1;
+}
+.txt-badge.primary { color: #2563eb; background: #eff6ff; border-color: #bfdbfe; font-size: 0.9rem; }
+.txt-badge.warning { color: #d97706; background: #fef3c7; border-color: #fde68a; font-size: 0.9rem; }
