@@ -927,3 +927,19 @@ h1, h2, h3, h4, h5, h6 {
     .main-content { order: 1; }
     .sidebar-right { order: 3; }
 }
+
+/* --- Typography Icons for Article Layout --- */
+.typo-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-family: 'Inter', system-ui, sans-serif;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    line-height: 1;
+}
+.typo-guide { font-size: 0.95rem; color: #3b82f6; padding: 6px 10px; background: #eff6ff; border: 1px solid #bfdbfe; }
+.typo-prem { font-size: 0.95rem; color: #f59e0b; padding: 6px 10px; background: #fef3c7; border: 1px solid #fde68a; }
+.typo-info { font-size: 0.75rem; color: #64748b; width: 32px; height: 32px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; }
+.typo-view { font-size: 0.7rem; color: #94a3b8; margin-left: 4px; padding: 3px 5px; border: 1px solid #e2e8f0; border-radius: 4px; }
