@@ -1,20 +1,242 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Android v2rayNG 配置教程 - 云轨导航</title>
-  <link rel="stylesheet" href="../index.css">
-  <style>.article-body p {margin-bottom:2rem; line-height:1.9;}</style>
+  <title>Android v2rayNG 配置教程（2026最新版） - 云轨导航</title>
+  <link rel="stylesheet" href="../index.css?v=3">
+  <style>
+    .article-body h2 { margin-top: 2.5rem; margin-bottom: 1.2rem; color: #0284c7; border-bottom: 2px solid #e0f2fe; padding-bottom: 0.5rem; }
+    .article-body h3 { margin-top: 1.5rem; margin-bottom: 1rem; color: var(--text-primary); font-size: 1.15rem; }
+    .article-body p { margin-bottom: 1.5rem; line-height: 1.8; color: var(--text-secondary); font-size: 1.05rem; }
+    .article-body ul, .article-body ol { margin-bottom: 1.5rem; padding-left: 1.5rem; color: var(--text-secondary); line-height: 1.8; font-size: 1.05rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body strong { color: var(--text-primary); font-weight: 600; }
+    .article-body .highlight-box { background: #f0f9ff; border-left: 4px solid #0ea5e9; padding: 1.2rem 1.5rem; margin-bottom: 1.5rem; border-radius: 0 8px 8px 0; }
+    .related-links { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+    .related-links a { display: block; margin-bottom: 0.8rem; color: #0ea5e9; text-decoration: none; font-size: 1.05rem; }
+    .related-links a:hover { text-decoration: underline; color: #0284c7; }
+    code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: monospace; color: #0f172a; }
+  </style>
 </head>
-<body>
-<header class="header"><div class="container"><a href="../index.html" class="logo-container"><span class="logo-text">云轨导航</span></a></div></header>
-<main class="container" style="padding-top:100px; max-width:800px; margin-bottom:80px;">
-<h1> Android v2rayNG 配置教程</h1>
-<div class="article-content"><div class="article-body">
-<p>本教程为您展示安卓平台使用 v2rayNG 配置代理并实现全局或分流连接的完整流程。</p>
-<p>（详细步骤内容正在整理中，敬请期待...）</p>
-</div></div>
+<body style="background: #f8fafc;">
+<header class="header">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+    <a href="../index.html" class="logo-container" style="text-decoration: none;"><span class="logo-text" style="font-size: 1.5rem; font-weight: bold; color: var(--text-primary);">云轨导航</span></a>
+    <nav class="nav-links" style="display: flex; gap: 20px;">
+      <a href="../index.html" style="text-decoration: none; color: var(--text-primary);">首页</a>
+      <a href="../airports.html" style="text-decoration: none; color: var(--text-primary);">机场推荐</a>
+      <a href="../knowledge.html" style="text-decoration: none; color: var(--text-primary);">科普指南</a>
+      <a href="../ranking.html" style="text-decoration: none; color: var(--text-primary);">排行榜</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container" style="padding-top:120px; max-width:850px; margin-bottom:80px; margin-left: auto; margin-right: auto;">
+  <div style="margin-bottom: 25px; font-size: 0.95rem;">
+    <a href="../index.html" style="color: #64748b; text-decoration: none;">首页</a> &gt; 
+    <a href="../knowledge.html" style="color: #64748b; text-decoration: none;">科普指南</a> &gt; 
+    <span style="color: #0ea5e9;">Android 教程</span>
+  </div>
+
+  <h1 style="font-size: 2.2rem; color: var(--text-primary); margin-bottom: 1.5rem; line-height: 1.4;">Android v2rayNG 配置教程（2026最新版）</h1>
+  
+  <div class="article-content" style="background: white; padding: 50px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05);">
+    <div class="article-body">
+      <p>在 Android 手机上使用 <strong>v2rayNG</strong> 是目前最常见的网络代理方案之一，它支持 V2Ray 核心协议，能够实现节点连接、规则分流、订阅管理等功能，适合新手快速上手使用。</p>
+      <p>本教程将一步一步教你如何在安卓设备上安装 v2rayNG，并导入订阅节点完成基础配置，即使没有技术基础也可以顺利完成。</p>
+
+      <h2>一、v2rayNG 是什么？</h2>
+      <p>v2rayNG 是一款基于 V2Ray 核心的 Android 客户端工具，它的主要作用是：</p>
+      
+      <div class="highlight-box">
+        <p style="margin-bottom: 10px;">帮助用户通过节点实现网络代理与分流访问。</p>
+        <strong style="display: block; margin-bottom: 10px;">简单理解就是：</strong>
+        <ul style="margin-bottom: 0;">
+          <li>国内网站正常访问</li>
+          <li>国外网站通过节点访问</li>
+          <li>支持多种协议与订阅链接</li>
+        </ul>
+      </div>
+
+      <h3>v2rayNG 的主要特点：</h3>
+      <ul>
+        <li>支持 V2Ray / VMess / VLESS 协议</li>
+        <li>支持订阅链接导入</li>
+        <li>支持分流规则（路由规则）</li>
+        <li>支持延迟测试</li>
+        <li>操作简单适合新手</li>
+      </ul>
+
+      <h2>二、v2rayNG 下载与安装</h2>
+      
+      <h3>1. 下载方式</h3>
+      <p>v2rayNG 通常可以通过以下方式获取：</p>
+      <ul>
+        <li>Google Play（部分地区可用）</li>
+        <li>GitHub 官方 Release</li>
+        <li>APK 手动安装包</li>
+      </ul>
+      <p>建议使用 <strong>GitHub 最新版本</strong>，保证安全与稳定。</p>
+
+      <h3>2. 安装步骤</h3>
+      <ol>
+        <li>下载 APK 文件</li>
+        <li>打开手机“文件管理器”</li>
+        <li>点击安装包</li>
+        <li>允许“未知来源安装”</li>
+        <li>等待安装完成</li>
+      </ol>
+      <p>安装完成后桌面会出现 <strong>v2rayNG 图标</strong>。</p>
+
+      <h2>三、如何导入订阅节点（核心步骤）</h2>
+      <p>这是整个教程最重要的一步。</p>
+      
+      <div class="highlight-box">
+        <strong style="display: block; margin-bottom: 5px;">什么是订阅链接？</strong>
+        订阅链接是机场提供的一种节点集合地址，通常类似：<br>
+        <code>https://example.com/api/v1/subscribe?token=xxxxx</code><br>
+        它包含多个节点，例如：香港节点、日本节点、美国节点等。
+      </div>
+
+      <h3>方法一：订阅链接导入（推荐）</h3>
+      <p>操作步骤：</p>
+      <ol>
+        <li>打开 v2rayNG</li>
+        <li>点击右上角 <strong>“+”</strong> 按钮</li>
+        <li>选择 <strong>“从订阅导入”</strong></li>
+        <li>输入订阅链接</li>
+        <li>点击确认保存</li>
+        <li>返回主页刷新节点</li>
+      </ol>
+      <p>等待几秒后，节点列表会自动加载完成。</p>
+
+      <h3>方法二：手动添加节点</h3>
+      <p>如果没有订阅链接，可以手动添加：</p>
+      <ol>
+        <li>点击 <strong>“+”</strong></li>
+        <li>选择 <strong>“手动输入”</strong></li>
+        <li>选择协议类型（VMess / VLESS）</li>
+        <li>填写以下信息：地址（server）、端口（port）、用户ID（UUID）、加密方式</li>
+        <li>保存节点</li>
+      </ol>
+
+      <h2>四、如何开启代理连接</h2>
+      <p>节点导入成功后，还需要开启连接。</p>
+      <p>操作步骤：</p>
+      <ol>
+        <li>返回首页</li>
+        <li>选择一个节点</li>
+        <li>点击右下角 <strong>“连接按钮”</strong>（一个 V 字形图标）</li>
+        <li>等待状态变为 <strong>“已连接”</strong></li>
+      </ol>
+      <p>连接成功后，手机顶部状态栏会出现 <strong>VPN</strong> 图标。</p>
+
+      <h2>五、路由模式说明（非常重要）</h2>
+      <p>v2rayNG 支持不同的路由模式：</p>
+
+      <h3>1. 全局模式（Global）</h3>
+      <p>所有流量都走代理节点。</p>
+      <p><strong>适合：</strong>测试节点、强制代理场景。</p>
+      <p><strong>缺点：</strong>耗电较高、国内访问速度可能变慢。</p>
+
+      <h3>2. 规则模式（推荐）</h3>
+      <p>自动分流：国内网站直连，国外网站走代理。</p>
+      <p><strong>日常使用最推荐</strong>。</p>
+
+      <h3>3. 直连模式</h3>
+      <p>关闭代理。</p>
+      <p><strong>用于：</strong>排查问题、恢复正常网络。</p>
+
+      <h2>六、节点测速与选择技巧</h2>
+      <p>在 v2rayNG 中可以进行延迟测试：</p>
+      <ol>
+        <li>长按节点</li>
+        <li>点击 <strong>“测试延迟”</strong></li>
+      </ol>
+      
+      <div class="highlight-box">
+        <strong style="display: block; margin-bottom: 10px;">选择节点建议：</strong>
+        <p style="margin-bottom: 5px;"><strong>优先选择：</strong></p>
+        <ul style="margin-bottom: 10px;">
+          <li>延迟低（&lt;200ms）</li>
+          <li>稳定不丢包</li>
+          <li>地理位置近（香港 / 日本）</li>
+        </ul>
+        <p style="margin-bottom: 5px;"><strong>避免：</strong></p>
+        <ul style="margin-bottom: 0;">
+          <li>延迟高</li>
+          <li>长时间不可用节点</li>
+        </ul>
+      </div>
+
+      <h2>七、常见问题解决</h2>
+
+      <h3>1. 订阅导入失败？</h3>
+      <ul>
+        <li><strong>可能原因：</strong>链接失效、网络无法访问订阅服务器、复制错误</li>
+        <li><strong>解决方法：</strong>重新复制订阅链接、更换网络环境、更新机场订阅</li>
+      </ul>
+
+      <h3>2. 节点连接失败？</h3>
+      <ul>
+        <li><strong>可能原因：</strong>节点已过期、配置错误、网络限制</li>
+        <li><strong>解决方法：</strong>切换节点、更新订阅、检查协议是否正确</li>
+      </ul>
+
+      <h3>3. VPN已连接但无法上网？</h3>
+      <ul>
+        <li><strong>检查：</strong>是否选中节点、是否开启路由规则、是否网络正常</li>
+      </ul>
+
+      <h3>4. 应用打不开？</h3>
+      <ul>
+        <li><strong>可能原因：</strong>APK版本过旧、安装不完整</li>
+        <li><strong>解决方法：</strong>重新下载最新版本、清除缓存后重装</li>
+      </ul>
+
+      <h2>八、进阶功能（建议了解）</h2>
+      
+      <h3>1. 延迟测试</h3>
+      <p>帮助你快速筛选最优节点。</p>
+
+      <h3>2. 分组管理</h3>
+      <p>可以将节点分类：游戏节点、流媒体节点、稳定节点等。</p>
+
+      <h3>3. 自动更新订阅</h3>
+      <p>建议开启：<strong>定期更新订阅</strong>，保证节点长期可用。</p>
+
+      <h2>九、使用建议（新手必看）</h2>
+      <div class="highlight-box">
+        <strong style="display: block; margin-bottom: 10px;">为了保证稳定体验，建议：</strong>
+        <ul style="margin-bottom: 0;">
+          <li>不要频繁切换节点</li>
+          <li>优先使用规则模式</li>
+          <li>每周更新订阅</li>
+          <li>选择低延迟节点</li>
+          <li>避免同时使用多个代理工具</li>
+        </ul>
+      </div>
+
+      <h2>十、总结</h2>
+      <p>v2rayNG 是安卓平台非常成熟的代理工具，适合新手和进阶用户使用。</p>
+      <p>只需三步即可完成配置：<strong>安装 v2rayNG -> 导入订阅链接 -> 选择节点并连接</strong>，即可实现稳定网络访问。</p>
+
+      <div class="related-links">
+        <h3 style="margin-bottom: 1rem;">相关阅读推荐</h3>
+        <a href="tutorial-win.html">Clash Verge Windows 使用教程</a>
+        <a href="tutorial-ios.html">Shadowrocket iOS 配置教程</a>
+        <a href="tutorial-mac.html">Mac 客户端配置教程</a>
+        <a href="beginner-1.html">机场订阅是什么意思？</a>
+        <a href="article-1.html">节点测速方法详解</a>
+        <a href="../airports.html">稳定机场推荐合集</a>
+      </div>
+
+    </div>
+  </div>
 </main>
+<footer style="text-align: center; padding: 40px; margin-top: 40px; color: #94a3b8; border-top: 1px solid #e2e8f0;">
+  <p>© 2026 云轨导航. All rights reserved.</p>
+</footer>
 </body>
 </html>
