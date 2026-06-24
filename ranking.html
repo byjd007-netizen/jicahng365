@@ -23,6 +23,8 @@
       border-radius: 20px;
       font-size: 0.9rem;
       margin-bottom: 20px;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
     .hero-title {
       font-size: 3rem;
@@ -35,13 +37,12 @@
       gap: 15px;
     }
     .hero-title::before, .hero-title::after {
-      content: '«';
-      color: #3b82f6;
-      font-size: 2.5rem;
+      content: '';
+      width: 40px;
+      height: 4px;
+      background: #3b82f6;
+      border-radius: 2px;
       opacity: 0.5;
-    }
-    .hero-title::after {
-      content: '»';
     }
     .hero-subtitle {
       color: #64748b;
@@ -55,18 +56,23 @@
       color: #3b82f6;
       font-size: 0.95rem;
     }
+    .hero-tags span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
     .hero-tags span::before {
-      content: '✓';
+      content: '√';
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
       background: #3b82f6;
       color: white;
-      border-radius: 50%;
-      margin-right: 6px;
+      border-radius: 4px;
       font-size: 0.7rem;
+      font-weight: bold;
     }
 
     .feature-boxes {
@@ -96,7 +102,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
+      font-weight: 900;
+      font-family: "Microsoft YaHei", serif;
     }
     .feature-info h4 {
       margin: 0 0 5px;
@@ -137,6 +145,7 @@
       cursor: pointer;
       font-size: 0.95rem;
       transition: all 0.3s;
+      font-weight: 500;
     }
     .tab.active {
       background: #3b82f6;
@@ -150,6 +159,15 @@
       align-items: center;
       gap: 5px;
     }
+    .update-tag {
+      background: #e2e8f0;
+      color: #475569;
+      font-size: 0.75rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
 
     .ranking-table-header {
       display: grid;
@@ -159,6 +177,7 @@
       font-size: 0.9rem;
       border-bottom: 2px solid #e2e8f0;
       text-align: center;
+      font-weight: bold;
     }
     .ranking-table-header > div:nth-child(2),
     .ranking-table-header > div:nth-child(3) {
@@ -202,11 +221,12 @@
       justify-content: center;
       color: white;
       font-size: 1.2rem;
-      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%23f59e0b" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7L12 12L22 7L12 2Z"/><path d="M2 17L12 22L22 17M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center/contain;
+      background: #f59e0b;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     }
-    .r-num.top-1 { color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
-    .r-num.top-2 { filter: hue-rotate(180deg) brightness(1.2); }
-    .r-num.top-3 { filter: hue-rotate(320deg) brightness(1.1); }
+    .r-num.top-1 { background: #f59e0b; }
+    .r-num.top-2 { background: #94a3b8; }
+    .r-num.top-3 { background: #b45309; }
 
     /* Column 2: Provider */
     .r-provider {
@@ -223,8 +243,9 @@
       align-items: center;
       justify-content: center;
       font-size: 1.5rem;
-      font-weight: bold;
+      font-weight: 900;
       color: white;
+      font-family: Impact, sans-serif;
     }
     .r-provider-info h3 {
       margin: 0 0 5px;
@@ -234,12 +255,13 @@
     .r-badge {
       font-size: 0.75rem;
       padding: 2px 8px;
-      border-radius: 12px;
+      border-radius: 4px;
       display: inline-block;
+      font-weight: bold;
     }
-    .badge-orange { background: #fef3c7; color: #d97706; }
-    .badge-blue { background: #e0f2fe; color: #0284c7; }
-    .badge-purple { background: #f3e8ff; color: #9333ea; }
+    .badge-orange { background: #fef3c7; color: #d97706; border: 1px solid #fde68a; }
+    .badge-blue { background: #e0f2fe; color: #0284c7; border: 1px solid #bae6fd; }
+    .badge-purple { background: #f3e8ff; color: #9333ea; border: 1px solid #e9d5ff; }
 
     /* Column 3: Features */
     .r-features ul {
@@ -253,10 +275,12 @@
       margin-bottom: 4px;
     }
     .r-features li::before {
-      content: '✓';
+      content: '·';
       color: #3b82f6;
       margin-right: 6px;
       font-weight: bold;
+      font-size: 1.2rem;
+      vertical-align: middle;
     }
     .r-tags {
       display: flex;
@@ -269,18 +293,21 @@
       background: #eff6ff;
       padding: 2px 8px;
       border-radius: 4px;
+      border: 1px solid #dbeafe;
     }
 
     /* Column 4: Rating */
     .r-rating .stars {
       color: #f59e0b;
-      font-size: 1.1rem;
+      font-size: 1rem;
       margin-bottom: 5px;
+      letter-spacing: 2px;
     }
     .r-rating .score {
       font-size: 1.2rem;
       font-weight: bold;
       color: #ef4444;
+      margin-left: 5px;
     }
     .r-rating .user-score {
       font-size: 0.8rem;
@@ -300,11 +327,12 @@
     .r-price .discount {
       display: inline-block;
       font-size: 0.75rem;
-      color: #3b82f6;
-      background: #eff6ff;
-      padding: 2px 8px;
-      border-radius: 12px;
+      color: #ef4444;
+      background: #fef2f2;
+      padding: 2px 6px;
+      border-radius: 4px;
       margin-top: 5px;
+      border: 1px solid #fecaca;
     }
 
     /* Column 6: Platforms */
@@ -312,13 +340,22 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 5px;
+      gap: 8px;
     }
     .platform-icons {
       display: flex;
-      gap: 10px;
-      color: #64748b;
-      font-size: 1.2rem;
+      gap: 4px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .pt-tag {
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      color: #475569;
+      background: #f8fafc;
+      font-weight: 500;
     }
     .platform-text {
       font-size: 0.8rem;
@@ -335,22 +372,24 @@
       background: #3b82f6;
       color: white;
       padding: 8px 0;
-      border-radius: 8px;
+      border-radius: 6px;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: bold;
       font-size: 0.95rem;
       transition: background 0.3s;
+      box-shadow: 0 2px 4px rgba(59,130,246,0.3);
     }
     .btn-visit:hover { background: #2563eb; }
     .btn-review {
       background: white;
       color: #3b82f6;
-      border: 1px solid #bfdbfe;
+      border: 1px solid #3b82f6;
       padding: 8px 0;
-      border-radius: 8px;
+      border-radius: 6px;
       text-decoration: none;
       font-size: 0.95rem;
       transition: all 0.3s;
+      font-weight: 500;
     }
     .btn-review:hover {
       background: #eff6ff;
@@ -370,20 +409,29 @@
       box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
       display: flex;
       justify-content: space-between;
+      border-top: 4px solid #3b82f6;
     }
     .stat-item {
       text-align: center;
     }
     .stat-icon {
-      font-size: 2rem;
+      font-size: 1rem;
       color: #3b82f6;
       margin-bottom: 10px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      font-family: Impact, sans-serif;
+      background: #eff6ff;
+      padding: 4px 12px;
+      border-radius: 4px;
+      display: inline-block;
     }
     .stat-value {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-weight: bold;
       color: #1e293b;
       margin-bottom: 5px;
+      font-family: Impact, sans-serif;
     }
     .stat-label {
       font-size: 0.9rem;
@@ -392,10 +440,12 @@
 
     .advice-panel {
       flex: 1;
-      background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
+      background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 100%);
       border-radius: 16px;
       padding: 30px;
       position: relative;
+      border: 1px solid #e2e8f0;
+      border-top: 4px solid #0ea5e9;
     }
     .advice-panel h4 {
       margin: 0 0 15px;
@@ -403,16 +453,33 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      font-size: 1.1rem;
+    }
+    .advice-panel h4::before {
+      content: 'GUIDE';
+      background: #0ea5e9;
+      color: white;
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: bold;
     }
     .advice-panel ul {
       margin: 0;
-      padding-left: 20px;
+      padding-left: 0;
+      list-style: none;
       color: #475569;
       font-size: 0.95rem;
       line-height: 1.8;
     }
-    .advice-panel ul li::marker {
-      color: #3b82f6;
+    .advice-panel ul li {
+      margin-bottom: 8px;
+    }
+    .advice-panel ul li::before {
+      content: '■';
+      color: #0ea5e9;
+      font-size: 0.8rem;
+      margin-right: 8px;
     }
 
     .notice-bar {
@@ -422,19 +489,25 @@
       align-items: center;
       background: white;
       padding: 15px 20px;
-      border-radius: 12px;
+      border-radius: 8px;
       color: #64748b;
       font-size: 0.9rem;
       box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      border-left: 4px solid #cbd5e1;
     }
-    .notice-bar span i {
-      color: #3b82f6;
-      margin-right: 8px;
+    .notice-bar-tag {
+      background: #cbd5e1;
+      color: white;
+      font-size: 0.75rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-right: 10px;
+      font-weight: bold;
     }
 
     @media (max-width: 1024px) {
       .ranking-table-header {
-        display: none; /* Hide header on mobile */
+        display: none;
       }
       .rank-card {
         grid-template-columns: 1fr;
@@ -493,35 +566,35 @@
 
   <div class="feature-boxes">
     <div class="feature-box">
-      <div class="feature-icon" style="background: #e0f2fe; color: #0284c7;">🚀</div>
+      <div class="feature-icon" style="background: #e0f2fe; color: #0284c7;">速</div>
       <div class="feature-info">
         <h4>极速稳定</h4>
         <p>优质节点，极速连接</p>
       </div>
     </div>
     <div class="feature-box">
-      <div class="feature-icon" style="background: #dcfce7; color: #16a34a;">🛡️</div>
+      <div class="feature-icon" style="background: #dcfce7; color: #16a34a;">安</div>
       <div class="feature-info">
         <h4>安全可靠</h4>
         <p>严格筛选，隐私保护</p>
       </div>
     </div>
     <div class="feature-box">
-      <div class="feature-icon" style="background: #f3e8ff; color: #9333ea;">🎧</div>
+      <div class="feature-icon" style="background: #f3e8ff; color: #9333ea;">服</div>
       <div class="feature-info">
         <h4>优质服务</h4>
-        <p>7 x 24小时客服支持</p>
+        <p>7x24小时客服支持</p>
       </div>
     </div>
     <div class="feature-box">
-      <div class="feature-icon" style="background: #ffedd5; color: #ea580c;">👍</div>
+      <div class="feature-icon" style="background: #ffedd5; color: #ea580c;">价</div>
       <div class="feature-info">
         <h4>高性价比</h4>
         <p>价格合理，物超所值</p>
       </div>
     </div>
     <div class="feature-box">
-      <div class="feature-icon" style="background: #e0e7ff; color: #4f46e5;">👑</div>
+      <div class="feature-icon" style="background: #e0e7ff; color: #4f46e5;">荐</div>
       <div class="feature-info">
         <h4>口碑推荐</h4>
         <p>用户真实评价推荐</p>
@@ -541,7 +614,7 @@
         <div class="tab">流媒体解锁</div>
       </div>
       <div class="update-time">
-        ↻ 数据更新时间: 2026-06-22
+        <span class="update-tag">UPDATE</span> 数据更新时间: 2026-06-22
       </div>
     </div>
 
@@ -559,7 +632,7 @@
     <div class="rank-card">
       <div class="r-num top-1">1<br><span style="font-size:0.5rem">TOP</span></div>
       <div class="r-provider">
-        <div class="r-logo" style="background: #0ea5e9;">⚡</div>
+        <div class="r-logo" style="background: #0ea5e9;">E</div>
         <div class="r-provider-info">
           <h3>EdgeNova</h3>
           <span class="r-badge badge-orange">官方推荐</span>
@@ -580,7 +653,7 @@
         </div>
       </div>
       <div class="r-rating">
-        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px;">综合评分</div>
+        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px; font-weight: bold;">综合评分</div>
         <div class="stars">★★★★★ <span class="score">9.8</span></div>
         <div class="user-score">用户评分: 9.9</div>
       </div>
@@ -589,7 +662,12 @@
         <span class="discount">年付优惠20%</span>
       </div>
       <div class="r-platforms">
-        <div class="platform-icons">💻 🍎 📱 🐧</div>
+        <div class="platform-icons">
+          <span class="pt-tag">Win</span>
+          <span class="pt-tag">Mac</span>
+          <span class="pt-tag">iOS</span>
+          <span class="pt-tag">And</span>
+        </div>
         <div class="platform-text">全平台支持</div>
       </div>
       <div class="r-actions">
@@ -602,7 +680,7 @@
     <div class="rank-card">
       <div class="r-num top-2">2<br><span style="font-size:0.5rem">TOP</span></div>
       <div class="r-provider">
-        <div class="r-logo" style="background: #2dd4bf;">✈️</div>
+        <div class="r-logo" style="background: #2dd4bf;">极</div>
         <div class="r-provider-info">
           <h3>极连云</h3>
           <span class="r-badge badge-blue">稳定优选</span>
@@ -623,7 +701,7 @@
         </div>
       </div>
       <div class="r-rating">
-        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px;">综合评分</div>
+        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px; font-weight: bold;">综合评分</div>
         <div class="stars">★★★★★ <span class="score">9.6</span></div>
         <div class="user-score">用户评分: 9.7</div>
       </div>
@@ -632,7 +710,11 @@
         <span class="discount">年付优惠15%</span>
       </div>
       <div class="r-platforms">
-        <div class="platform-icons">💻 🍎 📱</div>
+        <div class="platform-icons">
+          <span class="pt-tag">Win</span>
+          <span class="pt-tag">Mac</span>
+          <span class="pt-tag">And</span>
+        </div>
         <div class="platform-text">主流平台</div>
       </div>
       <div class="r-actions">
@@ -645,7 +727,7 @@
     <div class="rank-card">
       <div class="r-num top-3">3<br><span style="font-size:0.5rem">TOP</span></div>
       <div class="r-provider">
-        <div class="r-logo" style="background: #a855f7;">✨</div>
+        <div class="r-logo" style="background: #a855f7;">光</div>
         <div class="r-provider-info">
           <h3>光年梯</h3>
           <span class="r-badge badge-purple">性价比高</span>
@@ -666,7 +748,7 @@
         </div>
       </div>
       <div class="r-rating">
-        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px;">综合评分</div>
+        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px; font-weight: bold;">综合评分</div>
         <div class="stars">★★★★★ <span class="score">9.4</span></div>
         <div class="user-score">用户评分: 9.5</div>
       </div>
@@ -675,7 +757,12 @@
         <span class="discount">年付优惠25%</span>
       </div>
       <div class="r-platforms">
-        <div class="platform-icons">💻 🍎 📱 🐧</div>
+        <div class="platform-icons">
+          <span class="pt-tag">Win</span>
+          <span class="pt-tag">Mac</span>
+          <span class="pt-tag">iOS</span>
+          <span class="pt-tag">And</span>
+        </div>
         <div class="platform-text">全平台支持</div>
       </div>
       <div class="r-actions">
@@ -688,7 +775,7 @@
     <div class="rank-card">
       <div class="r-num">4</div>
       <div class="r-provider">
-        <div class="r-logo" style="background: #f97316;">🦊</div>
+        <div class="r-logo" style="background: #f97316;">快</div>
         <div class="r-provider-info">
           <h3>快狸</h3>
           <span class="r-badge badge-blue">新锐推荐</span>
@@ -709,7 +796,7 @@
         </div>
       </div>
       <div class="r-rating">
-        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px;">综合评分</div>
+        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px; font-weight: bold;">综合评分</div>
         <div class="stars">★★★★☆ <span class="score">9.2</span></div>
         <div class="user-score">用户评分: 9.3</div>
       </div>
@@ -718,7 +805,11 @@
         <span class="discount">年付优惠18%</span>
       </div>
       <div class="r-platforms">
-        <div class="platform-icons">💻 🍎 📱</div>
+        <div class="platform-icons">
+          <span class="pt-tag">Win</span>
+          <span class="pt-tag">Mac</span>
+          <span class="pt-tag">And</span>
+        </div>
         <div class="platform-text">主流平台</div>
       </div>
       <div class="r-actions">
@@ -731,7 +822,7 @@
     <div class="rank-card">
       <div class="r-num">5</div>
       <div class="r-provider">
-        <div class="r-logo" style="background: #22c55e;">🌍</div>
+        <div class="r-logo" style="background: #22c55e;">寰</div>
         <div class="r-provider-info">
           <h3>寰宇云</h3>
           <span class="r-badge badge-blue">稳定可靠</span>
@@ -752,7 +843,7 @@
         </div>
       </div>
       <div class="r-rating">
-        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px;">综合评分</div>
+        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px; font-weight: bold;">综合评分</div>
         <div class="stars">★★★★☆ <span class="score">9.0</span></div>
         <div class="user-score">用户评分: 9.1</div>
       </div>
@@ -761,7 +852,12 @@
         <span class="discount">年付优惠20%</span>
       </div>
       <div class="r-platforms">
-        <div class="platform-icons">💻 🍎 📱 🐧</div>
+        <div class="platform-icons">
+          <span class="pt-tag">Win</span>
+          <span class="pt-tag">Mac</span>
+          <span class="pt-tag">iOS</span>
+          <span class="pt-tag">And</span>
+        </div>
         <div class="platform-text">全平台支持</div>
       </div>
       <div class="r-actions">
@@ -774,7 +870,7 @@
     <div class="rank-card">
       <div class="r-num">6</div>
       <div class="r-provider">
-        <div class="r-logo" style="background: #64748b;">💨</div>
+        <div class="r-logo" style="background: #64748b;">瞬</div>
         <div class="r-provider-info">
           <h3>瞬云</h3>
         </div>
@@ -792,7 +888,7 @@
         </div>
       </div>
       <div class="r-rating">
-        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px;">综合评分</div>
+        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px; font-weight: bold;">综合评分</div>
         <div class="stars">★★★★☆ <span class="score">8.8</span></div>
         <div class="user-score">用户评分: 8.9</div>
       </div>
@@ -800,7 +896,11 @@
         <span class="amount">¥15.00</span><span class="unit"> /月起</span>
       </div>
       <div class="r-platforms">
-        <div class="platform-icons">💻 🍎 📱</div>
+        <div class="platform-icons">
+          <span class="pt-tag">Win</span>
+          <span class="pt-tag">Mac</span>
+          <span class="pt-tag">And</span>
+        </div>
         <div class="platform-text">主流平台</div>
       </div>
       <div class="r-actions">
@@ -813,7 +913,7 @@
     <div class="rank-card">
       <div class="r-num">7</div>
       <div class="r-provider">
-        <div class="r-logo" style="background: #f43f5e;">🌐</div>
+        <div class="r-logo" style="background: #f43f5e;">速</div>
         <div class="r-provider-info">
           <h3>速界</h3>
         </div>
@@ -831,7 +931,7 @@
         </div>
       </div>
       <div class="r-rating">
-        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px;">综合评分</div>
+        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px; font-weight: bold;">综合评分</div>
         <div class="stars">★★★★☆ <span class="score">8.5</span></div>
         <div class="user-score">用户评分: 8.7</div>
       </div>
@@ -839,7 +939,12 @@
         <span class="amount">¥12.00</span><span class="unit"> /月起</span>
       </div>
       <div class="r-platforms">
-        <div class="platform-icons">💻 🍎 📱 🐧</div>
+        <div class="platform-icons">
+          <span class="pt-tag">Win</span>
+          <span class="pt-tag">Mac</span>
+          <span class="pt-tag">iOS</span>
+          <span class="pt-tag">And</span>
+        </div>
         <div class="platform-text">全平台支持</div>
       </div>
       <div class="r-actions">
@@ -852,7 +957,7 @@
     <div class="rank-card">
       <div class="r-num">8</div>
       <div class="r-provider">
-        <div class="r-logo" style="background: #3b82f6;">🔒</div>
+        <div class="r-logo" style="background: #3b82f6;">可</div>
         <div class="r-provider-info">
           <h3>可信云</h3>
         </div>
@@ -870,7 +975,7 @@
         </div>
       </div>
       <div class="r-rating">
-        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px;">综合评分</div>
+        <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 5px; font-weight: bold;">综合评分</div>
         <div class="stars">★★★★☆ <span class="score">8.5</span></div>
         <div class="user-score">用户评分: 8.6</div>
       </div>
@@ -878,7 +983,11 @@
         <span class="amount">¥20.00</span><span class="unit"> /月起</span>
       </div>
       <div class="r-platforms">
-        <div class="platform-icons">💻 🍎 📱</div>
+        <div class="platform-icons">
+          <span class="pt-tag">Win</span>
+          <span class="pt-tag">Mac</span>
+          <span class="pt-tag">And</span>
+        </div>
         <div class="platform-text">主流平台</div>
       </div>
       <div class="r-actions">
@@ -891,29 +1000,29 @@
     <div class="info-panels">
       <div class="stats-panel">
         <div class="stat-item">
-          <div class="stat-icon">📋</div>
+          <div class="stat-icon">PRO</div>
           <div class="stat-value">50+</div>
           <div class="stat-label">优质服务商<br><span style="font-size: 0.8rem;">严选推荐</span></div>
         </div>
         <div class="stat-item">
-          <div class="stat-icon">📍</div>
+          <div class="stat-icon">LOC</div>
           <div class="stat-value">1000+</div>
           <div class="stat-label">全球节点<br><span style="font-size: 0.8rem;">覆盖国家和地区</span></div>
         </div>
         <div class="stat-item">
-          <div class="stat-icon">⚡</div>
+          <div class="stat-icon">SLA</div>
           <div class="stat-value">99.9%</div>
           <div class="stat-label">平均可用率<br><span style="font-size: 0.8rem;">稳定可靠</span></div>
         </div>
         <div class="stat-item">
-          <div class="stat-icon">🕒</div>
+          <div class="stat-icon">SRV</div>
           <div class="stat-value">24/7</div>
           <div class="stat-label">专业客服<br><span style="font-size: 0.8rem;">快速响应</span></div>
         </div>
       </div>
 
       <div class="advice-panel">
-        <h4>💡 选择建议</h4>
+        <h4>选择建议</h4>
         <ul>
           <li>追求速度：EdgeNova、极连云</li>
           <li>注重性价比：光年梯、快狸</li>
@@ -924,10 +1033,10 @@
     </div>
 
     <div class="notice-bar">
-      <span><i>ℹ️</i> 温馨提示：排名结果基于用户评价、速度测试、稳定性、价格等维度的综合评估，仅供参考；请根据自身需求选择合适的服务商。</span>
+      <span><span class="notice-bar-tag">声明</span> 排名结果基于用户评价、速度测试、稳定性、价格等维度的综合评估，仅供参考；请根据自身需求选择合适的服务商。</span>
       <span style="display: flex; align-items: center; gap: 10px;">
         <span style="background: #10b981; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem;">用户评价 (4.9/5)</span>
-        <span style="color: #f59e0b;">★★★★★</span>
+        <span style="color: #f59e0b; letter-spacing: 2px;">★★★★★</span>
       </span>
     </div>
 
