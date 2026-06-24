@@ -1,81 +1,242 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clash 系列全平台使用指南与高级规则配置 - 云轨导航知识库</title>
+  <title>Clash 系列全平台使用指南与高级规则配置 - 云轨导航</title>
   <link rel="stylesheet" href="../index.css?v=3">
+  <style>
+    .article-body h2 { margin-top: 2.5rem; margin-bottom: 1.2rem; color: #0284c7; border-bottom: 2px solid #e0f2fe; padding-bottom: 0.5rem; }
+    .article-body h3 { margin-top: 1.5rem; margin-bottom: 1rem; color: var(--text-primary); font-size: 1.15rem; }
+    .article-body p { margin-bottom: 1.5rem; line-height: 1.8; color: var(--text-secondary); font-size: 1.05rem; }
+    .article-body ul, .article-body ol { margin-bottom: 1.5rem; padding-left: 1.5rem; color: var(--text-secondary); line-height: 1.8; font-size: 1.05rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body strong { color: var(--text-primary); font-weight: 600; }
+    .article-body .highlight-box { background: #f0f9ff; border-left: 4px solid #0ea5e9; padding: 1.2rem 1.5rem; margin-bottom: 1.5rem; border-radius: 0 8px 8px 0; }
+    .related-links { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+    .related-links a { display: block; margin-bottom: 0.8rem; color: #0ea5e9; text-decoration: none; font-size: 1.05rem; }
+    .related-links a:hover { text-decoration: underline; color: #0284c7; }
+    code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: monospace; color: #0f172a; }
+  </style>
 </head>
-<body>
-  <header class="header">
-    <div class="container">
-      <a href="../index.html" class="logo-container">
-        <span class="logo-text" style="color: var(--accent-primary); font-weight: bold;">云轨导航</span>
-      </a>
-      <nav class="nav-menu">
-        <a href="../index.html" class="nav-link">科普指南首页</a>
-        <a href="../index.html#basics" class="nav-link">新手入门</a>
-        <a href="../index.html#clients" class="nav-link">客户端教程</a>
-        <a href="../index.html#advanced" class="nav-link">协议与进阶</a>
-      </nav>
+<body style="background: #f8fafc;">
+<header class="header">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+    <a href="../index.html" class="logo-container" style="text-decoration: none;"><span class="logo-text" style="font-size: 1.5rem; font-weight: bold; color: var(--accent-primary);">云轨导航</span></a>
+    <nav class="nav-links" style="display: flex; gap: 20px;">
+      <a href="../index.html" style="text-decoration: none; color: var(--text-primary);">首页</a>
+      <a href="../airports.html" style="text-decoration: none; color: var(--text-primary);">机场推荐</a>
+      <a href="../knowledge.html" style="text-decoration: none; color: var(--text-primary);">科普指南</a>
+      <a href="../ranking.html" style="text-decoration: none; color: var(--text-primary);">排行榜</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container" style="padding-top:120px; max-width:850px; margin-bottom:80px; margin-left: auto; margin-right: auto;">
+  <div style="margin-bottom: 25px; font-size: 0.95rem;">
+    <a href="../index.html" style="color: #64748b; text-decoration: none;">首页</a> &gt; 
+    <a href="../knowledge.html" style="color: #64748b; text-decoration: none;">科普指南</a> &gt; 
+    <span style="color: #0ea5e9;">客户端教程</span>
+  </div>
+
+  <div style="text-align: center; margin-bottom: 30px;">
+    <span style="background: #e0f2fe; color: #0ea5e9; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; display: inline-block; margin-bottom: 15px;">客户端教程</span>
+    <h1 style="font-size: 2.2rem; color: var(--text-primary); margin-bottom: 1rem; line-height: 1.4;">Clash 系列全平台使用指南与高级规则配置</h1>
+    
+    <div style="color: #64748b; font-size: 0.95rem; display: flex; justify-content: center; gap: 20px;">
+      <span>作者: 技术编辑部</span>
+      <span>阅读时长: 约 12 分钟</span>
+      <span>发布于: 2026-06-22</span>
     </div>
-  </header>
+  </div>
 
-  <section class="article-header">
-    <div class="container">
-      <div class="article-meta" style="margin-bottom: 20px;">
-        <span style="background: rgba(14,165,233,0.1); color: var(--accent-primary); padding: 4px 10px; border-radius: 20px;">客户端教程</span>
+  <div class="article-content" style="background: white; padding: 50px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05);">
+    <div class="article-body">
+      <p>Clash 系列工具是目前跨平台使用最广泛的代理客户端之一，支持 Windows、macOS、Android、iOS 等多端使用，同时具备强大的规则系统与灵活的订阅管理能力。</p>
+      <p>相比传统代理工具，Clash 最大的优势在于：</p>
+      <div class="highlight-box">
+        <strong style="display: block; text-align: center;">规则分流 + 多节点策略 + 自动选择最优线路</strong>
       </div>
-      <h1>Clash 系列全平台使用指南与高级规则配置</h1>
-      <div class="article-meta">
-        <span>作者: 技术编辑部</span>
-        <span>阅读时长: 约 12 分钟</span>
-        <span>发布于: 2026-06-22</span>
+      <p>本篇文章将从基础使用到高级规则配置，系统讲解 Clash 系列工具的完整使用方法，帮助你快速掌握核心功能。</p>
+
+      <h2>一、Clash 是什么？</h2>
+      <p>Clash 本质上是一个网络代理规则引擎，它的作用是：</p>
+      <div class="highlight-box">
+        <strong style="display: block; margin-bottom: 10px;">将不同的网络请求分配到不同的节点或直连线路</strong>
       </div>
+      <p>简单来说就是：</p>
+      <ul>
+        <li>国内网站 -&gt; 直连</li>
+        <li>国外网站 -&gt; 代理节点</li>
+        <li>指定网站 -&gt; 特定节点</li>
+      </ul>
+      
+      <h3>Clash 的核心特点：</h3>
+      <ul>
+        <li>支持多协议（SS / VMess / Trojan / VLESS）</li>
+        <li>支持订阅自动更新</li>
+        <li>支持规则分流（Rule System）</li>
+        <li>支持策略组（Policy Group）</li>
+        <li>支持多平台统一配置</li>
+      </ul>
+
+      <h2>二、Clash 系列客户端分类</h2>
+      <p>不同平台对应不同客户端：</p>
+      <ul>
+        <li><strong>Windows：</strong>Clash Verge / Clash for Windows</li>
+        <li><strong>macOS：</strong>Clash Verge / Stash</li>
+        <li><strong>Android：</strong>Clash Meta / v2rayNG</li>
+        <li><strong>iOS：</strong>Stash / Shadowrocket</li>
+      </ul>
+
+      <h2>三、Clash 基础使用流程</h2>
+      <p>Clash 的使用流程非常固定：</p>
+      <div class="highlight-box" style="text-align: center;">
+        <strong>安装客户端 -&gt; 导入订阅 -&gt; 选择节点 -&gt; 开启代理</strong>
+      </div>
+
+      <h2>四、如何导入订阅（核心步骤）</h2>
+      
+      <div class="highlight-box">
+        <strong style="display: block; margin-bottom: 5px;">什么是订阅？</strong>
+        订阅就是节点集合链接，例如：<br>
+        <code>https://example.com/api/v1/subscribe?token=xxxxx</code>
+      </div>
+
+      <h3>方法一：URL导入（推荐）</h3>
+      <p>操作步骤：</p>
+      <ol>
+        <li>打开 Clash 客户端</li>
+        <li>进入 <strong>Profiles</strong>（配置）</li>
+        <li>点击 <strong>“+ 添加配置”</strong></li>
+        <li>选择 <strong>URL 导入</strong></li>
+        <li>粘贴订阅链接</li>
+        <li>点击确认</li>
+      </ol>
+      <p>等待几秒后节点自动加载。</p>
+
+      <h3>方法二：文件导入</h3>
+      <p>如果是 .yaml 文件：</p>
+      <ol>
+        <li>下载配置文件</li>
+        <li>点击 <strong>Import File</strong></li>
+        <li>选择 YAML 文件</li>
+        <li>导入完成</li>
+      </ol>
+
+      <h2>五、节点选择与代理模式</h2>
+      
+      <h3>1. 选择节点</h3>
+      <p>进入 <strong>Proxies</strong>（代理列表），常见节点：</p>
+      <ul>
+        <li>香港（低延迟）</li>
+        <li>日本（稳定）</li>
+        <li>美国（流媒体）</li>
+        <li>新加坡（均衡）</li>
+      </ul>
+
+      <h3>2. Clash 三种模式</h3>
+      
+      <p><strong>Rule 模式（推荐）</strong></p>
+      <p>智能分流模式：国内网站直连，国外网站代理。<br><strong>日常使用最佳选择。</strong></p>
+
+      <p><strong>Global 模式</strong></p>
+      <p>所有流量走代理。<br>适合：测试节点、特殊环境。<br>缺点：耗电、速度不稳定。</p>
+
+      <p><strong>Direct 模式</strong></p>
+      <p>关闭代理。<br>用于：排查问题、恢复网络。</p>
+
+      <h2>六、Clash 高级规则系统（核心重点）</h2>
+      <p>Clash 强大的原因就在于规则系统。</p>
+
+      <h3>1. Domain 规则（域名规则）</h3>
+      <code>DOMAIN,google.com,Proxy</code><br>
+      <code>DOMAIN,youtube.com,Proxy</code>
+      <p style="margin-top: 10px;">指定网站走代理。</p>
+
+      <h3>2. GeoIP 规则</h3>
+      <code>GEOIP,CN,DIRECT</code>
+      <p style="margin-top: 10px;">国内 IP 直连。</p>
+
+      <h3>3. FINAL 规则（兜底规则）</h3>
+      <code>FINAL,Proxy</code>
+      <p style="margin-top: 10px;">所有未匹配流量走代理。</p>
+
+      <h2>七、策略组（Policy Group）</h2>
+      <p>策略组是 Clash 的核心功能之一。</p>
+      <p><strong>常见策略组：</strong>自动选择（Auto）、手动选择（Select）、故障转移（Fallback）、负载均衡（Load Balance）。</p>
+      <p><strong>示例：</strong>游戏节点组、流媒体节点组、AI专用节点组。</p>
+
+      <h2>八、延迟测试与节点优化</h2>
+      <p>Clash 可以自动测试节点延迟：</p>
+      <ul>
+        <li>操作：点击节点 -&gt; 选择 “Test Delay”</li>
+      </ul>
+      <div class="highlight-box">
+        <strong style="display: block; margin-bottom: 10px;">节点选择建议优先考虑：</strong>
+        <ul style="margin-bottom: 0;">
+          <li>延迟低</li>
+          <li>稳定性高</li>
+          <li>丢包少</li>
+        </ul>
+      </div>
+
+      <h2>九、常见问题解决</h2>
+
+      <h3>1. 订阅无法加载？</h3>
+      <p><strong>原因：</strong>链接失效、网络无法访问。<br><strong>解决：</strong>更新订阅、更换网络。</p>
+
+      <h3>2. 节点无法连接？</h3>
+      <p><strong>原因：</strong>节点过期、配置错误。<br><strong>解决：</strong>更换节点、更新订阅。</p>
+
+      <h3>3. 可以上网但很慢？</h3>
+      <p><strong>原因：</strong>节点拥堵、路由不佳。<br><strong>解决：</strong>切换节点、使用延迟测试。</p>
+
+      <h2>十、Clash 使用建议（非常重要）</h2>
+      <div class="highlight-box">
+        <strong style="display: block; margin-bottom: 10px;">为了长期稳定使用：</strong>
+        <ul style="margin-bottom: 0;">
+          <li>使用 Rule 模式</li>
+          <li>定期更新订阅</li>
+          <li>避免频繁切换节点</li>
+          <li>选择低延迟节点</li>
+          <li>不要多个代理工具同时运行</li>
+        </ul>
+      </div>
+
+      <h2>十一、Clash 进阶玩法（提升体验）</h2>
+      
+      <h3>1. 分应用代理</h3>
+      <p>可以设置：浏览器走代理，软件直连。</p>
+
+      <h3>2. 自动切换节点</h3>
+      <p>选择 <strong>Fallback 模式</strong>，自动选择可用节点。</p>
+
+      <h3>3. 规则分组优化</h3>
+      <p>可建立：AI节点组、流媒体组、游戏组。</p>
+
+      <h2>十二、总结</h2>
+      <p>Clash 是目前最强大的代理规则系统工具之一，其核心优势在于：</p>
+      <div class="highlight-box">
+        <strong style="display: block; text-align: center;">灵活规则 + 多节点策略 + 自动分流</strong>
+      </div>
+      <p>只要掌握三个步骤：<strong>导入订阅 -&gt; 选择节点 -&gt; 开启 Rule 模式</strong>，即可获得稳定使用体验。</p>
+
+      <div class="related-links">
+        <h3 style="margin-bottom: 1rem;">相关阅读推荐</h3>
+        <a href="tutorial-win.html">Clash Verge Windows 使用教程</a>
+        <a href="tutorial-ios.html">Shadowrocket iOS 使用教程</a>
+        <a href="tutorial-and.html">v2rayNG 安卓配置教程</a>
+        <a href="beginner-1.html">机场订阅是什么意思？</a>
+        <a href="article-1.html">节点测速方法详解</a>
+        <a href="../airports.html">稳定机场推荐合集</a>
+      </div>
+
     </div>
-  </section>
-
-  <main class="container article-content">
-    <article class="article-body">
-      <p class='highlight-box'><strong>导读：</strong> 本文档旨在为您提供最详实、最前沿的技术剖析。我们将从基础概念入手，逐步深入到高级配置与排错，帮助您全面掌握这一领域的核心知识。</p>
-      
-      <h2>1. 破网机制的底层逻辑</h2>
-      <p>在当今复杂多变的网络环境中，突破网络限制、获取全球信息已成为许多人的刚需。随着防火墙技术的不断升级，传统的 VPN 协议（如 PPTP、L2TP/IPsec）因其明显的流量特征而逐渐被淘汰。取而代之的是一系列以“流量伪装”和“加密传输”为核心的新一代代理协议。本文将全面剖析这些技术的底层逻辑，帮助您在面对琳琅满目的服务节点时，能够做出最理性的判断。</p>
-      
-      <p>首先我们需要理解，任何数据在互联网上的传输，本质上都是数据包的路由转发。传统的防火墙通过深度包检测（Deep Packet Inspection, DPI）技术，可以轻易识别出未经伪装的代理流量特征。一旦特征被匹配，该连接就会被阻断，甚至导致服务器 IP 被封锁。因此，现代代理协议的核心诉求是将代理流量伪装成正常的 HTTP/HTTPS 网页浏览流量，或者通过复杂的加密算法使其表现为完全随机的噪声，从而规避 DPI 系统的识别。</p>
-
-      <h2>2. 核心代理协议的发展史</h2>
-      <p>在具体实现上，不同的协议采取了不同的策略。例如，Shadowsocks 采用的是全流量加密，它放弃了传统的握手过程，直接发送加密后的负载数据，这在早期非常有效。然而，随着机器学习算法在防火墙中的应用，纯随机的数据流也逐渐成为一种明显的特征。这就是为什么后来发展出了基于 TLS（传输层安全协议）的代理方案，如 Trojan 和 V2Ray 的 VMess/VLESS 协议。它们将代理数据封装在标准的 TLS 隧道中，从外部观测，这与您访问任何一个普通的加密 HTTPS 网站毫无二致。</p>
-      
-      <h3>2.1 VMess 与 VLESS 协议</h3>
-      <p>详细了解各类协议的技术细节是配置高质量代理服务的基础。V2Ray 作为一个极其灵活的代理框架，支持多种协议组合。其主打的 VMess 协议通过复杂的加密和身份验证机制，提供了极高的安全性。而新推出的 VLESS 协议则是对 VMess 的精简与升级，它去除了冗余的加密环节，极大地降低了服务端的性能开销，同时配合 XTLS 技术，可以实现数据包的“直接回流”，将传输延迟降到最低，被誉为目前最高效的直连方案之一。</p>
-
-      <h2>3. 性能与安全的权衡之道</h2>
-      <p>在选择协议时，我们常常需要在“安全性（抗封锁能力）”和“传输性能（速度与延迟）”之间做出权衡。高强度的加密必然会带来额外的 CPU 计算开销和网络延迟。对于跨国专线（IPLC/IEPL）而言，由于其内网传输的特性，流量本身并不经过公共防火墙的审查，因此可以直接使用轻量级的 Shadowsocks 协议以追求极致的带宽吞吐量。而对于普通的公网直连（BGP/CN2 GIA）节点，为了防范主动探测和阻断，则必须使用带有完整 TLS 伪装的复杂协议。</p>
-
-      <h3>3.1 常见故障：DNS 污染排查</h3>
-      <p>在使用代理软件时，您可能会遇到各种网络故障。最常见的问题之一是“DNS 污染”。当您在浏览器中输入一个被屏蔽的域名时，防火墙会抢先返回一个错误的 IP 地址，导致网页无法访问。现代代理客户端（如 Clash、Surge）通过内置的 DNS 分流规则（Fake-IP 或 Redir-Host 模式），将敏感域名的解析请求通过代理隧道发送到国外的可信 DNS 服务器，从而彻底根除污染问题。理解这一机制，对于排查“节点通畅但部分网页打不开”的故障至关重要。</p>
-
-      <h2>4. 路由分流与高级配置</h2>
-      <p>此外，路由分流规则的合理配置也是提升体验的关键。全局代理不仅会消耗昂贵的代理流量，还会导致访问国内应用（如微信、淘宝）速度极慢。通过使用 GeoIP 数据库和基于域名的规则集（Ruleset），客户端可以精准地将国内流量直连，将国外受限流量走代理隧道。这也就是所谓的“PAC 模式”的现代进化版。熟练掌握这些规则的编写和调优，是成为高级用户的必经之路。</p>
-
-      <blockquote><p><strong>技术洞察：</strong> 未来的代理技术正向着更底层的方向演进。例如基于 WireGuard 的新型 VPN 协议，虽然其本身不具备抗封锁特性，但通过配合前置的混淆插件（Obfs），可以在保证极高传输效率的同时实现隐蔽传输。同时，基于 QUIC（HTTP/3）协议的代理技术（如 Hysteria、TUIC）也正在崛起，它们利用 UDP 协议在恶劣网络环境下的极强抢占能力，能够在大丢包率的跨国链路上实现惊人的速度提升。</p></blockquote>
-
-      <h2>5. 客户端生态全景图</h2>
-      <p>在客户端选择方面，Windows 平台上的 Clash Verge 凭借其优秀的 UI 设计和强大的 Meta 核心（支持 VLESS/Hysteria 等新协议）已经成为绝对的主流。而在 macOS 和 iOS 生态中，Surge 虽然价格高昂，但其提供的网络接管能力和脚本扩展性无可匹敌；对于追求性价比的用户，Shadowrocket（小火箭）和 Quantumult X 则是最佳的替代方案。不同的客户端在底层实现和规则语法上存在差异，但其核心思想——本地监听、规则分流、隧道封装——是完全一致的。</p>
-
-      <p>总结而言，构建一个稳定、高速、安全的科学上网环境，不仅仅是花钱购买一个昂贵的“机场”套餐那么简单。它需要您对底层网络协议有一定的认知，对客户端的规则分流有精准的把控，以及在遇到断流封锁时具备一定的系统排查能力。希望本知识库的系列文章，能够帮助您系统性地掌握这些技能，在数字世界中畅游无阻。请记住，技术是一把双刃剑，在获取信息的同时，也务必注重自身的隐私保护和数据安全。</p>
-
-      <p>通过上述的深度分析，我们可以清楚地看到，技术的迭代是永无止境的。我们需要保持持续学习的态度，才能在这个瞬息万变的网络环境中立于不败之地。感谢您的阅读，希望本文对您有所启发。</p>
-    </article>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-bottom">
-        &copy; 2026 云轨导航. 构建最专业的网络知识体系.
-      </div>
-    </div>
-  </footer>
+  </div>
+</main>
+<footer style="text-align: center; padding: 40px; margin-top: 40px; color: #94a3b8; border-top: 1px solid #e2e8f0;">
+  <p>© 2026 云轨导航. All rights reserved.</p>
+</footer>
 </body>
 </html>
