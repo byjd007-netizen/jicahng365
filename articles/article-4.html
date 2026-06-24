@@ -1,81 +1,310 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apple 设备最佳实践：Shadowrocket 与 QX 对比 - 云轨导航知识库</title>
+  <title>Apple 设备最佳实践：Shadowrocket 与 QX 对比 - 云轨导航</title>
   <link rel="stylesheet" href="../index.css?v=3">
+  <style>
+    .article-body h2 { margin-top: 2.5rem; margin-bottom: 1.2rem; color: #0284c7; border-bottom: 2px solid #e0f2fe; padding-bottom: 0.5rem; }
+    .article-body h3 { margin-top: 1.5rem; margin-bottom: 1rem; color: var(--text-primary); font-size: 1.15rem; }
+    .article-body p { margin-bottom: 1.5rem; line-height: 1.8; color: var(--text-secondary); font-size: 1.05rem; }
+    .article-body ul, .article-body ol { margin-bottom: 1.5rem; padding-left: 1.5rem; color: var(--text-secondary); line-height: 1.8; font-size: 1.05rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body strong { color: var(--text-primary); font-weight: 600; }
+    .article-body .highlight-box { background: #f0f9ff; border-left: 4px solid #0ea5e9; padding: 1.2rem 1.5rem; margin-bottom: 1.5rem; border-radius: 0 8px 8px 0; }
+    .related-links { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+    .related-links a { display: block; margin-bottom: 0.8rem; color: #0ea5e9; text-decoration: none; font-size: 1.05rem; }
+    .related-links a:hover { text-decoration: underline; color: #0284c7; }
+    code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: monospace; color: #0f172a; }
+    table { width: 100%; text-align: left; border-collapse: collapse; margin-bottom: 1.5rem; }
+    th { border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; font-weight: 600; color: var(--text-primary); }
+    td { padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: var(--text-secondary); }
+  </style>
 </head>
-<body>
-  <header class="header">
-    <div class="container">
-      <a href="../index.html" class="logo-container">
-        <span class="logo-text" style="color: var(--accent-primary); font-weight: bold;">云轨导航</span>
-      </a>
-      <nav class="nav-menu">
-        <a href="../index.html" class="nav-link">科普指南首页</a>
-        <a href="../index.html#basics" class="nav-link">新手入门</a>
-        <a href="../index.html#clients" class="nav-link">客户端教程</a>
-        <a href="../index.html#advanced" class="nav-link">协议与进阶</a>
-      </nav>
+<body style="background: #f8fafc;">
+<header class="header">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+    <a href="../index.html" class="logo-container" style="text-decoration: none;"><span class="logo-text" style="font-size: 1.5rem; font-weight: bold; color: var(--accent-primary);">云轨导航</span></a>
+    <nav class="nav-links" style="display: flex; gap: 20px;">
+      <a href="../index.html" style="text-decoration: none; color: var(--text-primary);">首页</a>
+      <a href="../airports.html" style="text-decoration: none; color: var(--text-primary);">机场推荐</a>
+      <a href="../knowledge.html" style="text-decoration: none; color: var(--text-primary);">科普指南</a>
+      <a href="../ranking.html" style="text-decoration: none; color: var(--text-primary);">排行榜</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container" style="padding-top:120px; max-width:850px; margin-bottom:80px; margin-left: auto; margin-right: auto;">
+  <div style="margin-bottom: 25px; font-size: 0.95rem;">
+    <a href="../index.html" style="color: #64748b; text-decoration: none;">首页</a> &gt; 
+    <a href="../knowledge.html" style="color: #64748b; text-decoration: none;">科普指南</a> &gt; 
+    <span style="color: #0ea5e9;">客户端教程</span>
+  </div>
+
+  <div style="text-align: center; margin-bottom: 30px;">
+    <span style="background: #e0f2fe; color: #0ea5e9; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; display: inline-block; margin-bottom: 15px;">客户端教程</span>
+    <h1 style="font-size: 2.2rem; color: var(--text-primary); margin-bottom: 1rem; line-height: 1.4;">Apple 设备最佳实践：Shadowrocket 与 QX 对比</h1>
+    
+    <div style="color: #64748b; font-size: 0.95rem; display: flex; justify-content: center; gap: 20px;">
+      <span>作者: 技术编辑部</span>
+      <span>阅读时长: 约 9 分钟</span>
+      <span>发布于: 2026-06-22</span>
     </div>
-  </header>
+  </div>
 
-  <section class="article-header">
-    <div class="container">
-      <div class="article-meta" style="margin-bottom: 20px;">
-        <span style="background: rgba(14,165,233,0.1); color: var(--accent-primary); padding: 4px 10px; border-radius: 20px;">客户端教程</span>
+  <div class="article-content" style="background: white; padding: 50px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05);">
+    <div class="article-body">
+      <p>在 iOS 生态中，Shadowrocket 与 Quantumult X（简称 QX）是两款非常常见的网络代理工具。</p>
+      <p>很多用户在选择时都会纠结一个问题：</p>
+      
+      <div class="highlight-box">
+        <strong style="display: block; text-align: center; font-size: 1.1rem;">到底是 Shadowrocket 更好用，还是 Quantumult X 更强？</strong>
       </div>
-      <h1>Apple 设备最佳实践：Shadowrocket 与 QX 对比</h1>
-      <div class="article-meta">
-        <span>作者: 技术编辑部</span>
-        <span>阅读时长: 约 9 分钟</span>
-        <span>发布于: 2026-06-22</span>
+      
+      <p>这两款工具虽然功能相似，但在设计理念、规则系统、学习成本以及使用场景上有明显区别。</p>
+      <p>本篇文章将从功能结构、性能表现、规则能力、易用性与适用人群五个维度进行全面对比，帮助你做出更合理的选择。</p>
+
+      <h2>一、Shadowrocket 与 QX 是什么？</h2>
+
+      <h3>1. Shadowrocket（小火箭）</h3>
+      <p>Shadowrocket 是 iOS 平台上最经典的代理工具之一，特点是：</p>
+      <ul>
+        <li>支持多协议节点（SS / VMess / Trojan 等）</li>
+        <li>支持订阅导入</li>
+        <li>支持规则分流</li>
+        <li>界面简洁，易上手</li>
+        <li>稳定性较高</li>
+      </ul>
+      <div class="highlight-box" style="text-align: center;">
+        <strong>本质是一个“轻量级代理控制器”</strong>
       </div>
+
+      <h3>2. Quantumult X（QX）</h3>
+      <p>Quantumult X 是功能更高级的网络工具，特点是：</p>
+      <ul>
+        <li>强大的规则系统（Rewrite / Filter / Policy）</li>
+        <li>支持脚本（JS脚本）</li>
+        <li>支持复杂分流策略</li>
+        <li>可高度自定义</li>
+        <li>学习成本较高</li>
+      </ul>
+      <div class="highlight-box" style="text-align: center;">
+        <strong>本质是“高级网络规则引擎”</strong>
+      </div>
+
+      <h2>二、核心结构对比</h2>
+      <p>我们先看底层逻辑差异：</p>
+
+      <h3>Shadowrocket 结构</h3>
+      <p><strong>应用 -&gt; 代理规则 -&gt; 节点 -&gt; 目标网站</strong></p>
+      <p><strong>特点：</strong>结构简单，规则较直观，适合新手。</p>
+
+      <h3>Quantumult X 结构</h3>
+      <p><strong>应用 -&gt; 复杂规则系统 -&gt; 策略组 -&gt; 脚本处理 -&gt; 节点 -&gt; 目标网站</strong></p>
+      <p><strong>特点：</strong>多层处理，可编程规则，灵活性极高。</p>
+
+      <h2>三、功能对比（核心差异）</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>功能</th>
+            <th>Shadowrocket</th>
+            <th>Quantumult X</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>上手难度</td>
+            <td>简单</td>
+            <td>较复杂</td>
+          </tr>
+          <tr>
+            <td>规则系统</td>
+            <td>基础规则</td>
+            <td>高级规则（Rewrite）</td>
+          </tr>
+          <tr>
+            <td>脚本支持</td>
+            <td>无</td>
+            <td>支持JS脚本</td>
+          </tr>
+          <tr>
+            <td>订阅管理</td>
+            <td>简单清晰</td>
+            <td>高度自定义</td>
+          </tr>
+          <tr>
+            <td>稳定性</td>
+            <td>高</td>
+            <td>高</td>
+          </tr>
+          <tr>
+            <td>可玩性</td>
+            <td>中</td>
+            <td>极高</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>四、易用性对比（新手重点）</h2>
+
+      <h3>Shadowrocket</h3>
+      <p><strong>优点：</strong>界面直观，操作简单，一键导入订阅，不需要复杂配置。<br>
+      <strong>适合人群：</strong>新手 / 日常使用用户。</p>
+
+      <h3>Quantumult X</h3>
+      <p><strong>优点：</strong>功能极其强大，可定制程度高，支持复杂规则。<br>
+      <strong>缺点：</strong>学习成本高，配置复杂，不适合纯小白。<br>
+      <strong>适合人群：</strong>进阶用户 / 技术用户 / 重度使用者。</p>
+
+      <h2>五、规则系统对比（关键区别）</h2>
+
+      <h3>Shadowrocket 规则系统</h3>
+      <p>主要特点：DOMAIN规则、IP规则、简单分流。</p>
+      <p><strong>示例逻辑：</strong>Google -&gt; 代理，国内网站 -&gt; 直连。<br>
+      <strong>评价：</strong>易理解，但功能有限。</p>
+
+      <h3>Quantumult X 规则系统</h3>
+      <p>支持：Rewrite（请求重写）、Filter（过滤）、Script（脚本处理）、Policy Group（策略组）。</p>
+      <p><strong>可以实现：</strong></p>
+      <ul>
+        <li>广告屏蔽</li>
+        <li>高级分流</li>
+        <li>请求修改</li>
+        <li>自动策略切换</li>
+      </ul>
+
+      <h2>六、性能表现对比</h2>
+      <p>很多人误以为工具影响速度，其实：</p>
+      <div class="highlight-box" style="text-align: center;">
+        <strong>工具本身不决定速度，节点质量才是关键</strong>
+      </div>
+      <p>但工具仍然影响体验：</p>
+      <ul>
+        <li><strong>Shadowrocket：</strong>处理流程简单，CPU占用低，启动速度快。</li>
+        <li><strong>Quantumult X：</strong>规则处理多，功能调用多，极端情况下略高耗能。</li>
+      </ul>
+
+      <h2>七、稳定性对比</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>项目</th>
+            <th>Shadowrocket</th>
+            <th>Quantumult X</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>日常稳定性</td>
+            <td>很高</td>
+            <td>很高</td>
+          </tr>
+          <tr>
+            <td>崩溃概率</td>
+            <td>极低</td>
+            <td>低</td>
+          </tr>
+          <tr>
+            <td>复杂规则稳定性</td>
+            <td>一般</td>
+            <td>非常高</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>八、使用场景推荐</h2>
+
+      <h3>适合 Shadowrocket 的人</h3>
+      <ul>
+        <li>刚接触代理工具</li>
+        <li>只需要基础上网</li>
+        <li>不想折腾规则</li>
+        <li>只用订阅节点</li>
+      </ul>
+      <p><strong>一句话总结：</strong>简单稳定就选它。</p>
+
+      <h3>适合 Quantumult X 的人</h3>
+      <ul>
+        <li>想做精细规则</li>
+        <li>需要脚本功能</li>
+        <li>多策略分流用户</li>
+        <li>进阶网络玩家</li>
+      </ul>
+      <p><strong>一句话总结：</strong>想玩深度配置选它。</p>
+
+      <h2>九、为什么很多人最终会换 QX？</h2>
+      <p>主要原因：</p>
+      <ol>
+        <li><strong>可玩性更高：</strong>可以实现广告过滤、精准分流、自动切换策略。</li>
+        <li><strong>扩展能力强：</strong>支持 JS脚本、自定义规则链。</li>
+        <li><strong>长期使用更灵活：</strong>适合复杂网络环境。</li>
+      </ol>
+
+      <h2>十、常见误区（重要）</h2>
+      <div class="highlight-box">
+        <p><strong>误区1：QX一定比小火箭快</strong><br>
+        错误。速度取决于节点，不是工具。</p>
+        <p><strong>误区2：小火箭太弱</strong><br>
+        错误。小火箭只是功能简单，不是性能弱。</p>
+        <p style="margin-bottom: 0;"><strong>误区3：必须用高级工具</strong><br>
+        错误。80% 用户 Shadowrocket 足够。</p>
+      </div>
+
+      <h2>十一、总结</h2>
+      <p>Shadowrocket 与 Quantumult X 的核心区别可以总结为：</p>
+      <table>
+        <thead>
+          <tr>
+            <th>项目</th>
+            <th>Shadowrocket</th>
+            <th>Quantumult X</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>定位</td>
+            <td>简单稳定工具</td>
+            <td>高级规则系统</td>
+          </tr>
+          <tr>
+            <td>难度</td>
+            <td>低</td>
+            <td>高</td>
+          </tr>
+          <tr>
+            <td>灵活性</td>
+            <td>中</td>
+            <td>极高</td>
+          </tr>
+          <tr>
+            <td>推荐人群</td>
+            <td>新手</td>
+            <td>进阶用户</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="highlight-box">
+        <strong style="display: block; text-align: center;">最终建议：如果你是普通用户选 Shadowrocket，如果你想深度配置选 Quantumult X。</strong>
+      </div>
+
+      <div class="related-links">
+        <h3 style="margin-bottom: 1rem;">相关阅读推荐</h3>
+        <a href="tutorial-ios.html">Shadowrocket iOS配置教程</a>
+        <a href="tutorial-win.html">Clash Verge Windows使用指南</a>
+        <a href="tutorial-and.html">v2rayNG安卓教程</a>
+        <a href="beginner-1.html">机场订阅是什么意思？</a>
+        <a href="article-1.html">节点测速方法详解</a>
+        <a href="../airports.html">稳定机场推荐合集</a>
+      </div>
+
     </div>
-  </section>
-
-  <main class="container article-content">
-    <article class="article-body">
-      <p class='highlight-box'><strong>导读：</strong> 本文档旨在为您提供最详实、最前沿的技术剖析。我们将从基础概念入手，逐步深入到高级配置与排错，帮助您全面掌握这一领域的核心知识。</p>
-      
-      <h2>1. 破网机制的底层逻辑</h2>
-      <p>在当今复杂多变的网络环境中，突破网络限制、获取全球信息已成为许多人的刚需。随着防火墙技术的不断升级，传统的 VPN 协议（如 PPTP、L2TP/IPsec）因其明显的流量特征而逐渐被淘汰。取而代之的是一系列以“流量伪装”和“加密传输”为核心的新一代代理协议。本文将全面剖析这些技术的底层逻辑，帮助您在面对琳琅满目的服务节点时，能够做出最理性的判断。</p>
-      
-      <p>首先我们需要理解，任何数据在互联网上的传输，本质上都是数据包的路由转发。传统的防火墙通过深度包检测（Deep Packet Inspection, DPI）技术，可以轻易识别出未经伪装的代理流量特征。一旦特征被匹配，该连接就会被阻断，甚至导致服务器 IP 被封锁。因此，现代代理协议的核心诉求是将代理流量伪装成正常的 HTTP/HTTPS 网页浏览流量，或者通过复杂的加密算法使其表现为完全随机的噪声，从而规避 DPI 系统的识别。</p>
-
-      <h2>2. 核心代理协议的发展史</h2>
-      <p>在具体实现上，不同的协议采取了不同的策略。例如，Shadowsocks 采用的是全流量加密，它放弃了传统的握手过程，直接发送加密后的负载数据，这在早期非常有效。然而，随着机器学习算法在防火墙中的应用，纯随机的数据流也逐渐成为一种明显的特征。这就是为什么后来发展出了基于 TLS（传输层安全协议）的代理方案，如 Trojan 和 V2Ray 的 VMess/VLESS 协议。它们将代理数据封装在标准的 TLS 隧道中，从外部观测，这与您访问任何一个普通的加密 HTTPS 网站毫无二致。</p>
-      
-      <h3>2.1 VMess 与 VLESS 协议</h3>
-      <p>详细了解各类协议的技术细节是配置高质量代理服务的基础。V2Ray 作为一个极其灵活的代理框架，支持多种协议组合。其主打的 VMess 协议通过复杂的加密和身份验证机制，提供了极高的安全性。而新推出的 VLESS 协议则是对 VMess 的精简与升级，它去除了冗余的加密环节，极大地降低了服务端的性能开销，同时配合 XTLS 技术，可以实现数据包的“直接回流”，将传输延迟降到最低，被誉为目前最高效的直连方案之一。</p>
-
-      <h2>3. 性能与安全的权衡之道</h2>
-      <p>在选择协议时，我们常常需要在“安全性（抗封锁能力）”和“传输性能（速度与延迟）”之间做出权衡。高强度的加密必然会带来额外的 CPU 计算开销和网络延迟。对于跨国专线（IPLC/IEPL）而言，由于其内网传输的特性，流量本身并不经过公共防火墙的审查，因此可以直接使用轻量级的 Shadowsocks 协议以追求极致的带宽吞吐量。而对于普通的公网直连（BGP/CN2 GIA）节点，为了防范主动探测和阻断，则必须使用带有完整 TLS 伪装的复杂协议。</p>
-
-      <h3>3.1 常见故障：DNS 污染排查</h3>
-      <p>在使用代理软件时，您可能会遇到各种网络故障。最常见的问题之一是“DNS 污染”。当您在浏览器中输入一个被屏蔽的域名时，防火墙会抢先返回一个错误的 IP 地址，导致网页无法访问。现代代理客户端（如 Clash、Surge）通过内置的 DNS 分流规则（Fake-IP 或 Redir-Host 模式），将敏感域名的解析请求通过代理隧道发送到国外的可信 DNS 服务器，从而彻底根除污染问题。理解这一机制，对于排查“节点通畅但部分网页打不开”的故障至关重要。</p>
-
-      <h2>4. 路由分流与高级配置</h2>
-      <p>此外，路由分流规则的合理配置也是提升体验的关键。全局代理不仅会消耗昂贵的代理流量，还会导致访问国内应用（如微信、淘宝）速度极慢。通过使用 GeoIP 数据库和基于域名的规则集（Ruleset），客户端可以精准地将国内流量直连，将国外受限流量走代理隧道。这也就是所谓的“PAC 模式”的现代进化版。熟练掌握这些规则的编写和调优，是成为高级用户的必经之路。</p>
-
-      <blockquote><p><strong>技术洞察：</strong> 未来的代理技术正向着更底层的方向演进。例如基于 WireGuard 的新型 VPN 协议，虽然其本身不具备抗封锁特性，但通过配合前置的混淆插件（Obfs），可以在保证极高传输效率的同时实现隐蔽传输。同时，基于 QUIC（HTTP/3）协议的代理技术（如 Hysteria、TUIC）也正在崛起，它们利用 UDP 协议在恶劣网络环境下的极强抢占能力，能够在大丢包率的跨国链路上实现惊人的速度提升。</p></blockquote>
-
-      <h2>5. 客户端生态全景图</h2>
-      <p>在客户端选择方面，Windows 平台上的 Clash Verge 凭借其优秀的 UI 设计和强大的 Meta 核心（支持 VLESS/Hysteria 等新协议）已经成为绝对的主流。而在 macOS 和 iOS 生态中，Surge 虽然价格高昂，但其提供的网络接管能力和脚本扩展性无可匹敌；对于追求性价比的用户，Shadowrocket（小火箭）和 Quantumult X 则是最佳的替代方案。不同的客户端在底层实现和规则语法上存在差异，但其核心思想——本地监听、规则分流、隧道封装——是完全一致的。</p>
-
-      <p>总结而言，构建一个稳定、高速、安全的科学上网环境，不仅仅是花钱购买一个昂贵的“机场”套餐那么简单。它需要您对底层网络协议有一定的认知，对客户端的规则分流有精准的把控，以及在遇到断流封锁时具备一定的系统排查能力。希望本知识库的系列文章，能够帮助您系统性地掌握这些技能，在数字世界中畅游无阻。请记住，技术是一把双刃剑，在获取信息的同时，也务必注重自身的隐私保护和数据安全。</p>
-
-      <p>通过上述的深度分析，我们可以清楚地看到，技术的迭代是永无止境的。我们需要保持持续学习的态度，才能在这个瞬息万变的网络环境中立于不败之地。感谢您的阅读，希望本文对您有所启发。</p>
-    </article>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-bottom">
-        &copy; 2026 云轨导航. 构建最专业的网络知识体系.
-      </div>
-    </div>
-  </footer>
+  </div>
+</main>
+<footer style="text-align: center; padding: 40px; margin-top: 40px; color: #94a3b8; border-top: 1px solid #e2e8f0;">
+  <p>© 2026 云轨导航. All rights reserved.</p>
+</footer>
 </body>
 </html>
