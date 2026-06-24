@@ -4,240 +4,247 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>流媒体解锁解析：Netflix/Disney+ 跨区攻略 - 云轨导航</title>
-  <link rel="stylesheet" href="../index.css?v=3">
-  <style>
-    .article-body h2 { margin-top: 2.5rem; margin-bottom: 1.2rem; color: #0284c7; border-bottom: 2px solid #e0f2fe; padding-bottom: 0.5rem; }
-    .article-body h3 { margin-top: 1.5rem; margin-bottom: 1rem; color: var(--text-primary); font-size: 1.15rem; }
-    .article-body p { margin-bottom: 1.5rem; line-height: 1.8; color: var(--text-secondary); font-size: 1.05rem; }
-    .article-body ul, .article-body ol { margin-bottom: 1.5rem; padding-left: 1.5rem; color: var(--text-secondary); line-height: 1.8; font-size: 1.05rem; }
-    .article-body li { margin-bottom: 0.5rem; }
-    .article-body strong { color: var(--text-primary); font-weight: 600; }
-    .article-body .highlight-box { background: #f0f9ff; border-left: 4px solid #0ea5e9; padding: 1.2rem 1.5rem; margin-bottom: 1.5rem; border-radius: 0 8px 8px 0; }
-    .related-links { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
-    .related-links a { display: block; margin-bottom: 0.8rem; color: #0ea5e9; text-decoration: none; font-size: 1.05rem; }
-    .related-links a:hover { text-decoration: underline; color: #0284c7; }
-    code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: monospace; color: #0f172a; }
-    table { width: 100%; text-align: left; border-collapse: collapse; margin-bottom: 1.5rem; }
-    th { border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; font-weight: 600; color: var(--text-primary); }
-    td { padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: var(--text-secondary); }
-  </style>
+  <link rel="stylesheet" href="../index.css?v=6">
 </head>
-<body style="background: #f8fafc;">
+<body class="article-page">
 <header class="header">
   <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-    <a href="../index.html" class="logo-container" style="text-decoration: none;"><span class="logo-text" style="font-size: 1.5rem; font-weight: bold; color: var(--accent-primary);">云轨导航</span></a>
+    <a href="../index.html" class="logo-container" style="text-decoration: none;">
+      <span class="logo-text" style="font-size: 1.5rem; font-weight: bold; color: var(--accent-primary);">云轨导航</span>
+    </a>
     <nav class="nav-links" style="display: flex; gap: 20px;">
       <a href="../index.html" style="text-decoration: none; color: var(--text-primary);">首页</a>
       <a href="../airports.html" style="text-decoration: none; color: var(--text-primary);">机场推荐</a>
-      <a href="../knowledge.html" style="text-decoration: none; color: var(--text-primary);">科普指南</a>
+      <a href="../knowledge.html" style="text-decoration: none; color: var(--text-primary); font-weight: bold;">科普指南</a>
       <a href="../ranking.html" style="text-decoration: none; color: var(--text-primary);">排行榜</a>
     </nav>
   </div>
 </header>
 
-<main class="container" style="padding-top:120px; max-width:850px; margin-bottom:80px; margin-left: auto; margin-right: auto;">
-  <div style="margin-bottom: 25px; font-size: 0.95rem;">
-    <a href="../index.html" style="color: #64748b; text-decoration: none;">首页</a> &gt; 
-    <a href="../knowledge.html" style="color: #64748b; text-decoration: none;">科普指南</a> &gt; 
-    <span style="color: #0ea5e9;">协议与进阶</span>
-  </div>
-
-  <div style="text-align: center; margin-bottom: 30px;">
-    <span style="background: #e0f2fe; color: #0ea5e9; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; display: inline-block; margin-bottom: 15px;">协议与进阶</span>
-    <h1 style="font-size: 2.2rem; color: var(--text-primary); margin-bottom: 1rem; line-height: 1.4;">流媒体解锁解析：Netflix/Disney+ 跨区攻略</h1>
-    
-    <div style="color: #64748b; font-size: 0.95rem; display: flex; justify-content: center; gap: 20px;">
-      <span>作者: 技术编辑部</span>
-      <span>阅读时长: 约 8 分钟</span>
-      <span>发布于: 2026-06-22</span>
+<div class="article-layout-container">
+    <aside class="sidebar-left">
+    <!-- TOC Widget -->
+    <div class="widget toc-widget">
+        <h3 class="widget-title">文章目录</h3>
+        <nav id="toc" class="toc-nav"></nav>
     </div>
-  </div>
 
-  <div class="article-content" style="background: white; padding: 50px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05);">
-    <div class="article-body">
-      <p>在全球流媒体平台中，Netflix 和 Disney+ 是最受欢迎的两大内容服务平台，但很多用户在使用过程中会发现一个明显问题：</p>
-      
-      <div class="highlight-box">
-        <strong style="display: block; text-align: center; font-size: 1.1rem;">同一个账号，在不同地区看到的内容完全不同</strong>
-      </div>
-      
-      <p>例如：</p>
-      <ul>
-        <li>美国 Netflix 内容最丰富</li>
-        <li>日本 Netflix 动漫较多</li>
-        <li>Disney+ 在不同地区上线内容差异明显</li>
-      </ul>
-      <p>这就是所谓的：<strong>“流媒体跨区差异（Region Library Difference）”</strong></p>
-      <p>本篇文章将从内容库机制、地区差异、解锁原理、选择策略与使用建议五个方面进行全面解析。</p>
-
-      <h2>一、什么是“流媒体跨区”？</h2>
-      <p>流媒体平台并不是全球统一内容，而是根据用户所在地区提供不同内容库。</p>
-      <div class="highlight-box" style="text-align: center;">
-        <strong>核心逻辑：用户所在地区 -&gt; 识别IP -&gt; 分配内容库 -&gt; 展示不同影视内容</strong>
-      </div>
-
-      <h3>举例说明：</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>地区</th>
-            <th>Netflix内容特点</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>美国</td>
-            <td>电影最多、更新最快</td>
-          </tr>
-          <tr>
-            <td>日本</td>
-            <td>动漫资源丰富</td>
-          </tr>
-          <tr>
-            <td>韩国</td>
-            <td>韩剧独占内容</td>
-          </tr>
-          <tr>
-            <td>欧洲</td>
-            <td>版权电影较多</td>
-          </tr>
-        </tbody>
-      </table>
-      <p><strong>结论：</strong>你看到的内容，并不是“Netflix全部内容”，而只是“该地区版本”。</p>
-
-      <h2>二、为什么会有地区限制？</h2>
-      <p>主要原因是：</p>
-
-      <h3>1. 版权问题</h3>
-      <p>影视内容通常是按地区授权的，例如某部电影只在美国上映，某些动漫只授权日本地区。</p>
-
-      <h3>2. 商业分发策略</h3>
-      <p>平台会根据不同市场调整内容推荐、控制版权成本、分区运营。</p>
-
-      <h3>3. 法律合规要求</h3>
-      <p>不同国家对流媒体内容有不同监管要求。</p>
-
-      <h2>三、Netflix 各地区内容差异解析</h2>
-      <p>Netflix 是差异最明显的平台之一。</p>
-
-      <h3>美国区（US）</h3>
-      <p><strong>特点：</strong>电影最多、更新最快、原创内容优先上线。<br>
-      <strong>适合：</strong>电影爱好者 / 美剧用户</p>
-
-      <h3>日本区（JP）</h3>
-      <p><strong>特点：</strong>动漫资源丰富、日剧更新快、独家动画较多。<br>
-      <strong>适合：</strong>二次元用户</p>
-
-      <h3>英国区（UK）</h3>
-      <p><strong>特点：</strong>纪录片丰富、BBC内容较多。</p>
-
-      <h3>香港/新加坡区</h3>
-      <p><strong>特点：</strong>亚洲内容较均衡、字幕支持较好。</p>
-
-      <h2>四、Disney+ 内容特点</h2>
-      <p>Disney+ 相对 Netflix 更“集中化”，但也存在地区差异。</p>
-
-      <h3>美国 Disney+</h3>
-      <p><strong>内容最完整：</strong>Marvel 系列、Star Wars 全系列、Pixar 动画、National Geographic。</p>
-
-      <h3>亚洲地区 Disney+</h3>
-      <p><strong>特点：</strong>内容相对少、部分影片延迟上线、本地化内容增加。</p>
-
-      <h2>五、跨区差异的本质是什么？</h2>
-      <p>核心只有一句话：</p>
-      <div class="highlight-box" style="text-align: center;">
-        <strong>内容是“按地区授权分发”，不是统一数据库</strong>
-      </div>
-      <p><strong>技术层结构：</strong>平台服务器 -&gt; 判断IP地区 -&gt; 返回对应内容库</p>
-
-      <h2>六、为什么同一个账号内容不一样？</h2>
-      <p>即使你登录同一个账号：</p>
-      <ul>
-        <li>美国IP -&gt; 美国库</li>
-        <li>日本IP -&gt; 日本库</li>
-        <li>香港IP -&gt; 亚洲库</li>
-      </ul>
-      <p><strong>结论：</strong>决定因素是“网络出口位置”，而不是账号本身。</p>
-
-      <h2>七、如何选择最佳地区？</h2>
-      <p>不同用户适合不同地区：</p>
-      <ul>
-        <li><strong>电影用户：</strong>推荐 美国区</li>
-        <li><strong>动漫用户：</strong>推荐 日本区</li>
-        <li><strong>综合用户：</strong>推荐 新加坡 / 香港区</li>
-        <li><strong>家庭用户：</strong>推荐 本地区（稳定性优先）</li>
-      </ul>
-
-      <h2>八、影响观看体验的核心因素</h2>
-      <p>很多人误以为：“地区决定体验好坏”。实际上影响因素有4个：</p>
-
-      <h3>1. 内容库（最重要）</h3>
-      <p>不同地区内容差异最大。</p>
-
-      <h3>2. 网络延迟</h3>
-      <p>延迟影响视频加载速度和清晰度切换。</p>
-
-      <h3>3. 带宽质量</h3>
-      <p>影响是否卡顿、是否缓冲。</p>
-
-      <h3>4. CDN分布</h3>
-      <p>流媒体平台会使用全球节点分发内容。</p>
-
-      <h2>九、为什么有时候会“打不开或卡顿”？</h2>
-      <p>常见原因：</p>
-      <ol>
-        <li><strong>当前网络出口拥堵：</strong>高峰期容易卡顿。</li>
-        <li><strong>节点地区不匹配：</strong>比如访问美国内容但出口在亚洲。</li>
-        <li><strong>CDN调度问题：</strong>平台自动分配线路不稳定。</li>
-      </ol>
-
-      <h2>十、流媒体优化建议（重点）</h2>
-      <div class="highlight-box">
-        <strong style="display: block; margin-bottom: 10px;">为了更好的观看体验，可以注意以下几点：</strong>
-        <ul>
-          <li><strong>选择稳定线路：</strong>优先低延迟、稳定性高的网络出口。</li>
-          <li><strong>固定地区使用：</strong>避免频繁切换地区。</li>
-          <li><strong>使用匹配区域：</strong>看美国内容用美国线路，看动漫用日本线路。</li>
-          <li><strong>避免高峰时段：</strong>晚上 8-11 点是高峰期。</li>
+    <!-- Beginner Guide Widget -->
+    <div class="widget guide-widget">
+        <div class="guide-header">
+            <span class="guide-icon">🚀</span>
+            <div>
+                <h3 class="widget-title" style="margin:0; border:none; padding:0;">新手入门指南</h3>
+                <span class="guide-sub">从零开始教你科学上网</span>
+            </div>
+        </div>
+        <ul class="guide-list">
+            <li><a href="beginner-1.html">机场如何选择</a></li>
+            <li><a href="tutorial-win.html">客户端安装教程</a></li>
+            <li><a href="beginner-3.html">订阅配置方法</a></li>
+            <li><a href="beginner-2.html">常见问题解决</a></li>
         </ul>
-      </div>
-
-      <h2>十一、常见问题（FAQ）</h2>
-      <p><strong>Q1：为什么 Netflix 内容和朋友不一样？</strong><br>
-      因为地区库不同。</p>
-
-      <p><strong>Q2：为什么同一个账号内容不同？</strong><br>
-      因为IP所在地区不同。</p>
-
-      <p><strong>Q3：为什么有些影片搜不到？</strong><br>
-      版权未在该地区开放。</p>
-
-      <p><strong>Q4：Disney+ 为什么内容少？</strong><br>
-      区域内容库限制。</p>
-
-      <h2>十二、总结</h2>
-      <p>流媒体跨区的本质是：“内容按地区分发，而不是全球统一”。</p>
-      <p>Netflix 和 Disney+ 的差异主要来自版权限制、地区策略和内容分发机制。</p>
-      
-      <div class="highlight-box">
-        <strong style="display: block; text-align: center;">最核心结论：美国区 = 内容最全，日本区 = 动漫最多，亚洲区 = 稳定均衡。</strong>
-      </div>
-
-      <div class="related-links">
-        <h3 style="margin-bottom: 1rem;">相关阅读推荐</h3>
-        <a href="tutorial-ios.html">Shadowrocket iOS配置教程</a>
-        <a href="tutorial-win.html">Clash Verge Windows使用指南</a>
-        <a href="tutorial-and.html">v2rayNG安卓教程</a>
-        <a href="beginner-1.html">机场订阅是什么意思？</a>
-        <a href="article-1.html">节点测速方法详解</a>
-        <a href="../airports.html">稳定机场推荐合集</a>
-      </div>
-
+        <a href="beginner-1.html" class="widget-btn">立即查看 →</a>
     </div>
-  </div>
-</main>
-<footer style="text-align: center; padding: 40px; margin-top: 40px; color: #94a3b8; border-top: 1px solid #e2e8f0;">
+
+    <!-- Hot Articles Widget -->
+    <div class="widget hot-widget">
+        <h3 class="widget-title">热门文章</h3>
+        <ul class="hot-list">
+            <li><span class="hot-rank top-1">1</span><a href="../airports.html">2026年稳定机场推荐 TOP10</a></li>
+            <li><span class="hot-rank top-2">2</span><a href="tutorial-win.html">Clash 使用教程（Windows）</a></li>
+            <li><span class="hot-rank top-3">3</span><a href="tutorial-ios.html">Shadowrocket 配置教程 (iOS)</a></li>
+            <li><span class="hot-rank">4</span><a href="article-1.html">节点延迟高怎么办？原因与解决方法</a></li>
+            <li><span class="hot-rank">5</span><a href="article-5.html">Netflix/Disney+ 跨区解锁攻略</a></li>
+        </ul>
+    </div>
+</aside>
+
+    
+    <main class="main-content">
+        <div class="breadcrumbs">
+            <a href="../index.html">首页</a> &gt; <a href="../knowledge.html">科普指南</a> &gt; <span>科普指南</span> &gt; <span class="current">__H1_TITLE__</span>
+        </div>
+        
+        <article class="article-box">
+            <header class="article-header">
+                <h1 class="article-title">__H1_TITLE__</h1>
+                <div class="article-meta">
+                    <span>作者: 技术编辑部</span>
+                    <span>阅读时长: 约 10 分钟</span>
+                    <span>发布于: 2026-06-22</span>
+                    <span>更新于: 2026-06-22</span>
+                </div>
+                <div class="article-tags">
+                    <span class="tag">科普指南</span>
+                    <span class="tag">科学上网</span>
+                    <span class="tag">网络科普</span>
+                    <span class="views" style="margin-left:auto; color:#64748b; font-size:0.9rem;">阅读量: 12.5k 👁️</span>
+                </div>
+            </header>
+            
+            <div class="article-intro">
+                在现代网络环境中，“代理”已成为连接全球互联网的重要技术手段。了解代理的原理与常见协议，是提升网络体验的关键一步。
+            </div>
+            
+            <div class="article-body" id="articleBody">
+<p>姝ｆ枃鍐呭鍔犺浇澶辫触銆?/p>
+            </div>
+        </article>
+    </main>
+
+    <aside class="sidebar-right">
+    <!-- Article Info Widget -->
+    <div class="widget info-widget">
+        <h3 class="widget-title">文章信息</h3>
+        <div class="info-item">
+            <span class="info-icon">📄</span>
+            <div>
+                <div class="info-label">文章分类</div>
+                <div class="info-val">科普指南</div>
+            </div>
+        </div>
+        <div class="info-item">
+            <span class="info-icon">⏱️</span>
+            <div>
+                <div class="info-label">阅读时长</div>
+                <div class="info-val">约 10 分钟</div>
+            </div>
+        </div>
+        <div class="info-item">
+            <span class="info-icon">📝</span>
+            <div>
+                <div class="info-label">字数统计</div>
+                <div class="info-val">约 3200 字</div>
+            </div>
+        </div>
+        <div class="info-item">
+            <span class="info-icon">🕒</span>
+            <div>
+                <div class="info-label">最后更新</div>
+                <div class="info-val">2026-06-22</div>
+            </div>
+        </div>
+        
+        <div class="share-box">
+            <div class="info-label" style="margin-bottom:8px;">分享这篇文章</div>
+            <div class="share-icons">
+                <a href="#" class="share-icon wx">W</a>
+                <a href="#" class="share-icon tg">T</a>
+                <a href="#" class="share-icon tw">X</a>
+                <a href="#" class="share-icon cp">C</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Recommendations Widget -->
+    <div class="widget related-widget">
+        <h3 class="widget-title">相关推荐</h3>
+        <div class="related-cards">
+            <a href="article-4.html" class="rel-card">
+                <div class="rel-icon" style="background:#1e293b;">E</div>
+                <div class="rel-text">
+                    <div class="rel-title">代理协议深度对比</div>
+                    <div class="rel-read">阅读 8.7k</div>
+                </div>
+            </a>
+            <a href="tutorial-win.html" class="rel-card">
+                <div class="rel-icon" style="background:#0284c7;">C</div>
+                <div class="rel-text">
+                    <div class="rel-title">Clash 核心规则详解</div>
+                    <div class="rel-read">阅读 6.2k</div>
+                </div>
+            </a>
+            <a href="tutorial-and.html" class="rel-card">
+                <div class="rel-icon" style="background:#0ea5e9;">V</div>
+                <div class="rel-text">
+                    <div class="rel-title">v2rayNG 入门教程</div>
+                    <div class="rel-read">阅读 5.1k</div>
+                </div>
+            </a>
+            <a href="article-10.html" class="rel-card">
+                <div class="rel-icon" style="background:#dc2626;">W</div>
+                <div class="rel-text">
+                    <div class="rel-title">WireGuard 协议优势分析</div>
+                    <div class="rel-read">阅读 4.3k</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Premium Airport Widget -->
+    <div class="widget premium-widget">
+        <div class="premium-header">
+            <span class="premium-icon">👑</span>
+            <div>
+                <h3 class="widget-title" style="margin:0; border:none; padding:0;">优质机场推荐</h3>
+                <span class="premium-sub">高速稳定，安全可靠</span>
+            </div>
+        </div>
+        <ul class="premium-list">
+            <li>全球节点覆盖</li>
+            <li>支持多种协议</li>
+            <li>7x24小时服务</li>
+        </ul>
+        <a href="../airports.html" class="widget-btn primary">查看推荐 →</a>
+    </div>
+</aside>
+
+</div>
+
+<footer style="text-align: center; padding: 40px; margin-top: 40px; color: #94a3b8; border-top: 1px solid #e2e8f0; grid-column: 1 / -1;">
   <p>© 2026 云轨导航. All rights reserved.</p>
 </footer>
+
+<script>
+// Dynamic TOC Generation
+document.addEventListener("DOMContentLoaded", function() {
+    const articleBody = document.getElementById('articleBody');
+    const tocNav = document.getElementById('toc');
+    if(!articleBody || !tocNav) return;
+    
+    const headers = articleBody.querySelectorAll('h2, h3');
+    if(headers.length === 0) return;
+    
+    const ul = document.createElement('ul');
+    ul.className = 'toc-list';
+    
+    headers.forEach((header, index) => {
+        const id = 'heading-' + index;
+        header.id = id;
+        
+        const li = document.createElement('li');
+        li.className = header.tagName.toLowerCase() === 'h2' ? 'toc-h2' : 'toc-h3';
+        
+        const a = document.createElement('a');
+        a.href = '#' + id;
+        a.textContent = header.textContent;
+        
+        li.appendChild(a);
+        ul.appendChild(li);
+    });
+    
+    tocNav.appendChild(ul);
+    
+    // Highlight active TOC item on scroll
+    const tocLinks = tocNav.querySelectorAll('a');
+    window.addEventListener('scroll', () => {
+        let currentId = '';
+        headers.forEach(header => {
+            const rect = header.getBoundingClientRect();
+            if(rect.top <= 100) {
+                currentId = header.id;
+            }
+        });
+        
+        tocLinks.forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === '#' + currentId) {
+                link.classList.add('active');
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>

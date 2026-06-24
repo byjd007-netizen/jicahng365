@@ -4,31 +4,247 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>全网测速工具与评测网站汇总 - 云轨导航</title>
-  <link rel="stylesheet" href="../index.css">
-  <style>.article-body p {margin-bottom:2rem; line-height:1.9;}</style>
+  <link rel="stylesheet" href="../index.css?v=6">
 </head>
-<body>
-<header class="header"><div class="container"><a href="../index.html" class="logo-container"><span class="logo-text">云轨导航</span></a></div></header>
-<main class="container" style="padding-top:100px; max-width:800px; margin-bottom:80px;">
-<h1>📊 全网测速工具与评测网站汇总</h1>
-<div class="article-content"><div class="article-body">
-<p>对于代理用户来说，节点的真实速度是决定使用体验的关键因素。市面上涌现了大量测速工具与评测平台，如何挑选可靠且具备高可视化的工具，成为新手常见的难点。</p>
-<h2>1️⃣ 主流在线测速平台</h2>
-<p><strong>Speedtest by Ookla</strong> 是全球用户最熟悉的测速站点，提供节点到多地区的延迟、带宽、丢包等多维度指标。国内用户在大陆网络环境下使用时，需要选择 <em>Speedtest.net</em> 的亚洲节点，以免因跨境网络导致误判。</p>
-<p><strong>Fast.com</strong> 由 Netflix 提供，专注于下行带宽的测算，界面极简，适合快速了解真实下载速度。</p>
-<h2>2️⃣ 专业代理测速客户端</h2>
-<p>部分客户端内置测速模块，如 <strong>Clash for Android</strong>、<strong>Clash Verge</strong> 等，可以直接对当前订阅中的每个节点执行速度测算，结果以毫秒和 Mbps 同时展示，便于快速筛选。</p>
-<h2>3️⃣ 第三方评测频道</h2>
-<p>国内外社区中活跃的评测频道，如 <strong>毒药测速</strong>、<strong>极速社</strong>、<strong>AirPort</strong> 等，会定期发布节点测评视频，提供直观的画面展示和对比。关注这些频道可以获得实测的节点质量报告，尤其对新上线的机场有参考价值。</p>
-<h2>4️⃣ 自建测速脚本</h2>
-<p>高级用户可以使用 <code>speedtest-cli</code>（Python）或 <code>fast.com-cli</code>（Node）自行编写脚本，对选定节点进行多次测量并取平均值。常见的做法是结合 <code>ping</code>、<code>traceroute</code> 与 <code>curl</code> 下载测试文件，形成完整的延迟‑带宽‑丢包报告。</p>
-<h2>5️⃣ 如何解读测试结果</h2>
-<p>- <strong>延迟（RTT）</strong>：对实时交互类业务（游戏、视频会议）至关重要，建议保持在 80ms 以下。</p>
-<p>- <strong>带宽（Mbps）</strong>：影响下载/观看高清视频，建议选择 30Mbps 以上的节点。</p>
-<p>- <strong>丢包率</strong>：任何明显的丢包都会导致卡顿，理想状态是 <1%。</p>
-<p>综合三个维度，您可以给每个节点打分，选出最适合自己使用场景的线路。</p>
-<p>通过以上内容，您可以快速搭建自己的测速体系，精准评估每个节点的性能，从而在实际使用中获得更流畅的网络体验。</p>
-</div></div>
-</main>
+<body class="article-page">
+<header class="header">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+    <a href="../index.html" class="logo-container" style="text-decoration: none;">
+      <span class="logo-text" style="font-size: 1.5rem; font-weight: bold; color: var(--accent-primary);">云轨导航</span>
+    </a>
+    <nav class="nav-links" style="display: flex; gap: 20px;">
+      <a href="../index.html" style="text-decoration: none; color: var(--text-primary);">首页</a>
+      <a href="../airports.html" style="text-decoration: none; color: var(--text-primary);">机场推荐</a>
+      <a href="../knowledge.html" style="text-decoration: none; color: var(--text-primary); font-weight: bold;">科普指南</a>
+      <a href="../ranking.html" style="text-decoration: none; color: var(--text-primary);">排行榜</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-layout-container">
+    <aside class="sidebar-left">
+    <!-- TOC Widget -->
+    <div class="widget toc-widget">
+        <h3 class="widget-title">文章目录</h3>
+        <nav id="toc" class="toc-nav"></nav>
+    </div>
+
+    <!-- Beginner Guide Widget -->
+    <div class="widget guide-widget">
+        <div class="guide-header">
+            <span class="guide-icon">🚀</span>
+            <div>
+                <h3 class="widget-title" style="margin:0; border:none; padding:0;">新手入门指南</h3>
+                <span class="guide-sub">从零开始教你科学上网</span>
+            </div>
+        </div>
+        <ul class="guide-list">
+            <li><a href="beginner-1.html">机场如何选择</a></li>
+            <li><a href="tutorial-win.html">客户端安装教程</a></li>
+            <li><a href="beginner-3.html">订阅配置方法</a></li>
+            <li><a href="beginner-2.html">常见问题解决</a></li>
+        </ul>
+        <a href="beginner-1.html" class="widget-btn">立即查看 →</a>
+    </div>
+
+    <!-- Hot Articles Widget -->
+    <div class="widget hot-widget">
+        <h3 class="widget-title">热门文章</h3>
+        <ul class="hot-list">
+            <li><span class="hot-rank top-1">1</span><a href="../airports.html">2026年稳定机场推荐 TOP10</a></li>
+            <li><span class="hot-rank top-2">2</span><a href="tutorial-win.html">Clash 使用教程（Windows）</a></li>
+            <li><span class="hot-rank top-3">3</span><a href="tutorial-ios.html">Shadowrocket 配置教程 (iOS)</a></li>
+            <li><span class="hot-rank">4</span><a href="article-1.html">节点延迟高怎么办？原因与解决方法</a></li>
+            <li><span class="hot-rank">5</span><a href="article-5.html">Netflix/Disney+ 跨区解锁攻略</a></li>
+        </ul>
+    </div>
+</aside>
+
+    
+    <main class="main-content">
+        <div class="breadcrumbs">
+            <a href="../index.html">首页</a> &gt; <a href="../knowledge.html">科普指南</a> &gt; <span>科普指南</span> &gt; <span class="current">__H1_TITLE__</span>
+        </div>
+        
+        <article class="article-box">
+            <header class="article-header">
+                <h1 class="article-title">__H1_TITLE__</h1>
+                <div class="article-meta">
+                    <span>作者: 技术编辑部</span>
+                    <span>阅读时长: 约 10 分钟</span>
+                    <span>发布于: 2026-06-22</span>
+                    <span>更新于: 2026-06-22</span>
+                </div>
+                <div class="article-tags">
+                    <span class="tag">科普指南</span>
+                    <span class="tag">科学上网</span>
+                    <span class="tag">网络科普</span>
+                    <span class="views" style="margin-left:auto; color:#64748b; font-size:0.9rem;">阅读量: 12.5k 👁️</span>
+                </div>
+            </header>
+            
+            <div class="article-intro">
+                在现代网络环境中，“代理”已成为连接全球互联网的重要技术手段。了解代理的原理与常见协议，是提升网络体验的关键一步。
+            </div>
+            
+            <div class="article-body" id="articleBody">
+<p>姝ｆ枃鍐呭鍔犺浇澶辫触銆?/p>
+            </div>
+        </article>
+    </main>
+
+    <aside class="sidebar-right">
+    <!-- Article Info Widget -->
+    <div class="widget info-widget">
+        <h3 class="widget-title">文章信息</h3>
+        <div class="info-item">
+            <span class="info-icon">📄</span>
+            <div>
+                <div class="info-label">文章分类</div>
+                <div class="info-val">科普指南</div>
+            </div>
+        </div>
+        <div class="info-item">
+            <span class="info-icon">⏱️</span>
+            <div>
+                <div class="info-label">阅读时长</div>
+                <div class="info-val">约 10 分钟</div>
+            </div>
+        </div>
+        <div class="info-item">
+            <span class="info-icon">📝</span>
+            <div>
+                <div class="info-label">字数统计</div>
+                <div class="info-val">约 3200 字</div>
+            </div>
+        </div>
+        <div class="info-item">
+            <span class="info-icon">🕒</span>
+            <div>
+                <div class="info-label">最后更新</div>
+                <div class="info-val">2026-06-22</div>
+            </div>
+        </div>
+        
+        <div class="share-box">
+            <div class="info-label" style="margin-bottom:8px;">分享这篇文章</div>
+            <div class="share-icons">
+                <a href="#" class="share-icon wx">W</a>
+                <a href="#" class="share-icon tg">T</a>
+                <a href="#" class="share-icon tw">X</a>
+                <a href="#" class="share-icon cp">C</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Recommendations Widget -->
+    <div class="widget related-widget">
+        <h3 class="widget-title">相关推荐</h3>
+        <div class="related-cards">
+            <a href="article-4.html" class="rel-card">
+                <div class="rel-icon" style="background:#1e293b;">E</div>
+                <div class="rel-text">
+                    <div class="rel-title">代理协议深度对比</div>
+                    <div class="rel-read">阅读 8.7k</div>
+                </div>
+            </a>
+            <a href="tutorial-win.html" class="rel-card">
+                <div class="rel-icon" style="background:#0284c7;">C</div>
+                <div class="rel-text">
+                    <div class="rel-title">Clash 核心规则详解</div>
+                    <div class="rel-read">阅读 6.2k</div>
+                </div>
+            </a>
+            <a href="tutorial-and.html" class="rel-card">
+                <div class="rel-icon" style="background:#0ea5e9;">V</div>
+                <div class="rel-text">
+                    <div class="rel-title">v2rayNG 入门教程</div>
+                    <div class="rel-read">阅读 5.1k</div>
+                </div>
+            </a>
+            <a href="article-10.html" class="rel-card">
+                <div class="rel-icon" style="background:#dc2626;">W</div>
+                <div class="rel-text">
+                    <div class="rel-title">WireGuard 协议优势分析</div>
+                    <div class="rel-read">阅读 4.3k</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Premium Airport Widget -->
+    <div class="widget premium-widget">
+        <div class="premium-header">
+            <span class="premium-icon">👑</span>
+            <div>
+                <h3 class="widget-title" style="margin:0; border:none; padding:0;">优质机场推荐</h3>
+                <span class="premium-sub">高速稳定，安全可靠</span>
+            </div>
+        </div>
+        <ul class="premium-list">
+            <li>全球节点覆盖</li>
+            <li>支持多种协议</li>
+            <li>7x24小时服务</li>
+        </ul>
+        <a href="../airports.html" class="widget-btn primary">查看推荐 →</a>
+    </div>
+</aside>
+
+</div>
+
+<footer style="text-align: center; padding: 40px; margin-top: 40px; color: #94a3b8; border-top: 1px solid #e2e8f0; grid-column: 1 / -1;">
+  <p>© 2026 云轨导航. All rights reserved.</p>
+</footer>
+
+<script>
+// Dynamic TOC Generation
+document.addEventListener("DOMContentLoaded", function() {
+    const articleBody = document.getElementById('articleBody');
+    const tocNav = document.getElementById('toc');
+    if(!articleBody || !tocNav) return;
+    
+    const headers = articleBody.querySelectorAll('h2, h3');
+    if(headers.length === 0) return;
+    
+    const ul = document.createElement('ul');
+    ul.className = 'toc-list';
+    
+    headers.forEach((header, index) => {
+        const id = 'heading-' + index;
+        header.id = id;
+        
+        const li = document.createElement('li');
+        li.className = header.tagName.toLowerCase() === 'h2' ? 'toc-h2' : 'toc-h3';
+        
+        const a = document.createElement('a');
+        a.href = '#' + id;
+        a.textContent = header.textContent;
+        
+        li.appendChild(a);
+        ul.appendChild(li);
+    });
+    
+    tocNav.appendChild(ul);
+    
+    // Highlight active TOC item on scroll
+    const tocLinks = tocNav.querySelectorAll('a');
+    window.addEventListener('scroll', () => {
+        let currentId = '';
+        headers.forEach(header => {
+            const rect = header.getBoundingClientRect();
+            if(rect.top <= 100) {
+                currentId = header.id;
+            }
+        });
+        
+        tocLinks.forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === '#' + currentId) {
+                link.classList.add('active');
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>

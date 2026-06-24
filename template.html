@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>__TITLE__</title>
+  <link rel="stylesheet" href="../index.css?v=6">
+</head>
+<body class="article-page">
+<header class="header">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+    <a href="../index.html" class="logo-container" style="text-decoration: none;">
+      <span class="logo-text" style="font-size: 1.5rem; font-weight: bold; color: var(--accent-primary);">云轨导航</span>
+    </a>
+    <nav class="nav-links" style="display: flex; gap: 20px;">
+      <a href="../index.html" style="text-decoration: none; color: var(--text-primary);">首页</a>
+      <a href="../airports.html" style="text-decoration: none; color: var(--text-primary);">机场推荐</a>
+      <a href="../knowledge.html" style="text-decoration: none; color: var(--text-primary); font-weight: bold;">科普指南</a>
+      <a href="../ranking.html" style="text-decoration: none; color: var(--text-primary);">排行榜</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-layout-container">
+    __LEFT_SIDEBAR__
+    
+    <main class="main-content">
+        <div class="breadcrumbs">
+            <a href="../index.html">首页</a> &gt; <a href="../knowledge.html">科普指南</a> &gt; <span>__CATEGORY__</span> &gt; <span class="current">__SHORT_TITLE__</span>
+        </div>
+        
+        <article class="article-box">
+            <header class="article-header">
+                <h1 class="article-title">__H1_TITLE__</h1>
+                <div class="article-meta">
+                    <span>作者: 技术编辑部</span>
+                    <span>阅读时长: 约 10 分钟</span>
+                    <span>发布于: 2026-06-22</span>
+                    <span>更新于: 2026-06-22</span>
+                </div>
+                <div class="article-tags">
+                    <span class="tag">__CATEGORY__</span>
+                    <span class="tag">科学上网</span>
+                    <span class="tag">网络科普</span>
+                    <span class="views" style="margin-left:auto; color:#64748b; font-size:0.9rem;">阅读量: 12.5k 👁️</span>
+                </div>
+            </header>
+            
+            <div class="article-intro">
+                __INTRO_TEXT__
+            </div>
+            
+            <div class="article-body" id="articleBody">
+__BODY_CONTENT__
+            </div>
+        </article>
+    </main>
+
+    __RIGHT_SIDEBAR__
+</div>
+
+<footer style="text-align: center; padding: 40px; margin-top: 40px; color: #94a3b8; border-top: 1px solid #e2e8f0; grid-column: 1 / -1;">
+  <p>© 2026 云轨导航. All rights reserved.</p>
+</footer>
+
+<script>
+// Dynamic TOC Generation
+document.addEventListener("DOMContentLoaded", function() {
+    const articleBody = document.getElementById('articleBody');
+    const tocNav = document.getElementById('toc');
+    if(!articleBody || !tocNav) return;
+    
+    const headers = articleBody.querySelectorAll('h2, h3');
+    if(headers.length === 0) return;
+    
+    const ul = document.createElement('ul');
+    ul.className = 'toc-list';
+    
+    headers.forEach((header, index) => {
+        const id = 'heading-' + index;
+        header.id = id;
+        
+        const li = document.createElement('li');
+        li.className = header.tagName.toLowerCase() === 'h2' ? 'toc-h2' : 'toc-h3';
+        
+        const a = document.createElement('a');
+        a.href = '#' + id;
+        a.textContent = header.textContent;
+        
+        li.appendChild(a);
+        ul.appendChild(li);
+    });
+    
+    tocNav.appendChild(ul);
+    
+    // Highlight active TOC item on scroll
+    const tocLinks = tocNav.querySelectorAll('a');
+    window.addEventListener('scroll', () => {
+        let currentId = '';
+        headers.forEach(header => {
+            const rect = header.getBoundingClientRect();
+            if(rect.top <= 100) {
+                currentId = header.id;
+            }
+        });
+        
+        tocLinks.forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === '#' + currentId) {
+                link.classList.add('active');
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>

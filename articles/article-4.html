@@ -1,310 +1,250 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Apple 设备最佳实践：Shadowrocket 与 QX 对比 - 云轨导航</title>
-  <link rel="stylesheet" href="../index.css?v=3">
-  <style>
-    .article-body h2 { margin-top: 2.5rem; margin-bottom: 1.2rem; color: #0284c7; border-bottom: 2px solid #e0f2fe; padding-bottom: 0.5rem; }
-    .article-body h3 { margin-top: 1.5rem; margin-bottom: 1rem; color: var(--text-primary); font-size: 1.15rem; }
-    .article-body p { margin-bottom: 1.5rem; line-height: 1.8; color: var(--text-secondary); font-size: 1.05rem; }
-    .article-body ul, .article-body ol { margin-bottom: 1.5rem; padding-left: 1.5rem; color: var(--text-secondary); line-height: 1.8; font-size: 1.05rem; }
-    .article-body li { margin-bottom: 0.5rem; }
-    .article-body strong { color: var(--text-primary); font-weight: 600; }
-    .article-body .highlight-box { background: #f0f9ff; border-left: 4px solid #0ea5e9; padding: 1.2rem 1.5rem; margin-bottom: 1.5rem; border-radius: 0 8px 8px 0; }
-    .related-links { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
-    .related-links a { display: block; margin-bottom: 0.8rem; color: #0ea5e9; text-decoration: none; font-size: 1.05rem; }
-    .related-links a:hover { text-decoration: underline; color: #0284c7; }
-    code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: monospace; color: #0f172a; }
-    table { width: 100%; text-align: left; border-collapse: collapse; margin-bottom: 1.5rem; }
-    th { border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; font-weight: 600; color: var(--text-primary); }
-    td { padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: var(--text-secondary); }
-  </style>
+  <link rel="stylesheet" href="../index.css?v=6">
 </head>
-<body style="background: #f8fafc;">
+<body class="article-page">
 <header class="header">
   <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-    <a href="../index.html" class="logo-container" style="text-decoration: none;"><span class="logo-text" style="font-size: 1.5rem; font-weight: bold; color: var(--accent-primary);">云轨导航</span></a>
+    <a href="../index.html" class="logo-container" style="text-decoration: none;">
+      <span class="logo-text" style="font-size: 1.5rem; font-weight: bold; color: var(--accent-primary);">云轨导航</span>
+    </a>
     <nav class="nav-links" style="display: flex; gap: 20px;">
       <a href="../index.html" style="text-decoration: none; color: var(--text-primary);">首页</a>
       <a href="../airports.html" style="text-decoration: none; color: var(--text-primary);">机场推荐</a>
-      <a href="../knowledge.html" style="text-decoration: none; color: var(--text-primary);">科普指南</a>
+      <a href="../knowledge.html" style="text-decoration: none; color: var(--text-primary); font-weight: bold;">科普指南</a>
       <a href="../ranking.html" style="text-decoration: none; color: var(--text-primary);">排行榜</a>
     </nav>
   </div>
 </header>
 
-<main class="container" style="padding-top:120px; max-width:850px; margin-bottom:80px; margin-left: auto; margin-right: auto;">
-  <div style="margin-bottom: 25px; font-size: 0.95rem;">
-    <a href="../index.html" style="color: #64748b; text-decoration: none;">首页</a> &gt; 
-    <a href="../knowledge.html" style="color: #64748b; text-decoration: none;">科普指南</a> &gt; 
-    <span style="color: #0ea5e9;">客户端教程</span>
-  </div>
+<div class="article-layout-container">
+    <aside class="sidebar-left">
+    <!-- TOC Widget -->
+    <div class="widget toc-widget">
+        <h3 class="widget-title">文章目录</h3>
+        <nav id="toc" class="toc-nav"></nav>
+    </div>
 
-  <div style="text-align: center; margin-bottom: 30px;">
-    <span style="background: #e0f2fe; color: #0ea5e9; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; display: inline-block; margin-bottom: 15px;">客户端教程</span>
-    <h1 style="font-size: 2.2rem; color: var(--text-primary); margin-bottom: 1rem; line-height: 1.4;">Apple 设备最佳实践：Shadowrocket 与 QX 对比</h1>
+    <!-- Beginner Guide Widget -->
+    <div class="widget guide-widget">
+        <div class="guide-header">
+            <span class="guide-icon">🚀</span>
+            <div>
+                <h3 class="widget-title" style="margin:0; border:none; padding:0;">新手入门指南</h3>
+                <span class="guide-sub">从零开始教你科学上网</span>
+            </div>
+        </div>
+        <ul class="guide-list">
+            <li><a href="beginner-1.html">机场如何选择</a></li>
+            <li><a href="tutorial-win.html">客户端安装教程</a></li>
+            <li><a href="beginner-3.html">订阅配置方法</a></li>
+            <li><a href="beginner-2.html">常见问题解决</a></li>
+        </ul>
+        <a href="beginner-1.html" class="widget-btn">立即查看 →</a>
+    </div>
+
+    <!-- Hot Articles Widget -->
+    <div class="widget hot-widget">
+        <h3 class="widget-title">热门文章</h3>
+        <ul class="hot-list">
+            <li><span class="hot-rank top-1">1</span><a href="../airports.html">2026年稳定机场推荐 TOP10</a></li>
+            <li><span class="hot-rank top-2">2</span><a href="tutorial-win.html">Clash 使用教程（Windows）</a></li>
+            <li><span class="hot-rank top-3">3</span><a href="tutorial-ios.html">Shadowrocket 配置教程 (iOS)</a></li>
+            <li><span class="hot-rank">4</span><a href="article-1.html">节点延迟高怎么办？原因与解决方法</a></li>
+            <li><span class="hot-rank">5</span><a href="article-5.html">Netflix/Disney+ 跨区解锁攻略</a></li>
+        </ul>
+    </div>
+</aside>
+
     
-    <div style="color: #64748b; font-size: 0.95rem; display: flex; justify-content: center; gap: 20px;">
-      <span>作者: 技术编辑部</span>
-      <span>阅读时长: 约 9 分钟</span>
-      <span>发布于: 2026-06-22</span>
+    <main class="main-content">
+        <div class="breadcrumbs">
+            <a href="../index.html">首页</a> &gt; <a href="../knowledge.html">科普指南</a> &gt; <span>科普指南</span> &gt; <span class="current">__H1_TITLE__</span>
+        </div>
+        
+        <article class="article-box">
+            <header class="article-header">
+                <h1 class="article-title">__H1_TITLE__</h1>
+                <div class="article-meta">
+                    <span>作者: 技术编辑部</span>
+                    <span>阅读时长: 约 10 分钟</span>
+                    <span>发布于: 2026-06-22</span>
+                    <span>更新于: 2026-06-22</span>
+                </div>
+                <div class="article-tags">
+                    <span class="tag">科普指南</span>
+                    <span class="tag">科学上网</span>
+                    <span class="tag">网络科普</span>
+                    <span class="views" style="margin-left:auto; color:#64748b; font-size:0.9rem;">阅读量: 12.5k 👁️</span>
+                </div>
+            </header>
+            
+            <div class="article-intro">
+                在现代网络环境中，“代理”已成为连接全球互联网的重要技术手段。了解代理的原理与常见协议，是提升网络体验的关键一步。
+            </div>
+            
+            <div class="article-body" id="articleBody">
+<p>姝ｆ枃鍐呭鍔犺浇澶辫触銆?/p>
+            </div>
+        </article>
+    </main>
+
+    <aside class="sidebar-right">
+    <!-- Article Info Widget -->
+    <div class="widget info-widget">
+        <h3 class="widget-title">文章信息</h3>
+        <div class="info-item">
+            <span class="info-icon">📄</span>
+            <div>
+                <div class="info-label">文章分类</div>
+                <div class="info-val">科普指南</div>
+            </div>
+        </div>
+        <div class="info-item">
+            <span class="info-icon">⏱️</span>
+            <div>
+                <div class="info-label">阅读时长</div>
+                <div class="info-val">约 10 分钟</div>
+            </div>
+        </div>
+        <div class="info-item">
+            <span class="info-icon">📝</span>
+            <div>
+                <div class="info-label">字数统计</div>
+                <div class="info-val">约 3200 字</div>
+            </div>
+        </div>
+        <div class="info-item">
+            <span class="info-icon">🕒</span>
+            <div>
+                <div class="info-label">最后更新</div>
+                <div class="info-val">2026-06-22</div>
+            </div>
+        </div>
+        
+        <div class="share-box">
+            <div class="info-label" style="margin-bottom:8px;">分享这篇文章</div>
+            <div class="share-icons">
+                <a href="#" class="share-icon wx">W</a>
+                <a href="#" class="share-icon tg">T</a>
+                <a href="#" class="share-icon tw">X</a>
+                <a href="#" class="share-icon cp">C</a>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <div class="article-content" style="background: white; padding: 50px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05);">
-    <div class="article-body">
-      <p>在 iOS 生态中，Shadowrocket 与 Quantumult X（简称 QX）是两款非常常见的网络代理工具。</p>
-      <p>很多用户在选择时都会纠结一个问题：</p>
-      
-      <div class="highlight-box">
-        <strong style="display: block; text-align: center; font-size: 1.1rem;">到底是 Shadowrocket 更好用，还是 Quantumult X 更强？</strong>
-      </div>
-      
-      <p>这两款工具虽然功能相似，但在设计理念、规则系统、学习成本以及使用场景上有明显区别。</p>
-      <p>本篇文章将从功能结构、性能表现、规则能力、易用性与适用人群五个维度进行全面对比，帮助你做出更合理的选择。</p>
-
-      <h2>一、Shadowrocket 与 QX 是什么？</h2>
-
-      <h3>1. Shadowrocket（小火箭）</h3>
-      <p>Shadowrocket 是 iOS 平台上最经典的代理工具之一，特点是：</p>
-      <ul>
-        <li>支持多协议节点（SS / VMess / Trojan 等）</li>
-        <li>支持订阅导入</li>
-        <li>支持规则分流</li>
-        <li>界面简洁，易上手</li>
-        <li>稳定性较高</li>
-      </ul>
-      <div class="highlight-box" style="text-align: center;">
-        <strong>本质是一个“轻量级代理控制器”</strong>
-      </div>
-
-      <h3>2. Quantumult X（QX）</h3>
-      <p>Quantumult X 是功能更高级的网络工具，特点是：</p>
-      <ul>
-        <li>强大的规则系统（Rewrite / Filter / Policy）</li>
-        <li>支持脚本（JS脚本）</li>
-        <li>支持复杂分流策略</li>
-        <li>可高度自定义</li>
-        <li>学习成本较高</li>
-      </ul>
-      <div class="highlight-box" style="text-align: center;">
-        <strong>本质是“高级网络规则引擎”</strong>
-      </div>
-
-      <h2>二、核心结构对比</h2>
-      <p>我们先看底层逻辑差异：</p>
-
-      <h3>Shadowrocket 结构</h3>
-      <p><strong>应用 -&gt; 代理规则 -&gt; 节点 -&gt; 目标网站</strong></p>
-      <p><strong>特点：</strong>结构简单，规则较直观，适合新手。</p>
-
-      <h3>Quantumult X 结构</h3>
-      <p><strong>应用 -&gt; 复杂规则系统 -&gt; 策略组 -&gt; 脚本处理 -&gt; 节点 -&gt; 目标网站</strong></p>
-      <p><strong>特点：</strong>多层处理，可编程规则，灵活性极高。</p>
-
-      <h2>三、功能对比（核心差异）</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>功能</th>
-            <th>Shadowrocket</th>
-            <th>Quantumult X</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>上手难度</td>
-            <td>简单</td>
-            <td>较复杂</td>
-          </tr>
-          <tr>
-            <td>规则系统</td>
-            <td>基础规则</td>
-            <td>高级规则（Rewrite）</td>
-          </tr>
-          <tr>
-            <td>脚本支持</td>
-            <td>无</td>
-            <td>支持JS脚本</td>
-          </tr>
-          <tr>
-            <td>订阅管理</td>
-            <td>简单清晰</td>
-            <td>高度自定义</td>
-          </tr>
-          <tr>
-            <td>稳定性</td>
-            <td>高</td>
-            <td>高</td>
-          </tr>
-          <tr>
-            <td>可玩性</td>
-            <td>中</td>
-            <td>极高</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2>四、易用性对比（新手重点）</h2>
-
-      <h3>Shadowrocket</h3>
-      <p><strong>优点：</strong>界面直观，操作简单，一键导入订阅，不需要复杂配置。<br>
-      <strong>适合人群：</strong>新手 / 日常使用用户。</p>
-
-      <h3>Quantumult X</h3>
-      <p><strong>优点：</strong>功能极其强大，可定制程度高，支持复杂规则。<br>
-      <strong>缺点：</strong>学习成本高，配置复杂，不适合纯小白。<br>
-      <strong>适合人群：</strong>进阶用户 / 技术用户 / 重度使用者。</p>
-
-      <h2>五、规则系统对比（关键区别）</h2>
-
-      <h3>Shadowrocket 规则系统</h3>
-      <p>主要特点：DOMAIN规则、IP规则、简单分流。</p>
-      <p><strong>示例逻辑：</strong>Google -&gt; 代理，国内网站 -&gt; 直连。<br>
-      <strong>评价：</strong>易理解，但功能有限。</p>
-
-      <h3>Quantumult X 规则系统</h3>
-      <p>支持：Rewrite（请求重写）、Filter（过滤）、Script（脚本处理）、Policy Group（策略组）。</p>
-      <p><strong>可以实现：</strong></p>
-      <ul>
-        <li>广告屏蔽</li>
-        <li>高级分流</li>
-        <li>请求修改</li>
-        <li>自动策略切换</li>
-      </ul>
-
-      <h2>六、性能表现对比</h2>
-      <p>很多人误以为工具影响速度，其实：</p>
-      <div class="highlight-box" style="text-align: center;">
-        <strong>工具本身不决定速度，节点质量才是关键</strong>
-      </div>
-      <p>但工具仍然影响体验：</p>
-      <ul>
-        <li><strong>Shadowrocket：</strong>处理流程简单，CPU占用低，启动速度快。</li>
-        <li><strong>Quantumult X：</strong>规则处理多，功能调用多，极端情况下略高耗能。</li>
-      </ul>
-
-      <h2>七、稳定性对比</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>项目</th>
-            <th>Shadowrocket</th>
-            <th>Quantumult X</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>日常稳定性</td>
-            <td>很高</td>
-            <td>很高</td>
-          </tr>
-          <tr>
-            <td>崩溃概率</td>
-            <td>极低</td>
-            <td>低</td>
-          </tr>
-          <tr>
-            <td>复杂规则稳定性</td>
-            <td>一般</td>
-            <td>非常高</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2>八、使用场景推荐</h2>
-
-      <h3>适合 Shadowrocket 的人</h3>
-      <ul>
-        <li>刚接触代理工具</li>
-        <li>只需要基础上网</li>
-        <li>不想折腾规则</li>
-        <li>只用订阅节点</li>
-      </ul>
-      <p><strong>一句话总结：</strong>简单稳定就选它。</p>
-
-      <h3>适合 Quantumult X 的人</h3>
-      <ul>
-        <li>想做精细规则</li>
-        <li>需要脚本功能</li>
-        <li>多策略分流用户</li>
-        <li>进阶网络玩家</li>
-      </ul>
-      <p><strong>一句话总结：</strong>想玩深度配置选它。</p>
-
-      <h2>九、为什么很多人最终会换 QX？</h2>
-      <p>主要原因：</p>
-      <ol>
-        <li><strong>可玩性更高：</strong>可以实现广告过滤、精准分流、自动切换策略。</li>
-        <li><strong>扩展能力强：</strong>支持 JS脚本、自定义规则链。</li>
-        <li><strong>长期使用更灵活：</strong>适合复杂网络环境。</li>
-      </ol>
-
-      <h2>十、常见误区（重要）</h2>
-      <div class="highlight-box">
-        <p><strong>误区1：QX一定比小火箭快</strong><br>
-        错误。速度取决于节点，不是工具。</p>
-        <p><strong>误区2：小火箭太弱</strong><br>
-        错误。小火箭只是功能简单，不是性能弱。</p>
-        <p style="margin-bottom: 0;"><strong>误区3：必须用高级工具</strong><br>
-        错误。80% 用户 Shadowrocket 足够。</p>
-      </div>
-
-      <h2>十一、总结</h2>
-      <p>Shadowrocket 与 Quantumult X 的核心区别可以总结为：</p>
-      <table>
-        <thead>
-          <tr>
-            <th>项目</th>
-            <th>Shadowrocket</th>
-            <th>Quantumult X</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>定位</td>
-            <td>简单稳定工具</td>
-            <td>高级规则系统</td>
-          </tr>
-          <tr>
-            <td>难度</td>
-            <td>低</td>
-            <td>高</td>
-          </tr>
-          <tr>
-            <td>灵活性</td>
-            <td>中</td>
-            <td>极高</td>
-          </tr>
-          <tr>
-            <td>推荐人群</td>
-            <td>新手</td>
-            <td>进阶用户</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="highlight-box">
-        <strong style="display: block; text-align: center;">最终建议：如果你是普通用户选 Shadowrocket，如果你想深度配置选 Quantumult X。</strong>
-      </div>
-
-      <div class="related-links">
-        <h3 style="margin-bottom: 1rem;">相关阅读推荐</h3>
-        <a href="tutorial-ios.html">Shadowrocket iOS配置教程</a>
-        <a href="tutorial-win.html">Clash Verge Windows使用指南</a>
-        <a href="tutorial-and.html">v2rayNG安卓教程</a>
-        <a href="beginner-1.html">机场订阅是什么意思？</a>
-        <a href="article-1.html">节点测速方法详解</a>
-        <a href="../airports.html">稳定机场推荐合集</a>
-      </div>
-
+    <!-- Related Recommendations Widget -->
+    <div class="widget related-widget">
+        <h3 class="widget-title">相关推荐</h3>
+        <div class="related-cards">
+            <a href="article-4.html" class="rel-card">
+                <div class="rel-icon" style="background:#1e293b;">E</div>
+                <div class="rel-text">
+                    <div class="rel-title">代理协议深度对比</div>
+                    <div class="rel-read">阅读 8.7k</div>
+                </div>
+            </a>
+            <a href="tutorial-win.html" class="rel-card">
+                <div class="rel-icon" style="background:#0284c7;">C</div>
+                <div class="rel-text">
+                    <div class="rel-title">Clash 核心规则详解</div>
+                    <div class="rel-read">阅读 6.2k</div>
+                </div>
+            </a>
+            <a href="tutorial-and.html" class="rel-card">
+                <div class="rel-icon" style="background:#0ea5e9;">V</div>
+                <div class="rel-text">
+                    <div class="rel-title">v2rayNG 入门教程</div>
+                    <div class="rel-read">阅读 5.1k</div>
+                </div>
+            </a>
+            <a href="article-10.html" class="rel-card">
+                <div class="rel-icon" style="background:#dc2626;">W</div>
+                <div class="rel-text">
+                    <div class="rel-title">WireGuard 协议优势分析</div>
+                    <div class="rel-read">阅读 4.3k</div>
+                </div>
+            </a>
+        </div>
     </div>
-  </div>
-</main>
-<footer style="text-align: center; padding: 40px; margin-top: 40px; color: #94a3b8; border-top: 1px solid #e2e8f0;">
+
+    <!-- Premium Airport Widget -->
+    <div class="widget premium-widget">
+        <div class="premium-header">
+            <span class="premium-icon">👑</span>
+            <div>
+                <h3 class="widget-title" style="margin:0; border:none; padding:0;">优质机场推荐</h3>
+                <span class="premium-sub">高速稳定，安全可靠</span>
+            </div>
+        </div>
+        <ul class="premium-list">
+            <li>全球节点覆盖</li>
+            <li>支持多种协议</li>
+            <li>7x24小时服务</li>
+        </ul>
+        <a href="../airports.html" class="widget-btn primary">查看推荐 →</a>
+    </div>
+</aside>
+
+</div>
+
+<footer style="text-align: center; padding: 40px; margin-top: 40px; color: #94a3b8; border-top: 1px solid #e2e8f0; grid-column: 1 / -1;">
   <p>© 2026 云轨导航. All rights reserved.</p>
 </footer>
+
+<script>
+// Dynamic TOC Generation
+document.addEventListener("DOMContentLoaded", function() {
+    const articleBody = document.getElementById('articleBody');
+    const tocNav = document.getElementById('toc');
+    if(!articleBody || !tocNav) return;
+    
+    const headers = articleBody.querySelectorAll('h2, h3');
+    if(headers.length === 0) return;
+    
+    const ul = document.createElement('ul');
+    ul.className = 'toc-list';
+    
+    headers.forEach((header, index) => {
+        const id = 'heading-' + index;
+        header.id = id;
+        
+        const li = document.createElement('li');
+        li.className = header.tagName.toLowerCase() === 'h2' ? 'toc-h2' : 'toc-h3';
+        
+        const a = document.createElement('a');
+        a.href = '#' + id;
+        a.textContent = header.textContent;
+        
+        li.appendChild(a);
+        ul.appendChild(li);
+    });
+    
+    tocNav.appendChild(ul);
+    
+    // Highlight active TOC item on scroll
+    const tocLinks = tocNav.querySelectorAll('a');
+    window.addEventListener('scroll', () => {
+        let currentId = '';
+        headers.forEach(header => {
+            const rect = header.getBoundingClientRect();
+            if(rect.top <= 100) {
+                currentId = header.id;
+            }
+        });
+        
+        tocLinks.forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === '#' + currentId) {
+                link.classList.add('active');
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>

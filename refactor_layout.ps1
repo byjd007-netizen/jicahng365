@@ -1,28 +1,8 @@
-﻿<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>流媒体合租与账号购买平台 - 云轨导航</title>
-  <link rel="stylesheet" href="../index.css?v=6">
-</head>
-<body class="article-page">
-<header class="header">
-  <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-    <a href="../index.html" class="logo-container" style="text-decoration: none;">
-      <span class="logo-text" style="font-size: 1.5rem; font-weight: bold; color: var(--accent-primary);">云轨导航</span>
-    </a>
-    <nav class="nav-links" style="display: flex; gap: 20px;">
-      <a href="../index.html" style="text-decoration: none; color: var(--text-primary);">首页</a>
-      <a href="../airports.html" style="text-decoration: none; color: var(--text-primary);">机场推荐</a>
-      <a href="../knowledge.html" style="text-decoration: none; color: var(--text-primary); font-weight: bold;">科普指南</a>
-      <a href="../ranking.html" style="text-decoration: none; color: var(--text-primary);">排行榜</a>
-    </nav>
-  </div>
-</header>
+$articlesDir = "c:\Users\Administrator\Desktop\博客\articles"
+$files = Get-ChildItem -Path $articlesDir -Filter "*.html"
 
-<div class="article-layout-container">
-    <aside class="sidebar-left">
+$leftSidebar = @"
+<aside class="sidebar-left">
     <!-- TOC Widget -->
     <div class="widget toc-widget">
         <h3 class="widget-title">文章目录</h3>
@@ -59,41 +39,10 @@
         </ul>
     </div>
 </aside>
+"@
 
-    
-    <main class="main-content">
-        <div class="breadcrumbs">
-            <a href="../index.html">首页</a> &gt; <a href="../knowledge.html">科普指南</a> &gt; <span>科普指南</span> &gt; <span class="current">__H1_TITLE__</span>
-        </div>
-        
-        <article class="article-box">
-            <header class="article-header">
-                <h1 class="article-title">__H1_TITLE__</h1>
-                <div class="article-meta">
-                    <span>作者: 技术编辑部</span>
-                    <span>阅读时长: 约 10 分钟</span>
-                    <span>发布于: 2026-06-22</span>
-                    <span>更新于: 2026-06-22</span>
-                </div>
-                <div class="article-tags">
-                    <span class="tag">科普指南</span>
-                    <span class="tag">科学上网</span>
-                    <span class="tag">网络科普</span>
-                    <span class="views" style="margin-left:auto; color:#64748b; font-size:0.9rem;">阅读量: 12.5k 👁️</span>
-                </div>
-            </header>
-            
-            <div class="article-intro">
-                在现代网络环境中，“代理”已成为连接全球互联网的重要技术手段。了解代理的原理与常见协议，是提升网络体验的关键一步。
-            </div>
-            
-            <div class="article-body" id="articleBody">
-<p>姝ｆ枃鍐呭鍔犺浇澶辫触銆?/p>
-            </div>
-        </article>
-    </main>
-
-    <aside class="sidebar-right">
+$rightSidebar = @"
+<aside class="sidebar-right">
     <!-- Article Info Widget -->
     <div class="widget info-widget">
         <h3 class="widget-title">文章信息</h3>
@@ -101,7 +50,7 @@
             <span class="info-icon">📄</span>
             <div>
                 <div class="info-label">文章分类</div>
-                <div class="info-val">科普指南</div>
+                <div class="info-val" id="cat-val">__CATEGORY__</div>
             </div>
         </div>
         <div class="info-item">
@@ -189,7 +138,68 @@
         <a href="../airports.html" class="widget-btn primary">查看推荐 →</a>
     </div>
 </aside>
+"@
 
+$htmlTemplate = @"
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>__TITLE__</title>
+  <link rel="stylesheet" href="../index.css?v=6">
+</head>
+<body class="article-page">
+<header class="header">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+    <a href="../index.html" class="logo-container" style="text-decoration: none;">
+      <span class="logo-text" style="font-size: 1.5rem; font-weight: bold; color: var(--accent-primary);">云轨导航</span>
+    </a>
+    <nav class="nav-links" style="display: flex; gap: 20px;">
+      <a href="../index.html" style="text-decoration: none; color: var(--text-primary);">首页</a>
+      <a href="../airports.html" style="text-decoration: none; color: var(--text-primary);">机场推荐</a>
+      <a href="../knowledge.html" style="text-decoration: none; color: var(--text-primary); font-weight: bold;">科普指南</a>
+      <a href="../ranking.html" style="text-decoration: none; color: var(--text-primary);">排行榜</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-layout-container">
+    __LEFT_SIDEBAR__
+    
+    <main class="main-content">
+        <div class="breadcrumbs">
+            <a href="../index.html">首页</a> &gt; <a href="../knowledge.html">科普指南</a> &gt; <span>__CATEGORY__</span> &gt; <span class="current">__SHORT_TITLE__</span>
+        </div>
+        
+        <article class="article-box">
+            <header class="article-header">
+                <h1 class="article-title">__H1_TITLE__</h1>
+                <div class="article-meta">
+                    <span>作者: 技术编辑部</span>
+                    <span>阅读时长: 约 10 分钟</span>
+                    <span>发布于: 2026-06-22</span>
+                    <span>更新于: 2026-06-22</span>
+                </div>
+                <div class="article-tags">
+                    <span class="tag">__CATEGORY__</span>
+                    <span class="tag">科学上网</span>
+                    <span class="tag">网络科普</span>
+                    <span class="views" style="margin-left:auto; color:#64748b; font-size:0.9rem;">阅读量: 12.5k 👁️</span>
+                </div>
+            </header>
+            
+            <div class="article-intro">
+                __INTRO_TEXT__
+            </div>
+            
+            <div class="article-body" id="articleBody">
+__BODY_CONTENT__
+            </div>
+        </article>
+    </main>
+
+    __RIGHT_SIDEBAR__
 </div>
 
 <footer style="text-align: center; padding: 40px; margin-top: 40px; color: #94a3b8; border-top: 1px solid #e2e8f0; grid-column: 1 / -1;">
@@ -248,3 +258,82 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+"@
+
+$count = 0
+foreach ($f in $files) {
+    $content = [System.IO.File]::ReadAllText($f.FullName)
+    
+    # Extract Title
+    $title = "文章 - 云轨导航"
+    if ($content -match '<title>(.*?)</title>') {
+        $title = $matches[1]
+    }
+    
+    # Extract H1
+    $h1 = $title.Split('-')[0].Trim()
+    if ($content -match '<h1[^>]*>(.*?)</h1>') {
+        $h1 = $matches[1]
+    }
+    
+    # Short title
+    $shortTitle = $h1
+    if ($shortTitle.Length -gt 15) {
+        $shortTitle = $shortTitle.Substring(0, 15) + "..."
+    }
+    
+    # Category
+    $category = "科普指南"
+    if ($f.Name -match "tutorial") { $category = "客户端教程" }
+    elseif ($f.Name -match "beginner") { $category = "新手入门" }
+    
+    # Extract Body Content (everything inside <div class="article-body">...</div>)
+    $bodyContent = ""
+    # Using regex to find article-body
+    if ($content -match '(?s)<div class="article-body">(.*?)</div>\s*</div>\s*</main>') {
+        $bodyContent = $matches[1]
+    } elseif ($content -match '(?s)<div class="article-body">(.*?)</div>\s*(?:<!--)?\s*</main>') {
+        $bodyContent = $matches[1]
+    } elseif ($content -match '(?s)<div class="article-body">(.*?)<div class="related-links">') {
+        $bodyContent = $matches[1]
+    } else {
+        # Fallback if no article-body div, just match between h2 and footer
+        if ($content -match '(?s)(<h2.*?</main>)') {
+            $bodyContent = $matches[1]
+            $bodyContent = $bodyContent -replace '</main>', ''
+        } else {
+            $bodyContent = "<p>正文内容加载失败，请检查源文件结构。</p>"
+        }
+    }
+    
+    # Remove related-links from body content (to prevent duplication)
+    $bodyContent = [System.Text.RegularExpressions.Regex]::Replace($bodyContent, '(?s)<div class="related-links">.*?</div>', '')
+    
+    # Remove img tags (User requested removing images)
+    $bodyContent = [System.Text.RegularExpressions.Regex]::Replace($bodyContent, '(?i)<img[^>]*>', '')
+    
+    # Remove old highlight box if it exists in body
+    $introText = "在现代网络环境中，“代理”已成为连接全球互联网的重要技术手段。了解代理的原理与常见协议，是提升网络体验的关键一步。"
+    if ($bodyContent -match '(?s)<div class="highlight-box">(.*?)</div>') {
+        $introText = $matches[1]
+        $bodyContent = [System.Text.RegularExpressions.Regex]::Replace($bodyContent, '(?s)<div class="highlight-box">.*?</div>', '')
+    }
+    
+    # Build final HTML
+    $rightContent = $rightSidebar.Replace('__CATEGORY__', $category)
+    
+    $newHtml = $htmlTemplate.Replace('__TITLE__', $title)
+                            .Replace('__H1_TITLE__', $h1)
+                            .Replace('__SHORT_TITLE__', $shortTitle)
+                            .Replace('__CATEGORY__', $category)
+                            .Replace('__LEFT_SIDEBAR__', $leftSidebar)
+                            .Replace('__RIGHT_SIDEBAR__', $rightContent)
+                            .Replace('__INTRO_TEXT__', $introText)
+                            .Replace('__BODY_CONTENT__', $bodyContent)
+                            
+    [System.IO.File]::WriteAllText($f.FullName, $newHtml, [System.Text.Encoding]::UTF8)
+    $count++
+    Write-Host "Processed: $($f.Name)"
+}
+
+Write-Host "Total Refactored: $count"

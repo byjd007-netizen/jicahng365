@@ -1,28 +1,13 @@
-﻿<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>流媒体合租与账号购买平台 - 云轨导航</title>
-  <link rel="stylesheet" href="../index.css?v=6">
-</head>
-<body class="article-page">
-<header class="header">
-  <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-    <a href="../index.html" class="logo-container" style="text-decoration: none;">
-      <span class="logo-text" style="font-size: 1.5rem; font-weight: bold; color: var(--accent-primary);">云轨导航</span>
-    </a>
-    <nav class="nav-links" style="display: flex; gap: 20px;">
-      <a href="../index.html" style="text-decoration: none; color: var(--text-primary);">首页</a>
-      <a href="../airports.html" style="text-decoration: none; color: var(--text-primary);">机场推荐</a>
-      <a href="../knowledge.html" style="text-decoration: none; color: var(--text-primary); font-weight: bold;">科普指南</a>
-      <a href="../ranking.html" style="text-decoration: none; color: var(--text-primary);">排行榜</a>
-    </nav>
-  </div>
-</header>
+import os
+from bs4 import BeautifulSoup
+import re
+import datetime
 
-<div class="article-layout-container">
-    <aside class="sidebar-left">
+articles_dir = r"c:\Users\Administrator\Desktop\博客\articles"
+
+# Widgets content (Hardcoded standard widgets for sidebars)
+left_sidebar = """
+<aside class="sidebar-left">
     <!-- TOC Widget -->
     <div class="widget toc-widget">
         <h3 class="widget-title">文章目录</h3>
@@ -59,41 +44,10 @@
         </ul>
     </div>
 </aside>
+"""
 
-    
-    <main class="main-content">
-        <div class="breadcrumbs">
-            <a href="../index.html">首页</a> &gt; <a href="../knowledge.html">科普指南</a> &gt; <span>科普指南</span> &gt; <span class="current">__H1_TITLE__</span>
-        </div>
-        
-        <article class="article-box">
-            <header class="article-header">
-                <h1 class="article-title">__H1_TITLE__</h1>
-                <div class="article-meta">
-                    <span>作者: 技术编辑部</span>
-                    <span>阅读时长: 约 10 分钟</span>
-                    <span>发布于: 2026-06-22</span>
-                    <span>更新于: 2026-06-22</span>
-                </div>
-                <div class="article-tags">
-                    <span class="tag">科普指南</span>
-                    <span class="tag">科学上网</span>
-                    <span class="tag">网络科普</span>
-                    <span class="views" style="margin-left:auto; color:#64748b; font-size:0.9rem;">阅读量: 12.5k 👁️</span>
-                </div>
-            </header>
-            
-            <div class="article-intro">
-                在现代网络环境中，“代理”已成为连接全球互联网的重要技术手段。了解代理的原理与常见协议，是提升网络体验的关键一步。
-            </div>
-            
-            <div class="article-body" id="articleBody">
-<p>姝ｆ枃鍐呭鍔犺浇澶辫触銆?/p>
-            </div>
-        </article>
-    </main>
-
-    <aside class="sidebar-right">
+right_sidebar = """
+<aside class="sidebar-right">
     <!-- Article Info Widget -->
     <div class="widget info-widget">
         <h3 class="widget-title">文章信息</h3>
@@ -101,7 +55,7 @@
             <span class="info-icon">📄</span>
             <div>
                 <div class="info-label">文章分类</div>
-                <div class="info-val">科普指南</div>
+                <div class="info-val">代理基础知识</div>
             </div>
         </div>
         <div class="info-item">
@@ -189,7 +143,69 @@
         <a href="../airports.html" class="widget-btn primary">查看推荐 →</a>
     </div>
 </aside>
+"""
 
+# HTML Template
+html_template = """<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <link rel="stylesheet" href="../index.css?v=5">
+</head>
+<body class="article-page" style="background: #f1f5f9;">
+<header class="header">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+    <a href="../index.html" class="logo-container" style="text-decoration: none;">
+      <span class="logo-text" style="font-size: 1.5rem; font-weight: bold; color: var(--accent-primary);">云轨导航</span>
+    </a>
+    <nav class="nav-links" style="display: flex; gap: 20px;">
+      <a href="../index.html" style="text-decoration: none; color: var(--text-primary);">首页</a>
+      <a href="../airports.html" style="text-decoration: none; color: var(--text-primary);">机场推荐</a>
+      <a href="../knowledge.html" style="text-decoration: none; color: var(--text-primary); font-weight: bold;">科普指南</a>
+      <a href="../ranking.html" style="text-decoration: none; color: var(--text-primary);">排行榜</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-layout-container">
+    {left_sidebar}
+    
+    <main class="main-content">
+        <div class="breadcrumbs">
+            <a href="../index.html">首页</a> &gt; <a href="../knowledge.html">科普指南</a> &gt; <span>{category}</span> &gt; <span class="current">{short_title}</span>
+        </div>
+        
+        <article class="article-box">
+            <header class="article-header">
+                <h1 class="article-title">{h1_title}</h1>
+                <div class="article-meta">
+                    <span>作者: 技术编辑部</span>
+                    <span>阅读时长: 约 10 分钟</span>
+                    <span>发布于: 2026-06-22</span>
+                    <span>更新于: 2026-06-22</span>
+                </div>
+                <div class="article-tags">
+                    <span class="tag">代理基础知识</span>
+                    <span class="tag">科学上网</span>
+                    <span class="tag">代理协议</span>
+                    <span class="tag">网络科普</span>
+                    <span class="views" style="margin-left:auto; color:#64748b; font-size:0.9rem;">阅读量: 12.5k 👁️</span>
+                </div>
+            </header>
+            
+            <div class="article-intro highlight-box">
+                {intro_text}
+            </div>
+            
+            <div class="article-body" id="articleBody">
+                {body_content}
+            </div>
+        </article>
+    </main>
+
+    {right_sidebar}
 </div>
 
 <footer style="text-align: center; padding: 40px; margin-top: 40px; color: #94a3b8; border-top: 1px solid #e2e8f0; grid-column: 1 / -1;">
@@ -247,4 +263,100 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 </body>
-</html>
+</html>"""
+
+def get_intro(body_soup):
+    # Try to find a highlight-box at the beginning
+    intro = ""
+    first_p = body_soup.find('p')
+    hl_box = body_soup.find(class_='highlight-box')
+    
+    if first_p and not first_p.find_previous('h2'):
+        # extract all paragraphs before the first h2
+        intro_elements = []
+        for sibling in body_soup.contents:
+            if sibling.name == 'h2':
+                break
+            if sibling.name in ['p', 'div'] and sibling != hl_box:
+                intro_elements.append(str(sibling))
+        intro = "".join(intro_elements)
+    elif hl_box:
+        intro = hl_box.decode_contents()
+    else:
+        intro = "<p>在现代网络环境中，“代理”已成为连接全球互联网的重要技术手段。了解代理的原理与常见协议，是提升网络体验的关键一步。</p>"
+    return intro
+
+count = 0
+for filename in os.listdir(articles_dir):
+    if filename.endswith(".html"):
+        file_path = os.path.join(articles_dir, filename)
+        with open(file_path, "r", encoding="utf-8") as f:
+            content = f.read()
+            
+        soup = BeautifulSoup(content, 'html.parser')
+        
+        # Extract title
+        title_tag = soup.find('title')
+        page_title = title_tag.text if title_tag else "文章 - 云轨导航"
+        
+        h1_tag = soup.find('h1')
+        h1_title = h1_tag.text if h1_tag else page_title.split('-')[0].strip()
+        
+        # Category deduction
+        category = "代理基础知识"
+        if "tutorial" in filename:
+            category = "客户端配置教程"
+        elif "beginner" in filename:
+            category = "新手入门"
+            
+        # Extract body
+        article_body = soup.find(class_='article-body')
+        if not article_body:
+            # Maybe inside a container?
+            main = soup.find('main')
+            if main:
+                article_body = main
+            else:
+                article_body = soup.find('body')
+                
+        # Remove related-links from body since it's now in the right sidebar
+        related = article_body.find(class_='related-links')
+        if related:
+            related.decompose()
+            
+        # Remove all img tags if any, to follow user instruction
+        for img in article_body.find_all('img'):
+            img.decompose()
+            
+        intro_text = get_intro(article_body)
+        
+        # Clean the body content a bit by removing the intro elements we already extracted
+        # Since we just need the text from the first h2 onwards.
+        h2s = article_body.find_all('h2')
+        if h2s:
+            first_h2 = h2s[0]
+            body_html = ""
+            current = first_h2
+            while current:
+                body_html += str(current)
+                current = current.find_next_sibling()
+        else:
+            body_html = article_body.decode_contents()
+
+        new_html = html_template.format(
+            title=page_title,
+            h1_title=h1_title,
+            short_title=h1_title[:15] + "..." if len(h1_title)>15 else h1_title,
+            category=category,
+            left_sidebar=left_sidebar,
+            right_sidebar=right_sidebar,
+            intro_text=intro_text,
+            body_content=body_html
+        )
+        
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.write(new_html)
+        count += 1
+        print(f"Refactored: {filename}")
+
+print(f"Refactored {count} articles.")
