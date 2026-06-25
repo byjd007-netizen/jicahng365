@@ -1,8 +1,8 @@
-﻿/* --- Ranking Page Specific CSS --- */
+/* --- Ranking Page Specific CSS --- */
 .ranking-page-container {
   display: flex;
   gap: 30px;
-  margin-top: 40px;
+  margin-top: calc(var(--header-height) + 40px);
   margin-bottom: 60px;
 }
 .ranking-main {
@@ -257,7 +257,7 @@
 .dim-name { font-size: 0.95rem; color: #1e293b; font-weight: 500; margin-bottom: 4px; }
 .dim-desc { font-size: 0.8rem; color: #64748b; line-height: 1.4; }
 
-.rk-timeline { border-left: 2px solid #e2e8f0; margin-left: 10px; padding-left: 20px; }
+.rk-timeline { border-left: 2px solid #e2e8f0; margin-left: 60px; padding-left: 20px; }
 .tl-item { position: relative; margin-bottom: 20px; }
 .tl-item::before {
   content: ''; position: absolute; left: -25px; top: 4px;
