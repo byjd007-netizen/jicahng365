@@ -1282,15 +1282,22 @@ h1, h2, h3, h4, h5, h6 {
 /* Tags Cloud */
 .tags-cloud { display: flex; flex-wrap: wrap; gap: 10px; }
 .tag-pill {
-  padding: 8px 16px;
+  padding: 6px 14px;
   background: #f1f5f9;
   color: #475569;
   border-radius: 20px;
   text-decoration: none;
-  font-size: 0.9rem;
-  transition: all 0.2s;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: 1px solid #e2e8f0;
 }
-.tag-pill:hover { background: #3b82f6; color: white; }
+.tag-pill:hover {
+  background: #eff6ff;
+  color: #2563eb;
+  border-color: #3b82f6;
+  transform: translateY(-1px);
+}
 
 /* Text Logo */
 .txt-logo-badge {
@@ -2070,14 +2077,10 @@ h1, h2, h3, h4, h5, h6 {
 .home-v2-art-thumb {
   width: 32px;
   height: 32px;
-  border-radius: 6px;
-  background-color: #f8fafc;
-  border: 1px solid #edf2f7;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: #64748b;
 }
 
 .home-v2-art-title {
@@ -2109,12 +2112,18 @@ h1, h2, h3, h4, h5, h6 {
 .home-v2-update-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 0;
+  gap: 10px;
+  padding: 6px 0;
 }
 
-.home-v2-update-icon {
-  color: #64748b;
+.home-v2-update-rank {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: #eff6ff;
+  color: #2563eb;
+  font-size: 0.75rem;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2142,19 +2151,29 @@ h1, h2, h3, h4, h5, h6 {
   flex-shrink: 0;
 }
 
-/* Premium Card (优质机场推荐) */
-.home-v2-premium-card {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+/* Card styles for Column 1 & 2 */
+.home-v2-info-card {
+  background-color: #ffffff;
   border-radius: 20px;
   padding: 24px;
-  color: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+}
+
+/* Premium Card (优质机场推荐) */
+.home-v2-premium-card {
+  background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 100%);
+  border-radius: 20px;
+  padding: 24px;
+  color: #1e293b;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 240px;
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.03);
 }
 
 .home-v2-prem-content {
@@ -2166,28 +2185,29 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .home-v2-prem-title {
   font-size: 1.15rem;
   font-weight: 800;
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .home-v2-prem-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   margin-bottom: 18px;
 }
 
 .home-v2-prem-li {
   font-size: 0.8rem;
-  color: #cbd5e1;
+  color: #475569;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  font-weight: 600;
 }
 
 .home-v2-prem-li svg {
@@ -2200,20 +2220,22 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   width: max-content;
-  padding: 8px 20px;
+  padding: 10px 24px;
   border-radius: 9999px;
-  background-color: #2563eb;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
   color: #ffffff !important;
   font-weight: 700;
   font-size: 0.85rem;
   transition: all 0.2s ease;
   z-index: 2;
   text-decoration: none;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
 }
 
 .home-v2-btn-prem-action:hover {
-  background-color: #3b82f6;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
   transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
 }
 
 .home-v2-rocket-img {
