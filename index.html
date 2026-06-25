@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -26,7 +26,7 @@
     .footer-logo .logo-text { font-size: 1.2rem; color: #475569; }
   </style>
 </head>
-<body>
+<body class="home-v2-body">
   <!-- Header -->
   <header class="header">
     <div class="container">
@@ -43,286 +43,693 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="home-hero">
-    <div class="container hero-container">
-      <div class="hero-left">
-        <h1 class="hero-title">2026 最新机场推荐与<br>科学上网教程导航</h1>
-        <p class="hero-subtitle">专注机场评测、节点测速、Clash 教程、Shadowrocket 配置、跨区解锁等科学上网相关指南，帮你快速掌握稳定、好用、适合自己的网络工具。</p>
-        
-        <div class="hero-features">
-          <div class="feat-badge">
-            <div class="feat-txt"><strong>稳定可靠</strong>实测节点，稳定在线</div>
+  <main class="home-v2">
+    <!-- Hero Section -->
+    <section class="home-v2-section home-v2-hero">
+      <div class="container home-v2-hero-container">
+        <div class="home-v2-hero-left">
+          <h1 class="home-v2-hero-title">2026 最新机场推荐与<br>科学上网教程导航</h1>
+          <p class="home-v2-hero-subtitle">专注机场评测、节点测速、Clash 教程、Shadowrocket 配置、跨区解锁等科学上网相关指南，帮你快速掌握稳定、好用、适合自己的网络工具。</p>
+          
+          <div class="home-v2-features-grid">
+            <div class="home-v2-feature-card">
+              <div class="home-v2-feature-icon home-v2-icon-stable">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <div class="home-v2-feature-info">
+                <span class="home-v2-feature-name">稳定可靠</span>
+                <span class="home-v2-feature-desc">实测节点，稳定在线</span>
+              </div>
+            </div>
+            
+            <div class="home-v2-feature-card">
+              <div class="home-v2-feature-icon home-v2-icon-speed">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+              </div>
+              <div class="home-v2-feature-info">
+                <span class="home-v2-feature-name">高速体验</span>
+                <span class="home-v2-feature-desc">低延迟，高速晚高峰</span>
+              </div>
+            </div>
+            
+            <div class="home-v2-feature-card">
+              <div class="home-v2-feature-icon home-v2-icon-privacy">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+              </div>
+              <div class="home-v2-feature-info">
+                <span class="home-v2-feature-name">安全隐私</span>
+                <span class="home-v2-feature-desc">严加加密，保护隐私</span>
+              </div>
+            </div>
+            
+            <div class="home-v2-feature-card">
+              <div class="home-v2-feature-icon home-v2-icon-update">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                </svg>
+              </div>
+              <div class="home-v2-feature-info">
+                <span class="home-v2-feature-name">持续更新</span>
+                <span class="home-v2-feature-desc">每周更新，求精最新</span>
+              </div>
+            </div>
           </div>
-          <div class="feat-badge">
-            <div class="feat-txt"><strong>高速体验</strong>低延迟，高速晚高峰</div>
-          </div>
-          <div class="feat-badge">
-            <div class="feat-txt"><strong>安全隐私</strong>严加加密，保护隐私</div>
-          </div>
-          <div class="feat-badge">
-            <div class="feat-txt"><strong>持续更新</strong>每周更新，求精最新</div>
+          
+          <div class="home-v2-hero-actions">
+            <a href="airports.html" class="home-v2-btn home-v2-btn-primary">查看机场推荐 ➔</a>
+            <a href="articles/article-1.html" class="home-v2-btn home-v2-btn-secondary">新手入门教程</a>
           </div>
         </div>
         
-        <div class="hero-actions">
-          <a href="airports.html" class="btn btn-primary">查看机场推荐 &rarr;</a>
-          <a href="articles/article-1.html" class="btn btn-outline">新手入门教程</a>
+        <div class="home-v2-hero-right">
+          <div class="home-v2-quick-nav">
+            <div class="home-v2-quick-nav-header">快速导航</div>
+            
+            <a href="knowledge.html" class="home-v2-qn-card">
+              <div class="home-v2-qn-icon home-v2-qn-icon-1">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                </svg>
+              </div>
+              <div class="home-v2-qn-info">
+                <span class="home-v2-qn-title">新手入门指南</span>
+                <span class="home-v2-qn-desc">3分钟学会科学上网</span>
+              </div>
+            </a>
+            
+            <a href="airports.html" class="home-v2-qn-card">
+              <div class="home-v2-qn-icon home-v2-qn-icon-2">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                  <line x1="6" y1="6" x2="6.01" y2="6"/>
+                  <line x1="6" y1="18" x2="6.01" y2="18"/>
+                </svg>
+              </div>
+              <div class="home-v2-qn-info">
+                <span class="home-v2-qn-title">本周稳定机场推荐</span>
+                <span class="home-v2-qn-desc">实时更新可用节点</span>
+              </div>
+            </a>
+            
+            <a href="articles/article-4.html" class="home-v2-qn-card">
+              <div class="home-v2-qn-icon home-v2-qn-icon-3">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="4 17 10 11 4 5"/>
+                  <line x1="12" y1="19" x2="20" y2="19"/>
+                </svg>
+              </div>
+              <div class="home-v2-qn-info">
+                <span class="home-v2-qn-title">Clash 完整教程</span>
+                <span class="home-v2-qn-desc">从安装到配置详细教学</span>
+              </div>
+            </a>
+            
+            <a href="ranking.html" class="home-v2-qn-card">
+              <div class="home-v2-qn-icon home-v2-qn-icon-4">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                </svg>
+              </div>
+              <div class="home-v2-qn-info">
+                <span class="home-v2-qn-title">节点测速工具</span>
+                <span class="home-v2-qn-desc">一键测速，找出最快节点</span>
+              </div>
+            </a>
+          </div>
+          
+          <div class="home-v2-illustration-container">
+            <img class="home-v2-globe-img" src="assets/images/globe.png" alt="地球插画">
+          </div>
         </div>
       </div>
-      
-      <div class="hero-right">
-        <div class="quick-nav-panel">
-          <h3 class="panel-title">快速导航</h3>
-          <a href="knowledge.html" class="quick-nav-item">
-            <div class="qn-text"><strong>新手入门指南</strong>3分钟学会科学上网</div>
-          </a>
-          <a href="airports.html" class="quick-nav-item">
-            <div class="qn-text"><strong>本周稳定机场推荐</strong>实时更新可用节点</div>
-          </a>
-          <a href="articles/article-4.html" class="quick-nav-item">
-            <div class="qn-text"><strong>Clash 完整教程</strong>从安装到配置详细教学</div>
-          </a>
-          <a href="ranking.html" class="quick-nav-item">
-            <div class="qn-text"><strong>节点测速工具</strong>一键测速，找出最快节点</div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Stats Bar -->
-  <section class="home-stats">
-    <div class="container stats-container">
-      <div class="stat-item"><div class="stat-num">100+</div><div class="stat-desc">精选机场节点<br><span class="stat-sub">全球优质节点资源</span></div></div>
-      <div class="stat-item"><div class="stat-num">50+</div><div class="stat-desc">详细教程文章<br><span class="stat-sub">覆盖全平台教学</span></div></div>
-      <div class="stat-item"><div class="stat-num">99.9%</div><div class="stat-desc">平均可用率<br><span class="stat-sub">实测稳定可靠</span></div></div>
-      <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-desc">实时监控更新<br><span class="stat-sub">持续维护保障</span></div></div>
-      <div class="stat-item"><div class="stat-num">10W+</div><div class="stat-desc">用户信赖选择<br><span class="stat-sub">持续增长中</span></div></div>
-    </div>
-  </section>
+    <!-- Stats Bar -->
+    <section class="home-v2-stats-section">
+      <div class="container home-v2-stats-container">
+        <div class="home-v2-stat-item">
+          <div class="home-v2-stat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"/>
+              <line x1="1.05" y1="12" x2="7" y2="12"/>
+              <line x1="17.01" y1="12" x2="22.96" y2="12"/>
+            </svg>
+          </div>
+          <div class="home-v2-stat-info">
+            <span class="home-v2-stat-num">100+</span>
+            <span class="home-v2-stat-label">精选机场节点</span>
+            <span class="home-v2-stat-desc">全球优质节点资源</span>
+          </div>
+        </div>
+        
+        <div class="home-v2-stat-item">
+          <div class="home-v2-stat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+          </div>
+          <div class="home-v2-stat-info">
+            <span class="home-v2-stat-num">50+</span>
+            <span class="home-v2-stat-label">详细教程文章</span>
+            <span class="home-v2-stat-desc">覆盖全平台教学</span>
+          </div>
+        </div>
+        
+        <div class="home-v2-stat-item">
+          <div class="home-v2-stat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 11 2 2 4-4"/>
+            </svg>
+          </div>
+          <div class="home-v2-stat-info">
+            <span class="home-v2-stat-num">99.9%</span>
+            <span class="home-v2-stat-label">平均可用率</span>
+            <span class="home-v2-stat-desc">实测稳定可靠</span>
+          </div>
+        </div>
+        
+        <div class="home-v2-stat-item">
+          <div class="home-v2-stat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div class="home-v2-stat-info">
+            <span class="home-v2-stat-num">24/7</span>
+            <span class="home-v2-stat-label">实时监控更新</span>
+            <span class="home-v2-stat-desc">持续维护保障</span>
+          </div>
+        </div>
+        
+        <div class="home-v2-stat-item">
+          <div class="home-v2-stat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="home-v2-stat-info">
+            <span class="home-v2-stat-num">10W+</span>
+            <span class="home-v2-stat-label">用户信赖选择</span>
+            <span class="home-v2-stat-desc">持续增长中</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- 热门机场推荐 -->
-  <section class="home-section bg-gray">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">2026 热门机场推荐</h2>
-        <a href="ranking.html" class="section-link">查看完整榜单 &rarr;</a>
+    <!-- 热门机场推荐 -->
+    <section class="home-v2-section">
+      <div class="container">
+        <div class="home-v2-sec-header">
+          <h2 class="home-v2-sec-title">2026 热门机场推荐</h2>
+          <a href="ranking.html" class="home-v2-sec-link">查看完整榜单 &rarr;</a>
+        </div>
+        
+        <div class="home-v2-airports-grid">
+          <!-- Card 1 -->
+          <div class="home-v2-airport-card">
+            <div class="home-v2-card-badge-row">
+              <span class="home-v2-card-rank home-v2-card-rank-1">1</span>
+              <span class="home-v2-card-tag home-v2-tag-hot">🔥 人气推荐</span>
+            </div>
+            
+            <div class="home-v2-airport-logo">
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="60" height="60" rx="16" fill="#0f172a"/>
+                <path d="M33 15L21 31H31L27 45L39 29H29L33 15Z" fill="#00d2ff" stroke="#00d2ff" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            
+            <h3 class="home-v2-ap-name">EdgeNova</h3>
+            <p class="home-v2-ap-desc">稳定 · 高速 · 流媒体</p>
+            
+            <div class="home-v2-ap-meta">
+              <span class="home-v2-meta-score">★ 9.8</span>
+              <span class="home-v2-meta-ping">延迟 38ms</span>
+            </div>
+            
+            <a href="https://cristyc.edgenovaaff.cc/#/register?code=WWiIvxL9" target="_blank" class="home-v2-btn-card-action">查看评测</a>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="home-v2-airport-card">
+            <div class="home-v2-card-badge-row">
+              <span class="home-v2-card-rank home-v2-card-rank-2">2</span>
+              <span class="home-v2-card-tag home-v2-tag-stable">💎 稳定首选</span>
+            </div>
+            
+            <div class="home-v2-airport-logo">
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="jilianGrad" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#06b6d4"/>
+                    <stop offset="1" stop-color="#3b82f6"/>
+                  </linearGradient>
+                </defs>
+                <rect width="60" height="60" rx="16" fill="url(#jilianGrad)"/>
+                <path d="M43 17L17 30L27 34L37 24L29 36L38 43L43 17Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            
+            <h3 class="home-v2-ap-name">极连云</h3>
+            <p class="home-v2-ap-desc">稳定 · 低延迟 · 高性价比</p>
+            
+            <div class="home-v2-ap-meta">
+              <span class="home-v2-meta-score">★ 9.6</span>
+              <span class="home-v2-meta-ping">延迟 42ms</span>
+            </div>
+            
+            <a href="articles/jilianyun.html" class="home-v2-btn-card-action">查看评测</a>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="home-v2-airport-card">
+            <div class="home-v2-card-badge-row">
+              <span class="home-v2-card-rank home-v2-card-rank-3">3</span>
+              <span class="home-v2-card-tag home-v2-tag-value">🔶 性价比高</span>
+            </div>
+            
+            <div class="home-v2-airport-logo">
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="guangnianGrad" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#4f46e5"/>
+                    <stop offset="1" stop-color="#7c3aed"/>
+                  </linearGradient>
+                </defs>
+                <rect width="60" height="60" rx="16" fill="url(#guangnianGrad)"/>
+                <circle cx="30" cy="30" r="11" stroke="white" stroke-width="2"/>
+                <path d="M16 35.5C21.5 39 38.5 39 44 35.5" stroke="#f472b6" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M18 31.5C23 27.5 37 27.5 42 31.5" stroke="#f472b6" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            
+            <h3 class="home-v2-ap-name">光年梯</h3>
+            <p class="home-v2-ap-desc">隐私保护 · 安全可靠 · 稳定</p>
+            
+            <div class="home-v2-ap-meta">
+              <span class="home-v2-meta-score">★ 9.4</span>
+              <span class="home-v2-meta-ping">延迟 45ms</span>
+            </div>
+            
+            <a href="articles/guangnianti.html" class="home-v2-btn-card-action">查看评测</a>
+          </div>
+          
+          <!-- Card 4 -->
+          <div class="home-v2-airport-card">
+            <div class="home-v2-card-badge-row">
+              <span class="home-v2-card-rank">4</span>
+              <span class="home-v2-card-tag home-v2-tag-new">🔹 新人推荐</span>
+            </div>
+            
+            <div class="home-v2-airport-logo">
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="kuailiGrad" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#f97316"/>
+                    <stop offset="1" stop-color="#dc2626"/>
+                  </linearGradient>
+                </defs>
+                <rect width="60" height="60" rx="16" fill="url(#kuailiGrad)"/>
+                <path d="M22 18V42H28V33L35 42H42L33 30L41 18H34L28 27V18H22Z" fill="white"/>
+              </svg>
+            </div>
+            
+            <h3 class="home-v2-ap-name">快狸</h3>
+            <p class="home-v2-ap-desc">新手友好 · 简单易用</p>
+            
+            <div class="home-v2-ap-meta">
+              <span class="home-v2-meta-score">★ 9.2</span>
+              <span class="home-v2-meta-ping">延迟 48ms</span>
+            </div>
+            
+            <a href="articles/kuaili.html" class="home-v2-btn-card-action">查看评测</a>
+          </div>
+          
+          <!-- Card 5 -->
+          <div class="home-v2-airport-card">
+            <div class="home-v2-card-badge-row">
+              <span class="home-v2-card-rank">5</span>
+              <span class="home-v2-card-tag home-v2-tag-bandwidth">🟢 大带宽</span>
+            </div>
+            
+            <div class="home-v2-airport-logo">
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="huanyuGrad" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#10b981"/>
+                    <stop offset="1" stop-color="#047857"/>
+                  </linearGradient>
+                </defs>
+                <rect width="60" height="60" rx="16" fill="url(#huanyuGrad)"/>
+                <path d="M30 19C24 19 21.5 23 22 26C19 26 17 28 17 31C17 34.5 20 37 23.5 37H37.5C40.5 37 43 35 43 32C43 29 40.5 27 38 27C38 22 35 19 30 19Z" fill="white"/>
+                <path d="M25 41H35" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            
+            <h3 class="home-v2-ap-name">寰宇云</h3>
+            <p class="home-v2-ap-desc">大带宽 · 多地互联 · 稳定</p>
+            
+            <div class="home-v2-ap-meta">
+              <span class="home-v2-meta-score">★ 9.0</span>
+              <span class="home-v2-meta-ping">延迟 50ms</span>
+            </div>
+            
+            <a href="articles/huanyuyun.html" class="home-v2-btn-card-action">查看评测</a>
+          </div>
+          
+          <!-- Card 6 -->
+          <div class="home-v2-airport-card">
+            <div class="home-v2-card-badge-row">
+              <span class="home-v2-card-rank">6</span>
+              <span class="home-v2-card-tag home-v2-tag-light">🔵 轻量极速</span>
+            </div>
+            
+            <div class="home-v2-airport-logo">
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="shunGrad" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#3b82f6"/>
+                    <stop offset="1" stop-color="#1d4ed8"/>
+                  </linearGradient>
+                </defs>
+                <rect width="60" height="60" rx="16" fill="url(#shunGrad)"/>
+                <path d="M23 21C27.5 19 32.5 19 37 21M20 28C26.5 25 33.5 25 40 28M27 36C29 35 31 35 33 36M30 41C30.5 41 30.5 41 30 41" stroke="white" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            
+            <h3 class="home-v2-ap-name">瞬云</h3>
+            <p class="home-v2-ap-desc">极速连接 · 轻量化 · 灵活</p>
+            
+            <div class="home-v2-ap-meta">
+              <span class="home-v2-meta-score">★ 8.8</span>
+              <span class="home-v2-meta-ping">延迟 52ms</span>
+            </div>
+            
+            <a href="articles/shunyun.html" class="home-v2-btn-card-action">查看评测</a>
+          </div>
+        </div>
       </div>
-      
-      <div class="airports-grid">
-        <!-- Card 1 -->
-        <div class="airport-card">
-          <div class="ac-top">
-            <span class="ac-rank rank-1">1</span>
-            <span class="ac-tag tag-hot">人气推荐</span>
-          </div>
-          <h3 class="ac-name">EdgeNova</h3>
-          <p class="ac-sub">稳定 · 高速 · 流媒体</p>
-          <div class="ac-meta">
-            <span class="ac-score">评分 9.8</span>
-            <span class="ac-ping">延迟 38ms</span>
-          </div>
-          <a href="https://cristyc.edgenovaaff.cc/#/register?code=WWiIvxL9" target="_blank" class="btn btn-block btn-outline">查看评测</a>
-        </div>
-        
-        <!-- Card 2 -->
-        <div class="airport-card">
-          <div class="ac-top">
-            <span class="ac-rank rank-2">2</span>
-            <span class="ac-tag tag-stable">稳定首选</span>
-          </div>
-          <h3 class="ac-name">极连云</h3>
-          <p class="ac-sub">稳定 · 低延迟 · 高性价比</p>
-          <div class="ac-meta">
-            <span class="ac-score">评分 9.6</span>
-            <span class="ac-ping">延迟 42ms</span>
-          </div>
-          <a href="articles/jilianyun.html" class="btn btn-block btn-outline">查看评测</a>
-        </div>
-        
-        <!-- Card 3 -->
-        <div class="airport-card">
-          <div class="ac-top">
-            <span class="ac-rank rank-3">3</span>
-            <span class="ac-tag tag-value">性价比高</span>
-          </div>
-          <h3 class="ac-name">光年梯</h3>
-          <p class="ac-sub">隐私保护 · 安全可靠 · 稳定</p>
-          <div class="ac-meta">
-            <span class="ac-score">评分 9.4</span>
-            <span class="ac-ping">延迟 45ms</span>
-          </div>
-          <a href="articles/guangnianti.html" class="btn btn-block btn-outline">查看评测</a>
-        </div>
+    </section>
 
-        <!-- Card 4 -->
-        <div class="airport-card">
-          <div class="ac-top">
-            <span class="ac-rank">4</span>
-            <span class="ac-tag tag-new">新手推荐</span>
-          </div>
-          <h3 class="ac-name">快狸</h3>
-          <p class="ac-sub">新手友好 · 简单易用</p>
-          <div class="ac-meta">
-            <span class="ac-score">评分 9.2</span>
-            <span class="ac-ping">延迟 48ms</span>
-          </div>
-          <a href="articles/kuaili.html" class="btn btn-block btn-outline">查看评测</a>
+    <!-- 新手科学上网教程 -->
+    <section class="home-v2-section">
+      <div class="container">
+        <div class="home-v2-sec-header">
+          <h2 class="home-v2-sec-title">新手科学上网教程</h2>
+          <a href="knowledge.html" class="home-v2-sec-link">查看全部教程 &rarr;</a>
         </div>
         
-        <!-- Card 5 -->
-        <div class="airport-card">
-          <div class="ac-top">
-            <span class="ac-rank">5</span>
-            <span class="ac-tag tag-stable">大带宽</span>
+        <div class="home-v2-tutorials-grid">
+          <!-- Win -->
+          <div class="home-v2-tut-card">
+            <div class="home-v2-tut-main">
+              <svg class="home-v2-tut-brand-logo" viewBox="0 0 24 24" fill="#00a4ef" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 3.449L9.75 2.1v9.45H0V3.449zM0 12.45h9.75v9.45L0 20.551v-8.102zM10.8 1.95L24 0v11.55H10.8V1.95zM10.8 12.45H24v11.55l-13.2-1.95v-9.6z"/>
+              </svg>
+              <div class="home-v2-tut-text">
+                <span class="home-v2-tut-title">Windows 教程</span>
+                <span class="home-v2-tut-desc">Clash Verge 安装与配置详解</span>
+              </div>
+            </div>
+            <a href="articles/article-4.html" class="home-v2-btn-tut-action">查看教程</a>
           </div>
-          <h3 class="ac-name">寰宇云</h3>
-          <p class="ac-sub">大带宽 · 多地互联 · 稳定</p>
-          <div class="ac-meta">
-            <span class="ac-score">评分 9.0</span>
-            <span class="ac-ping">延迟 50ms</span>
+          
+          <!-- iOS -->
+          <div class="home-v2-tut-card">
+            <div class="home-v2-tut-main">
+              <svg class="home-v2-tut-brand-logo" viewBox="0 0 24 24" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.48C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.1 16.67C20.08 16.74 19.67 18.11 18.71 19.5M15.97 4.17C16.63 3.37 17.07 2.28 16.95 1C15.85 1.04 14.51 1.73 13.73 2.64C13.07 3.41 12.49 4.52 12.64 5.78C13.87 5.87 15.12 5.17 15.97 4.17Z"/>
+              </svg>
+              <div class="home-v2-tut-text">
+                <span class="home-v2-tut-title">iOS 教程</span>
+                <span class="home-v2-tut-desc">Shadowrocket 配置使用指南</span>
+              </div>
+            </div>
+            <a href="articles/article-1.html" class="home-v2-btn-tut-action">查看教程</a>
           </div>
-          <a href="articles/huanyuyun.html" class="btn btn-block btn-outline">查看评测</a>
-        </div>
-        
-        <!-- Card 6 -->
-        <div class="airport-card">
-          <div class="ac-top">
-            <span class="ac-rank">6</span>
-            <span class="ac-tag tag-pro">轻量极速</span>
+          
+          <!-- Android -->
+          <div class="home-v2-tut-card">
+            <div class="home-v2-tut-main">
+              <svg class="home-v2-tut-brand-logo" viewBox="0 0 24 24" fill="#a4c639" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.52 18c0 1.1-.9 2-2 2h-7c-1.1 0-2-.9-2-2v-8h11v8zM15.5 5.5c.3 0 .5-.2.5-.5V3c0-.3-.2-.5-.5-.5s-.5.2-.5.5v2c0 .3.2.5.5.5zm-7 0c.3 0 .5-.2.5-.5V3c0-.3-.2-.5-.5-.5s-.5.2-.5.5v2c0 .3.2.5.5.5zM20 9c-.5 0-1 .4-1 1v6c0 .6.5 1 1 1s1-.4 1-1v-6c0-.6-.4-1-1-1zm-16 0c-.5 0-1 .4-1 1v6c0 .6.5 1 1 1s1-.4 1-1v-6c0-.6-.4-1-1-1zm12.5-3.5h-9c-1.9 0-3.5 1.6-3.5 3.5h16c0-1.9-1.6-3.5-3.5-3.5z"/>
+              </svg>
+              <div class="home-v2-tut-text">
+                <span class="home-v2-tut-title">Android 教程</span>
+                <span class="home-v2-tut-desc">v2rayNG 配置与使用教程</span>
+              </div>
+            </div>
+            <a href="articles/article-2.html" class="home-v2-btn-tut-action">查看教程</a>
           </div>
-          <h3 class="ac-name">瞬云</h3>
-          <p class="ac-sub">极速连接 · 轻量化 · 灵活</p>
-          <div class="ac-meta">
-            <span class="ac-score">评分 8.8</span>
-            <span class="ac-ping">延迟 52ms</span>
+          
+          <!-- Mac -->
+          <div class="home-v2-tut-card">
+            <div class="home-v2-tut-main">
+              <svg class="home-v2-tut-brand-logo" viewBox="0 0 24 24" fill="#0071e3" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 2.05c3.95.23 7.15 3.12 7.8 7.02l-4.14-1.21-.69 2.5 4.3 1.25c-.27 2.03-1.42 3.73-3.08 4.79l-2.07-2.92-2.18 1.54 2.07 2.92C10.02 20 8.35 19 7.37 17.56l2.36-.83-.84-2.38-2.43.86C6.12 14.17 6.03 13.1 6.13 12h5.87V9.75H7.13L10.3 5.34l-2.03-1.45L4.54 8.79C5.45 6.03 7.85 4.2 10.75 4.04V6.5h2.25V4.05z"/>
+              </svg>
+              <div class="home-v2-tut-text">
+                <span class="home-v2-tut-title">Mac 教程</span>
+                <span class="home-v2-tut-desc">Clash Verge Mac 使用指南</span>
+              </div>
+            </div>
+            <a href="articles/article-4.html" class="home-v2-btn-tut-action">查看教程</a>
           </div>
-          <a href="articles/shunyun.html" class="btn btn-block btn-outline">查看评测</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 新手科学上网教程 -->
-  <section class="home-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">新手科学上网教程</h2>
-        <a href="knowledge.html" class="section-link">查看全部教程 &rarr;</a>
+    <!-- 底部三栏信息流 -->
+    <section class="home-v2-section">
+      <div class="container">
+        <div class="home-v2-cols-grid">
+          <!-- Col 1 -->
+          <div class="home-v2-col-card">
+            <div class="home-v2-col-header">
+              <span class="home-v2-col-title">本周热门文章</span>
+              <a href="knowledge.html" class="home-v2-col-more">更多文章 &rarr;</a>
+            </div>
+            <div class="home-v2-articles-list">
+              <!-- Art 1 -->
+              <div class="home-v2-art-item">
+                <span class="home-v2-art-rank home-v2-art-rank-1">1</span>
+                <div class="home-v2-art-thumb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                  </svg>
+                </div>
+                <a href="articles/article-1.html" class="home-v2-art-title">机场选购防坑指南：评估专线与直连</a>
+                <span class="home-v2-art-badge-hot">热门</span>
+              </div>
+              
+              <!-- Art 2 -->
+              <div class="home-v2-art-item">
+                <span class="home-v2-art-rank home-v2-art-rank-2">2</span>
+                <div class="home-v2-art-thumb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                  </svg>
+                </div>
+                <a href="articles/article-2.html" class="home-v2-art-title">Apple 设备最佳实践：Shadowrocket 与 QX 对比</a>
+              </div>
+              
+              <!-- Art 3 -->
+              <div class="home-v2-art-item">
+                <span class="home-v2-art-rank home-v2-art-rank-3">3</span>
+                <div class="home-v2-art-thumb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                  </svg>
+                </div>
+                <a href="articles/article-3.html" class="home-v2-art-title">流媒体解锁解析：Netflix/Disney+ 跨区攻略</a>
+              </div>
+              
+              <!-- Art 4 -->
+              <div class="home-v2-art-item">
+                <span class="home-v2-art-rank">4</span>
+                <div class="home-v2-art-thumb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                  </svg>
+                </div>
+                <a href="articles/article-4.html" class="home-v2-art-title">Clash 订阅导入与更新完整教程</a>
+              </div>
+              
+              <!-- Art 5 -->
+              <div class="home-v2-art-item">
+                <span class="home-v2-art-rank">5</span>
+                <div class="home-v2-art-thumb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                  </svg>
+                </div>
+                <a href="articles/article-5.html" class="home-v2-art-title">v2rayNG 安卓配置从入门到精通</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Col 2 -->
+          <div class="home-v2-col-card">
+            <div class="home-v2-col-header">
+              <span class="home-v2-col-title">最新更新</span>
+              <a href="knowledge.html" class="home-v2-col-more">更多更新 &rarr;</a>
+            </div>
+            <div class="home-v2-articles-list">
+              <!-- Item 1 -->
+              <div class="home-v2-update-item">
+                <span class="home-v2-update-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 14 14"/>
+                  </svg>
+                </span>
+                <a href="articles/article-6.html" class="home-v2-update-title">2026 年 6 月可用机场节点更新汇总</a>
+                <span class="home-v2-update-date">06-22</span>
+              </div>
+              
+              <!-- Item 2 -->
+              <div class="home-v2-update-item">
+                <span class="home-v2-update-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 14 14"/>
+                  </svg>
+                </span>
+                <a href="articles/article-7.html" class="home-v2-update-title">Clash Meta 内核版本对比与选择</a>
+                <span class="home-v2-update-date">06-22</span>
+              </div>
+              
+              <!-- Item 3 -->
+              <div class="home-v2-update-item">
+                <span class="home-v2-update-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 14 14"/>
+                  </svg>
+                </span>
+                <a href="articles/article-8.html" class="home-v2-update-title">WireGuard 协议详解与配置教程</a>
+                <span class="home-v2-update-date">06-22</span>
+              </div>
+              
+              <!-- Item 4 -->
+              <div class="home-v2-update-item">
+                <span class="home-v2-update-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 14 14"/>
+                  </svg>
+                </span>
+                <a href="articles/article-9.html" class="home-v2-update-title">如何测试节点速度与稳定性？</a>
+                <span class="home-v2-update-date">06-22</span>
+              </div>
+              
+              <!-- Item 5 -->
+              <div class="home-v2-update-item">
+                <span class="home-v2-update-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 14 14"/>
+                  </svg>
+                </span>
+                <a href="articles/article-10.html" class="home-v2-update-title">科学上网常见问题及解决方案（大全）</a>
+                <span class="home-v2-update-date">06-22</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Col 3 -->
+          <div class="home-v2-col-card">
+            <div class="home-v2-premium-card">
+              <div class="home-v2-prem-content">
+                <div class="home-v2-prem-header">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="2">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                  <span class="home-v2-prem-title">优质机场推荐</span>
+                </div>
+                <div class="home-v2-prem-list">
+                  <div class="home-v2-prem-li">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <span>全球优质节点覆盖</span>
+                  </div>
+                  <div class="home-v2-prem-li">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <span>高速稳定，4K 流媒体无压力</span>
+                  </div>
+                  <div class="home-v2-prem-li">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <span>严格隐私保护，安全可靠</span>
+                  </div>
+                  <div class="home-v2-prem-li">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <span>7x24 小时专业客服</span>
+                  </div>
+                </div>
+              </div>
+              <a href="airports.html" class="home-v2-btn-prem-action">查看优质机场 &rarr;</a>
+              <img class="home-v2-rocket-img" src="assets/images/rocket.png" alt="火箭插画">
+            </div>
+          </div>
+        </div>
       </div>
-      
-      <div class="tutorials-grid">
-        <div class="tut-card">
-          <div class="tut-content">
-            <h3 class="tut-title">Windows 教程</h3>
-            <p class="tut-sub">Clash Verge 安装与配置详解</p>
-          </div>
-          <a href="articles/article-4.html" class="btn btn-block btn-primary">查看教程</a>
-        </div>
-        <div class="tut-card">
-          <div class="tut-content">
-            <h3 class="tut-title">iOS 教程</h3>
-            <p class="tut-sub">Shadowrocket 配置使用指南</p>
-          </div>
-          <a href="articles/article-1.html" class="btn btn-block btn-primary">查看教程</a>
-        </div>
-        <div class="tut-card">
-          <div class="tut-content">
-            <h3 class="tut-title">Android 教程</h3>
-            <p class="tut-sub">v2rayNG 配置与使用教程</p>
-          </div>
-          <a href="articles/article-2.html" class="btn btn-block btn-primary">查看教程</a>
-        </div>
-        <div class="tut-card">
-          <div class="tut-content">
-            <h3 class="tut-title">Mac 教程</h3>
-            <p class="tut-sub">Clash Verge Mac 使用指南</p>
-          </div>
-          <a href="articles/article-4.html" class="btn btn-block btn-primary">查看教程</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 底部三栏信息流 -->
-  <section class="home-section bg-gray">
-    <div class="container">
-      <div class="bottom-cols">
-        <!-- Col 1 -->
-        <div class="b-col">
-          <div class="b-header">
-            <h3 class="b-title">本周热门文章</h3>
-            <a href="knowledge.html" class="b-link">更多文章 &rarr;</a>
-          </div>
-          <ul class="b-list">
-            <li><span class="b-rank rank-1">1</span> <a href="articles/article-1.html">机场选购防坑指南：评估专线与直连</a></li>
-            <li><span class="b-rank rank-2">2</span> <a href="articles/article-2.html">Apple 设备最佳实践：Shadowrocket 与 QX 对比</a></li>
-            <li><span class="b-rank rank-3">3</span> <a href="articles/article-3.html">流媒体解锁解析：Netflix/Disney+ 跨区攻略</a></li>
-            <li><span class="b-rank">4</span> <a href="articles/article-4.html">Clash 订阅导入与更新完整教程</a></li>
-            <li><span class="b-rank">5</span> <a href="articles/article-5.html">v2rayNG 安卓配置从入门到精通</a></li>
-          </ul>
+    <!-- 热门标签 -->
+    <section class="home-v2-section" style="padding-top: 0;">
+      <div class="container">
+        <div class="home-v2-sec-header">
+          <h2 class="home-v2-sec-title">热门标签</h2>
+          <a href="knowledge.html" class="home-v2-sec-link">更多标签 &rarr;</a>
         </div>
-        
-        <!-- Col 2 -->
-        <div class="b-col">
-          <div class="b-header">
-            <h3 class="b-title">最新更新</h3>
-            <a href="knowledge.html" class="b-link">更多更新 &rarr;</a>
-          </div>
-          <ul class="b-list no-num">
-            <li><a href="articles/article-6.html">2026 年 6 月可用机场节点更新汇总</a> <span class="b-date">06-22</span></li>
-            <li><a href="articles/article-7.html">Clash Meta 内核版本对比与选择</a> <span class="b-date">06-22</span></li>
-            <li><a href="articles/article-8.html">WireGuard 协议详解与配置教程</a> <span class="b-date">06-22</span></li>
-            <li><a href="articles/article-9.html">如何测试节点速度与稳定性？</a> <span class="b-date">06-22</span></li>
-            <li><a href="articles/article-10.html">科学上网常见问题及解决方案（大全）</a> <span class="b-date">06-22</span></li>
-          </ul>
-        </div>
-        
-        <!-- Col 3 -->
-        <div class="b-col bg-white box-shadow premium-col">
-          <div class="premium-header">
-            <h3 class="b-title" style="color: #2563eb; font-size: 1.3rem;">优质机场推荐</h3>
-          </div>
-          <ul class="p-features">
-            <li>全球优质节点覆盖</li>
-            <li>高速稳定，4K 流媒体无压力</li>
-            <li>严格隐私保护，安全可靠</li>
-            <li>7x24 小时专业客服</li>
-          </ul>
-          <a href="airports.html" class="btn btn-primary btn-block" style="margin-top: 20px;">查看优质机场 &rarr;</a>
+        <div class="tags-cloud">
+          <a href="knowledge.html" class="tag-pill">机场推荐</a>
+          <a href="articles/article-4.html" class="tag-pill">Clash 教程</a>
+          <a href="articles/article-1.html" class="tag-pill">Shadowrocket</a>
+          <a href="articles/article-2.html" class="tag-pill">v2rayNG</a>
+          <a href="ranking.html" class="tag-pill">节点测速</a>
+          <a href="articles/article-3.html" class="tag-pill">Netflix 解锁</a>
+          <a href="articles/article-3.html" class="tag-pill">Disney+</a>
+          <a href="knowledge.html" class="tag-pill">Trojan 协议</a>
+          <a href="knowledge.html" class="tag-pill">科学上网</a>
+          <a href="airports.html" class="tag-pill">网络代理</a>
+          <a href="knowledge.html" class="tag-pill">新手入门</a>
+          <a href="ranking.html" class="tag-pill">翻墙工具</a>
+          <a href="articles/article-8.html" class="tag-pill">WireGuard</a>
+          <a href="knowledge.html" class="tag-pill">VLESS 协议</a>
+          <a href="knowledge.html" class="tag-pill">订阅配置</a>
+          <a href="articles/article-10.html" class="tag-pill">常见问题</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- 热门标签 -->
-  <section class="home-section pt-0">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">热门标签</h2>
-        <a href="knowledge.html" class="section-link">更多标签 &rarr;</a>
-      </div>
-      <div class="tags-cloud">
-        <a href="knowledge.html" class="tag-pill">机场推荐</a>
-        <a href="articles/article-4.html" class="tag-pill">Clash 教程</a>
-        <a href="articles/article-1.html" class="tag-pill">Shadowrocket</a>
-        <a href="articles/article-2.html" class="tag-pill">v2rayNG</a>
-        <a href="ranking.html" class="tag-pill">节点测速</a>
-        <a href="articles/article-3.html" class="tag-pill">Netflix 解锁</a>
-        <a href="articles/article-3.html" class="tag-pill">Disney+</a>
-        <a href="knowledge.html" class="tag-pill">Trojan 协议</a>
-        <a href="knowledge.html" class="tag-pill">科学上网</a>
-        <a href="airports.html" class="tag-pill">网络代理</a>
-        <a href="knowledge.html" class="tag-pill">新手入门</a>
-        <a href="ranking.html" class="tag-pill">翻墙工具</a>
-        <a href="articles/article-8.html" class="tag-pill">WireGuard</a>
-        <a href="knowledge.html" class="tag-pill">VLESS 协议</a>
-        <a href="knowledge.html" class="tag-pill">订阅配置</a>
-        <a href="articles/article-10.html" class="tag-pill">常见问题</a>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
