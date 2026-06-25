@@ -5,14 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>云轨导航 - 专业的全球网络与协议指南</title>
   <meta name="description" content="云轨导航为您提供最新的网络协议解析、客户端配置教程及安全隐私指南。">
-  <link rel="stylesheet" href="index.css?v=4">
+  <link rel="stylesheet" href="index.css?v=6">
+  <style>
+    /* 纯文字排版优化补丁 */
+    .feat-txt { padding-left: 10px; border-left: 3px solid #2563eb; margin-bottom: 15px; }
+    .feat-txt strong { font-size: 1.1rem; color: #0f172a; margin-bottom: 6px; display: block; }
+    .hero-features { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
+    .feat-badge { width: 100%; }
+    .quick-nav-item { padding: 15px 20px; border-left: 3px solid transparent; }
+    .quick-nav-item:hover { border-left-color: #2563eb; background: #f8fafc; }
+    .qn-text strong { font-size: 1.1rem; color: #1e293b; margin-bottom: 6px; }
+    .qn-text { font-size: 0.9rem; color: #64748b; line-height: 1.4; }
+    .ac-name { font-size: 1.6rem; color: #2563eb; margin-bottom: 12px; font-weight: bold; }
+    .tut-title { font-size: 1.3rem; color: #2563eb; margin-bottom: 12px; font-weight: bold; }
+    .p-features li { padding-left: 15px; position: relative; }
+    .p-features li::before { content: "-"; position: absolute; left: 0; color: #94a3b8; }
+    .b-list li { align-items: flex-start; }
+    .b-date { color: #94a3b8; font-size: 0.85rem; margin-left: auto; }
+    .logo-text { font-size: 1.4rem; font-weight: bold; color: #2563eb; letter-spacing: 1px; }
+    .footer-logo .logo-text { font-size: 1.2rem; color: #475569; }
+  </style>
 </head>
 <body>
   <!-- Header -->
   <header class="header">
     <div class="container">
-      <a href="index.html" class="logo-container">
-        <div class="txt-logo-badge">云轨</div>
+      <a href="index.html" class="logo-container" style="text-decoration: none;">
         <span class="logo-text">云轨导航</span>
       </a>
       <nav class="nav-menu" id="navMenu">
@@ -33,10 +51,18 @@
         <p class="hero-subtitle">专注机场评测、节点测速、Clash 教程、Shadowrocket 配置、跨区解锁等科学上网相关指南，帮你快速掌握稳定、好用、适合自己的网络工具。</p>
         
         <div class="hero-features">
-          <div class="feat-badge"><span class="badge-icon">[稳]</span> <div class="feat-txt"><strong>稳定可靠</strong><br>实测节点，稳定在线</div></div>
-          <div class="feat-badge"><span class="badge-icon">[速]</span> <div class="feat-txt"><strong>高速体验</strong><br>低延迟，高速晚高峰</div></div>
-          <div class="feat-badge"><span class="badge-icon">[安]</span> <div class="feat-txt"><strong>安全隐私</strong><br>严加加密，保护隐私</div></div>
-          <div class="feat-badge"><span class="badge-icon">[新]</span> <div class="feat-txt"><strong>持续更新</strong><br>每周更新，求精最新</div></div>
+          <div class="feat-badge">
+            <div class="feat-txt"><strong>稳定可靠</strong>实测节点，稳定在线</div>
+          </div>
+          <div class="feat-badge">
+            <div class="feat-txt"><strong>高速体验</strong>低延迟，高速晚高峰</div>
+          </div>
+          <div class="feat-badge">
+            <div class="feat-txt"><strong>安全隐私</strong>严加加密，保护隐私</div>
+          </div>
+          <div class="feat-badge">
+            <div class="feat-txt"><strong>持续更新</strong>每周更新，求精最新</div>
+          </div>
         </div>
         
         <div class="hero-actions">
@@ -49,20 +75,16 @@
         <div class="quick-nav-panel">
           <h3 class="panel-title">快速导航</h3>
           <a href="knowledge.html" class="quick-nav-item">
-            <div class="qn-icon">[指]</div>
-            <div class="qn-text"><strong>新手入门指南</strong><br>3分钟学会科学上网</div>
+            <div class="qn-text"><strong>新手入门指南</strong>3分钟学会科学上网</div>
           </a>
           <a href="airports.html" class="quick-nav-item">
-            <div class="qn-icon">[推]</div>
-            <div class="qn-text"><strong>本周稳定机场推荐</strong><br>实时更新可用节点</div>
+            <div class="qn-text"><strong>本周稳定机场推荐</strong>实时更新可用节点</div>
           </a>
           <a href="articles/article-4.html" class="quick-nav-item">
-            <div class="qn-icon">[教]</div>
-            <div class="qn-text"><strong>Clash 完整教程</strong><br>从安装到配置详细教学</div>
+            <div class="qn-text"><strong>Clash 完整教程</strong>从安装到配置详细教学</div>
           </a>
           <a href="ranking.html" class="quick-nav-item">
-            <div class="qn-icon">[测]</div>
-            <div class="qn-text"><strong>节点测速工具</strong><br>一键测速，找出最快节点</div>
+            <div class="qn-text"><strong>节点测速工具</strong>一键测速，找出最快节点</div>
           </a>
         </div>
       </div>
@@ -93,9 +115,8 @@
         <div class="airport-card">
           <div class="ac-top">
             <span class="ac-rank rank-1">1</span>
-            <span class="ac-tag tag-hot">[人气推荐]</span>
+            <span class="ac-tag tag-hot">人气推荐</span>
           </div>
-          <div class="ac-logo-text bg-blue">E</div>
           <h3 class="ac-name">Edgenova</h3>
           <p class="ac-sub">稳定 · 高速 · 流媒体</p>
           <div class="ac-meta">
@@ -109,9 +130,8 @@
         <div class="airport-card">
           <div class="ac-top">
             <span class="ac-rank rank-2">2</span>
-            <span class="ac-tag tag-stable">[稳定首选]</span>
+            <span class="ac-tag tag-stable">稳定首选</span>
           </div>
-          <div class="ac-logo-text bg-teal">极</div>
           <h3 class="ac-name">极光网络</h3>
           <p class="ac-sub">稳定 · 低延迟 · 高性价比</p>
           <div class="ac-meta">
@@ -125,9 +145,8 @@
         <div class="airport-card">
           <div class="ac-top">
             <span class="ac-rank rank-3">3</span>
-            <span class="ac-tag tag-value">[性价比高]</span>
+            <span class="ac-tag tag-value">性价比高</span>
           </div>
-          <div class="ac-logo-text bg-purple">星</div>
           <h3 class="ac-name">星际加速</h3>
           <p class="ac-sub">性价比 · 解锁强 · 稳定</p>
           <div class="ac-meta">
@@ -141,9 +160,8 @@
         <div class="airport-card">
           <div class="ac-top">
             <span class="ac-rank">4</span>
-            <span class="ac-tag tag-new">[新锐推荐]</span>
+            <span class="ac-tag tag-new">新锐推荐</span>
           </div>
-          <div class="ac-logo-text bg-dark">N</div>
           <h3 class="ac-name">南极网络</h3>
           <p class="ac-sub">高速 · 稳定 · 新锐</p>
           <div class="ac-meta">
@@ -157,9 +175,8 @@
         <div class="airport-card">
           <div class="ac-top">
             <span class="ac-rank">5</span>
-            <span class="ac-tag tag-stable">[稳定可选]</span>
+            <span class="ac-tag tag-stable">稳定可选</span>
           </div>
-          <div class="ac-logo-text bg-green">绿</div>
           <h3 class="ac-name">绿叶加速器</h3>
           <p class="ac-sub">稳定 · 安全 · 隐私</p>
           <div class="ac-meta">
@@ -173,9 +190,8 @@
         <div class="airport-card">
           <div class="ac-top">
             <span class="ac-rank">6</span>
-            <span class="ac-tag tag-pro">[品质保证]</span>
+            <span class="ac-tag tag-pro">品质保证</span>
           </div>
-          <div class="ac-logo-text bg-sky">飞</div>
           <h3 class="ac-name">飞跃云</h3>
           <p class="ac-sub">高质量 · 专线 · 解锁强</p>
           <div class="ac-meta">
@@ -198,7 +214,6 @@
       
       <div class="tutorials-grid">
         <div class="tut-card">
-          <div class="tut-icon bg-win">Win</div>
           <div class="tut-content">
             <h3 class="tut-title">Windows 教程</h3>
             <p class="tut-sub">Clash Verge 安装与配置详解</p>
@@ -206,7 +221,6 @@
           <a href="articles/article-4.html" class="btn btn-block btn-primary">查看教程</a>
         </div>
         <div class="tut-card">
-          <div class="tut-icon bg-ios">iOS</div>
           <div class="tut-content">
             <h3 class="tut-title">iOS 教程</h3>
             <p class="tut-sub">Shadowrocket 配置使用指南</p>
@@ -214,7 +228,6 @@
           <a href="articles/article-1.html" class="btn btn-block btn-primary">查看教程</a>
         </div>
         <div class="tut-card">
-          <div class="tut-icon bg-and">And</div>
           <div class="tut-content">
             <h3 class="tut-title">Android 教程</h3>
             <p class="tut-sub">v2rayNG 配置与使用教程</p>
@@ -222,7 +235,6 @@
           <a href="articles/article-2.html" class="btn btn-block btn-primary">查看教程</a>
         </div>
         <div class="tut-card">
-          <div class="tut-icon bg-mac">Mac</div>
           <div class="tut-content">
             <h3 class="tut-title">Mac 教程</h3>
             <p class="tut-sub">Clash Verge Mac 使用指南</p>
@@ -244,7 +256,7 @@
             <a href="knowledge.html" class="b-link">更多文章 &rarr;</a>
           </div>
           <ul class="b-list">
-            <li><span class="b-rank rank-1">1</span> <a href="articles/article-1.html">机场选购防坑指南：评估专线与直连</a> <span class="b-badge hot">[热门]</span></li>
+            <li><span class="b-rank rank-1">1</span> <a href="articles/article-1.html">机场选购防坑指南：评估专线与直连</a></li>
             <li><span class="b-rank rank-2">2</span> <a href="articles/article-2.html">Apple 设备最佳实践：Shadowrocket 与 QX 对比</a></li>
             <li><span class="b-rank rank-3">3</span> <a href="articles/article-3.html">流媒体解锁解析：Netflix/Disney+ 跨区攻略</a></li>
             <li><span class="b-rank">4</span> <a href="articles/article-4.html">Clash 订阅导入与更新完整教程</a></li>
@@ -259,24 +271,24 @@
             <a href="knowledge.html" class="b-link">更多更新 &rarr;</a>
           </div>
           <ul class="b-list no-num">
-            <li><span class="b-badge-text">[更]</span> <a href="articles/article-6.html">2026 年 6 月可用机场节点更新汇总</a> <span class="b-date">06-22</span></li>
-            <li><span class="b-badge-text">[更]</span> <a href="articles/article-7.html">Clash Meta 内核版本对比与选择</a> <span class="b-date">06-22</span></li>
-            <li><span class="b-badge-text">[更]</span> <a href="articles/article-8.html">WireGuard 协议详解与配置教程</a> <span class="b-date">06-22</span></li>
-            <li><span class="b-badge-text">[更]</span> <a href="articles/article-9.html">如何测试节点速度与稳定性？</a> <span class="b-date">06-22</span></li>
-            <li><span class="b-badge-text">[更]</span> <a href="articles/article-10.html">科学上网常见问题及解决方案（大全）</a> <span class="b-date">06-22</span></li>
+            <li><a href="articles/article-6.html">2026 年 6 月可用机场节点更新汇总</a> <span class="b-date">06-22</span></li>
+            <li><a href="articles/article-7.html">Clash Meta 内核版本对比与选择</a> <span class="b-date">06-22</span></li>
+            <li><a href="articles/article-8.html">WireGuard 协议详解与配置教程</a> <span class="b-date">06-22</span></li>
+            <li><a href="articles/article-9.html">如何测试节点速度与稳定性？</a> <span class="b-date">06-22</span></li>
+            <li><a href="articles/article-10.html">科学上网常见问题及解决方案（大全）</a> <span class="b-date">06-22</span></li>
           </ul>
         </div>
         
         <!-- Col 3 -->
         <div class="b-col bg-white box-shadow premium-col">
           <div class="premium-header">
-            <span class="p-icon">[优]</span> <h3 class="b-title">优质机场推荐</h3>
+            <h3 class="b-title" style="color: #2563eb; font-size: 1.3rem;">优质机场推荐</h3>
           </div>
           <ul class="p-features">
-            <li><span>[·]</span> 全球优质节点覆盖</li>
-            <li><span>[·]</span> 高速稳定，4K 流媒体无压力</li>
-            <li><span>[·]</span> 严格隐私保护，安全可靠</li>
-            <li><span>[·]</span> 7x24 小时专业客服</li>
+            <li>全球优质节点覆盖</li>
+            <li>高速稳定，4K 流媒体无压力</li>
+            <li>严格隐私保护，安全可靠</li>
+            <li>7x24 小时专业客服</li>
           </ul>
           <a href="airports.html" class="btn btn-primary btn-block" style="margin-top: 20px;">查看优质机场 &rarr;</a>
         </div>
@@ -317,7 +329,6 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-logo">
-          <div class="txt-logo-badge" style="width: 30px; height: 30px; font-size: 0.8rem;">云轨</div>
           <span class="logo-text">云轨导航</span>
         </div>
         <div class="footer-links">
