@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>科普指南 - 云轨导航</title>
+  <title>关于我们 - 云轨导航</title>
   <meta name="description" content="云轨导航为您提供最新的网络协议解析、客户端配置教程及安全隐私指南。">
   <link rel="stylesheet" href="index.css?v=3">
 </head>
@@ -18,8 +18,8 @@
         <a href="index.html" class="nav-link">首页探索</a>
         <a href="airports.html" class="nav-link">机场测评</a>
         <a href="ranking.html" class="nav-link">机场排行</a>
-        <a href="knowledge.html" class="nav-link active">科普指南</a>
-        <a href="about.html" class="nav-link">关于我们</a>
+        <a href="knowledge.html" class="nav-link">科普指南</a>
+        <a href="about.html" class="nav-link active">关于我们</a>
       </nav>
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">☰</button>
     </div>
@@ -75,85 +75,20 @@
     }
   </style>
 
-  <main class="container" style="max-width: 900px; margin: 60px auto; min-height: 60vh;">
-    <div style="margin-bottom: 40px;">
-      <h1 style="font-size: 1.4rem; color: #64748b; font-weight: normal;">共计 <span id="totalCount" style="color: var(--text-primary); font-weight: bold;">16</span> 篇文章</h1>
+    <main class="page-container">
+    <div class="page-header">
+      <h1 class="page-title">关于我们</h1>
+      <p class="page-subtitle">了解云轨导航的初衷与愿景</p>
     </div>
     
-    <div style="margin-bottom: 20px;">
-      <h2 style="font-size: 1.8rem; color: var(--text-primary); margin-bottom: 20px;">2026</h2>
-      <div id="articleList" style="border-top: 1px solid var(--border-color);">
-         
-         <a href="articles/article-1.html" class="article-row">
-           <span class="article-date">06-20</span>
-           <span class="article-title">翻墙基础原理：深入浅出讲解 Shadowsocks、V2Ray 等协议工作原理</span>
-         </a>
-         <a href="articles/article-2.html" class="article-row">
-           <span class="article-date">06-18</span>
-           <span class="article-title">Clash 全平台指南：导入订阅及高级规则分流配置教程</span>
-         </a>
-         <a href="articles/article-3.html" class="article-row">
-           <span class="article-date">06-15</span>
-           <span class="article-title">选购防坑指南：揭秘行业内幕，评估 IPLC 专线与 BGP 直连节点</span>
-         </a>
-         <a href="articles/article-4.html" class="article-row">
-           <span class="article-date">06-12</span>
-           <span class="article-title">Apple 设备配置：全面对比 Shadowrocket 与 Quantumult X</span>
-         </a>
-         <a href="articles/article-5.html" class="article-row">
-           <span class="article-date">06-10</span>
-           <span class="article-title">流媒体解锁攻略：解析 Netflix/Disney+ 封锁机制及跨区方案</span>
-         </a>
-         <a href="articles/article-6.html" class="article-row">
-           <span class="article-date">06-08</span>
-           <span class="article-title">断流超时排查：本地 DNS 污染到运营商封锁的终极解决方法</span>
-         </a>
-         <a href="articles/article-7.html" class="article-row">
-           <span class="article-date">06-05</span>
-           <span class="article-title">新一代代理剖析：VLESS/XTLS 与 Hysteria 抗封锁新协议详解</span>
-         </a>
-         <a href="articles/article-8.html" class="article-row">
-           <span class="article-date">06-02</span>
-           <span class="article-title">跨境网络拓扑：剖析深港专线、沪日专线背后的物理链路原理</span>
-         </a>
-         <a href="articles/article-9.html" class="article-row">
-           <span class="article-date">05-28</span>
-           <span class="article-title">隐私泄漏防范：防范 WebRTC 真实 IP 泄漏与解决 DNS 劫持</span>
-         </a>
-         <a href="articles/article-10.html" class="article-row">
-           <span class="article-date">05-25</span>
-           <span class="article-title">路由器翻墙实战：OpenWrt 软路由配置 PassWall / OpenClash 教程</span>
-         </a>
-         <a href="articles/article-11.html" class="article-row">
-           <span class="article-date">05-20</span>
-           <span class="article-title">深度解析：代理工具高级进阶玩法与极端网络环境生存指南</span>
-         </a>
-         <a href="articles/article-12.html" class="article-row">
-           <span class="article-date">05-18</span>
-           <span class="article-title">网络安全全指南：防止隐私裸奔，从硬件到软件打造无懈可击防线</span>
-         </a>
-         <a href="articles/tutorial-win.html" class="article-row">
-           <span class="article-date">05-15</span>
-           <span class="article-title">Windows 新手教程：Clash Verge 导入订阅与基础使用指南</span>
-         </a>
-         <a href="articles/tutorial-ios.html" class="article-row">
-           <span class="article-date">05-12</span>
-           <span class="article-title">iOS 新手教程：Shadowrocket (小火箭) 节点添加与分流规则设置</span>
-         </a>
-         <a href="articles/tutorial-and.html" class="article-row">
-           <span class="article-date">05-10</span>
-           <span class="article-title">Android 新手教程：v2rayNG 全面配置教程与移动端稳定方案</span>
-         </a>
-         <a href="articles/tutorial-mac.html" class="article-row">
-           <span class="article-date">05-08</span>
-           <span class="article-title">Mac 新手教程：Stash / Clash Verge 使用教程与高效分流配置</span>
-         </a>
-
-      </div>
-    </div>
-
-    <!-- Pagination controls -->
-    <div class="pagination" id="pagination" style="display: flex; justify-content: center; gap: 8px; margin-top: 50px;">
+    <div class="content-card" style="padding: 40px; text-align: center; line-height: 1.8;">
+      <h2>我们的使命</h2>
+      <p>云轨导航致力于为大家提供最优质的网络服务推荐与教程，帮助每一位用户安全、快速、稳定地连接全球网络。</p>
+      
+      <br><br>
+      <h2>联系我们</h2>
+      <p>如果您有任何建议、合作意向或需要帮助，欢迎随时联系我们。</p>
+      <p>Email: contact@yungui.com</p>
     </div>
   </main>
 
