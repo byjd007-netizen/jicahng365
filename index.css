@@ -786,9 +786,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .guide-list li { margin-bottom: 10px; }
 .guide-list a { color: #475569; text-decoration: none; display: flex; align-items: center; font-size:0.95rem; }
-.guide-list a::before { content: '?'; color: #3b82f6; margin-right: 8px; font-weight: bold; }
 .premium-list li { color: #475569; font-size:0.95rem; margin-bottom: 8px; display: flex; align-items: center; }
-.premium-list li::before { content: '?'; color: #3b82f6; margin-right: 8px; font-weight: bold; }
 
 /* Main Content */
 .main-content {
