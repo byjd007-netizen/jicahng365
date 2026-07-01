@@ -1,4 +1,4 @@
-$index_path = ".\index.html"
+﻿$index_path = ".\index.html"
 $k_path = ".\knowledge.html"
 
 # Extract header from knowledge.html
@@ -6,10 +6,9 @@ $k_content = [System.IO.File]::ReadAllText($k_path, [System.Text.Encoding]::UTF8
 $header = [regex]::Match($k_content, '(?s)(<!DOCTYPE html>.*?</header>)').Groups[1].Value
 
 # Modify header for airports.html
-$header = $header -replace '<a href="knowledge.html" class="nav-link active">知识库</a>', '<a href="knowledge.html" class="nav-link">知识库</a>'
-$header = $header -replace '<a href="#recommend" class="nav-link">机场推荐</a>', '<a href="airports.html" class="nav-link active">机场推荐</a>'
-$header = $header -replace '<a href="airports.html" class="nav-link">机场推荐</a>', '<a href="airports.html" class="nav-link active">机场推荐</a>'
-$header = $header -replace '<title>知识库 - 云轨导航</title>', '<title>机场推荐 - 云轨导航</title>'
+$header = $header -replace '<a href="knowledge.html" class="nav-link active">科普指南</a>', '<a href="knowledge.html" class="nav-link">科普指南</a>'
+$header = $header -replace '<a href="airports.html" class="nav-link">机场测评</a>', '<a href="airports.html" class="nav-link active">机场测评</a>'
+$header = $header -replace '<title>科普指南 - 云轨导航</title>', '<title>机场测评 - 云轨导航</title>'
 
 # Extract footer
 $footer = [regex]::Match($k_content, '(?s)(<!-- SEO Links Section -->.*</html>)').Groups[1].Value
@@ -76,36 +75,36 @@ $main = @"
       <div id="articleList" style="border-top: 1px solid var(--border-color);">
          
          <a href="articles/jilianyun.html" class="article-row">
-           <span class="article-date">05-24</span>
-           <span class="article-title">极连云机场深度评测（2026最新）：全网性价比之王，稳定高速不跑路</span>
+            <span class="article-date">05-24</span>
+            <span class="article-title">极连云机场深度评测（2026最新）：全网性价比之王，稳定高速不跑路</span>
          </a>
          <a href="articles/edgenova.html" class="article-row">
-           <span class="article-date">05-24</span>
-           <span class="article-title">EdgeNova机场深度评测：全线顶级专线，晚高峰无缝秒开流媒体首选</span>
+            <span class="article-date">05-24</span>
+            <span class="article-title">EdgeNova机场深度评测：全线顶级专线，晚高峰无缝秒开流媒体首选</span>
          </a>
          <a href="articles/guangnianti.html" class="article-row">
-           <span class="article-date">05-22</span>
-           <span class="article-title">光年梯深度评测：专为极客打造，支持最新 Hysteria2 及 VLESS 协议</span>
+            <span class="article-date">05-22</span>
+            <span class="article-title">光年梯深度评测：专为极客打造，支持最新 Hysteria2 及 VLESS 协议</span>
          </a>
          <a href="articles/huanyuyun.html" class="article-row">
-           <span class="article-date">05-22</span>
-           <span class="article-title">幻宇云机场深度评测：BGP三网优化+IEPL专线，Netflix/DAZN全解锁</span>
+            <span class="article-date">05-22</span>
+            <span class="article-title">幻宇云机场深度评测：BGP三网优化+IEPL专线，Netflix/DAZN全解锁</span>
          </a>
          <a href="articles/kexinyun.html" class="article-row">
-           <span class="article-date">05-21</span>
-           <span class="article-title">可信云机场深度评测：不限速不限设备，老牌稳定专线深度测评</span>
+            <span class="article-date">05-21</span>
+            <span class="article-title">可信云机场深度评测：不限速不限设备，老牌稳定专线深度测评</span>
          </a>
          <a href="articles/kuaili.html" class="article-row">
-           <span class="article-date">05-17</span>
-           <span class="article-title">快鲤机场深度评测（2026版）：多地BGP企业专线，流媒体无障碍</span>
+            <span class="article-date">05-17</span>
+            <span class="article-title">快狸机场深度评测（2026版）：多地BGP企业专线，流媒体无障碍</span>
          </a>
          <a href="articles/shunyun.html" class="article-row">
-           <span class="article-date">05-05</span>
-           <span class="article-title">瞬云机场深度评测：主打高频节点轮换，极致抗墙的破冰尖兵</span>
+            <span class="article-date">05-05</span>
+            <span class="article-title">瞬云机场深度评测：主打高频节点轮换，极致抗墙的破冰尖兵</span>
          </a>
          <a href="articles/sujie.html" class="article-row">
-           <span class="article-date">04-30</span>
-           <span class="article-title">速捷机场深度评测：不限设备连接的2026年高性价比全IPLC专线</span>
+            <span class="article-date">04-30</span>
+            <span class="article-title">速捷机场深度评测：不限设备连接的2026年高性价比全IPLC专线</span>
          </a>
 
       </div>
@@ -182,7 +181,7 @@ $files = @("index.html", "knowledge.html", "ranking.html")
 foreach ($file in $files) {
     if (Test-Path ".\$file") {
         $content = [System.IO.File]::ReadAllText(".\$file", [System.Text.Encoding]::UTF8)
-        $content = $content -replace '<a href="#recommend" class="nav-link">机场推荐</a>', '<a href="airports.html" class="nav-link">机场推荐</a>'
+        $content = $content -replace '<a href="#recommend" class="nav-link">机场测评</a>', '<a href="airports.html" class="nav-link">机场测评</a>'
         [System.IO.File]::WriteAllText(".\$file", $content, [System.Text.Encoding]::UTF8)
         Write-Host "Updated links in $file"
     }
