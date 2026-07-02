@@ -1,4 +1,4 @@
-﻿$index_path = ".\index.html"
+$index_path = ".\index.html"
 $k_path = ".\knowledge.html"
 
 # Extract header from knowledge.html
@@ -104,7 +104,7 @@ $main = @"
          </a>
          <a href="articles/sujie.html" class="article-row">
             <span class="article-date">04-30</span>
-            <span class="article-title">速捷机场深度评测：不限设备连接的2026年高性价比全IPLC专线</span>
+            <span class="article-title">速界机场深度评测：高性价比企业级 IEPL 专线的晚高峰实测与选购边界说明</span>
          </a>
 
       </div>
