@@ -1,4 +1,4 @@
-$airports_path = ".\airports.html"
+﻿$airports_path = ".\airports.html"
 
 $html = @"
 <!DOCTYPE html>

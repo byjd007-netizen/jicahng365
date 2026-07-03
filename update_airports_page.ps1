@@ -1,4 +1,4 @@
-$index_path = ".\index.html"
+﻿$index_path = ".\index.html"
 $k_path = ".\knowledge.html"
 
 # Extract header from knowledge.html
