@@ -281,204 +281,69 @@
 
 <h2>四、晚高峰时段多节点 Miaoko 测速表现与使用体验</h2>
 <p>对于 IEPL 专线而言，其最大的技术考量在于<b>“晚高峰期间是否会掉速拥堵”</b>。为了得出可复现的真实表现，我们使用上海联通 500M 宽带环境，在连续一周的<b>晚高峰时段（20:00 - 23:00）</b>进行了多节点稳定性与延迟测试。以下是实测得出的平均连通数据：</p>
-<div class="pricing-sec-container">
-  <div class="pricing-tabs-row">
-    <button class="pricing-tab-btn active" data-filter="all">全部</button>
-    <button class="pricing-tab-btn" data-filter="cycle">按周期</button>
-    <button class="pricing-tab-btn" data-filter="traffic">按流量</button>
-  </div>
-  
-  <div class="pricing-cards-grid">
-    <!-- Card -->
-    <div class="pricing-card-item" data-type="cycle">
-      <div class="pricing-card-header">
-        <h4 class="pricing-card-title">年付体验包</h4>
-        <div class="pricing-card-price-box">
-          <span class="pricing-card-price">¥ 90</span>
-          <span class="pricing-card-unit">/年付</span>
-        </div>
-      </div>
-      <ul class="pricing-card-features">
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>每月50GB流量配置</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>不限速不限制设备数量</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>折合7.5元/月，全IEPL专线</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>解锁各大流媒体AI工具</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>自研客户端一键使用</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>重置包 ¥7.3/次，适合轻度尝鲜与安全备用</span>
-        </li>
-      </ul>
-      <a href="https://speedworld.com" target="_blank" class="pricing-card-btn">立即订阅</a>
-    </div>
-
-    <!-- Card -->
-    <div class="pricing-card-item" data-type="cycle">
-      <div class="pricing-card-header">
-        <h4 class="pricing-card-title">极速版</h4>
-        <div class="pricing-card-price-box">
-          <span class="pricing-card-price">¥ 25</span>
-          <span class="pricing-card-unit">/月付</span>
-        </div>
-      </div>
-      <ul class="pricing-card-features">
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>每月120GB流量配置</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>不限速不限制设备数量</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>年付折算仅 21.2元/月，重置包 ¥22.5/次</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>解锁各大流媒体AI工具</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>自研客户端一键使用</span>
-        </li>
-        <li class="pricing-card-feature-li" style="color: #0d9488; font-weight: 600;">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>日常办公/流媒体追剧主力推荐版</span>
-        </li>
-      </ul>
-      <a href="https://speedworld.com" target="_blank" class="pricing-card-btn">立即订阅</a>
-    </div>
-
-    <!-- Card -->
-    <div class="pricing-card-item" data-type="traffic">
-      <div class="pricing-card-header">
-        <h4 class="pricing-card-title">超速版</h4>
-        <div class="pricing-card-price-box">
-          <span class="pricing-card-price">¥ 50</span>
-          <span class="pricing-card-unit">/月付</span>
-        </div>
-      </div>
-      <ul class="pricing-card-features">
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>每月250GB流量配置</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>不限速不限制设备数量</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>年付折算仅 42.5元/月，重置包 ¥46/次</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>解锁各大流媒体AI工具</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>自研客户端一键使用</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>专线游戏加速、中重度视频及AI开发者推荐</span>
-        </li>
-      </ul>
-      <a href="https://speedworld.com" target="_blank" class="pricing-card-btn">立即订阅</a>
-    </div>
-
-    <!-- Card -->
-    <div class="pricing-card-item" data-type="traffic">
-      <div class="pricing-card-header">
-        <h4 class="pricing-card-title">光速版</h4>
-        <div class="pricing-card-price-box">
-          <span class="pricing-card-price">¥ 100</span>
-          <span class="pricing-card-unit">/月付</span>
-        </div>
-      </div>
-      <ul class="pricing-card-features">
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>每月500GB流量配置</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>不限速不限制设备数量</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>年付折算仅 85元/月，重置包 ¥95/次</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>解锁各大流媒体AI工具</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>自研客户端一键使用</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>极速大带宽专线，小团队共享与巨量下载优选</span>
-        </li>
-      </ul>
-      <a href="https://speedworld.com" target="_blank" class="pricing-card-btn">立即订阅</a>
-    </div>
-
-    <!-- Card -->
-    <div class="pricing-card-item" data-type="traffic">
-      <div class="pricing-card-header">
-        <h4 class="pricing-card-title">跃迁版</h4>
-        <div class="pricing-card-price-box">
-          <span class="pricing-card-price">¥ 200</span>
-          <span class="pricing-card-unit">/月付</span>
-        </div>
-      </div>
-      <ul class="pricing-card-features">
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>每月1000GB流量配置</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>不限速不限制设备数量</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>年付折算仅 170元/月</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>解锁各大流媒体AI工具</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>自研客户端一键使用</span>
-        </li>
-        <li class="pricing-card-feature-li">
-          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-          <span>旗舰大带宽，超重度企业级极速传输</span>
-        </li>
-      </ul>
-      <a href="https://speedworld.com" target="_blank" class="pricing-card-btn">立即订阅</a>
-    </div>
-  </div>
+<div style="overflow-x:auto;">
+    <table style="width:100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+        <thead>
+            <tr style="background-color: #f8fafc; border-bottom: 2px solid #e2e8f0;">
+                <th style="padding: 15px; text-align: left; color: #1e293b; font-weight: 700;">节点名称</th>
+                <th style="padding: 15px; text-align: left; color: #1e293b; font-weight: 700;">协议类型</th>
+                <th style="padding: 15px; text-align: left; color: #1e293b; font-weight: 700;">TLS RTT 延迟</th>
+                <th style="padding: 15px; text-align: left; color: #1e293b; font-weight: 700;">平均下载带宽</th>
+                <th style="padding: 15px; text-align: left; color: #1e293b; font-weight: 700;">YouTube 8K 起缓冲时间</th>
+                <th style="padding: 15px; text-align: left; color: #1e293b; font-weight: 700;">网络可用率与稳定性</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="border-bottom: 1px solid #f1f5f9;">
+                <td style="padding: 15px; font-weight: 600;">香港 01 [IEPL]</td>
+                <td style="padding: 15px;">Shadowsocks</td>
+                <td style="padding: 15px; color: #475569;">42 ms</td>
+                <td style="padding: 15px; color: #10b981; font-weight:600;">380 Mbps</td>
+                <td style="padding: 15px; color: #2563eb; font-weight:600;">秒开 (小于 1.5s)</td>
+                <td style="padding: 15px; color: #ef4444; font-weight:600;">99.9% / 无任何丢包</td>
+            </tr>
+            <tr style="background-color: #fcfcfc; border-bottom: 1px solid #f1f5f9;">
+                <td style="padding: 15px; font-weight: 600;">香港 02 [IEPL]</td>
+                <td style="padding: 15px;">Trojan</td>
+                <td style="padding: 15px; color: #475569;">45 ms</td>
+                <td style="padding: 15px; color: #10b981; font-weight:600;">350 Mbps</td>
+                <td style="padding: 15px; color: #2563eb; font-weight:600;">秒开 (无需缓冲)</td>
+                <td style="padding: 15px; color: #ef4444; font-weight:600;">99.9% / 无丢包</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #f1f5f9;">
+                <td style="padding: 15px; font-weight: 600;">台湾 01 [IEPL]</td>
+                <td style="padding: 15px;">VLESS</td>
+                <td style="padding: 15px; color: #475569;">68 ms</td>
+                <td style="padding: 15px; color: #10b981; font-weight:600;">310 Mbps</td>
+                <td style="padding: 15px; color: #2563eb; font-weight:600;">极速流畅</td>
+                <td style="padding: 15px; color: #ef4444; font-weight:600;">99.8% / 偶尔微幅抖动</td>
+            </tr>
+            <tr style="background-color: #fcfcfc; border-bottom: 1px solid #f1f5f9;">
+                <td style="padding: 15px; font-weight: 600;">日本 01 [IEPL]</td>
+                <td style="padding: 15px;">Trojan</td>
+                <td style="padding: 15px; color: #475569;">72 ms</td>
+                <td style="padding: 15px; color: #10b981; font-weight:600;">290 Mbps</td>
+                <td style="padding: 15px; color: #2563eb; font-weight:600;">非常流畅</td>
+                <td style="padding: 15px; color: #ef4444; font-weight:600;">99.7% / 无丢包</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #f1f5f9;">
+                <td style="padding: 15px; font-weight: 600;">新加坡 01 [IEPL]</td>
+                <td style="padding: 15px;">Shadowsocks</td>
+                <td style="padding: 15px; color: #475569;">98 ms</td>
+                <td style="padding: 15px; color: #10b981; font-weight:600;">270 Mbps</td>
+                <td style="padding: 15px; color: #2563eb; font-weight:600;">极速加载</td>
+                <td style="padding: 15px; color: #ef4444; font-weight:600;">99.5% / 偶有丢包</td>
+            </tr>
+            <tr style="background-color: #fcfcfc; border-bottom: 1px solid #f1f5f9;">
+                <td style="padding: 15px; font-weight: 600;">美国 01 [IEPL]</td>
+                <td style="padding: 15px;">VMess</td>
+                <td style="padding: 15px; color: #475569;">145 ms</td>
+                <td style="padding: 15px; color: #10b981; font-weight:600;">210 Mbps</td>
+                <td style="padding: 15px; color: #2563eb; font-weight:600;">正常播放</td>
+                <td style="padding: 15px; color: #ef4444; font-weight:600;">99.2% / 线路稳定</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 <div style="text-align: center; margin: 40px 0 30px 0;">
