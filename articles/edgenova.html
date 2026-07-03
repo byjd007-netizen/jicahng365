@@ -1,10 +1,133 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>机场EdgeNova 深度评测：IPLC 专线体验：评估专线与直连 - 云轨导航知识库</title>
   <link rel="stylesheet" href="../index.css?v=6">
+  <style>
+  /* Pricing Section Styling */
+  .pricing-sec-container {
+    margin: 40px 0;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  .pricing-tabs-row {
+    display: flex;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+  .pricing-tab-btn {
+    padding: 10px 22px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #475569;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .pricing-tab-btn:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+    border-color: #cbd5e1;
+  }
+  .pricing-tab-btn.active {
+    background: #0d9488;
+    color: #ffffff;
+    border-color: #0d9488;
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
+  }
+  .pricing-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .pricing-card-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .pricing-card-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 28px -6px rgba(13, 148, 136, 0.18);
+    border-color: #0d9488;
+  }
+  .pricing-card-header {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 16px;
+  }
+  .pricing-card-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0;
+  }
+  .pricing-card-price-box {
+    text-align: right;
+  }
+  .pricing-card-price {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #0f172a;
+  }
+  .pricing-card-unit {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: normal;
+  }
+  .pricing-card-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 28px 0;
+    flex-grow: 1;
+  }
+  .pricing-card-feature-li {
+    font-size: 0.92rem;
+    color: #475569;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.45;
+  }
+  .pricing-card-feature-li svg {
+    color: #0d9488;
+    flex-shrink: 0;
+    margin-top: 3px;
+    width: 16px;
+    height: 16px;
+  }
+  .pricing-card-btn {
+    display: block;
+    text-align: center;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0d9488;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .pricing-card-btn:hover {
+    background: #0d9488;
+    color: #ffffff;
+    border-color: #0d9488;
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
+  }
+  </style>
 </head>
 <body class="article-page">
 <header class="header">
@@ -151,11 +274,243 @@
 <p>为了让不同需求的用户都能找到最合适的方案，EdgeNova提供了阶梯状的丰富套餐。我们为你整理了最详尽的选购指南：</p>
 
 <h3>1. 寻找最适合你的套餐</h3>
-<ul>
-    <li><strong>【限时年付】（首推爆款，闭眼入）：</strong> 108元/年（用码 <code>xk808</code> 后仅需 <strong>86.4元</strong>），每月45GB流量。这是EdgeNova为了打响知名度放出的超级福利。只要你不是重度视频下载狂魔，每月45GB应对日常冲浪、社交媒体、轻度流媒体完全足够。7.2元/月享受纯IEPL专线，这个价位绝对是“过了这村没这店”，强烈建议所有人将此套餐作为首选或最强备用。</li>
-    <li><strong>【极界·标准】：</strong> 25元/月（同样可使用 <code>xk808</code> 享受首单优惠），每月200GB超大流量。如果你每天都要刷几个小时的Netflix 4K视频，或者需要频繁下载大文件，这档套餐能给你充足的流量安全感。</li>
-    <li><strong>【极界·进阶 / 专业 / 旗舰】：</strong> 月费依次递增，流量分别为400GB、800GB、1500GB。这三档专为工作室、超重度下载用户、外贸团队设计，配合EdgeNova“不限制设备数量”的优良特性，可以轻松实现一个账号全家/全公司共享，极具性价比。</li>
-</ul>
+<div class="pricing-sec-container">
+  <div class="pricing-tabs-row">
+    <button class="pricing-tab-btn active" data-filter="all">全部</button>
+    <button class="pricing-tab-btn" data-filter="cycle">按周期</button>
+    <button class="pricing-tab-btn" data-filter="traffic">按流量</button>
+  </div>
+  
+  <div class="pricing-cards-grid">
+    <!-- Card 1 -->
+    <div class="pricing-card-item" data-type="cycle">
+      <div class="pricing-card-header">
+        <h4 class="pricing-card-title">限时月付小包</h4>
+        <div class="pricing-card-price-box">
+          <span class="pricing-card-price">¥ 15</span>
+          <span class="pricing-card-unit">/月付</span>
+        </div>
+      </div>
+      <ul class="pricing-card-features">
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>每月72GB流量配置</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>不限速不限制设备数量</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>解锁各大流媒体AI工具</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>自研客户端一键使用</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>60+节点覆盖港/台/新/日/关/马来等地</span>
+        </li>
+        <li class="pricing-card-feature-li" style="color: #ea580c; font-weight: 600;">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>注：体验套餐不参加任何活动</span>
+        </li>
+      </ul>
+      <a href="https://maya_hhh.edgenovaaff.cc/#/register?code=c9xizZ0c" target="_blank" class="pricing-card-btn">立即订阅</a>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="pricing-card-item" data-type="cycle">
+      <div class="pricing-card-header">
+        <h4 class="pricing-card-title">限时年付</h4>
+        <div class="pricing-card-price-box">
+          <span class="pricing-card-price">¥ 108</span>
+          <span class="pricing-card-unit">/年付</span>
+        </div>
+      </div>
+      <ul class="pricing-card-features">
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>每月45GB流量配置</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>不限速不限制设备数量</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>两年付9折</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>解锁各大流媒体AI工具</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>自研客户端一键使用</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>60+节点覆盖港/台/新/日/关/马来等地</span>
+        </li>
+      </ul>
+      <a href="https://maya_hhh.edgenovaaff.cc/#/register?code=c9xizZ0c" target="_blank" class="pricing-card-btn">立即订阅</a>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="pricing-card-item" data-type="traffic">
+      <div class="pricing-card-header">
+        <h4 class="pricing-card-title">极界·标准套餐</h4>
+        <div class="pricing-card-price-box">
+          <span class="pricing-card-price">¥ 25</span>
+          <span class="pricing-card-unit">/月付</span>
+        </div>
+      </div>
+      <ul class="pricing-card-features">
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>每月120GB流量配置，重置9折</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>不限速不限制设备数量</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>季付95折 半年付9折 年付85折 两年付8折 三年付7折</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>解锁各大流媒体AI工具</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>自研客户端一键使用</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>60+节点覆盖港/台/新/日/关/马来等地</span>
+        </li>
+      </ul>
+      <a href="https://maya_hhh.edgenovaaff.cc/#/register?code=c9xizZ0c" target="_blank" class="pricing-card-btn">立即订阅</a>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="pricing-card-item" data-type="traffic">
+      <div class="pricing-card-header">
+        <h4 class="pricing-card-title">极界·进阶套餐</h4>
+        <div class="pricing-card-price-box">
+          <span class="pricing-card-price">¥ 50</span>
+          <span class="pricing-card-unit">/月付</span>
+        </div>
+      </div>
+      <ul class="pricing-card-features">
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>每月250GB流量配置，重置9折</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>不限速不限制设备数量</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>季付95折 半年付9折 年付85折 两年付8折 三年付7折</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>解锁各大流媒体AI工具</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>自研客户端一键使用</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>60+节点覆盖港/台/新/日/关/马来等地</span>
+        </li>
+      </ul>
+      <a href="https://maya_hhh.edgenovaaff.cc/#/register?code=c9xizZ0c" target="_blank" class="pricing-card-btn">立即订阅</a>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="pricing-card-item" data-type="traffic">
+      <div class="pricing-card-header">
+        <h4 class="pricing-card-title">极界·高级套餐</h4>
+        <div class="pricing-card-price-box">
+          <span class="pricing-card-price">¥ 100</span>
+          <span class="pricing-card-unit">/月付</span>
+        </div>
+      </div>
+      <ul class="pricing-card-features">
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>每月500GB流量配置，重置9折</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>不限速不限制设备数量</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>季付95折 半年付9折 年付85折 两年付8折 三年付7折</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>解锁各大流媒体AI工具</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>自研客户端一键使用</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>60+节点覆盖港/台/新/日/关/马来等地</span>
+        </li>
+      </ul>
+      <a href="https://maya_hhh.edgenovaaff.cc/#/register?code=c9xizZ0c" target="_blank" class="pricing-card-btn">立即订阅</a>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="pricing-card-item" data-type="traffic">
+      <div class="pricing-card-header">
+        <h4 class="pricing-card-title">极界·极限套餐</h4>
+        <div class="pricing-card-price-box">
+          <span class="pricing-card-price">¥ 200</span>
+          <span class="pricing-card-unit">/月付</span>
+        </div>
+      </div>
+      <ul class="pricing-card-features">
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>每月1千GB流量配置，重置9折</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>不限速不限制设备数量</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>季付95折 半年付9折 年付85折 两年付8折 三年付7折</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>解锁各大流媒体AI工具</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>自研客户端一键使用</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>60+节点覆盖港/台/新/日/关/马来等地</span>
+        </li>
+      </ul>
+      <a href="https://maya_hhh.edgenovaaff.cc/#/register?code=c9xizZ0c" target="_blank" class="pricing-card-btn">立即订阅</a>
+    </div>
+  </div>
+</div>
 
 <h3>2. 终极省钱秘籍：务必使用优惠码 <code>xk808</code></h3>
 <p>在下单结算的最后一步，请务必在“优惠码/充值码”输入框中填写官方指定的开业特惠码：<code>xk808</code>。只需这简单的五个字符，就能立刻让你的订单总额锐减20%（8折优惠）。这省下的钱，用来开个流媒体会员或者买杯咖啡，难道不香吗？请注意，此优惠码为限时发放，随着开业红利期的结束，官方随时可能下架，因此早用早享受！</p>
@@ -421,6 +776,27 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 <script src="../script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const tabs = document.querySelectorAll(".pricing-tab-btn");
+    const cards = document.querySelectorAll(".pricing-card-item");
+    if(!tabs.length || !cards.length) return;
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            tabs.forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
+            const filter = tab.dataset.filter;
+            cards.forEach(card => {
+                if (filter === "all" || card.dataset.type === filter) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    });
+});
+</script>
 </body>
 </html>
 
