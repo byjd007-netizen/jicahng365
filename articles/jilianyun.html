@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -119,49 +119,204 @@
 
 <h2>五、套餐矩阵解析：灵活性与高性价比的完美统一</h2>
 <p>极连云并没有采用一刀切的收费模式，而是根据不同用户群体的使用习惯，精心设计了极具弹性和性价比的套餐矩阵。从轻度浏览到极客重度下载，都能找到最适合自己的方案。</p>
-<div style="overflow-x:auto;">
-    <table style="width:100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
-        <thead>
-            <tr style="background-color: #f8fafc; border-bottom: 2px solid #e2e8f0;">
-                <th style="padding: 15px; text-align: left; color: #1e293b; font-weight: 700;">套餐名称</th>
-                <th style="padding: 15px; text-align: left; color: #1e293b; font-weight: 700;">价格（约）</th>
-                <th style="padding: 15px; text-align: left; color: #1e293b; font-weight: 700;">月流量</th>
-                <th style="padding: 15px; text-align: left; color: #1e293b; font-weight: 700;">核心特性与适用人群</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr style="border-bottom: 1px solid #f1f5f9; transition: background-color 0.2s;">
-                <td style="padding: 15px; font-weight: 600; color: #0ea5e9;">轻量体验 (年付)</td>
-                <td style="padding: 15px; color: #475569;">96元 / 年</td>
-                <td style="padding: 15px; color: #475569;">60GB</td>
-                <td style="padding: 15px; color: #475569;">极致性价比，适合仅需偶尔查阅资料、刷刷文字资讯的轻度文字用户。</td>
-            </tr>
-            <tr style="background-color: #fcfcfc; border-bottom: 1px solid #f1f5f9; transition: background-color 0.2s;">
-                <td style="padding: 15px; font-weight: 600; color: #0ea5e9;">基础套餐</td>
-                <td style="padding: 15px; color: #475569;">15.5元 / 月</td>
-                <td style="padding: 15px; color: #475569;">100GB</td>
-                <td style="padding: 15px; color: #475569;">主力平民套餐，全IPLC专线加持，原生IP解锁，满足日常刷剧、社交需求。</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #f1f5f9; transition: background-color 0.2s;">
-                <td style="padding: 15px; font-weight: 600; color: #0ea5e9;">进阶套餐</td>
-                <td style="padding: 15px; color: #475569;">30.5元 / 月</td>
-                <td style="padding: 15px; color: #475569;">200GB</td>
-                <td style="padding: 15px; color: #475569;">性价比之选，优化带宽调度，AI服务和4K高清视频爱好者首选，流量充裕。</td>
-            </tr>
-            <tr style="background-color: #fcfcfc; border-bottom: 1px solid #f1f5f9; transition: background-color 0.2s;">
-                <td style="padding: 15px; font-weight: 600; color: #0ea5e9;">旗舰套餐</td>
-                <td style="padding: 15px; color: #475569;">65.5元 / 月</td>
-                <td style="padding: 15px; color: #475569;">500GB</td>
-                <td style="padding: 15px; color: #475569;">针对工作室、跨境电商及超重度下载用户，极致低延迟，速度狂飙。</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #f1f5f9; transition: background-color 0.2s;">
-                <td style="padding: 15px; font-weight: 600; color: #8b5cf6;">不限时套餐</td>
-                <td style="padding: 15px; color: #475569;">399元</td>
-                <td style="padding: 15px; color: #475569;">1000GB</td>
-                <td style="padding: 15px; color: #475569;">一次性买断流量，永久有效不重置，适合作为备用机场或流量消耗极不规律的用户。</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="pricing-sec-container">
+  <div class="pricing-tabs-row">
+    <button class="pricing-tab-btn active" data-filter="all">全部</button>
+    <button class="pricing-tab-btn" data-filter="cycle">按周期</button>
+    <button class="pricing-tab-btn" data-filter="traffic">按流量</button>
+  </div>
+  
+  <div class="pricing-cards-grid">
+    <!-- Card -->
+    <div class="pricing-card-item" data-type="cycle">
+      <div class="pricing-card-header">
+        <h4 class="pricing-card-title">轻量体验 (年付)</h4>
+        <div class="pricing-card-price-box">
+          <span class="pricing-card-price">¥ 96</span>
+          <span class="pricing-card-unit">/年付</span>
+        </div>
+      </div>
+      <ul class="pricing-card-features">
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>每月60GB流量配置</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>不限速不限制设备数量</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>解锁各大流媒体AI工具</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>自研客户端一键使用</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>智能中转线路支持</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>性价比首选，轻度网页/文字备用</span>
+        </li>
+      </ul>
+      <a href="https://jilianyun.net" target="_blank" class="pricing-card-btn">立即订阅</a>
+    </div>
+
+    <!-- Card -->
+    <div class="pricing-card-item" data-type="cycle">
+      <div class="pricing-card-header">
+        <h4 class="pricing-card-title">基础套餐</h4>
+        <div class="pricing-card-price-box">
+          <span class="pricing-card-price">¥ 15.5</span>
+          <span class="pricing-card-unit">/月付</span>
+        </div>
+      </div>
+      <ul class="pricing-card-features">
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>每月100GB流量配置</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>不限速不限制设备数量</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>解锁各大流媒体AI工具</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>自研客户端一键使用</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>主力平民套餐，全IPLC专线加持</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>适合日常看剧、社交媒体浏览</span>
+        </li>
+      </ul>
+      <a href="https://jilianyun.net" target="_blank" class="pricing-card-btn">立即订阅</a>
+    </div>
+
+    <!-- Card -->
+    <div class="pricing-card-item" data-type="traffic">
+      <div class="pricing-card-header">
+        <h4 class="pricing-card-title">进阶套餐</h4>
+        <div class="pricing-card-price-box">
+          <span class="pricing-card-price">¥ 30.5</span>
+          <span class="pricing-card-unit">/月付</span>
+        </div>
+      </div>
+      <ul class="pricing-card-features">
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>每月200GB流量配置</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>不限速不限制设备数量</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>解锁各大流媒体AI工具</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>自研客户端一键使用</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>优化带宽调度与低延迟接入</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>AI服务和4K视频爱好者首选</span>
+        </li>
+      </ul>
+      <a href="https://jilianyun.net" target="_blank" class="pricing-card-btn">立即订阅</a>
+    </div>
+
+    <!-- Card -->
+    <div class="pricing-card-item" data-type="traffic">
+      <div class="pricing-card-header">
+        <h4 class="pricing-card-title">旗舰套餐</h4>
+        <div class="pricing-card-price-box">
+          <span class="pricing-card-price">¥ 65.5</span>
+          <span class="pricing-card-unit">/月付</span>
+        </div>
+      </div>
+      <ul class="pricing-card-features">
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>每月500GB流量配置</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>不限速不限制设备数量</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>解锁各大流媒体AI工具</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>自研客户端一键使用</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>极速大带宽专线保障</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>适合小型工作室与超重度下载用户</span>
+        </li>
+      </ul>
+      <a href="https://jilianyun.net" target="_blank" class="pricing-card-btn">立即订阅</a>
+    </div>
+
+    <!-- Card -->
+    <div class="pricing-card-item" data-type="traffic">
+      <div class="pricing-card-header">
+        <h4 class="pricing-card-title">不限时套餐</h4>
+        <div class="pricing-card-price-box">
+          <span class="pricing-card-price">¥ 399</span>
+          <span class="pricing-card-unit">/一次性</span>
+        </div>
+      </div>
+      <ul class="pricing-card-features">
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>1000GB 总量配额</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>不限速不限制设备数量</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>解锁各大流媒体AI工具</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>自研客户端一键使用</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>流量永久有效，用完为止</span>
+        </li>
+        <li class="pricing-card-feature-li">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>非常适合作为长效防失联备用</span>
+        </li>
+      </ul>
+      <a href="https://jilianyun.net" target="_blank" class="pricing-card-btn">立即订阅</a>
+    </div>
+  </div>
 </div>
 <p>极连云在定价上展现出了极大的诚意，即便是最入门的套餐，也没有在专线质量上进行阉割。而且，最值得称道的是：<strong>极连云完全不限制同时在线的设备数量！</strong> 这在如今普遍限制 3-5 台设备的机场圈里，简直是一股清流。这意味着你完全可以用一个账号，让你的手机、平板、电脑、甚至家里的路由器同时畅游国际互联网，非常适合家庭共享或团队协作办公。</p>
 
