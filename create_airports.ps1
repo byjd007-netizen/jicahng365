@@ -1,4 +1,4 @@
-﻿$airports_path = ".\airports.html"
+$airports_path = ".\airports.html"
 
 $html = @"
 <!DOCTYPE html>
@@ -226,7 +226,7 @@ $btn_html = @"
   </section>
 "@
 
-$content = $content -replace '</div>\s*</section>\s*<!-- Beginner Guide Section -->', $btn_html + "`n`n  <!-- Beginner Guide Section -->"
+$content = $content -replace '</div>\s*</section>\s*<!-- Beginner Guide Section -->', ($btn_html + "`n`n  <!-- Beginner Guide Section -->")
 
 [System.IO.File]::WriteAllText($index_path, $content, [System.Text.Encoding]::UTF8)
 Write-Host "Updated index.html"

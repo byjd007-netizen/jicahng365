@@ -2425,3 +2425,239 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
 }
 
+/* Premium Airport Recommendation Styles */
+.prem-tabs-container {
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+}
+.prem-tabs-container::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+.prem-tab {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #64748b;
+  padding-bottom: 12px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.prem-tab:hover {
+  color: #0f172a;
+}
+.prem-tab.active {
+  color: #2563eb;
+}
+.prem-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #2563eb;
+  border-radius: 999px;
+}
+.prem-recommend-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 1024px) {
+  .prem-recommend-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .prem-recommend-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.premium-recommend-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+.premium-recommend-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 28px -6px rgba(15, 23, 42, 0.08);
+  border-color: #cbd5e1;
+}
+.prem-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.prem-card-no {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  font-weight: 700;
+}
+.prem-card-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 9999px;
+}
+.prem-tag-hot { background-color: #fff7ed; color: #ea580c; }
+.prem-tag-stable { background-color: #f0fdfa; color: #0d9488; }
+.prem-tag-value { background-color: #fffbeb; color: #d97706; }
+.prem-tag-new { background-color: #eff6ff; color: #2563eb; }
+.prem-tag-bandwidth { background-color: #f0fdf4; color: #16a34a; }
+.prem-tag-light { background-color: #e0f2fe; color: #0369a1; }
+
+.prem-card-info-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.prem-card-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  border: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+.prem-card-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.prem-card-info-meta {
+  display: flex;
+  flex-direction: column;
+}
+.prem-card-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 2px 0;
+}
+.prem-card-price-label {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 0;
+}
+.prem-card-score-box {
+  text-align: right;
+}
+.prem-card-score-val {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #f97316;
+  line-height: 1;
+}
+.prem-card-score-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-top: 2px;
+  color: #10b981;
+}
+.prem-card-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.prem-pill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+.prem-pill-cyan {
+  background-color: #ecfeff;
+  color: #0891b2;
+}
+.prem-card-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+  padding: 12px 0;
+}
+.prem-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: #475569;
+}
+.prem-feat-icon {
+  width: 14px;
+  height: 14px;
+  color: #2563eb;
+  flex-shrink: 0;
+}
+.prem-card-review {
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+}
+.prem-card-btns-row {
+  display: grid;
+  grid-template-columns: 1fr 80px;
+  gap: 10px;
+}
+.prem-btn-review {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  height: 38px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+}
+.prem-btn-review:hover {
+  background-color: #1d4ed8;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  color: #ffffff !important;
+}
+.prem-btn-site {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  height: 38px;
+  transition: all 0.2s ease;
+}
+.prem-btn-site:hover {
+  background-color: #f8fafc;
+  color: #0f172a !important;
+  border-color: #cbd5e1;
+}
+
+
