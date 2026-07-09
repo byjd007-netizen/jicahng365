@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>新一代代理协议剖析：VLESS/XTLS/Hysteria - 云轨导航知识库</title>
+  <title>新一代代理协议剖析：VLESS、XTLS、Hysteria 深度解析与技术趋势 - 云轨导航</title>
   <link rel="stylesheet" href="../index.css?v=6">
 </head>
 <body class="article-page">
@@ -32,65 +32,132 @@
     </div>
 </aside>
 
-    
     <main class="main-content">
         <div class="breadcrumbs" style="margin-bottom: 25px; font-size: 0.95rem; color: #64748b; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0;">
             <a href="../index.html" style="color: #0ea5e9; text-decoration: none; font-weight: 500;">首页</a> &gt; 
             <a href="../knowledge.html" style="color: #0ea5e9; text-decoration: none; font-weight: 500;">科普指南</a> &gt; 
-            <span class="current" style="color: #94a3b8;">新一代代理协议剖析：VLESS...</span>
+            <span class="current" style="color: #94a3b8;">新一代代理协议剖析：VLESS、XTLS、Hysteria...</span>
         </div>
         
         <article class="article-box">
             <header class="article-header" style="text-align: center; margin-bottom: 40px;">
-                <h1 class="article-title" style="font-size: 2.4rem; color: #0f172a; margin: 0 0 20px 0; font-weight: 800; line-height: 1.3;">新一代代理协议剖析：VLESS/XTLS/Hysteria</h1>
+                <h1 class="article-title" style="font-size: 2.4rem; color: #0f172a; margin: 0 0 20px 0; font-weight: 800; line-height: 1.3;">新一代代理协议剖析：VLESS、XTLS、Hysteria 深度解析与技术趋势</h1>
                 <div class="article-meta" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px; color: #64748b; font-size: 0.95rem; margin-bottom: 25px;">
                     <span>作者: 技术编辑部</span>
-                    <span>阅读时长: 约 9 分钟</span>
-                    <span>发布于: 2026-06-22</span>
-                    <span>更新于: 2026-06-22</span>
+                    <span>阅读时长: 约 10 分钟</span>
+                    <span>发布于: 2026-06-25</span>
+                    <span>更新于: 2026-06-25</span>
                 </div>
                 <div class="article-tags" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; padding-bottom: 25px; border-bottom: 1px solid #e2e8f0;">
-                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">科普指南</span>
-                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">科学上网</span>
-                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">网络科普</span>
-                    <span class="views" style="margin-left: 15px; color:#94a3b8; font-size:0.9rem;">阅读量: 12.5k</span>
+                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">代理协议</span>
+                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">VLESS</span>
+                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">Hysteria</span>
+                    <span class="views" style="margin-left: 15px; color:#94a3b8; font-size:0.9rem;">阅读量: 15.2k</span>
                 </div>
             </header>
             
             <div class="article-intro">
-                在现代网络环境中，“代理”已成为连接全球互联网的重要技术手段。了解代理的原理与常见协议，是提升网络体验的关键一步。
+                <strong>导语：代理协议正在进入新的技术阶段</strong><br><br>随着互联网应用场景不断变化，传统代理协议已经越来越难以满足现代用户对于速度、稳定性以及网络适应性的需求。<br><br>本文将从底层原理出发，对 VLESS、XTLS 和 Hysteria 进行全面解析。
             </div>
             
             <div class="article-body" id="articleBody">
-<h2>1. 破网机制的底层逻辑</h2>
-      <p>在当今复杂多变的网络环境中，突破网络限制、获取全球信息已成为许多人的刚需。随着防火墙技术的不断升级，传统的 VPN 协议（如 PPTP、L2TP/IPsec）因其明显的流量特征而逐渐被淘汰。取而代之的是一系列以“流量伪装”和“加密传输”为核心的新一代代理协议。本文将全面剖析这些技术的底层逻辑，帮助您在面对琳琅满目的服务节点时，能够做出最理性的判断。</p>
-      
-      <p>首先我们需要理解，任何数据在互联网上的传输，本质上都是数据包的路由转发。传统的防火墙通过深度包检测（Deep Packet Inspection, DPI）技术，可以轻易识别出未经伪装的代理流量特征。一旦特征被匹配，该连接就会被阻断，甚至导致服务器 IP 被封锁。因此，现代代理协议的核心诉求是将代理流量伪装成正常的 HTTP/HTTPS 网页浏览流量，或者通过复杂的加密算法使其表现为完全随机的噪声，从而规避 DPI 系统的识别。</p>
+<h2>一、代理协议为什么需要不断升级？</h2>
+<p>在了解新协议之前，需要先了解传统协议面临的困境。</p>
 
-      <h2>2. 核心代理协议的发展史</h2>
-      <p>在具体实现上，不同的协议采取了不同的策略。例如，Shadowsocks 采用的是全流量加密，它放弃了传统的握手过程，直接发送加密后的负载数据，这在早期非常有效。然而，随着机器学习算法在防火墙中的应用，纯随机的数据流也逐渐成为一种明显的特征。这就是为什么后来发展出了基于 TLS（传输层安全协议）的代理方案，如 Trojan 和 V2Ray 的 VMess/VLESS 协议。它们将代理数据封装在标准的 TLS 隧道中，从外部观测，这与您访问任何一个普通的加密 HTTPS 网站毫无二致。</p>
-      
-      <h3>2.1 VMess 与 VLESS 协议</h3>
-      <p>详细了解各类协议的技术细节是配置高质量代理服务的基础。V2Ray 作为一个极其灵活的代理框架，支持多种协议组合。其主打的 VMess 协议通过复杂的加密和身份验证机制，提供了极高的安全性。而新推出的 VLESS 协议则是对 VMess 的精简与升级，它去除了冗余的加密环节，极大地降低了服务端的性能开销，同时配合 XTLS 技术，可以实现数据包的“直接回流”，将传输延迟降到最低，被誉为目前最高效的直连方案之一。</p>
+<h3>1. 传统协议的痛点</h3>
+<ul>
+    <li><strong>特征明显，容易被封锁：</strong> 像早期的 Shadowsocks 协议，虽然经过加密，但其握手和数据传输模式已经可以被深度包检测（DPI）技术识别。一旦特征暴露，节点很容易遭到封锁。</li>
+    <li><strong>性能瓶颈：</strong> 传统协议大多基于 TCP，在遇到网络拥堵或高丢包率时，TCP 的拥塞控制机制会导致传输速度断崖式下降。这就是为什么晚高峰时传统协议往往表现不佳。</li>
+    <li><strong>伪装成本高：</strong> 为了对抗封锁，很多协议引入了 TLS 伪装（如 VMess + WS + TLS）。虽然安全性提高了，但多层加密和解密带来了极高的性能消耗，导致延迟增加，尤其是在路由器等低性能设备上表现明显。</li>
+</ul>
 
-      <h2>3. 性能与安全的权衡之道</h2>
-      <p>在选择协议时，我们常常需要在“安全性（抗封锁能力）”和“传输性能（速度与延迟）”之间做出权衡。高强度的加密必然会带来额外的 CPU 计算开销和网络延迟。对于跨国专线（IPLC/IEPL）而言，由于其内网传输的特性，流量本身并不经过公共防火墙的审查，因此可以直接使用轻量级的 Shadowsocks 协议以追求极致的带宽吞吐量。而对于普通的公网直连（BGP/CN2 GIA）节点，为了防范主动探测和阻断，则必须使用带有完整 TLS 伪装的复杂协议。</p>
+<h3>2. 新一代协议的核心诉求</h3>
+<p>为了解决上述痛点，新一代协议的设计思路发生了根本转变：</p>
+<ul>
+    <li><strong>降低特征：</strong> 追求“无特征”或“完美伪装”，让代理流量看起来与正常的网页流量（如 HTTPS）完全一致。</li>
+    <li><strong>提升性能：</strong> 减少不必要的加密层级，引入更高效的传输层协议（如 UDP/QUIC）。</li>
+    <li><strong>灵活适应：</strong> 能够根据网络环境（弱网、高丢包）自动调整传输策略，保证连接的连贯性。</li>
+</ul>
 
-      <h3>3.1 常见故障：DNS 污染排查</h3>
-      <p>在使用代理软件时，您可能会遇到各种网络故障。最常见的问题之一是“DNS 污染”。当您在浏览器中输入一个被屏蔽的域名时，防火墙会抢先返回一个错误的 IP 地址，导致网页无法访问。现代代理客户端（如 Clash、Surge）通过内置的 DNS 分流规则（Fake-IP 或 Redir-Host 模式），将敏感域名的解析请求通过代理隧道发送到国外的可信 DNS 服务器，从而彻底根除污染问题。理解这一机制，对于排查“节点通畅但部分网页打不开”的故障至关重要。</p>
+<h2>二、VLESS：化繁为简的极致轻量化</h2>
+<p>VLESS 是 V2Ray 框架（Xray-core）推出的一种新型协议，旨在解决其前身 VMess 协议的性能瓶颈。</p>
 
-      <h2>4. 路由分流与高级配置</h2>
-      <p>此外，路由分流规则的合理配置也是提升体验的关键。全局代理不仅会消耗昂贵的代理流量，还会导致访问国内应用（如微信、淘宝）速度极慢。通过使用 GeoIP 数据库和基于域名的规则集（Ruleset），客户端可以精准地将国内流量直连，将国外受限流量走代理隧道。这也就是所谓的“PAC 模式”的现代进化版。熟练掌握这些规则的编写和调优，是成为高级用户的必经之路。</p>
+<h3>1. VLESS 的技术原理</h3>
+<p>VMess 协议为了保证安全性，内置了复杂的加密机制和时间同步要求（如果客户端和服务器时间相差超过 90 秒，则无法连接）。</p>
+<p>VLESS 则采用了“化繁为简”的策略。它本身<strong>不依赖于任何自带的加密</strong>，而是完全依赖于底层的 TLS（传输层安全协议）来保证数据的安全。VLESS 仅仅负责数据的路由和转发。</p>
 
-      <blockquote><p><strong>技术洞察：</strong> 未来的代理技术正向着更底层的方向演进。例如基于 WireGuard 的新型 VPN 协议，虽然其本身不具备抗封锁特性，但通过配合前置的混淆插件（Obfs），可以在保证极高传输效率的同时实现隐蔽传输。同时，基于 QUIC（HTTP/3）协议的代理技术（如 Hysteria、TUIC）也正在崛起，它们利用 UDP 协议在恶劣网络环境下的极强抢占能力，能够在大丢包率的跨国链路上实现惊人的速度提升。</p></blockquote>
+<h3>2. VLESS 的优势</h3>
+<ul>
+    <li><strong>极高的性能：</strong> 由于去除了冗余的加密层，VLESS 的性能消耗极低。在同等服务器配置下，VLESS 的吞吐量远超 VMess，尤其适合软路由等性能有限的设备。</li>
+    <li><strong>无时间同步要求：</strong> 解决了 VMess 因时间误差导致无法连接的常见痛点。</li>
+    <li><strong>更强的伪装能力：</strong> 配合真实的 TLS 证书，VLESS 流量在网络中间节点看来，完全是标准的 HTTPS 流量。</li>
+</ul>
 
-      <h2>5. 客户端生态全景图</h2>
-      <p>在客户端选择方面，Windows 平台上的 Clash Verge 凭借其优秀的 UI 设计和强大的 Meta 核心（支持 VLESS/Hysteria 等新协议）已经成为绝对的主流。而在 macOS 和 iOS 生态中，Surge 虽然价格高昂，但其提供的网络接管能力和脚本扩展性无可匹敌；对于追求性价比的用户，Shadowrocket（小火箭）和 Quantumult X 则是最佳的替代方案。不同的客户端在底层实现和规则语法上存在差异，但其核心思想——本地监听、规则分流、隧道封装——是完全一致的。</p>
+<h3>3. VLESS 的适用场景</h3>
+<p>VLESS 是目前最主流、最稳妥的选择，适合追求稳定性和较低延迟的用户，广泛应用于日常科学上网和轻度流媒体观看。</p>
 
-      <p>总结而言，构建一个稳定、高速、安全的科学上网环境，不仅仅是花钱购买一个昂贵的“机场”套餐那么简单。它需要您对底层网络协议有一定的认知，对客户端的规则分流有精准的把控，以及在遇到断流封锁时具备一定的系统排查能力。希望本知识库的系列文章，能够帮助您系统性地掌握这些技能，在数字世界中畅游无阻。请记住，技术是一把双刃剑，在获取信息的同时，也务必注重自身的隐私保护和数据安全。</p>
+<h2>三、XTLS：直击性能痛点的“黑科技”</h2>
+<p>XTLS 并非一个独立的代理协议，而是配合 VLESS 使用的一种<strong>传输层技术拓展</strong>。它的出现，可以说是代理技术的一次重大突破。</p>
 
-      <p>通过上述的深度分析，我们可以清楚地看到，技术的迭代是永无止境的。我们需要保持持续学习的态度，才能在这个瞬息万变的网络环境中立于不败之地。感谢您的阅读，希望本文对您有所启发。</p>
-    </article>
+<h3>1. XTLS 解决的问题</h3>
+<p>在传统的 TLS 代理（如 VMess + TLS 或 VLESS + TLS）中，存在一个“双重 TLS 加密”的问题。</p>
+<p>当你通过代理访问一个 HTTPS 网站（如 YouTube）时：</p>
+<ol>
+    <li>浏览器先对数据进行一次 TLS 加密（因为访问的是 HTTPS）。</li>
+    <li>代理客户端将这层加密数据打包，再进行一次代理隧道的 TLS 加密。</li>
+</ol>
+<p>服务器端收到数据后，需要先解密外层的代理 TLS，然后将内层的浏览器 TLS 数据转发给 YouTube。这种“加密中的加密”极大地浪费了 CPU 资源，并增加了延迟。</p>
+
+<h3>2. XTLS 的核心原理：Direct 模式</h3>
+<p>XTLS 创新性地引入了 <code>Direct</code>（直连）模式。在建立连接时，XTLS 会检测内层流量是否已经是 TLS 加密流量。如果是，XTLS 在完成握手后，会直接<strong>跳过外层的代理加密解密过程</strong>，将内层的 TLS 数据流“原封不动”地转发出去。</p>
+<p>简单来说，XTLS 就像一个聪明的快递员，发现包裹（数据）本身已经有密码箱（HTTPS）保护了，就不再多套一层保险箱（代理 TLS），而是直接运送。</p>
+
+<h3>3. XTLS 的表现</h3>
+<p>由于省去了大量冗余的加解密计算，XTLS 能够将代理服务器和本地设备的性能发挥到极致。在千兆甚至万兆宽带环境下，XTLS 能够跑满带宽，延迟极低。</p>
+
+<h2>四、Hysteria：弱网环境下的“狂飙”协议</h2>
+<p>如果说 VLESS/XTLS 是在优化 TCP 传输，那么 Hysteria 则是彻底抛弃 TCP，转向 UDP 的代表作。Hysteria（中文名常译为“歇斯底里”）以其激进的传输策略而闻名。</p>
+
+<h3>1. Hysteria 的技术基础：QUIC 与 UDP</h3>
+<p>Hysteria 基于 QUIC 协议构建。QUIC 是 Google 开发的一种基于 UDP 的传输层协议（现已被标准化为 HTTP/3 的底层）。</p>
+<p>与 TCP 相比，UDP 没有繁琐的“三次握手”和严格的拥塞控制。当网络出现丢包时，TCP 会认为网络拥堵，主动降低发送速度；而 UDP 则不管不顾，继续全速发送。</p>
+
+<h3>2. Hysteria 的“暴力”美学</h3>
+<p>Hysteria 充分利用了 UDP 的特性，并加入了自定义的拥塞控制算法（或者说，它刻意忽视了传统的拥塞控制）。</p>
+<p>在面临跨国线路常见的<strong>高丢包、高延迟（弱网环境）</strong>时，Hysteria 会采取“暴力发包”的策略。即使丢了包，它也会以极高的频率重传，强行挤占网络带宽，从而在恶劣的网络环境下依然能跑出惊人的速度。</p>
+
+<h3>3. Hysteria 的优缺点</h3>
+<ul>
+    <li><strong>优点（极速体验）：</strong> 在晚高峰线路拥堵、或者本身线路质量较差的服务器上，Hysteria 能带来化腐朽为神奇的效果，速度远超基于 TCP 的协议（如 VLESS）。</li>
+    <li><strong>缺点（带宽抢占）：</strong> Hysteria 的激进策略对网络并不友好，容易挤占同一网络下其他用户的带宽（俗称“损人利己”）。部分云服务商为了保护网络环境，会对 UDP 流量进行限速或封锁（UDP QoS），导致 Hysteria 在某些环境下无法使用。</li>
+</ul>
+
+<h2>五、协议选择指南：如何匹配你的需求？</h2>
+<p>面对这些新一代协议，用户应该如何选择？</p>
+
+<h3>1. 追求极致稳定与全场景兼容：选择 VLESS + TCP + TLS / Reality</h3>
+<ul>
+    <li><strong>适用人群：</strong> 对延迟敏感，需要长时间稳定连接，网络环境较好。</li>
+    <li><strong>特点：</strong> 伪装性极强（尤其是配合最新的 Reality 技术，可以伪装成访问微软、苹果等知名网站，几乎无法被识别），不易被封，各平台客户端兼容性最好。</li>
+</ul>
+
+<h3>2. 拥有大带宽，追求低延迟：选择 VLESS + XTLS (Xray)</h3>
+<ul>
+    <li><strong>适用人群：</strong> 拥有高性能服务器和千兆宽带，追求跑满带宽的极客用户。</li>
+    <li><strong>特点：</strong> 性能损耗极低，直连速度极快，但配置相对复杂。</li>
+</ul>
+
+<h3>3. 线路质量差，晚高峰卡顿：选择 Hysteria 2 / TUIC</h3>
+<ul>
+    <li><strong>适用人群：</strong> 使用廉价 VPS（线路无优化），或者在晚高峰宽带严重拥堵时仍需要流畅观看 4K 视频的用户。</li>
+    <li><strong>特点：</strong> 弱网环境下的“速度救星”，但可能遭遇运营商的 UDP 限速或阻断。</li>
+</ul>
+
+<h2>结语：技术没有终点</h2>
+<p>从早期的 Socks5 到 Shadowsocks，再到如今的 VLESS、XTLS 和 Hysteria，代理协议的发展史，就是一部与网络封锁和恶劣网络环境不断博弈的技术史。</p>
+<p>每一种协议都有其特定的应用场景和局限性。作为用户，了解这些底层技术的原理，不仅能帮助我们更好地选择和配置科学上网工具，也能让我们在面对网络波动时，多一份从容，少一份焦虑。未来，随着 AI 技术的发展和网络环境的进一步演变，相信还会有更智能、更高效的代理协议不断涌现。</p>
+            </div>
+        </article>
       </main>
 
     <aside class="sidebar-right">
@@ -103,86 +170,25 @@
         </div>
         <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
             <span class="info-label">阅读时长</span>
-            <span class="info-val" style="font-weight:600; color:#0f172a;">约 9 分钟</span>
-        </div>
-        <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
-            <span class="info-label">字数统计</span>
-            <span class="info-val" style="font-weight:600; color:#0f172a;">约 3641 字</span>
+            <span class="info-val" style="font-weight:600; color:#0f172a;">约 10 分钟</span>
         </div>
         <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
             <span class="info-label">最后更新</span>
-            <span class="info-val" style="font-weight:600; color:#0f172a;">2026-06-22</span>
+            <span class="info-val" style="font-weight:600; color:#0f172a;">2026-06-25</span>
         </div>
     </div>
-    <!-- Beginner Guide Widget (Moved from left) -->
-    <div class="widget guide-widget" style="padding: 20px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 25px;">
-        <div class="guide-header" style="display: flex; align-items: center; margin-bottom: 20px;">
-            <span style="font-size: 1.4rem; margin-right: 8px;">🎓</span>
-            <h3 class="widget-title" style="margin:0; border:none; padding:0; font-size: 1.1rem; color: #1e293b; font-weight: 700;">新手入门指南</h3>
-            <span class="guide-sub" style="margin-left: 10px; color:#64748b; font-size:0.85rem;">从零开始教你科学上网</span>
-        </div>
-        <ul class="guide-list" style="list-style:none; padding:0; margin:0 0 20px 0;">
-            <li style="margin-bottom:12px;">
-                <a href="beginner-1.html" style="display:flex; align-items:center; background:#f8fafc; padding:12px; border-radius:8px; text-decoration:none; transition: all 0.2s;">
-                    <div style="background:#2563eb; color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:0.9rem; margin-right:12px; flex-shrink:0;">01</div>
-                    <div style="flex-grow:1;">
-                        <div style="color:#1e293b; font-weight:600; font-size:0.95rem; margin-bottom:2px;">机场如何选择</div>
-                        <div style="color:#64748b; font-size:0.8rem;">新手必看，轻松选到合适的机场</div>
-                    </div>
-                    <div style="color:#94a3b8; font-size:1.2rem;">›</div>
-                </a>
-            </li>
-            <li style="margin-bottom:12px;">
-                <a href="tutorial-win.html" style="display:flex; align-items:center; background:#f8fafc; padding:12px; border-radius:8px; text-decoration:none; transition: all 0.2s;">
-                    <div style="background:#2563eb; color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:0.9rem; margin-right:12px; flex-shrink:0;">02</div>
-                    <div style="flex-grow:1;">
-                        <div style="color:#1e293b; font-weight:600; font-size:0.95rem; margin-bottom:2px;">客户端安装教程</div>
-                        <div style="color:#64748b; font-size:0.8rem;">Clash / V2Ray / Shadowrocket 等</div>
-                    </div>
-                    <div style="color:#94a3b8; font-size:1.2rem;">›</div>
-                </a>
-            </li>
-            <li style="margin-bottom:12px;">
-                <a href="beginner-3.html" style="display:flex; align-items:center; background:#f8fafc; padding:12px; border-radius:8px; text-decoration:none; transition: all 0.2s;">
-                    <div style="background:#2563eb; color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:0.9rem; margin-right:12px; flex-shrink:0;">03</div>
-                    <div style="flex-grow:1;">
-                        <div style="color:#1e293b; font-weight:600; font-size:0.95rem; margin-bottom:2px;">订阅配置方法</div>
-                        <div style="color:#64748b; font-size:0.8rem;">手把手教你导入订阅与配置</div>
-                    </div>
-                    <div style="color:#94a3b8; font-size:1.2rem;">›</div>
-                </a>
-            </li>
-            <li style="margin-bottom:0;">
-                <a href="beginner-2.html" style="display:flex; align-items:center; background:#f8fafc; padding:12px; border-radius:8px; text-decoration:none; transition: all 0.2s;">
-                    <div style="background:#2563eb; color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:0.9rem; margin-right:12px; flex-shrink:0;">04</div>
-                    <div style="flex-grow:1;">
-                        <div style="color:#1e293b; font-weight:600; font-size:0.95rem; margin-bottom:2px;">常见问题解决</div>
-                        <div style="color:#64748b; font-size:0.8rem;">连接失败 / 速度慢等问题汇总</div>
-                    </div>
-                    <div style="color:#94a3b8; font-size:1.2rem;">›</div>
-                </a>
-            </li>
-        </ul>
-        <a href="beginner-1.html" class="widget-btn" style="display:block; text-align:center; padding:12px; background:#2563eb; color:white; border-radius:8px; text-decoration:none; font-weight:600; font-size:1rem; transition: background 0.3s;">查看完整新手教程 →</a>
-    </div>
-
-
 
     <!-- Related Recommendations Widget -->
     <div class="widget related-widget">
-        <h3 class="widget-title">相关推荐</h3>
+        <h3 class="widget-title">相关阅读</h3>
         <div class="related-cards" style="display:flex; flex-direction:column; gap:10px;">
+            <a href="article-6.html" class="rel-card" style="text-decoration:none; display:block; padding:12px; background:#f8fafc; border-radius:8px;">
+                <div class="rel-title" style="color:#1e293b; font-weight:600; margin-bottom:4px;">节点断流与超时排查指南</div>
+                <div class="rel-read" style="color:#94a3b8; font-size:0.8rem;">阅读 18.5k</div>
+            </a>
             <a href="article-4.html" class="rel-card" style="text-decoration:none; display:block; padding:12px; background:#f8fafc; border-radius:8px;">
-                <div class="rel-title" style="color:#1e293b; font-weight:600; margin-bottom:4px;">代理协议深度对比</div>
+                <div class="rel-title" style="color:#1e293b; font-weight:600; margin-bottom:4px;">代理协议深度对比：SS vs V2Ray vs Trojan</div>
                 <div class="rel-read" style="color:#94a3b8; font-size:0.8rem;">阅读 8.7k</div>
-            </a>
-            <a href="tutorial-win.html" class="rel-card" style="text-decoration:none; display:block; padding:12px; background:#f8fafc; border-radius:8px;">
-                <div class="rel-title" style="color:#1e293b; font-weight:600; margin-bottom:4px;">Clash 核心规则详解</div>
-                <div class="rel-read" style="color:#94a3b8; font-size:0.8rem;">阅读 6.2k</div>
-            </a>
-            <a href="tutorial-and.html" class="rel-card" style="text-decoration:none; display:block; padding:12px; background:#f8fafc; border-radius:8px;">
-                <div class="rel-title" style="color:#1e293b; font-weight:600; margin-bottom:4px;">v2rayNG 入门教程</div>
-                <div class="rel-read" style="color:#94a3b8; font-size:0.8rem;">阅读 5.1k</div>
             </a>
             <a href="article-10.html" class="rel-card" style="text-decoration:none; display:block; padding:12px; background:#f8fafc; border-radius:8px;">
                 <div class="rel-title" style="color:#1e293b; font-weight:600; margin-bottom:4px;">WireGuard 协议优势分析</div>
@@ -190,8 +196,8 @@
             </a>
         </div>
     </div>
-
-    <!-- Hot Articles Widget (Moved from left) -->
+    
+    <!-- Hot Articles Widget -->
     <div class="widget hot-widget">
         <h3 class="widget-title">热门文章</h3>
         <ul class="hot-list" style="list-style:none; padding:0; margin:0;">
@@ -201,11 +207,11 @@
             </li>
             <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
                 <span style="color:#f97316; font-weight:bold; font-size:1.1rem; line-height:1.2;">2</span>
-                <a href="tutorial-win.html" style="color:#334155; text-decoration:none; line-height:1.4;">Clash 使用教程（Windows）</a>
+                <a href="article-6.html" style="color:#334155; text-decoration:none; line-height:1.4;">节点频繁断流与连接超时排查</a>
             </li>
             <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
                 <span style="color:#f59e0b; font-weight:bold; font-size:1.1rem; line-height:1.2;">3</span>
-                <a href="tutorial-ios.html" style="color:#334155; text-decoration:none; line-height:1.4;">Shadowrocket 配置教程 (iOS)</a>
+                <a href="tutorial-win.html" style="color:#334155; text-decoration:none; line-height:1.4;">Clash 使用教程（Windows）</a>
             </li>
             <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
                 <span style="color:#94a3b8; font-weight:bold; font-size:1.1rem; line-height:1.2;">4</span>
@@ -217,68 +223,6 @@
             </li>
         </ul>
     </div>
-    <!-- Premium Airport Widget -->
-    <div class="widget premium-widget ranking-promo-widget" style="padding: 20px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 25px;">
-        <div class="promo-ranking-header" style="display: flex; align-items: center; margin-bottom: 20px;">
-            <div style="background: #2563eb; color: white; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-right: 12px; flex-shrink: 0; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);">🏆</div>
-            <div>
-                <h3 class="widget-title" style="margin:0; border:none; padding:0; font-size: 1.2rem; color: #1e293b; font-weight: 800; letter-spacing: 0.5px;">机场排行榜</h3>
-                <div style="color:#64748b; font-size:0.8rem; margin-top:4px;">精选优质机场，稳定高速，全球覆盖</div>
-            </div>
-        </div>
-        
-        <div class="ranking-content" style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
-            <div class="ranking-features" style="flex: 1; min-width: 220px;">
-                <div style="display:flex; align-items:center; margin-bottom:15px; position:relative;">
-                    <div style="background:#e0f2fe; color:#0284c7; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;">📊</div>
-                    <div>
-                        <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">实时更新</div>
-                        <div style="color:#94a3b8; font-size:0.8rem;">每日检测，数据实时更新</div>
-                    </div>
-                </div>
-                <div style="border-bottom: 1px dashed #e2e8f0; margin: -5px 0 10px 48px;"></div>
-
-                <div style="display:flex; align-items:center; margin-bottom:15px;">
-                    <div style="background:#dcfce7; color:#16a34a; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;">🛡️</div>
-                    <div>
-                        <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">多维度评测</div>
-                        <div style="color:#94a3b8; font-size:0.8rem;">速度、稳定性、性价比综合评分</div>
-                    </div>
-                </div>
-                <div style="border-bottom: 1px dashed #e2e8f0; margin: -5px 0 10px 48px;"></div>
-
-                <div style="display:flex; align-items:center; margin-bottom:15px;">
-                    <div style="background:#ffedd5; color:#ea580c; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;">⚡</div>
-                    <div>
-                        <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">优质机场</div>
-                        <div style="color:#94a3b8; font-size:0.8rem;">人工筛选，剔除不稳定节点</div>
-                    </div>
-                </div>
-                <div style="border-bottom: 1px dashed #e2e8f0; margin: -5px 0 10px 48px;"></div>
-
-                <div style="display:flex; align-items:center; margin-bottom:0;">
-                    <div style="background:#f3e8ff; color:#9333ea; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;">🌐</div>
-                    <div>
-                        <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">全球覆盖</div>
-                        <div style="color:#94a3b8; font-size:0.8rem;">全球节点，高速访问无压力</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="ranking-illustration" style="flex: 1; min-width: 180px; background:linear-gradient(to bottom, #eff6ff, #f8fafc); border-radius:12px; padding:20px 15px; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center; border: 1px solid #e2e8f0;">
-                <img src="../assets/images/new_logo.png" alt="Ranking Podium" style="width:100%; max-width:140px; margin:0 auto 15px auto; display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <div style="display:none; font-size: 3rem; margin-bottom:15px;">🏅</div>
-                <div style="color:#475569; font-size:0.85rem; line-height:1.5;">
-                    找出最适合你的机场<br>
-                    从<span style="color:#2563eb; font-weight:700;">排行榜</span>开始了解
-                </div>
-            </div>
-        </div>
-        
-        <a href="../ranking.html" class="widget-btn" style="display:block; text-align:center; padding:14px; background:#2563eb; color:white; border-radius:8px; text-decoration:none; font-weight:700; font-size:1.05rem; transition: background 0.3s; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);">查看机场排行榜 →</a>
-    </div>
-
-
 </aside>
 
 </div>
