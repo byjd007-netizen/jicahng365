@@ -96,7 +96,7 @@ $main = @"
          </a>
          <a href="articles/article-6.html" class="article-row">
            <span class="article-date">06-08</span>
-           <span class="article-title">断流超时排查：本地 DNS 污染到运营商封锁的终极解决方法</span>
+           <span class="article-title">节点频繁断流与连接超时的终极排查指南：从网络环境、线路质量到客户端配置全面解析</span>
          </a>
          <a href="articles/article-7.html" class="article-row">
            <span class="article-date">06-05</span>
