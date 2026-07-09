@@ -3,10 +3,10 @@ $redirects = @{
     'airport-rank' = '/ranking.html'
     'reviews' = '/#kb'
     'tutorials' = '/#tutorial'
-    'clash-tutorial' = '/articles/article-2.html'
-    'shadowrocket-tutorial' = '/articles/article-4.html'
+    'clash-tutorial' = '/articles/tutorial-win.html'
+    'shadowrocket-tutorial' = '/articles/tutorial-ios.html'
     'client-download' = '/articles/nav-1.html'
-    'avoid-scam' = '/articles/article-3.html'
+    'avoid-scam' = '/articles/beginner-1.html'
 }
 
 $html_template = @"
