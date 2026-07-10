@@ -47,4 +47,21 @@ document.addEventListener('DOMContentLoaded', () => {
       header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
     }
   });
+
+  // FAQ Accordion Toggle
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    if (question) {
+      question.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        // Close other items
+        faqItems.forEach(i => i.classList.remove('active'));
+        // Toggle current item
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    }
+  });
 });
