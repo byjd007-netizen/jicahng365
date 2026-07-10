@@ -801,196 +801,398 @@
       </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq-section" id="faq">
+    <!-- FAQ + Scam Warning Section -->
+    <section class="faq-section" id="faq" style="background: #f8fafc; padding: 60px 0; border-top: 1px solid #e2e8f0;">
       <div class="home-v2-container">
-        <div class="home-v2-sec-header">
-          <h2 class="home-v2-sec-title" style="margin:0;">跨境网络与科学上网常见问题 <span style="color:#2563eb; font-style:italic;">FAQ</span></h2>
-          <a href="knowledge.html" class="home-v2-sec-link">查看全部问题 &rarr;</a>
-        </div>
-        <p style="color:#64748b; font-size:0.95rem; margin:-10px 0 28px 0;">快速解答您关心的热门问题</p>
-
-        <div class="faq-v2-layout">
-          <!-- Left col: FAQ accordion list -->
-          <div class="faq-v2-questions">
-
-            <details class="faq-v2-item" name="faq-acc">
-              <summary class="faq-v2-q"><span class="faq-v2-num">01</span>什么是机场？</summary>
-              <div class="faq-v2-a">机场（通常指代理服务节点托管平台）是提供翻墙、代理服务的网络节点集合，用户通过 Clash、小火箭等客户端连接这些节点，绕过网络封锁，安全访问海外网络资源。</div>
-            </details>
-
-            <details class="faq-v2-item" name="faq-acc" open>
-              <summary class="faq-v2-q"><span class="faq-v2-num">02</span>什么是 IPLC 专线？</summary>
-              <div class="faq-v2-a">IPLC（国际私人租用线路）是运营商搭建的跨国物理专线。它不经过公网，完全绕过 GFW 的干扰，具有极低的延迟和极佳的稳定性，即使在晚高峰依然稳定。</div>
-            </details>
-
-            <details class="faq-v2-item" name="faq-acc">
-              <summary class="faq-v2-q"><span class="faq-v2-num">03</span>什么是 IEPL 专线？</summary>
-              <div class="faq-v2-a">IEPL（国际以太网专线）是基于以太网技术的二层跨国专线服务。同样不经过公网 GFW，比传统 IPLC 更灵活，支持更大带宽、容灾备份与多路调度，是高端企业级机场的首选线路。</div>
-            </details>
-
-            <details class="faq-v2-item" name="faq-acc">
-              <summary class="faq-v2-q"><span class="faq-v2-num">04</span>IPLC 和 IEPL 专线有什么区别？</summary>
-              <div class="faq-v2-a">两者均提供不经 GFW 的跨境私网传输。核心区别：IPLC 是传统点对点物理专线（L1），IEPL 是现代以太网虚拟专线（L2），支持更灵活的多点连接与备用入口调度，扩展性更好。</div>
-            </details>
-
-            <details class="faq-v2-item" name="faq-acc">
-              <summary class="faq-v2-q"><span class="faq-v2-num">05</span>什么是 BGP 线路？</summary>
-              <div class="faq-v2-a">BGP 中转线路在国内部署多线接入服务器，自动识别用户宽带（电信/联通/移动），将流量调度到对应运营商最优入口，大幅降低跨网延迟与丢包率。</div>
-            </details>
-
-            <details class="faq-v2-item" name="faq-acc">
-              <summary class="faq-v2-q"><span class="faq-v2-num">06</span>机场节点速度慢怎么办？</summary>
-              <div class="faq-v2-a">晚高峰速度变慢通常是公网出口拥堵或机场带宽超售所致。建议切换到 IPLC/IEPL 专线节点，或在客户端中开启"自动选优"功能，自动测试并连接最快节点。</div>
-            </details>
-
-            <details class="faq-v2-item" name="faq-acc">
-              <summary class="faq-v2-q"><span class="faq-v2-num">07</span>如何选择稳定且不易跑路的机场？</summary>
-              <div class="faq-v2-a">1) 优先月付，不贪年付大折扣；2) 选择开业2年以上的老牌机场；3) 检查是否采用 IPLC/IEPL 专线；4) 避开使用自定义"一键客户端"的无名小机场，防止隐私泄露。</div>
-            </details>
-
-            <details class="faq-v2-item" name="faq-acc">
-              <summary class="faq-v2-q"><span class="faq-v2-num">08</span>为什么有些网站应用无法访问？</summary>
-              <div class="faq-v2-a">部分应用（如 ChatGPT/Netflix）对 IP 有严格限制，仅允许特定地区的原生/住宅 IP 访问。请切换至机场提供的对应解锁节点，例如使用美国原生节点访问 OpenAI。</div>
-            </details>
-
-            <details class="faq-v2-item" name="faq-acc">
-              <summary class="faq-v2-q"><span class="faq-v2-num">09</span>机场账号被封怎么办？</summary>
-              <div class="faq-v2-a">联系机场客服说明情况并提供购买凭证，正规机场通常会在24小时内核实解封。如机场不响应，可尝试切换邮箱重新注册，同时注意不要多人共享账号。</div>
-            </details>
-
-            <details class="faq-v2-item" name="faq-acc">
-              <summary class="faq-v2-q"><span class="faq-v2-num">10</span>如何测试机场的真实速度？</summary>
-              <div class="faq-v2-a">建议在晚高峰（20:00-23:00）期间打开 fast.com 或 Speedtest，同时测试 YouTube 4K 的实际流畅度与延迟。单纯看测速工具的峰值数值意义有限，实际体感更重要。</div>
-            </details>
-
-          </div>
-
-          <!-- Right col: Decorative question mark bubble -->
-          <div class="faq-v2-deco">
-            <div class="faq-v2-deco-inner">
-              <div class="faq-v2-bubble">
-                <span class="faq-v2-qmark">?</span>
-                <div class="faq-v2-dots">
-                  <span></span><span></span><span></span>
-                </div>
-              </div>
-              <p class="faq-v2-deco-text">没找到想要的答案？</p>
-              <p class="faq-v2-deco-sub">浏览完整知识库，获取更多专业解答</p>
-              <a href="knowledge.html" class="faq-v2-deco-link">浏览全部知识库 &rarr;</a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Bottom Columns Section -->
-    <section class="home-v2-section" style="background:#ffffff; border-top:1px solid #e2e8f0; padding-top:50px; padding-bottom:50px; margin-top:20px;">
-      <div class="home-v2-container">
-        <div class="home-v2-cols-grid">
+        <div class="faq-warning-grid">
           
-          <!-- Column 1: 最新文章 -->
-          <div class="home-v2-col-card home-v2-info-card">
-            <div class="home-v2-col-header" style="border-bottom:1px solid #f1f5f9; padding-bottom:15px; margin-bottom:15px;">
-              <span class="home-v2-col-title" style="border-left:3px solid #2563eb; padding-left:10px;">最新文章</span>
-              <a href="knowledge.html" class="home-v2-col-more">查看更多 &rarr;</a>
+          <!-- Left Column: FAQ Grid -->
+          <div class="faq-v3-block">
+            <div class="faq-v3-header">
+              <div class="faq-v3-tabs">
+                <span class="faq-v3-tab active">全部问题</span>
+                <span class="faq-v3-tab">最新</span>
+                <span class="faq-v3-tab">最热</span>
+                <span class="faq-v3-tab">最常见</span>
+              </div>
+              <span class="faq-v3-total">共 73+ 个问题</span>
             </div>
             
-            <div class="home-v2-news-list">
+            <div class="faq-v3-grid">
+              
               <!-- Item 1 -->
-              <div class="home-v2-news-item">
-                <img class="home-v2-news-thumb" src="assets/images/new_logo.png" alt="2026 全球稳定机场推荐 Top10">
-                <div class="home-v2-news-content">
-                  <div class="home-v2-news-meta">
-                    <span class="home-v2-news-badge">机场推荐</span>
+              <details class="faq-v3-item" name="faq-acc">
+                <summary class="faq-v3-q-box">
+                  <div class="faq-v3-q-left">
+                    <span class="faq-v3-num">01</span>
+                    <div class="faq-v3-q-text">
+                      <span class="faq-v3-title">什么是机场？</span>
+                      <span class="faq-v3-desc">机场的定义、作用、原理及常见类型介绍</span>
+                    </div>
                   </div>
-                  <a href="airports.html" class="home-v2-news-title">2026 全球稳定机场推荐 Top10</a>
-                  <span class="home-v2-news-date">2026-06-22</span>
+                  <span class="faq-v3-arrow"></span>
+                </summary>
+                <div class="faq-v3-answer">
+                  机场是指提供代理节点订阅服务的平台。它将海外各地的 VPS 服务器打包配置为节点列表，用户只需导入 Clash, Shadowrocket 等客户端即可一键接入海外网络，畅享网络加速。
+                </div>
+              </details>
+
+              <!-- Item 6 -->
+              <details class="faq-v3-item" name="faq-acc">
+                <summary class="faq-v3-q-box">
+                  <div class="faq-v3-q-left">
+                    <span class="faq-v3-num">06</span>
+                    <div class="faq-v3-q-text">
+                      <span class="faq-v3-title">机场节点速度慢怎么办？</span>
+                      <span class="faq-v3-desc">诊断与优化方法，提升连接速度的实用技巧</span>
+                    </div>
+                  </div>
+                  <span class="faq-v3-arrow"></span>
+                </summary>
+                <div class="faq-v3-answer">
+                  请先尝试以下操作：1. 在客户端中一键测速，切换到延迟最低的节点；2. 避开晚高峰骨干网拥堵期；3. 在系统设置中更换 DNS 地址，防止由于 DNS 解析污染导致的网络慢。
+                </div>
+              </details>
+
+              <!-- Item 2 -->
+              <details class="faq-v3-item" name="faq-acc" open>
+                <summary class="faq-v3-q-box">
+                  <div class="faq-v3-q-left">
+                    <span class="faq-v3-num">02</span>
+                    <div class="faq-v3-q-text">
+                      <span class="faq-v3-title">什么是 IPLC 专线？</span>
+                      <span class="faq-v3-desc">IPLC 专线的定义、特点、优势与适用场景</span>
+                    </div>
+                  </div>
+                  <span class="faq-v3-arrow"></span>
+                </summary>
+                <div class="faq-v3-answer">
+                  IPLC（国际私人专线）是运营商提供的点对点内网跨国连接，由于完全不经过公网和防火墙（GFW），因此绝不会受 GFW 封锁干扰。它延迟极低，稳定性极强，是高端网络服务的基石。
+                </div>
+              </details>
+
+              <!-- Item 7 -->
+              <details class="faq-v3-item" name="faq-acc">
+                <summary class="faq-v3-q-box">
+                  <div class="faq-v3-q-left">
+                    <span class="faq-v3-num">07</span>
+                    <div class="faq-v3-q-text">
+                      <span class="faq-v3-title">如何选择稳定且不易跑路的机场？</span>
+                      <span class="faq-v3-desc">从线路、价格、稳定性等多维度给出建议</span>
+                    </div>
+                  </div>
+                  <span class="faq-v3-arrow"></span>
+                </summary>
+                <div class="faq-v3-answer">
+                  避坑首选：1. 建议只选择“月付”，不买超低价的长期年付套餐；2. 优先选择开业2年以上口碑成熟的老牌中转/专线机场；3. 看准是否有专属的客服和稳定的用户社群。
+                </div>
+              </details>
+
+              <!-- Item 3 -->
+              <details class="faq-v3-item" name="faq-acc">
+                <summary class="faq-v3-q-box">
+                  <div class="faq-v3-q-left">
+                    <span class="faq-v3-num">03</span>
+                    <div class="faq-v3-q-text">
+                      <span class="faq-v3-title">什么是 IEPL 专线？</span>
+                      <span class="faq-v3-desc">IEPL 专线的定义、技术原理和应用场景</span>
+                    </div>
+                  </div>
+                  <span class="faq-v3-arrow"></span>
+                </summary>
+                <div class="faq-v3-answer">
+                  IEPL 是国际以太网私网专线。它同 IPLC 一样不走公网防火墙，且具备更高的带宽灵活性、多点智能接入切换功能，比传统 IPLC 具备更强的抗灾备用冗余能力。
+                </div>
+              </details>
+
+              <!-- Item 8 -->
+              <details class="faq-v3-item" name="faq-acc">
+                <summary class="faq-v3-q-box">
+                  <div class="faq-v3-q-left">
+                    <span class="faq-v3-num">08</span>
+                    <div class="faq-v3-q-text">
+                      <span class="faq-v3-title">为什么有些网站或应用无法访问？</span>
+                      <span class="faq-v3-desc">常见原因分析及解决方案</span>
+                    </div>
+                  </div>
+                  <span class="faq-v3-arrow"></span>
+                </summary>
+                <div class="faq-v3-answer">
+                  这通常是由于 IP 的地域限制风控。例如 ChatGPT、Claude 不允许中国香港 IP 访问。请将代理客户端里的节点切换到美国、新加坡或日本的原生/住宅 IP 节点即可正常开启。
+                </div>
+              </details>
+
+              <!-- Item 4 -->
+              <details class="faq-v3-item" name="faq-acc">
+                <summary class="faq-v3-q-box">
+                  <div class="faq-v3-q-left">
+                    <span class="faq-v3-num">04</span>
+                    <div class="faq-v3-q-text">
+                      <span class="faq-v3-title">IPLC 和 IEPL 专线有什么区别？</span>
+                      <span class="faq-v3-desc">从技术原理、稳定性、价格等方面详细对比</span>
+                    </div>
+                  </div>
+                  <span class="faq-v3-arrow"></span>
+                </summary>
+                <div class="faq-v3-answer">
+                  IPLC 是基于物理层（L1）的点对点硬管道；IEPL 是基于二层（L2）以太网虚拟化管道。在防墙效果上两者完全一致，但 IEPL 的调度分配更灵活，维护难度低，扩展带宽速度更快。
+                </div>
+              </details>
+
+              <!-- Item 9 -->
+              <details class="faq-v3-item" name="faq-acc">
+                <summary class="faq-v3-q-box">
+                  <div class="faq-v3-q-left">
+                    <span class="faq-v3-num">09</span>
+                    <div class="faq-v3-q-text">
+                      <span class="faq-v3-title">机场账号被封怎么办？</span>
+                      <span class="faq-v3-desc">账号异常的处理流程与注意事项</span>
+                    </div>
+                  </div>
+                  <span class="faq-v3-arrow"></span>
+                </summary>
+                <div class="faq-v3-answer">
+                  如果遇到封禁，请核实是否有多设备同时在线超标、是否分享给他人引起风控，或者使用了非法网络扫描。你可以通过工单系统联系客服，正规机场会根据实际情况核实后给予解封。
+                </div>
+              </details>
+
+              <!-- Item 5 -->
+              <details class="faq-v3-item" name="faq-acc">
+                <summary class="faq-v3-q-box">
+                  <div class="faq-v3-q-left">
+                    <span class="faq-v3-num">05</span>
+                    <div class="faq-v3-q-text">
+                      <span class="faq-v3-title">什么是 BGP 线路？</span>
+                      <span class="faq-v3-desc">BGP 线路的定义和在跨境网络中的作用</span>
+                    </div>
+                  </div>
+                  <span class="faq-v3-arrow"></span>
+                </summary>
+                <div class="faq-v3-answer">
+                  BGP（边界网关协议）中转是指入口服务器配置了电信、联通、移动多线接入，能自动根据用户的宽带类型进行最优路线分流，避免了跨宽带运营商所导致的丢包与慢速。
+                </div>
+              </details>
+
+              <!-- Item 10 -->
+              <details class="faq-v3-item" name="faq-acc">
+                <summary class="faq-v3-q-box">
+                  <div class="faq-v3-q-left">
+                    <span class="faq-v3-num">10</span>
+                    <div class="faq-v3-q-text">
+                      <span class="faq-v3-title">如何测试机场的真实速度？</span>
+                      <span class="faq-v3-desc">推荐工具与测试方法，避免被虚假宣传误导</span>
+                    </div>
+                  </div>
+                  <span class="faq-v3-arrow"></span>
+                </summary>
+                <div class="faq-v3-answer">
+                  请使用专业的单兵测试工具（如 Speedtest/fast.com）在晚高峰阶段（20:00-23:00）测试节点下载速率，或者直接开启 YouTube 4K/8K 视频，在统计信息中查看连接速率。
+                </div>
+              </details>
+
+            </div>
+            
+            <div class="faq-v3-footer">
+              <a href="knowledge.html" class="faq-v3-more-link">查看全部 73+ 个问题 &rarr;</a>
+            </div>
+          </div>
+          
+          <!-- Right Column: Anti-Scam Warn Card -->
+          <div class="scam-warn-card">
+            <div class="scam-warn-header">
+              <div class="scam-warn-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="scam-warn-icon">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                  <line x1="12" y1="9" x2="12" y2="13"/>
+                  <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+                机场防坑预警
+              </div>
+              <a href="avoid-scam/" class="scam-warn-more">更多预警 &rarr;</a>
+            </div>
+            
+            <div class="scam-warn-list">
+              <!-- Item 1 -->
+              <div class="scam-warn-item">
+                <div class="scam-warn-top">
+                  <span class="scam-badge badge-high-risk">高危跑路</span>
+                  <span class="scam-warn-name">某某云机场</span>
+                </div>
+                <p class="scam-warn-desc">大量用户反馈无法连接，官网已无法打开</p>
+                <div class="scam-warn-bottom">
+                  <span class="scam-warn-date">曝光时间: 2026-05-20</span>
+                  <span class="scam-warn-hot"><span class="fire-icon">🔥</span> 9845</span>
                 </div>
               </div>
               
               <!-- Item 2 -->
-              <div class="home-v2-news-item">
-                <img class="home-v2-news-thumb" src="assets/images/new_logo.png" alt="IPLC, IEPL 与 BGP 区别讲解">
-                <div class="home-v2-news-content">
-                  <div class="home-v2-news-meta">
-                    <span class="home-v2-news-badge">网络知识</span>
-                  </div>
-                  <a href="articles/article-8.html" class="home-v2-news-title">IPLC, IEPL 与 BGP 区别讲解</a>
-                  <span class="home-v2-news-date">2026-06-22</span>
+              <div class="scam-warn-item">
+                <div class="scam-warn-top">
+                  <span class="scam-badge badge-fraud">只圈钱不跑</span>
+                  <span class="scam-warn-name">快联机场</span>
+                </div>
+                <p class="scam-warn-desc">节点不稳定，频繁断连，客服失联</p>
+                <div class="scam-warn-bottom">
+                  <span class="scam-warn-date">曝光时间: 2026-05-18</span>
+                  <span class="scam-warn-hot"><span class="fire-icon">🔥</span> 6231</span>
                 </div>
               </div>
               
               <!-- Item 3 -->
-              <div class="home-v2-news-item">
-                <img class="home-v2-news-thumb" src="assets/images/new_logo.png" alt="Clash 客户端详细使用教程">
-                <div class="home-v2-news-content">
-                  <div class="home-v2-news-meta">
-                    <span class="home-v2-news-badge">使用教程</span>
-                  </div>
-                  <a href="articles/article-2.html" class="home-v2-news-title">Clash 客户端详细使用教程</a>
-                  <span class="home-v2-news-date">2026-06-20</span>
+              <div class="scam-warn-item">
+                <div class="scam-warn-top">
+                  <span class="scam-badge badge-caution">谨慎使用</span>
+                  <span class="scam-warn-name">飞速网络</span>
+                </div>
+                <p class="scam-warn-desc">限速降级严重，实际速度不达标</p>
+                <div class="scam-warn-bottom">
+                  <span class="scam-warn-date">曝光时间: 2026-05-15</span>
+                  <span class="scam-warn-hot"><span class="fire-icon">🔥</span> 3125</span>
                 </div>
               </div>
             </div>
+            
+            <a href="avoid-scam/" class="scam-warn-btn">查看完整预警榜单 &rarr;</a>
           </div>
           
-          <!-- Column 2: 热门标签 -->
-          <div class="home-v2-col-card home-v2-info-card">
-            <div class="home-v2-col-header" style="border-bottom:1px solid #f1f5f9; padding-bottom:15px; margin-bottom:15px;">
-              <span class="home-v2-col-title" style="border-left:3px solid #2563eb; padding-left:10px;">热门标签</span>
-              <a href="knowledge.html" class="home-v2-col-more">更多标签 &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Three Columns Grid Section -->
+    <section class="middle-grid-section" style="background: #ffffff; padding: 60px 0; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+      <div class="home-v2-container">
+        <div class="middle-three-cols">
+          
+          <!-- Column 1: TOP 5 Hot Questions -->
+          <div class="middle-col-card top5-card">
+            <div class="middle-col-header">
+              <span class="middle-col-title">
+                <span style="color: #f97316; margin-right: 6px;">🔥</span>热门问题 TOP5
+              </span>
             </div>
-            
-            <div class="tags-cloud" style="display:flex; flex-wrap:wrap; gap:10px; margin-top:15px;">
-              <a href="knowledge.html" class="tag-pill">机场推荐</a>
-              <a href="articles/article-8.html" class="tag-pill">IPLC</a>
-              <a href="articles/article-8.html" class="tag-pill">IEPL</a>
-              <a href="articles/article-8.html" class="tag-pill">BGP</a>
-              <a href="articles/article-2.html" class="tag-pill">Clash</a>
-              <a href="articles/article-4.html" class="tag-pill">Shadowrocket</a>
-              <a href="articles/article-5.html" class="tag-pill">v2rayN</a>
-              <a href="knowledge.html" class="tag-pill">科学上网</a>
-              <a href="articles/article-3.html" class="tag-pill">流媒体解锁</a>
-              <a href="articles/article-10.html" class="tag-pill">ChatGPT</a>
-              <a href="airports.html" class="tag-pill">梯子推荐</a>
-              <a href="ranking.html" class="tag-pill">速度测试</a>
-              <a href="ranking.html" class="tag-pill">节点测试</a>
-              <a href="avoid-scam/" class="tag-pill">避坑工具</a>
-              <a href="knowledge.html" class="tag-pill">跨境工具</a>
-              <a href="articles/article-3.html" class="tag-pill">Netflix</a>
-              <a href="articles/article-3.html" class="tag-pill">Disney+</a>
+            <div class="top5-list">
+              <a href="knowledge.html" class="top5-item">
+                <div class="top5-rank rank-1">1</div>
+                <span class="top5-text">什么是机场？</span>
+                <span class="top5-views"><span class="eye-icon">👁</span> 12.5K</span>
+              </a>
+              <a href="articles/article-8.html" class="top5-item">
+                <div class="top5-rank rank-2">2</div>
+                <span class="top5-text">什么是 IPLC 专线？</span>
+                <span class="top5-views"><span class="eye-icon">👁 </span>8.7K</span>
+              </a>
+              <a href="knowledge.html" class="top5-item">
+                <div class="top5-rank rank-3">3</div>
+                <span class="top5-text">机场节点速度慢怎么办？</span>
+                <span class="top5-views"><span class="eye-icon">👁 </span>6.2K</span>
+              </a>
+              <a href="knowledge.html" class="top5-item">
+                <div class="top5-rank rank-4">4</div>
+                <span class="top5-text">如何选择稳定且不易跑路的机场？</span>
+                <span class="top5-views"><span class="eye-icon">👁 </span>5.8K</span>
+              </a>
+              <a href="knowledge.html" class="top5-item">
+                <div class="top5-rank rank-5">5</div>
+                <span class="top5-text">如何测试机场的真实速度？</span>
+                <span class="top5-views"><span class="eye-icon">👁 </span>4.3K</span>
+              </a>
+            </div>
+            <div class="top5-footer">
+              <a href="knowledge.html" class="top5-more">查看完整排行榜 &rarr;</a>
             </div>
           </div>
           
-          <!-- Column 3: 站内公告 -->
-          <div class="home-v2-col-card home-v2-info-card">
-            <div class="home-v2-col-header" style="border-bottom:1px solid #f1f5f9; padding-bottom:15px; margin-bottom:15px;">
-              <span class="home-v2-col-title" style="border-left:3px solid #2563eb; padding-left:10px;">站内公告</span>
+          <!-- Column 2: Newbie Guide Card -->
+          <div class="middle-col-card newbie-guide-card">
+            <div class="newbie-guide-header">
+              <h3 class="newbie-guide-title">新手入门指南</h3>
+              <p class="newbie-guide-subtitle">快速上手科学上网</p>
             </div>
             
-            <div class="home-v2-notice-list" style="margin-top:15px;">
-              <div class="home-v2-notice-item">
-                <a href="about.html" class="home-v2-notice-link">云轨导航全新版本上线，体验更流畅</a>
-                <span class="home-v2-notice-date">06-18</span>
+            <div class="newbie-guide-body">
+              <a href="knowledge.html" class="newbie-learn-btn">开始学习 &rarr;</a>
+              <div class="newbie-rocket-box">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="newbie-rocket">
+                  <path d="M4.5 16.5c-1.5 1.25-2.5 3.5-2.5 3.5s2.25-1 3.5-2.5L16.5 6.5c1.5-1.5 1.5-3.5 1.5-3.5s-2 0-3.5 1.5L4.5 16.5z"/>
+                  <path d="M12 15l-3-3M19 19s-1.5-1-2-2.5M5 5s1 1.5 2.5 2"/>
+                </svg>
               </div>
-              <div class="home-v2-notice-item">
-                <a href="articles/article-9.html" class="home-v2-notice-link">如何测试机场的真实速度？实用工具推荐</a>
-                <span class="home-v2-notice-date">06-15</span>
-              </div>
-              <div class="home-v2-notice-item">
-                <a href="avoid-scam/" class="home-v2-notice-link">2026 年机场选购避坑指南（新手必看）</a>
-                <span class="home-v2-notice-date">06-12</span>
-              </div>
-              <div class="home-v2-notice-item">
-                <a href="articles/article-6.html" class="home-v2-notice-link">Clash 客户端配置常见问题/问题解决汇总</a>
-                <span class="home-v2-notice-date">06-10</span>
-              </div>
-              <div class="home-v2-notice-item">
-                <a href="about.html" class="home-v2-notice-link">本站内容均为原创，禁止转载与抄袭</a>
-                <span class="home-v2-notice-date">06-08</span>
-              </div>
+            </div>
+            
+            <div class="newbie-links">
+              <a href="knowledge.html" class="newbie-link-item">● 科学上网基础知识</a>
+              <a href="airports.html" class="newbie-link-item">● 如何获取机场订阅</a>
+              <a href="articles/tutorial-win.html" class="newbie-link-item">● Clash 客户端配置</a>
+              <a href="knowledge.html" class="newbie-link-item">● 常见问题解决方案</a>
+            </div>
+          </div>
+          
+          <!-- Column 3: Recommended Tutorials -->
+          <div class="middle-col-card tuts-recommend-card">
+            <div class="middle-col-header">
+              <span class="middle-col-title">相关教程推荐</span>
+              <a href="knowledge.html" class="middle-col-more">更多教程 &rarr;</a>
+            </div>
+            
+            <div class="tuts-rec-grid">
+              
+              <!-- Card 1 -->
+              <a href="articles/tutorial-win.html" class="tut-rec-item">
+                <div class="tut-rec-bg bg-gradient-purple">
+                  <span class="tut-rec-icon">⚙</span>
+                </div>
+                <div class="tut-rec-content">
+                  <span class="tut-rec-title">Clash 客户端配置详细教程</span>
+                  <div class="tut-rec-stats">
+                    <span>👁 7.8K</span>
+                    <span>♡ 1.5K</span>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Card 2 -->
+              <a href="articles/article-8.html" class="tut-rec-item">
+                <div class="tut-rec-bg bg-gradient-blue">
+                  <span class="tut-rec-icon">⚡</span>
+                </div>
+                <div class="tut-rec-content">
+                  <span class="tut-rec-title">IPLC 专线机场深度解析与推荐</span>
+                  <div class="tut-rec-stats">
+                    <span>👁 6.1K</span>
+                    <span>♡ 1.2K</span>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Card 3 -->
+              <a href="avoid-scam/" class="tut-rec-item">
+                <div class="tut-rec-bg bg-gradient-orange">
+                  <span class="tut-rec-icon">🛡</span>
+                </div>
+                <div class="tut-rec-content">
+                  <span class="tut-rec-title">2026 年机场避坑指南</span>
+                  <div class="tut-rec-stats">
+                    <span>👁 4.8K</span>
+                    <span>♡ 756</span>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Card 4 -->
+              <a href="knowledge.html" class="tut-rec-item">
+                <div class="tut-rec-bg bg-gradient-teal">
+                  <span class="tut-rec-icon">🚀</span>
+                </div>
+                <div class="tut-rec-content">
+                  <span class="tut-rec-title">从零开始搭建科学上网环境</span>
+                  <div class="tut-rec-stats">
+                    <span>👁 3.6K</span>
+                    <span>♡ 892</span>
+                  </div>
+                </div>
+              </a>
+
             </div>
           </div>
           
@@ -998,65 +1200,98 @@
       </div>
     </section>
 
-    <!-- Bottom Stats Bar Section -->
-    <section class="bottom-stats-section">
+    <!-- Bottom Badges Row Section -->
+    <section class="badges-row-section" style="background: #f8fafc; padding: 30px 0; border-bottom: 1px solid #e2e8f0;">
       <div class="home-v2-container">
-        <div class="bottom-stats-grid">
+        <div class="badges-row-grid">
           
-          <div class="bottom-stat-card">
-            <div class="bottom-stat-icon-box">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+          <div class="badge-row-card">
+            <div class="badge-row-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
               </svg>
             </div>
-            <div class="bottom-stat-info">
-              <span class="bottom-stat-num">120+</span>
-              <span class="bottom-stat-label">机场评测</span>
+            <div class="badge-row-info">
+              <span class="badge-row-title">内容持续更新</span>
+              <span class="badge-row-desc">每周更新热门问题与解答</span>
             </div>
           </div>
           
-          <div class="bottom-stat-card">
-            <div class="bottom-stat-icon-box">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                <line x1="8" y1="21" x2="16" y2="21"/>
-                <line x1="12" y1="17" x2="12" y2="21"/>
-              </svg>
-            </div>
-            <div class="bottom-stat-info">
-              <span class="bottom-stat-num">300+</span>
-              <span class="bottom-stat-label">常用软件</span>
-            </div>
-          </div>
-          
-          <div class="bottom-stat-card">
-            <div class="bottom-stat-icon-box">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-              </svg>
-            </div>
-            <div class="bottom-stat-info">
-              <span class="bottom-stat-num">200+</span>
-              <span class="bottom-stat-label">避坑教程</span>
-            </div>
-          </div>
-          
-          <div class="bottom-stat-card">
-            <div class="bottom-stat-icon-box">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <div class="badge-row-card">
+            <div class="badge-row-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
                 <circle cx="9" cy="7" r="4"/>
                 <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
               </svg>
             </div>
-            <div class="bottom-stat-info">
-              <span class="bottom-stat-num">50000+</span>
-              <span class="bottom-stat-label">用户体验</span>
+            <div class="badge-row-info">
+              <span class="badge-row-title">专业团队维护</span>
+              <span class="badge-row-desc">技术团队 7&times;24 小时支持</span>
             </div>
           </div>
           
+          <div class="badge-row-card">
+            <div class="badge-row-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 8v8M8 12h8"/>
+              </svg>
+            </div>
+            <div class="badge-row-info">
+              <span class="badge-row-title">完全免费使用</span>
+              <span class="badge-row-desc">所有内容免费开放查看</span>
+            </div>
+          </div>
+          
+          <div class="badge-row-card">
+            <div class="badge-row-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <div class="badge-row-info">
+              <span class="badge-row-title">多平台支持</span>
+              <span class="badge-row-desc">支持手机电脑随时查看</span>
+            </div>
+          </div>
+          
+          <div class="badge-row-card">
+            <div class="badge-row-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <div class="badge-row-info">
+              <span class="badge-row-title">收藏分享</span>
+              <span class="badge-row-desc">便于保存和分享知识</span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA Banner Section -->
+    <section class="bottom-cta-banner-section" style="background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%); padding: 50px 0; color: #ffffff; position: relative; overflow: hidden;">
+      <div class="home-v2-container">
+        <div class="bottom-cta-banner-grid">
+          <div class="bottom-cta-left">
+            <h2 class="bottom-cta-title">还有其他问题？</h2>
+            <p class="bottom-cta-desc">没找到想要的答案？点击这里提交您的问题，或与我们的在线客服联系。</p>
+          </div>
+          <div class="bottom-cta-right">
+            <a href="about.html" class="bottom-cta-btn btn-primary">提交问题</a>
+            <a href="contact.html" class="bottom-cta-btn btn-secondary">联系客服</a>
+            <div class="bottom-cta-agent-wrapper">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="opacity: 0.15; position: absolute; right: 20px; bottom: -10px; transform: scale(1.5);">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
     </section>
