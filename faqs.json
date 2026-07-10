@@ -53,6 +53,14 @@
       {"q": "国内用户注册 ChatGPT 遇到 'Access Denied' 怎么破？", "a": "这是因为所选节点 IP 纯净度过低，已被 OpenAI 拉黑。必须切换到日本、新加坡或美国的原生双 ISP 住宅 IP 节点访问。"},
       {"q": "Claude 3 注册如何避免封号？", "a": "注册 Claude 3 时需使用纯净节点，并搭配接码平台提供的干净手机号码进行二次验证。登录期间切忌频繁更换节点国家 IP。"}
     ],
+    "article-11.html": [
+      {"q": "什么是 Fake-IP 模式？它有什么好处？", "a": "Fake-IP 模式是客户端直接返回局域网假 IP，并将真实解析推迟到代理端的技术。它能消除本地 DNS 解析等待，并彻底避开本地的 DNS 污染。"},
+      {"q": "为什么 TUN 模式能接管所有系统流量？", "a": "TUN 模式通过创建虚拟网卡接管操作系统底层的全部 IP 数据包，使那些不支持系统代理的软件（如命令行、各类游戏等）也能走代理。"}
+    ],
+    "article-12.html": [
+      {"q": "为什么挂了代理还会泄露真实 IP？", "a": "这主要是由 WebRTC 协议、DNS 泄露或 IPv6 旁路流量引起的。WebRTC 会绕过代理直连 stun 服务器查询 IP，而本地明文 DNS 查询则会暴露你的域名请求历史。"},
+      {"q": "如何检测是否存在 DNS 泄露？", "a": "开启代理后，可以访问 browserleaks.com 或 dnsleaktest.com 进行完整测试。如果测试结果中出现了你本地运营商的 DNS 服务器地址，则说明存在泄露。"}
+    ],
     "tutorial-win.html": [
       {"q": "Windows下最推荐使用哪款代理软件？", "a": "目前最推荐 Clash Verge。它界面美观，完美支持 Clash Meta 内核，全面兼容 VLESS Reality 和 Hysteria 2 协议。"},
       {"q": "Clash Verge 如何开启系统代理？", "a": "安装并导入订阅后，在软件的 Dashboard 或 Settings 页面，找到 System Proxy（系统代理）开关并将其打开即可。"}
