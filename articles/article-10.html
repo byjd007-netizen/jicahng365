@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>路由器翻墙：OpenWrt 插件 PassWall 实战 - 云轨导航知识库</title>
+  <title>路由器翻墙实战：OpenWrt 软路由配置 PassWall / OpenClash 教程 - 网络科普</title>
   <link rel="stylesheet" href="../index.css?v=6">
 
   
@@ -21,7 +21,7 @@
   
 
   
-  <meta name="description" content="关于 路由器翻墙：OpenWrt 插件 PassWall 实战 - 云轨导航知识库 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。">
+  <meta name="description" content="关于 翻墙基础原理与常见代理协议全面解析 - 云轨导航 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。">
   
   
   
@@ -36,7 +36,7 @@
   
 
   
-  <meta name="description" content="关于 路由器翻墙：OpenWrt 插件 PassWall 实战 - 云轨导航知识库 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。">
+  <meta name="description" content="关于 翻墙基础原理与常见代理协议全面解析 - 云轨导航 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。">
   
   
   
@@ -51,7 +51,22 @@
   
 
   
-  <meta name="description" content="关于 路由器翻墙：OpenWrt 插件 PassWall 实战 - 云轨导航知识库 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。">
+  <meta name="description" content="关于 翻墙基础原理与常见代理协议全面解析 - 云轨导航 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <meta name="description" content="关于 翻墙基础原理与常见代理协议全面解析 - 云轨导航 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。">
   
   
   
@@ -66,24 +81,24 @@
   
 
   <link rel="canonical" href="https://jichang365.com/articles/article-10.html">
-  <meta name="description" content="关于 路由器翻墙：OpenWrt 插件 PassWall 实战 - 云轨导航知识库 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。">
+  <meta name="description" content="关于 翻墙基础原理与常见代理协议全面解析 - 云轨导航 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://jichang365.com/articles/article-10.html">
-  <meta property="og:title" content="路由器翻墙：OpenWrt 插件 PassWall 实战 - 云轨导航知识库">
-  <meta property="og:description" content="关于 路由器翻墙：OpenWrt 插件 PassWall 实战 - 云轨导航知识库 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。">
+  <meta property="og:title" content="路由器翻墙实战：OpenWrt 软路由配置 PassWall / OpenClash 教程 - 网络科普 - 云轨导航">
+  <meta property="og:description" content="关于 翻墙基础原理与常见代理协议全面解析 - 云轨导航 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。">
   <meta property="og:image" content="https://jichang365.com/assets/images/new_logo.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="路由器翻墙：OpenWrt 插件 PassWall 实战 - 云轨导航知识库">
-  <meta name="twitter:description" content="关于 路由器翻墙：OpenWrt 插件 PassWall 实战 - 云轨导航知识库 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。">
+  <meta name="twitter:title" content="路由器翻墙实战：OpenWrt 软路由配置 PassWall / OpenClash 教程 - 网络科普 - 云轨导航">
+  <meta name="twitter:description" content="关于 翻墙基础原理与常见代理协议全面解析 - 云轨导航 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。">
   <meta name="twitter:image" content="https://jichang365.com/assets/images/new_logo.png">
   <script type="application/ld+json">
-  {"image":"https://jichang365.com/assets/images/new_logo.png","datePublished":"2026-06-22T08:00:00+08:00","description":"关于 路由器翻墙：OpenWrt 插件 PassWall 实战 - 云轨导航知识库 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。","@type":"Article","dateModified":"2026-07-10T16:41:25+08:00","headline":"路由器翻墙：OpenWrt 插件 PassWall 实战","author":{"url":"https://jichang365.com/about.html","name":"云梯指南技术编辑团队","@type":"Organization"},"@context":"https://schema.org","publisher":{"name":"云轨导航","logo":{"@type":"ImageObject","url":"https://jichang365.com/assets/images/new_logo.png"},"@type":"Organization"}}
+  {"image":"https://jichang365.com/assets/images/new_logo.png","datePublished":"2026-06-22T08:00:00+08:00","description":"关于 翻墙基础原理与常见代理协议全面解析 - 云轨导航 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。","@type":"Article","dateModified":"2026-07-10T16:54:38+08:00","headline":"路由器翻墙实战：OpenWrt 软路由配置 PassWall / OpenClash 教程","author":{"url":"https://jichang365.com/about.html","name":"云梯指南技术编辑团队","@type":"Organization"},"@context":"https://schema.org","publisher":{"name":"云轨导航","logo":{"@type":"ImageObject","url":"https://jichang365.com/assets/images/new_logo.png"},"@type":"Organization"}}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","itemListElement":[{"position":1,"name":"首页","item":"https://jichang365.com/","@type":"ListItem"},{"position":2,"name":"网络知识库","item":"https://jichang365.com/knowledge.html","@type":"ListItem"},{"position":3,"name":"路由器翻墙：OpenWrt 插件 PassWall 实战","item":"https://jichang365.com/articles/article-10.html","@type":"ListItem"}],"@type":"BreadcrumbList"}
+  {"@context":"https://schema.org","itemListElement":[{"position":1,"name":"首页","item":"https://jichang365.com/","@type":"ListItem"},{"position":2,"name":"网络知识库","item":"https://jichang365.com/knowledge.html","@type":"ListItem"},{"position":3,"name":"路由器翻墙实战：OpenWrt 软路由配置 PassWall / OpenClash 教程","item":"https://jichang365.com/articles/article-10.html","@type":"ListItem"}],"@type":"BreadcrumbList"}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","mainEntity":[{"acceptedAnswer":{"text":"这是因为所选节点 IP 纯净度过低，已被 OpenAI 拉黑。必须切换到日本、新加坡或美国的原生双 ISP 住宅 IP 节点访问。","@type":"Answer"},"name":"国内用户注册 ChatGPT 遇到 \u0027Access Denied\u0027 怎么破？","@type":"Question"},{"acceptedAnswer":{"text":"注册 Claude 3 时需使用纯净节点，并搭配接码平台提供的干净手机号码进行二次验证。登录期间切忌频繁更换节点国家 IP。","@type":"Answer"},"name":"Claude 3 注册如何避免封号？","@type":"Question"}],"@type":"FAQPage"}
+  {"@context":"https://schema.org","mainEntity":[{"acceptedAnswer":{"text":"PassWall 运行轻量且对 CPU 压力小，配置非常简单；OpenClash 功能极其强大，分流规则更细致，但需要消耗更多的内存和 CPU。","@type":"Answer"},"name":"OpenWrt 上 OpenClash 和 PassWall 哪个更好用？","@type":"Question"},{"acceptedAnswer":{"text":"1) 检查软路由系统时间是否准确，VMess/VLESS 协议对此极度敏感；2) 确认 DNS 过滤方案已正常运行，防止 DNS 被污染；3) 确保没有同时开启两个代理插件。","@type":"Answer"},"name":"软路由配置后节点延迟正常但无法打开网页是什么原因？","@type":"Question"}],"@type":"FAQPage"}
   </script>
 </head>
 <body class="article-page">
@@ -99,7 +114,7 @@
       <a href="../knowledge.html" class="nav-link active">科普指南</a>
         <a href="../about.html" class="nav-link">关于我们</a>
     </nav>
-    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">☰</button>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu"></button>
   </div>
 </header>
 
@@ -114,18 +129,18 @@
 
     
     <main class="main-content">
+
         <div class="breadcrumbs" style="margin-bottom: 25px; font-size: 0.95rem; color: #64748b; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0;">
             <a href="../index.html" style="color: #0ea5e9; text-decoration: none; font-weight: 500;">首页</a> &gt; 
             <a href="../knowledge.html" style="color: #0ea5e9; text-decoration: none; font-weight: 500;">科普指南</a> &gt; 
-            <span class="current" style="color: #94a3b8;">路由器翻墙：OpenWrt 插...</span>
+            <span class="current" style="color: #94a3b8;">路由器翻墙实战：OpenWrt 软路由配置 PassWall / OpenClash 教程</span>
         </div>
-        
         <article class="article-box">
             <header class="article-header" style="text-align: center; margin-bottom: 40px;">
-                <h1 class="article-title" style="font-size: 2.4rem; color: #0f172a; margin: 0 0 20px 0; font-weight: 800; line-height: 1.3;">路由器翻墙：OpenWrt 插件 PassWall 实战</h1>
+                <h1 class="article-title" style="font-size: 2.4rem; color: #0f172a; margin: 0 0 20px 0; font-weight: 800; line-height: 1.3;">路由器翻墙实战：OpenWrt 软路由配置 PassWall / OpenClash 教程</h1>
                 <div class="article-meta" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px; color: #64748b; font-size: 0.95rem; margin-bottom: 25px;">
                     <span>作者: 技术编辑部</span>
-                    <span>阅读时长: 约 9 分钟</span>
+                    <span>阅读时长: 约 15 分钟</span>
                     <span>发布于: 2026-06-22</span>
                     <span>更新于: 2026-06-22</span>
                 </div>
@@ -138,40 +153,49 @@
             </header>
             
             <div class="article-intro">
-                在现代网络环境中，“代理”已成为连接全球互联网的重要技术手段。了解代理的原理与常见协议，是提升网络体验的关键一步。
+                <strong style="display: block; margin-bottom: 10px;">想要实现全屋设备（包括电视、手机、游戏主机）无缝接入全球网络？在路由器端部署代理是终极解决方案。本文将针对最主流的开源路由器系统 OpenWrt，手把手教你配置 PassWall 和 OpenClash 两大王牌插件，实现智能分流与全局网络接管。</strong>
             </div>
             
             <div class="article-body" id="articleBody">
-<h2>1. 破网机制的底层逻辑</h2>
-      <p>在当今复杂多变的网络环境中，突破网络限制、获取全球信息已成为许多人的刚需。随着防火墙技术的不断升级，传统的 VPN 协议（如 PPTP、L2TP/IPsec）因其明显的流量特征而逐渐被淘汰。取而代之的是一系列以“流量伪装”和“加密传输”为核心的新一代代理协议。本文将全面剖析这些技术的底层逻辑，帮助您在面对琳琅满目的服务节点时，能够做出最理性的判断。</p>
-      
-      <p>首先我们需要理解，任何数据在互联网上的传输，本质上都是数据包的路由转发。传统的防火墙通过深度包检测（Deep Packet Inspection, DPI）技术，可以轻易识别出未经伪装的代理流量特征。一旦特征被匹配，该连接就会被阻断，甚至导致服务器 IP 被封锁。因此，现代代理协议的核心诉求是将代理流量伪装成正常的 HTTP/HTTPS 网页浏览流量，或者通过复杂的加密算法使其表现为完全随机的噪声，从而规避 DPI 系统的识别。</p>
+                <p>智能电视、PlayStation/Switch 游戏机以及智能家居设备通常无法直接安装 Shadowsocks 或 Clash 客户端。要想实现全屋网络设备的无缝加速与智能分流，在 OpenWrt 路由器（软路由）上直接部署代理客户端是公认的终极解决方案。本文将手把手带你完成 OpenWrt 系统上 PassWall 和 OpenClash 插件的配置与优化。</p>
 
-      <h2>2. 核心代理协议的发展史</h2>
-      <p>在具体实现上，不同的协议采取了不同的策略。例如，Shadowsocks 采用的是全流量加密，它放弃了传统的握手过程，直接发送加密后的负载数据，这在早期非常有效。然而，随着机器学习算法在防火墙中的应用，纯随机的数据流也逐渐成为一种明显的特征。这就是为什么后来发展出了基于 TLS（传输层安全协议）的代理方案，如 Trojan 和 V2Ray 的 VMess/VLESS 协议。它们将代理数据封装在标准的 TLS 隧道中，从外部观测，这与您访问任何一个普通的加密 HTTPS 网站毫无二致。</p>
-      
-      <h3>2.1 VMess 与 VLESS 协议</h3>
-      <p>详细了解各类协议的技术细节是配置高质量代理服务的基础。V2Ray 作为一个极其灵活的代理框架，支持多种协议组合。其主打的 VMess 协议通过复杂的加密和身份验证机制，提供了极高的安全性。而新推出的 VLESS 协议则是对 VMess 的精简与升级，它去除了冗余的加密环节，极大地降低了服务端的性能开销，同时配合 XTLS 技术，可以实现数据包的“直接回流”，将传输延迟降到最低，被誉为目前最高效的直连方案之一。</p>
+<h2>一、软路由与 OpenWrt 基础准备</h2>
+<p>所谓软路由，是指使用 x86 架构小主机或专用硬件（如 R2S、R4S、R5S、R6S）刷入开源 OpenWrt 系统来充当路由器。它拥有强大的 CPU 算力和大容量内存，能够轻松应对多设备、高宽带下的代理流量解密与网络分流计算。</p>
+<p>在开始配置前，请确保你的软路由已正常接入网络，且你可以通过浏览器登录 OpenWrt 的 LuCI 后台界面（默认地址通常为 192.168.1.1 或 192.168.2.1）。</p>
 
-      <h2>3. 性能与安全的权衡之道</h2>
-      <p>在选择协议时，我们常常需要在“安全性（抗封锁能力）”和“传输性能（速度与延迟）”之间做出权衡。高强度的加密必然会带来额外的 CPU 计算开销和网络延迟。对于跨国专线（IPLC/IEPL）而言，由于其内网传输的特性，流量本身并不经过公共防火墙的审查，因此可以直接使用轻量级的 Shadowsocks 协议以追求极致的带宽吞吐量。而对于普通的公网直连（BGP/CN2 GIA）节点，为了防范主动探测和阻断，则必须使用带有完整 TLS 伪装的复杂协议。</p>
+<h2>二、PassWall 插件实战配置步骤</h2>
+<p>PassWall 是一款以稳定、轻量著称的 OpenWrt 代理插件，特别适合 CPU 性能相对较低的路由器硬件。</p>
+<h3>1. 导入订阅与更新节点</h3>
+<p>进入 PassWall 界面，点击节点列表，在订阅管理中填入你的机场订阅链接。点击保存并开始订阅，等待节点列表更新完毕。建议开启定时更新订阅功能，保证节点数据的实时性。</p>
+<h3>2. 主开关与运行模式配置</h3>
+<p>在基本设置中，开启主开关。在 TCP 节点中选择你想要使用的主节点。在运行模式中，建议选择防火墙分流（如中国列表以外），这样国内的 IP 和域名会自动走直连，国外的受限网站才会走代理通道，兼顾了国内网速与流量节省。</p>
+<h3>3. DNS 过滤方案选择</h3>
+<p>PassWall 的稳定很大程度上取决于 DNS 配置。推荐在 DNS 过滤选项中选用 pdnsd 或 ChinaDNS-NG 方案，以过滤被污染的国外 DNS 解析结果，确保域名分流精确无误。</p>
 
-      <h3>3.1 常见故障：DNS 污染排查</h3>
-      <p>在使用代理软件时，您可能会遇到各种网络故障。最常见的问题之一是“DNS 污染”。当您在浏览器中输入一个被屏蔽的域名时，防火墙会抢先返回一个错误的 IP 地址，导致网页无法访问。现代代理客户端（如 Clash、Surge）通过内置的 DNS 分流规则（Fake-IP 或 Redir-Host 模式），将敏感域名的解析请求通过代理隧道发送到国外的可信 DNS 服务器，从而彻底根除污染问题。理解这一机制，对于排查“节点通畅但部分网页打不开”的故障至关重要。</p>
+<h2>三、OpenClash 插件实战配置步骤</h2>
+<p>OpenClash 是基于 Clash/Mihomo 内核在 OpenWrt 上的图形化客户端，功能极其强大，支持策略组切换、自定义规则以及复杂的虚拟网卡 TUN 模式接管。</p>
+<h3>1. 配置文件订阅与内核更新</h3>
+<p>在全局设置的配置文件管理中，输入你的 Clash 订阅链接并下载。返回主界面前，务必进入内核程序管理，检查并在线更新你的 Mihomo/Clash Meta 内核到最新版本。没有内核，OpenClash 将无法启动。</p>
+<h3>2. 运行模式与 TUN/TProxy 设置</h3>
+<p>在全局设置中，推荐将运行模式设置为 混合（TUN 和 TProxy）模式。这样，所有经过路由器的 TCP 和 UDP 数据包（包括电视盒子的 DNS 解析和主机网络流量）都会被强制接管。网络堆栈类型推荐选择 gVisor 或 System，能有效降低复杂并发下的丢包率。</p>
+<h3>3. 规则管理与策略组选择</h3>
+<p>启动 OpenClash 后，点击进入控制面板（Yacd 界面）。在此界面中，你可以手动为不同的网站分类（如 Netflix、ChatGPT、Youtube）选择最佳的代理节点策略组，实现精细化的策略路由调度。</p>
 
-      <h2>4. 路由分流与高级配置</h2>
-      <p>此外，路由分流规则的合理配置也是提升体验的关键。全局代理不仅会消耗昂贵的代理流量，还会导致访问国内应用（如微信、淘宝）速度极慢。通过使用 GeoIP 数据库和基于域名的规则集（Ruleset），客户端可以精准地将国内流量直连，将国外受限流量走代理隧道。这也就是所谓的“PAC 模式”的现代进化版。熟练掌握这些规则的编写和调优，是成为高级用户的必经之路。</p>
+<h2>四、PassWall 与 OpenClash 的核心对比与避坑指南</h2>
+<p>在日常使用中，你需要根据硬件实力和使用需求在两者之间做出选择：</p>
+<ul>
+  <li><strong>PassWall：</strong> 占用系统内存和 CPU 资源极小，配置直观，适合绝大多数家庭日常百兆/千兆宽带网络加速，稳定性一流。</li>
+  <li><strong>OpenClash：</strong> 功能极其强大，分流策略高度自治，但由于要加载庞大的规则集并运行独立的网络堆栈，内存占用通常在 200MB 以上，更适合 x86 软路由。</li>
+  <li><strong>避坑法则：</strong> 软路由系统内绝对不能同时开启 PassWall 和 OpenClash！两者的防火墙 iptables/nftables 规则会发生严重冲突，导致局域网设备全部断网。每次切换插件前，务必在当前插件界面点击关闭并保存。</li>
+  <li><strong>时间同步：</strong> 代理协议对时间同步要求极高（如 VMess/VLESS 允许的时间差通常在 90 秒以内）。如果软路由的系统时间不对，会出现所有节点延迟显示正常但完全无法连网的诡异情况。务必在 OpenWrt 系统设置中配置正确的 NTP 时间服务器（如 ntp.aliyun.com）。</li>
+</ul>
 
-      <blockquote><p><strong>技术洞察：</strong> 未来的代理技术正向着更底层的方向演进。例如基于 WireGuard 的新型 VPN 协议，虽然其本身不具备抗封锁特性，但通过配合前置的混淆插件（Obfs），可以在保证极高传输效率的同时实现隐蔽传输。同时，基于 QUIC（HTTP/3）协议的代理技术（如 Hysteria、TUIC）也正在崛起，它们利用 UDP 协议在恶劣网络环境下的极强抢占能力，能够在大丢包率的跨国链路上实现惊人的速度提升。</p></blockquote>
+<h2>五、总结：实现全屋无缝智能分流</h2>
+<p>配置好路由器端代理后，建议将电视、电脑等需要走代理的设备 IP 设为静态，并在软路由的客户端列表或 IP 分流设置中，为不同设备进行精细化管理。例如，可以让电视盒子默认走流媒体解锁策略组，而普通智能家居插座则被完全排除在代理防火墙之外，实现全屋网络的高效、平稳运行。</p>
+            </div>
+        </article>
 
-      <h2>5. 客户端生态全景图</h2>
-      <p>在客户端选择方面，Windows 平台上的 Clash Verge 凭借其优秀的 UI 设计和强大的 Meta 核心（支持 VLESS/Hysteria 等新协议）已经成为绝对的主流。而在 macOS 和 iOS 生态中，Surge 虽然价格高昂，但其提供的网络接管能力和脚本扩展性无可匹敌；对于追求性价比的用户，Shadowrocket（小火箭）和 Quantumult X 则是最佳的替代方案。不同的客户端在底层实现和规则语法上存在差异，但其核心思想——本地监听、规则分流、隧道封装——是完全一致的。</p>
-
-      <p>总结而言，构建一个稳定、高速、安全的科学上网环境，不仅仅是花钱购买一个昂贵的“机场”套餐那么简单。它需要您对底层网络协议有一定的认知，对客户端的规则分流有精准的把控，以及在遇到断流封锁时具备一定的系统排查能力。希望本知识库的系列文章，能够帮助您系统性地掌握这些技能，在数字世界中畅游无阻。请记住，技术是一把双刃剑，在获取信息的同时，也务必注重自身的隐私保护和数据安全。</p>
-
-      <p>通过上述的深度分析，我们可以清楚地看到，技术的迭代是永无止境的。我们需要保持持续学习的态度，才能在这个瞬息万变的网络环境中立于不败之地。感谢您的阅读，希望本文对您有所启发。</p>
-    </article>
-      </main>
+</main>
 
     <aside class="sidebar-right">
     <!-- Article Info Widget -->
@@ -183,11 +207,11 @@
         </div>
         <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
             <span class="info-label">阅读时长</span>
-            <span class="info-val" style="font-weight:600; color:#0f172a;">约 9 分钟</span>
+            <span class="info-val" style="font-weight:600; color:#0f172a;">约 15 分钟</span>
         </div>
         <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
             <span class="info-label">字数统计</span>
-            <span class="info-val" style="font-weight:600; color:#0f172a;">约 3632 字</span>
+            <span class="info-val" style="font-weight:600; color:#0f172a;">约 3500 字</span>
         </div>
         <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
             <span class="info-label">最后更新</span>
@@ -197,7 +221,7 @@
     <!-- Beginner Guide Widget (Moved from left) -->
     <div class="widget guide-widget" style="padding: 20px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 25px;">
         <div class="guide-header" style="display: flex; align-items: center; margin-bottom: 20px;">
-            <span style="font-size: 1.4rem; margin-right: 8px;">🎓</span>
+            <span style="font-size: 1.4rem; margin-right: 8px;"></span>
             <h3 class="widget-title" style="margin:0; border:none; padding:0; font-size: 1.1rem; color: #1e293b; font-weight: 700;">新手入门指南</h3>
             <span class="guide-sub" style="margin-left: 10px; color:#64748b; font-size:0.85rem;">从零开始教你科学上网</span>
         </div>
@@ -300,7 +324,7 @@
     <!-- Premium Airport Widget -->
     <div class="widget premium-widget ranking-promo-widget" style="padding: 20px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 25px;">
         <div class="promo-ranking-header" style="display: flex; align-items: center; margin-bottom: 20px;">
-            <div style="background: #2563eb; color: white; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-right: 12px; flex-shrink: 0; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);">🏆</div>
+            <div style="background: #2563eb; color: white; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-right: 12px; flex-shrink: 0; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);"></div>
             <div>
                 <h3 class="widget-title" style="margin:0; border:none; padding:0; font-size: 1.2rem; color: #1e293b; font-weight: 800; letter-spacing: 0.5px;">机场排行榜</h3>
                 <div style="color:#64748b; font-size:0.8rem; margin-top:4px;">精选优质机场，稳定高速，全球覆盖</div>
@@ -310,7 +334,7 @@
         <div class="ranking-content" style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
             <div class="ranking-features" style="flex: 1; min-width: 220px;">
                 <div style="display:flex; align-items:center; margin-bottom:15px; position:relative;">
-                    <div style="background:#e0f2fe; color:#0284c7; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;">📊</div>
+                    <div style="background:#e0f2fe; color:#0284c7; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
                     <div>
                         <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">实时更新</div>
                         <div style="color:#94a3b8; font-size:0.8rem;">每日检测，数据实时更新</div>
@@ -319,7 +343,7 @@
                 <div style="border-bottom: 1px dashed #e2e8f0; margin: -5px 0 10px 48px;"></div>
 
                 <div style="display:flex; align-items:center; margin-bottom:15px;">
-                    <div style="background:#dcfce7; color:#16a34a; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;">🛡️</div>
+                    <div style="background:#dcfce7; color:#16a34a; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
                     <div>
                         <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">多维度评测</div>
                         <div style="color:#94a3b8; font-size:0.8rem;">速度、稳定性、性价比综合评分</div>
@@ -328,7 +352,7 @@
                 <div style="border-bottom: 1px dashed #e2e8f0; margin: -5px 0 10px 48px;"></div>
 
                 <div style="display:flex; align-items:center; margin-bottom:15px;">
-                    <div style="background:#ffedd5; color:#ea580c; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;">⚡</div>
+                    <div style="background:#ffedd5; color:#ea580c; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
                     <div>
                         <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">优质机场</div>
                         <div style="color:#94a3b8; font-size:0.8rem;">人工筛选，剔除不稳定节点</div>
@@ -337,7 +361,7 @@
                 <div style="border-bottom: 1px dashed #e2e8f0; margin: -5px 0 10px 48px;"></div>
 
                 <div style="display:flex; align-items:center; margin-bottom:0;">
-                    <div style="background:#f3e8ff; color:#9333ea; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;">🌐</div>
+                    <div style="background:#f3e8ff; color:#9333ea; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
                     <div>
                         <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">全球覆盖</div>
                         <div style="color:#94a3b8; font-size:0.8rem;">全球节点，高速访问无压力</div>
@@ -347,7 +371,7 @@
             
             <div class="ranking-illustration" style="flex: 1; min-width: 180px; background:linear-gradient(to bottom, #eff6ff, #f8fafc); border-radius:12px; padding:20px 15px; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center; border: 1px solid #e2e8f0;">
                 <img src="../assets/images/new_logo.png" alt="Ranking Podium" style="width:100%; max-width:140px; margin:0 auto 15px auto; display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <div style="display:none; font-size: 3rem; margin-bottom:15px;">🏅</div>
+                <div style="display:none; font-size: 3rem; margin-bottom:15px;"></div>
                 <div style="color:#475569; font-size:0.85rem; line-height:1.5;">
                     找出最适合你的机场<br>
                     从<span style="color:#2563eb; font-weight:700;">排行榜</span>开始了解

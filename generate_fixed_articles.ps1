@@ -82,5 +82,8 @@ function Build-And-Save-Article($filename, $articleData) {
     Write-Host "Generated $filename successfully in UTF-8 without BOM"
 }
 
+Build-And-Save-Article "article-8.html" $data.article_8
+Build-And-Save-Article "article-9.html" $data.article_9
+Build-And-Save-Article "article-10.html" $data.article_10
 Build-And-Save-Article "article-11.html" $data.article_11
 Build-And-Save-Article "article-12.html" $data.article_12

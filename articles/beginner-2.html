@@ -65,6 +65,21 @@
   
   
 
+  
+  <meta name="description" content="关于 认识节点：专线、BGP 与直连的区别 - 云轨导航 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
   <link rel="canonical" href="https://jichang365.com/articles/beginner-2.html">
   <meta name="description" content="关于 认识节点：专线、BGP 与直连的区别 - 云轨导航 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。">
   <meta property="og:type" content="article">
@@ -77,7 +92,7 @@
   <meta name="twitter:description" content="关于 认识节点：专线、BGP 与直连的区别 - 云轨导航 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。">
   <meta name="twitter:image" content="https://jichang365.com/assets/images/new_logo.png">
   <script type="application/ld+json">
-  {"image":"https://jichang365.com/assets/images/new_logo.png","datePublished":"2026-06-22T08:00:00+08:00","description":"关于 认识节点：专线、BGP 与直连的区别 - 云轨导航 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。","@type":"Article","dateModified":"2026-07-10T16:41:26+08:00","headline":"认识节点：专线、BGP 与直连的区别","author":{"url":"https://jichang365.com/about.html","name":"云梯指南技术编辑团队","@type":"Organization"},"@context":"https://schema.org","publisher":{"name":"云轨导航","logo":{"@type":"ImageObject","url":"https://jichang365.com/assets/images/new_logo.png"},"@type":"Organization"}}
+  {"image":"https://jichang365.com/assets/images/new_logo.png","datePublished":"2026-06-22T08:00:00+08:00","description":"关于 认识节点：专线、BGP 与直连的区别 - 云轨导航 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。","@type":"Article","dateModified":"2026-07-10T16:53:37+08:00","headline":"认识节点：专线、BGP 与直连的区别","author":{"url":"https://jichang365.com/about.html","name":"云梯指南技术编辑团队","@type":"Organization"},"@context":"https://schema.org","publisher":{"name":"云轨导航","logo":{"@type":"ImageObject","url":"https://jichang365.com/assets/images/new_logo.png"},"@type":"Organization"}}
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","itemListElement":[{"position":1,"name":"首页","item":"https://jichang365.com/","@type":"ListItem"},{"position":2,"name":"新手指南","item":"https://jichang365.com/knowledge.html","@type":"ListItem"},{"position":3,"name":"认识节点：专线、BGP 与直连的区别","item":"https://jichang365.com/articles/beginner-2.html","@type":"ListItem"}],"@type":"BreadcrumbList"}
@@ -99,7 +114,7 @@
       <a href="../knowledge.html" class="nav-link active">科普指南</a>
         <a href="../about.html" class="nav-link">关于我们</a>
     </nav>
-    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">☰</button>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu"></button>
   </div>
 </header>
 
@@ -117,12 +132,12 @@
         <div class="breadcrumbs" style="margin-bottom: 25px; font-size: 0.95rem; color: #64748b; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0;">
             <a href="../index.html" style="color: #0ea5e9; text-decoration: none; font-weight: 500;">首页</a> &gt; 
             <a href="../knowledge.html" style="color: #0ea5e9; text-decoration: none; font-weight: 500;">新手入门</a> &gt; 
-            <span class="current" style="color: #94a3b8;">🛤️ 认识节点：专线、BGP...</span>
+            <span class="current" style="color: #94a3b8;"> 认识节点：专线、BGP...</span>
         </div>
         
         <article class="article-box">
             <header class="article-header" style="text-align: center; margin-bottom: 40px;">
-                <h1 class="article-title" style="font-size: 2.4rem; color: #0f172a; margin: 0 0 20px 0; font-weight: 800; line-height: 1.3;">🛤️ 认识节点：专线、BGP 与直连的区别</h1>
+                <h1 class="article-title" style="font-size: 2.4rem; color: #0f172a; margin: 0 0 20px 0; font-weight: 800; line-height: 1.3;"> 认识节点：专线、BGP 与直连的区别</h1>
                 <div class="article-meta" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px; color: #64748b; font-size: 0.95rem; margin-bottom: 25px;">
                     <span>作者: 技术编辑部</span>
                     <span>阅读时长: 约 5 分钟</span>
@@ -144,16 +159,16 @@
             <div class="article-body" id="articleBody">
 
 <p>在代理网络中，节点的底层实现直接决定了其性能、稳定性以及收费模型。下面我们从技术原理、使用场景和成本三方面，对三种常见节点类型进行系统拆解。</p>
-<h2>🔹 专线（IPLC / IEPL）</h2>
+<h2> 专线（IPLC / IEPL）</h2>
 <p>专线是一种运营商层面的专属光纤链路，数据在两端之间不经过公网路由。它的核心优势是超低的 RTT（往往在 10‑30 ms 之间）和几乎为 0% 的丢包率。因为专线占用了运营商的物理资源，月租价位通常在几千到上万元不等，适合对网络质量有极致要求的企业或高端玩家。</p>
-<h2>🔸 BGP 中转</h2>
+<h2> BGP 中转</h2>
 <p>BGP 中转节点通过多家 ISP 的互联实现跨地区流量转发。它的优势是覆盖面广、成本适中（多数机场按流量计费），但因为流经公网，网络路径会因拥堵和运营商策略产生波动，RTT 常在 50‑150 ms 之间，丢包率在 0.1%‑1% 区间。</p>
-<h2>🔹 直连节点</h2>
+<h2> 直连节点</h2>
 <p>直连节点直接使用公网 IP，部署成本最低，常见于个人租用的服务器或小型机场。它的优势是快速部署、费用低廉；缺点是受到运营商的流量监管和高峰期拥堵的影响，RTT 随网络情况波动大，丢包率相对较高。</p>
-<h2>📊 如何挑选合适的节点</h2>
-<p>1️⃣ <strong>业务需求</strong>：实时游戏或高帧率直播推荐专线；普通浏览、流媒体可选 BGP 中转；低流量、临时实验可用直连。</p>
-<p>2️⃣ <strong>预算考量</strong>：专线费用最高，BGP 中转性价比最佳，直连最省钱。</p>
-<p>3️⃣ <strong>健康监测</strong>：使用 Speedtest、PingPlotter 等工具定期测量 RTT 与丢包，将表现不佳的节点剔除。</p>
+<h2> 如何挑选合适的节点</h2>
+<p>1⃣ <strong>业务需求</strong>：实时游戏或高帧率直播推荐专线；普通浏览、流媒体可选 BGP 中转；低流量、临时实验可用直连。</p>
+<p>2⃣ <strong>预算考量</strong>：专线费用最高，BGP 中转性价比最佳，直连最省钱。</p>
+<p>3⃣ <strong>健康监测</strong>：使用 Speedtest、PingPlotter 等工具定期测量 RTT 与丢包，将表现不佳的节点剔除。</p>
 <p>通过对这三类节点的特点有清晰认知，您可以在实际使用中快速匹配业务场景，构建最优的代理网络。</p>
 
             </div>
@@ -184,7 +199,7 @@
     <!-- Beginner Guide Widget (Moved from left) -->
     <div class="widget guide-widget" style="padding: 20px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 25px;">
         <div class="guide-header" style="display: flex; align-items: center; margin-bottom: 20px;">
-            <span style="font-size: 1.4rem; margin-right: 8px;">🎓</span>
+            <span style="font-size: 1.4rem; margin-right: 8px;"></span>
             <h3 class="widget-title" style="margin:0; border:none; padding:0; font-size: 1.1rem; color: #1e293b; font-weight: 700;">新手入门指南</h3>
             <span class="guide-sub" style="margin-left: 10px; color:#64748b; font-size:0.85rem;">从零开始教你科学上网</span>
         </div>
@@ -287,7 +302,7 @@
     <!-- Premium Airport Widget -->
     <div class="widget premium-widget ranking-promo-widget" style="padding: 20px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 25px;">
         <div class="promo-ranking-header" style="display: flex; align-items: center; margin-bottom: 20px;">
-            <div style="background: #2563eb; color: white; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-right: 12px; flex-shrink: 0; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);">🏆</div>
+            <div style="background: #2563eb; color: white; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-right: 12px; flex-shrink: 0; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);"></div>
             <div>
                 <h3 class="widget-title" style="margin:0; border:none; padding:0; font-size: 1.2rem; color: #1e293b; font-weight: 800; letter-spacing: 0.5px;">机场排行榜</h3>
                 <div style="color:#64748b; font-size:0.8rem; margin-top:4px;">精选优质机场，稳定高速，全球覆盖</div>
@@ -297,7 +312,7 @@
         <div class="ranking-content" style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
             <div class="ranking-features" style="flex: 1; min-width: 220px;">
                 <div style="display:flex; align-items:center; margin-bottom:15px; position:relative;">
-                    <div style="background:#e0f2fe; color:#0284c7; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;">📊</div>
+                    <div style="background:#e0f2fe; color:#0284c7; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
                     <div>
                         <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">实时更新</div>
                         <div style="color:#94a3b8; font-size:0.8rem;">每日检测，数据实时更新</div>
@@ -306,7 +321,7 @@
                 <div style="border-bottom: 1px dashed #e2e8f0; margin: -5px 0 10px 48px;"></div>
 
                 <div style="display:flex; align-items:center; margin-bottom:15px;">
-                    <div style="background:#dcfce7; color:#16a34a; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;">🛡️</div>
+                    <div style="background:#dcfce7; color:#16a34a; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
                     <div>
                         <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">多维度评测</div>
                         <div style="color:#94a3b8; font-size:0.8rem;">速度、稳定性、性价比综合评分</div>
@@ -315,7 +330,7 @@
                 <div style="border-bottom: 1px dashed #e2e8f0; margin: -5px 0 10px 48px;"></div>
 
                 <div style="display:flex; align-items:center; margin-bottom:15px;">
-                    <div style="background:#ffedd5; color:#ea580c; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;">⚡</div>
+                    <div style="background:#ffedd5; color:#ea580c; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
                     <div>
                         <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">优质机场</div>
                         <div style="color:#94a3b8; font-size:0.8rem;">人工筛选，剔除不稳定节点</div>
@@ -324,7 +339,7 @@
                 <div style="border-bottom: 1px dashed #e2e8f0; margin: -5px 0 10px 48px;"></div>
 
                 <div style="display:flex; align-items:center; margin-bottom:0;">
-                    <div style="background:#f3e8ff; color:#9333ea; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;">🌐</div>
+                    <div style="background:#f3e8ff; color:#9333ea; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
                     <div>
                         <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">全球覆盖</div>
                         <div style="color:#94a3b8; font-size:0.8rem;">全球节点，高速访问无压力</div>
@@ -334,7 +349,7 @@
             
             <div class="ranking-illustration" style="flex: 1; min-width: 180px; background:linear-gradient(to bottom, #eff6ff, #f8fafc); border-radius:12px; padding:20px 15px; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center; border: 1px solid #e2e8f0;">
                 <img src="../assets/images/new_logo.png" alt="Ranking Podium" style="width:100%; max-width:140px; margin:0 auto 15px auto; display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <div style="display:none; font-size: 3rem; margin-bottom:15px;">🏅</div>
+                <div style="display:none; font-size: 3rem; margin-bottom:15px;"></div>
                 <div style="color:#475569; font-size:0.85rem; line-height:1.5;">
                     找出最适合你的机场<br>
                     从<span style="color:#2563eb; font-weight:700;">排行榜</span>开始了解

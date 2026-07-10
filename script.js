@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileMenuBtn.addEventListener('click', () => {
       navMenu.classList.toggle('active');
       if (navMenu.classList.contains('active')) {
-        mobileMenuBtn.textContent = '✕';
+        mobileMenuBtn.textContent = '';
       } else {
-        mobileMenuBtn.textContent = '☰';
+        mobileMenuBtn.textContent = '';
       }
     });
   }
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Close mobile menu if open
         if (navMenu && navMenu.classList.contains('active')) {
           navMenu.classList.remove('active');
-          mobileMenuBtn.textContent = '☰';
+          mobileMenuBtn.textContent = '';
         }
       }
     });

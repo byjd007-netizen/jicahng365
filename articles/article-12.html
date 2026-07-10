@@ -65,6 +65,21 @@
   
   
 
+  
+  <meta name="description" content="关于 翻墙基础原理与常见代理协议全面解析 - 云轨导航 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
   <link rel="canonical" href="https://jichang365.com/articles/article-12.html">
   <meta name="description" content="关于 翻墙基础原理与常见代理协议全面解析 - 云轨导航 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。">
   <meta property="og:type" content="article">
@@ -77,7 +92,7 @@
   <meta name="twitter:description" content="关于 翻墙基础原理与常见代理协议全面解析 - 云轨导航 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。">
   <meta name="twitter:image" content="https://jichang365.com/assets/images/new_logo.png">
   <script type="application/ld+json">
-  {"image":"https://jichang365.com/assets/images/new_logo.png","datePublished":"2026-06-22T08:00:00+08:00","description":"关于 翻墙基础原理与常见代理协议全面解析 - 云轨导航 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。","@type":"Article","dateModified":"2026-07-10T16:43:56+08:00","headline":"网络安全全指南：防止隐私裸奔","author":{"url":"https://jichang365.com/about.html","name":"云梯指南技术编辑团队","@type":"Organization"},"@context":"https://schema.org","publisher":{"name":"云轨导航","logo":{"@type":"ImageObject","url":"https://jichang365.com/assets/images/new_logo.png"},"@type":"Organization"}}
+  {"image":"https://jichang365.com/assets/images/new_logo.png","datePublished":"2026-06-22T08:00:00+08:00","description":"关于 翻墙基础原理与常见代理协议全面解析 - 云轨导航 的详细配置说明与网络知识介绍。由云梯指南技术编辑团队撰写，提供深度专线评测及客户端教程。","@type":"Article","dateModified":"2026-07-10T16:54:38+08:00","headline":"网络安全全指南：防止隐私裸奔","author":{"url":"https://jichang365.com/about.html","name":"云梯指南技术编辑团队","@type":"Organization"},"@context":"https://schema.org","publisher":{"name":"云轨导航","logo":{"@type":"ImageObject","url":"https://jichang365.com/assets/images/new_logo.png"},"@type":"Organization"}}
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","itemListElement":[{"position":1,"name":"首页","item":"https://jichang365.com/","@type":"ListItem"},{"position":2,"name":"网络知识库","item":"https://jichang365.com/knowledge.html","@type":"ListItem"},{"position":3,"name":"网络安全全指南：防止隐私裸奔","item":"https://jichang365.com/articles/article-12.html","@type":"ListItem"}],"@type":"BreadcrumbList"}
@@ -99,7 +114,7 @@
       <a href="../knowledge.html" class="nav-link active">科普指南</a>
         <a href="../about.html" class="nav-link">关于我们</a>
     </nav>
-    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">☰</button>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu"></button>
   </div>
 </header>
 
@@ -157,29 +172,29 @@
 <p>许多家庭和企业宽带目前已默认开通了 IPv6。如果你的代理客户端或节点仅支持 IPv4 代理，当浏览器尝试访问支持双栈（IPv4/IPv6）的网站时，操作系统可能会优先通过无代理保护的 IPv6 物理网卡直接访问该网站。这会导致你的真实 IPv6 地址暴露给目标网站，形成旁路泄露。</p>
 
 <h3>4. 浏览器指纹：无法删除的隐形 Cookie</h3>
-<p>目标网站除了记录 IP 外，还会通过 JavaScript 收集你浏览器的各项硬件特征——如屏幕分辨率、系统字体列表、图形显卡型号（Canvas/WebGL指纹）、声卡特征、甚至浏览器安装的插件列表。这些特征组合在一起，就形成了一个在全球具有唯一性的“浏览器指纹”。即使你更换节点、清除 Cookie、开启无痕模式，网站依然可以通过该指纹将不同的访问记录关联 to 同一个人身上。</p>
+<p>目标网站除了记录 IP 外，还会通过 JavaScript 收集你浏览器的各项硬件特征——如屏幕分辨率、系统字体列表、图形显卡型号（Canvas/WebGL指纹）、声卡特征、甚至浏览器安装的插件列表。这些特征组合在一起，就形成了一个在全球具有唯一性的“浏览器指纹”。即使你更换节点、清除 Cookie、开启无痕模式，网站依然可以通过该指纹将不同的访问记录关联到同一个人身上。</p>
 
 <h2>二、实战防泄漏配置指南</h2>
-<p>要终结隐私泄露，你需要对本地设备和代理工具进行针对性配置：</p>
+<p>要终结隐私泄露，你需要对本地设备 and 代理工具进行针对性配置：</p>
 
 <h3>1. 禁用或伪装 WebRTC</h3>
-<p>在日常使用的浏览器中，你可以安装专门的隐私扩展。例如，在 Chrome 或 Edge 中安装 <strong>WebRTC Control</strong> 扩展，一键关闭 WebRTC 的 IP 查询功能。如果你使用的是 Firefox 浏览器，可以在地址栏输入 <code>about:config</code>，搜索 <code>media.peerconnection.enabled</code>，将其设置为 <code>false</code> 即可彻底禁用。</p>
+<p>在日常使用的浏览器中，你可以安装专门的隐私扩展。例如，在 Chrome 或 Edge 中安装 WebRTC Control 扩展，一键关闭 WebRTC 的 IP 查询功能。如果你使用的是 Firefox 浏览器，可以在地址栏输入 about:config，搜索 media.peerconnection.enabled，将其设置为 false 即可彻底禁用。</p>
 
 <h3>2. 在代理软件中开启 DNS 防泄漏</h3>
-<p>确保你的 Clash、Shadowrocket 等客户端开启了系统级 DNS 接管。在 Clash Verge 中，建议启用 <code>Fake-IP</code> 模式，并将 DNS 解析的 Fallback 组设置为加密 DNS（如 <code>https://1.1.1.1/dns-query</code>），这样所有的 DNS 请求都会在代理服务器端解析，彻底避免本地 DNS 泄露。</p>
+<p>确保你的 Clash、Shadowrocket 等客户端开启了系统级 DNS 接管。在 Clash Verge 中，建议启用 Fake-IP 模式，并将 DNS 解析的 Fallback 组设置为加密 DNS（如 https://1.1.1.1/dns-query），这样所有的 DNS 请求都会在代理服务器端解析，彻底避免本地 DNS 泄露。</p>
 
 <h3>3. 关闭或正确配置 IPv6</h3>
 <p>如果你不需要使用 IPv6，最简单安全的方法是在操作系统的网卡属性中，直接取消勾选“Internet 协议版本 6 (TCP/IPv6)”。如果你必须保留 IPv6，请确保代理客户端开启了“IPv6 代理”开关，并在规则中设置 IPv6 流量分流策略。</p>
 
 <h3>4. 使用隐私专用浏览器</h3>
-<p>对于对匿名性有极高要求的活动，不要使用日常登录了个人社交和谷歌账号的常用浏览器。建议使用 <strong>Brave 浏览器</strong>，它内置了强大的广告拦截与浏览器指纹随机混淆功能。对于极致隐私场景，可以考虑使用指纹浏览器（如 AdsPower、Linken Sphere），手动为每个访问环境配置不同的设备参数与代理 IP。</p>
+<p>对于对匿名性有极高要求的活动，不要使用日常登录了个人社交和谷歌账号的常用浏览器。建议使用 Brave 浏览器，它内置了强大的广告拦截与浏览器指纹随机混淆功能。对于极度隐私场景，可以考虑使用指纹浏览器（如 AdsPower、Linken Sphere），手动为每个访问环境配置不同的设备参数与代理 IP。</p>
 
 <h2>三、总结：安全上网的黄金法则</h2>
 <p>隐私保护不是一蹴而就的，而是一种习惯。请时刻牢记以下黄金法则：</p>
 <ol>
   <li><strong>隔离原则：</strong> 工作、娱乐与敏感操作使用不同的浏览器分身或不同的虚拟设备。</li>
   <li><strong>防关联原则：</strong> 切忌在同一个浏览器环境内，一会儿用直连登录个人微信/邮箱，一会儿挂代理访问匿名论坛。</li>
-  <li><strong>定期检测：</strong> 在开启代理后，访问 <code>https://browserleaks.com</code> 或 <code>https://www.dnsleaktest.com</code>，定期检测你的 WebRTC 和 DNS 是否存在泄漏。</li>
+  <li><strong>定期检测：</strong> 在开启代理后，访问 https://browserleaks.com 或 https://www.dnsleaktest.com，定期检测你的 WebRTC 和 DNS 是否存在泄漏。</li>
 </ol>
             </div>
         </article>
@@ -210,7 +225,7 @@
     <!-- Beginner Guide Widget (Moved from left) -->
     <div class="widget guide-widget" style="padding: 20px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 25px;">
         <div class="guide-header" style="display: flex; align-items: center; margin-bottom: 20px;">
-            <span style="font-size: 1.4rem; margin-right: 8px;">🎓</span>
+            <span style="font-size: 1.4rem; margin-right: 8px;"></span>
             <h3 class="widget-title" style="margin:0; border:none; padding:0; font-size: 1.1rem; color: #1e293b; font-weight: 700;">新手入门指南</h3>
             <span class="guide-sub" style="margin-left: 10px; color:#64748b; font-size:0.85rem;">从零开始教你科学上网</span>
         </div>
@@ -313,7 +328,7 @@
     <!-- Premium Airport Widget -->
     <div class="widget premium-widget ranking-promo-widget" style="padding: 20px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 25px;">
         <div class="promo-ranking-header" style="display: flex; align-items: center; margin-bottom: 20px;">
-            <div style="background: #2563eb; color: white; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-right: 12px; flex-shrink: 0; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);">🏆</div>
+            <div style="background: #2563eb; color: white; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-right: 12px; flex-shrink: 0; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);"></div>
             <div>
                 <h3 class="widget-title" style="margin:0; border:none; padding:0; font-size: 1.2rem; color: #1e293b; font-weight: 800; letter-spacing: 0.5px;">机场排行榜</h3>
                 <div style="color:#64748b; font-size:0.8rem; margin-top:4px;">精选优质机场，稳定高速，全球覆盖</div>
@@ -323,7 +338,7 @@
         <div class="ranking-content" style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
             <div class="ranking-features" style="flex: 1; min-width: 220px;">
                 <div style="display:flex; align-items:center; margin-bottom:15px; position:relative;">
-                    <div style="background:#e0f2fe; color:#0284c7; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;">📊</div>
+                    <div style="background:#e0f2fe; color:#0284c7; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
                     <div>
                         <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">实时更新</div>
                         <div style="color:#94a3b8; font-size:0.8rem;">每日检测，数据实时更新</div>
@@ -332,7 +347,7 @@
                 <div style="border-bottom: 1px dashed #e2e8f0; margin: -5px 0 10px 48px;"></div>
 
                 <div style="display:flex; align-items:center; margin-bottom:15px;">
-                    <div style="background:#dcfce7; color:#16a34a; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;">🛡️</div>
+                    <div style="background:#dcfce7; color:#16a34a; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
                     <div>
                         <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">多维度评测</div>
                         <div style="color:#94a3b8; font-size:0.8rem;">速度、稳定性、性价比综合评分</div>
@@ -341,7 +356,7 @@
                 <div style="border-bottom: 1px dashed #e2e8f0; margin: -5px 0 10px 48px;"></div>
 
                 <div style="display:flex; align-items:center; margin-bottom:15px;">
-                    <div style="background:#ffedd5; color:#ea580c; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;">⚡</div>
+                    <div style="background:#ffedd5; color:#ea580c; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
                     <div>
                         <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">优质机场</div>
                         <div style="color:#94a3b8; font-size:0.8rem;">人工筛选，剔除不稳定节点</div>
@@ -350,7 +365,7 @@
                 <div style="border-bottom: 1px dashed #e2e8f0; margin: -5px 0 10px 48px;"></div>
 
                 <div style="display:flex; align-items:center; margin-bottom:0;">
-                    <div style="background:#f3e8ff; color:#9333ea; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;">🌐</div>
+                    <div style="background:#f3e8ff; color:#9333ea; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
                     <div>
                         <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">全球覆盖</div>
                         <div style="color:#94a3b8; font-size:0.8rem;">全球节点，高速访问无压力</div>
@@ -360,7 +375,7 @@
             
             <div class="ranking-illustration" style="flex: 1; min-width: 180px; background:linear-gradient(to bottom, #eff6ff, #f8fafc); border-radius:12px; padding:20px 15px; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center; border: 1px solid #e2e8f0;">
                 <img src="../assets/images/new_logo.png" alt="Ranking Podium" style="width:100%; max-width:140px; margin:0 auto 15px auto; display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <div style="display:none; font-size: 3rem; margin-bottom:15px;">🏅</div>
+                <div style="display:none; font-size: 3rem; margin-bottom:15px;"></div>
                 <div style="color:#475569; font-size:0.85rem; line-height:1.5;">
                     找出最适合你的机场<br>
                     从<span style="color:#2563eb; font-weight:700;">排行榜</span>开始了解
