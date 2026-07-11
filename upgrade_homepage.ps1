@@ -138,12 +138,12 @@ $extraStyles = @"
 "@
 
 # Inject styles before </style> in the index.html
-$html = $html -replace "(</style>)", "$extraStyles`n`$1"
+$html = $html.Replace("</style>", "$extraStyles`n</style>")
 
-# 4. Inject Module 1 and Module 2
+# 4. Inject Module 1 and Module 2 using literal Replace (not regex)
 $module1Html = $config.module1_html
 $module2Html = $config.module2_html
-$html = $html -replace "(<!-- Stats Bar -->)", "$module1Html`n`$module2Html`n`$1"
+$html = $html.Replace("<!-- Stats Bar -->", "$module1Html`n$module2Html`n<!-- Stats Bar -->")
 
 # 5. Construct Module 3: 20 FAQ Accordions
 $faqAccordionHtml = ""
@@ -172,8 +172,9 @@ foreach ($faq in $faqs) {
 "@
 }
 
-$targetFaqBlockPattern = '(?s)<div class="faq-v3-grid">.*?</div>'
-$replacementFaqBlock = "<div class=`"faq-v3-grid`">`n$faqAccordionHtml`n            </div>"
+# Match entire grid block up to the footer block using regex lookahead
+$targetFaqBlockPattern = '(?s)<div class="faq-v3-grid">.*?(?=<div class="faq-v3-footer">)'
+$replacementFaqBlock = "<div class=`"faq-v3-grid`">`n$faqAccordionHtml`n            </div>`n            `n            "
 $html = [System.Text.RegularExpressions.Regex]::Replace($html, $targetFaqBlockPattern, $replacementFaqBlock)
 
 # Replace the total question count text
@@ -208,9 +209,9 @@ $faqSchemaJson
 "@
 
 # Inject FAQ schema right before </head>
-$html = $html -replace "(</head>)", "$faqSchemaScript`n`$1"
+$html = $html.Replace("</head>", "$faqSchemaScript`n</head>")
 
 # 7. Write index.html back with no-BOM UTF-8
 $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
 [System.IO.File]::WriteAllText($htmlPath, $html, $utf8NoBom)
-Write-Output "Successfully upgraded index.html!"
+Write-Output "Successfully upgraded index.html with correct styling and layout!"

@@ -597,7 +597,36 @@
         </div>
       </div>
     </section>
-$module2Html
+    <!-- Module 2: 知识百科入口 -->
+    <section class="wiki-entries-section">
+      <div class="home-v2-container">
+        <div class="home-v2-sec-header">
+          <h2 class="home-v2-sec-title">🌐 跨境网络知识百科词条</h2>
+        </div>
+        <div class="wiki-grid">
+          <a href="articles/article-8.html" class="wiki-card">
+            <span class="wiki-card-q">什么是 IPLC 专线？</span>
+            <span class="wiki-card-a">IPLC是点对点跨国物理专线，内网传输不经过公网，完全绕过GFW，提供零丢包高稳定的终极访问体验。</span>
+            <span class="wiki-card-more">阅读百科词条 &rarr;</span>
+          </a>
+          <a href="articles/article-8.html" class="wiki-card">
+            <span class="wiki-card-q">什么是 IEPL 专线？</span>
+            <span class="wiki-card-a">IEPL是国际以太网私网专线。提供同IPLC一致的免阻断稳定性，但属于二层以太网链路，调度和带宽扩容更为弹性。</span>
+            <span class="wiki-card-more">阅读百科词条 &rarr;</span>
+          </a>
+          <a href="articles/article-8.html" class="wiki-card">
+            <span class="wiki-card-q">什么是 BGP 中继线路？</span>
+            <span class="wiki-card-a">BGP中转是机场入口部署多线服务器，自动适配联通、移动、电信用户，消除跨运营商跨省的高延迟与网络丢包。</span>
+            <span class="wiki-card-more">阅读百科词条 &rarr;</span>
+          </a>
+          <a href="articles/article-6.html" class="wiki-card">
+            <span class="wiki-card-q">机场晚上为什么慢？</span>
+            <span class="wiki-card-a">晚高峰20-23点是公网国际出口拥堵期。普通直连线路受QoS限速丢包严重，只有专线中转网络能保障全天不限速。</span>
+            <span class="wiki-card-more">阅读百科词条 &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
 <!-- Stats Bar -->
     <section class="home-v2-stats-section">
       <div class="home-v2-container home-v2-stats-container">
@@ -1417,168 +1446,6 @@ $module2Html
                   这是因为您开启了“全局模式”，导致网银识别到异常的境外登录 IP。建议使用“分流模式”并导入国内绕过规则（如 ACL4SSR 或 China-IP-Bypass），使所有国内网银与国内流量完全直连。
                 </div>
               </details>
-            </div>
-                  </div>
-                  <span class="faq-v3-arrow"></span>
-                </summary>
-                <div class="faq-v3-answer">
-                  机场是指提供代理节点订阅服务的平台。它将海外各地的 VPS 服务器打包配置为节点列表，用户只需导入 Clash, Shadowrocket 等客户端即可一键接入海外网络，畅享网络加速。
-                </div>
-              </details>
-
-              <!-- Item 6 -->
-              <details class="faq-v3-item" name="faq-acc">
-                <summary class="faq-v3-q-box">
-                  <div class="faq-v3-q-left">
-                    <span class="faq-v3-num">06</span>
-                    <div class="faq-v3-q-text">
-                      <span class="faq-v3-title">机场节点速度慢怎么办？</span>
-                      <span class="faq-v3-desc">诊断与优化方法，提升连接速度的实用技巧</span>
-                    </div>
-                  </div>
-                  <span class="faq-v3-arrow"></span>
-                </summary>
-                <div class="faq-v3-answer">
-                  请先尝试以下操作：1. 在客户端中一键测速，切换到延迟最低的节点；2. 避开晚高峰骨干网拥堵期；3. 在系统设置中更换 DNS 地址，防止由于 DNS 解析污染导致的网络慢。
-                </div>
-              </details>
-
-              <!-- Item 2 -->
-              <details class="faq-v3-item" name="faq-acc" open>
-                <summary class="faq-v3-q-box">
-                  <div class="faq-v3-q-left">
-                    <span class="faq-v3-num">02</span>
-                    <div class="faq-v3-q-text">
-                      <span class="faq-v3-title">什么是 IPLC 专线？</span>
-                      <span class="faq-v3-desc">IPLC 专线的定义、特点、优势与适用场景</span>
-                    </div>
-                  </div>
-                  <span class="faq-v3-arrow"></span>
-                </summary>
-                <div class="faq-v3-answer">
-                  IPLC（国际私人专线）是运营商提供的点对点内网跨国连接，由于完全不经过公网和防火墙（GFW），因此绝不会受 GFW 封锁干扰。它延迟极低，稳定性极强，是高端网络服务的基石。
-                </div>
-              </details>
-
-              <!-- Item 7 -->
-              <details class="faq-v3-item" name="faq-acc">
-                <summary class="faq-v3-q-box">
-                  <div class="faq-v3-q-left">
-                    <span class="faq-v3-num">07</span>
-                    <div class="faq-v3-q-text">
-                      <span class="faq-v3-title">如何选择稳定且不易跑路的机场？</span>
-                      <span class="faq-v3-desc">从线路、价格、稳定性等多维度给出建议</span>
-                    </div>
-                  </div>
-                  <span class="faq-v3-arrow"></span>
-                </summary>
-                <div class="faq-v3-answer">
-                  避坑首选：1. 建议只选择“月付”，不买超低价的长期年付套餐；2. 优先选择开业2年以上口碑成熟的老牌中转/专线机场；3. 看准是否有专属的客服和稳定的用户社群。
-                </div>
-              </details>
-
-              <!-- Item 3 -->
-              <details class="faq-v3-item" name="faq-acc">
-                <summary class="faq-v3-q-box">
-                  <div class="faq-v3-q-left">
-                    <span class="faq-v3-num">03</span>
-                    <div class="faq-v3-q-text">
-                      <span class="faq-v3-title">什么是 IEPL 专线？</span>
-                      <span class="faq-v3-desc">IEPL 专线的定义、技术原理和应用场景</span>
-                    </div>
-                  </div>
-                  <span class="faq-v3-arrow"></span>
-                </summary>
-                <div class="faq-v3-answer">
-                  IEPL 是国际以太网私网专线。它同 IPLC 一样不走公网防火墙，且具备更高的带宽灵活性、多点智能接入切换功能，比传统 IPLC 具备更强的抗灾备用冗余能力。
-                </div>
-              </details>
-
-              <!-- Item 8 -->
-              <details class="faq-v3-item" name="faq-acc">
-                <summary class="faq-v3-q-box">
-                  <div class="faq-v3-q-left">
-                    <span class="faq-v3-num">08</span>
-                    <div class="faq-v3-q-text">
-                      <span class="faq-v3-title">为什么有些网站或应用无法访问？</span>
-                      <span class="faq-v3-desc">常见原因分析及解决方案</span>
-                    </div>
-                  </div>
-                  <span class="faq-v3-arrow"></span>
-                </summary>
-                <div class="faq-v3-answer">
-                  这通常是由于 IP 的地域限制风控。例如 ChatGPT、Claude 不允许中国香港 IP 访问。请将代理客户端里的节点切换到美国、新加坡或日本的原生/住宅 IP 节点即可正常开启。
-                </div>
-              </details>
-
-              <!-- Item 4 -->
-              <details class="faq-v3-item" name="faq-acc">
-                <summary class="faq-v3-q-box">
-                  <div class="faq-v3-q-left">
-                    <span class="faq-v3-num">04</span>
-                    <div class="faq-v3-q-text">
-                      <span class="faq-v3-title">IPLC 和 IEPL 专线有什么区别？</span>
-                      <span class="faq-v3-desc">从技术原理、稳定性、价格等方面详细对比</span>
-                    </div>
-                  </div>
-                  <span class="faq-v3-arrow"></span>
-                </summary>
-                <div class="faq-v3-answer">
-                  IPLC 是基于物理层（L1）的点对点硬管道；IEPL 是基于二层（L2）以太网虚拟化管道。在防墙效果上两者完全一致，但 IEPL 的调度分配更灵活，维护难度低，扩展带宽速度更快。
-                </div>
-              </details>
-
-              <!-- Item 9 -->
-              <details class="faq-v3-item" name="faq-acc">
-                <summary class="faq-v3-q-box">
-                  <div class="faq-v3-q-left">
-                    <span class="faq-v3-num">09</span>
-                    <div class="faq-v3-q-text">
-                      <span class="faq-v3-title">机场账号被封怎么办？</span>
-                      <span class="faq-v3-desc">账号异常的处理流程与注意事项</span>
-                    </div>
-                  </div>
-                  <span class="faq-v3-arrow"></span>
-                </summary>
-                <div class="faq-v3-answer">
-                  如果遇到封禁，请核实是否有多设备同时在线超标、是否分享给他人引起风控，或者使用了非法网络扫描。你可以通过工单系统联系客服，正规机场会根据实际情况核实后给予解封。
-                </div>
-              </details>
-
-              <!-- Item 5 -->
-              <details class="faq-v3-item" name="faq-acc">
-                <summary class="faq-v3-q-box">
-                  <div class="faq-v3-q-left">
-                    <span class="faq-v3-num">05</span>
-                    <div class="faq-v3-q-text">
-                      <span class="faq-v3-title">什么是 BGP 线路？</span>
-                      <span class="faq-v3-desc">BGP 线路的定义和在跨境网络中的作用</span>
-                    </div>
-                  </div>
-                  <span class="faq-v3-arrow"></span>
-                </summary>
-                <div class="faq-v3-answer">
-                  BGP（边界网关协议）中转是指入口服务器配置了电信、联通、移动多线接入，能自动根据用户的宽带类型进行最优路线分流，避免了跨宽带运营商所导致的丢包与慢速。
-                </div>
-              </details>
-
-              <!-- Item 10 -->
-              <details class="faq-v3-item" name="faq-acc">
-                <summary class="faq-v3-q-box">
-                  <div class="faq-v3-q-left">
-                    <span class="faq-v3-num">10</span>
-                    <div class="faq-v3-q-text">
-                      <span class="faq-v3-title">如何测试机场的真实速度？</span>
-                      <span class="faq-v3-desc">推荐工具与测试方法，避免被虚假宣传误导</span>
-                    </div>
-                  </div>
-                  <span class="faq-v3-arrow"></span>
-                </summary>
-                <div class="faq-v3-answer">
-                  请使用专业的单兵测试工具（如 Speedtest/fast.com）在晚高峰阶段（20:00-23:00）测试节点下载速率，或者直接开启 YouTube 4K/8K 视频，在统计信息中查看连接速率。
-                </div>
-              </details>
-
             </div>
             
             <div class="faq-v3-footer">
