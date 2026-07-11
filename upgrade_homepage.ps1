@@ -10,6 +10,10 @@ $faqs = $jsonContent | ConvertFrom-Json
 $configContent = [System.IO.File]::ReadAllText($configJsonPath, [System.Text.Encoding]::UTF8)
 $config = $configContent | ConvertFrom-Json
 
+# Restore index.html from git to start clean before applying changes
+Write-Output "Restoring index.html to clean git state..."
+& git checkout HEAD -- index.html
+
 # Load the current index.html content
 $html = [System.IO.File]::ReadAllText($htmlPath, [System.Text.Encoding]::UTF8)
 
@@ -135,26 +139,35 @@ $extraStyles = @"
     .faq-v3-item {
       margin-bottom: 0 !important;
     }
+    .faq-hidden-item-hide {
+      display: none !important;
+    }
 "@
 
 # Inject styles before </style> in the index.html
 $html = $html.Replace("</style>", "$extraStyles`n</style>")
 
-# 4. Inject Module 1 and Module 2 using literal Replace (not regex)
+# 4. Inject Module 1 and Module 2 using literal Replace
 $module1Html = $config.module1_html
 $module2Html = $config.module2_html
 $html = $html.Replace("<!-- Stats Bar -->", "$module1Html`n$module2Html`n<!-- Stats Bar -->")
 
 # 5. Construct Module 3: 20 FAQ Accordions
 $faqAccordionHtml = ""
+$i = 0
 foreach ($faq in $faqs) {
+    $i++
     $num = $faq.num
     $q = $faq.q
     $desc = $faq.desc
     $a = $faq.a
+    $classes = "faq-v3-item"
+    if ($i -gt 10) {
+        $classes = "faq-v3-item faq-hidden-item faq-hidden-item-hide"
+    }
     $faqAccordionHtml += @"
               <!-- Item $num -->
-              <details class="faq-v3-item" name="faq-acc">
+              <details class="$classes" name="faq-acc">
                 <summary class="faq-v3-q-box">
                   <div class="faq-v3-q-left">
                     <span class="faq-v3-num">$num</span>
@@ -181,6 +194,23 @@ $html = [System.Text.RegularExpressions.Regex]::Replace($html, $targetFaqBlockPa
 $targetFaqText = $config.target_faq_text
 $replaceFaqText = $config.replace_faq_text
 $html = $html.Replace($targetFaqText, $replaceFaqText)
+
+# Replace the footer block to contain the trigger button
+$btnExpand = $config.btn_expand_text
+$oldFooterBlock = @"
+            <div class="faq-v3-footer">
+              <a href="knowledge.html" class="faq-v3-more-link">查看全部 73+ 个问题 &rarr;</a>
+            </div>
+"@
+
+$newFooterBlock = @"
+            <div class="faq-v3-footer" style="display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 20px;">
+              <button id="faqToggleBtn" class="faq-v3-more-link" style="background: #2563eb; color: #ffffff; border: none; padding: 10px 24px; border-radius: 20px; font-weight: 700; cursor: pointer; transition: all 0.2s ease; font-size: 0.9rem;">$btnExpand</button>
+              <a href="knowledge.html" class="faq-v3-more-link" style="font-size: 0.85rem; color: #64748b; text-decoration: none;">查看全部 73+ 个问题 &rarr;</a>
+            </div>
+"@
+
+$html = $html.Replace($oldFooterBlock, $newFooterBlock)
 
 # 6. Generate FAQ Schema (JSON-LD)
 $mainEntityArray = @()
@@ -211,7 +241,42 @@ $faqSchemaJson
 # Inject FAQ schema right before </head>
 $html = $html.Replace("</head>", "$faqSchemaScript`n</head>")
 
-# 7. Write index.html back with no-BOM UTF-8
+# 7. Inject FAQ Toggle Micro-interaction script before </body>
+$btnCollapse = $config.btn_collapse_text
+$toggleScript = @"
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggleBtn = document.getElementById('faqToggleBtn');
+      var hiddenItems = document.querySelectorAll('.faq-hidden-item');
+      var btnExpandText = "$btnExpand";
+      var btnCollapseText = "$btnCollapse";
+      if (toggleBtn && hiddenItems.length > 0) {
+        toggleBtn.addEventListener('click', function() {
+          var isExpanded = toggleBtn.getAttribute('data-expanded') === 'true';
+          if (isExpanded) {
+            // Collapse
+            hiddenItems.forEach(function(item) {
+              item.classList.add('faq-hidden-item-hide');
+            });
+            toggleBtn.textContent = btnExpandText;
+            toggleBtn.setAttribute('data-expanded', 'false');
+          } else {
+            // Expand
+            hiddenItems.forEach(function(item) {
+              item.classList.remove('faq-hidden-item-hide');
+            });
+            toggleBtn.textContent = btnCollapseText;
+            toggleBtn.setAttribute('data-expanded', 'true');
+          }
+        });
+      }
+    });
+  </script>
+"@
+
+$html = $html.Replace("</body>", "$toggleScript`n</body>")
+
+# 8. Write index.html back with no-BOM UTF-8
 $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
 [System.IO.File]::WriteAllText($htmlPath, $html, $utf8NoBom)
-Write-Output "Successfully upgraded index.html with correct styling and layout!"
+Write-Output "Successfully upgraded index.html with collapsed FAQ layout!"
