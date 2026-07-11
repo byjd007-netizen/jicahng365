@@ -4,5 +4,7 @@
   "target_faq_text": "共 73+ 个问题",
   "replace_faq_text": "精选 20 个热门 FAQ 问答",
   "btn_expand_text": "展开剩余 10 个热门问题 &darr;",
-  "btn_collapse_text": "收起部分热门问题 &uarr;"
+  "btn_collapse_text": "收起部分热门问题 &uarr;",
+  "old_footer_block": "            <div class=\"faq-v3-footer\">\n              <a href=\"knowledge.html\" class=\"faq-v3-more-link\">查看全部 73+ 个问题 &rarr;</a>\n            </div>",
+  "new_footer_block": "            <div class=\"faq-v3-footer\">\n              <a href=\"javascript:void(0)\" id=\"faqToggleBtn\" class=\"faq-v3-more-link\" style=\"cursor: pointer;\">{0}</a>\n            </div>"
 }

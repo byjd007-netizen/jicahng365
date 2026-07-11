@@ -17,6 +17,13 @@ Write-Output "Restoring index.html to layout-fix commit cf92b21..."
 # Load the current index.html content
 $html = [System.IO.File]::ReadAllText($htmlPath, [System.Text.Encoding]::UTF8)
 
+# Normalize newlines to LF for robust matching
+$html = $html -replace "`r`n", "`n"
+$oldFooterBlock = $config.old_footer_block -replace "`r`n", "`n"
+$newFooterBlockTemplate = $config.new_footer_block -replace "`r`n", "`n"
+$module1Html = $config.module1_html -replace "`r`n", "`n"
+$module2Html = $config.module2_html -replace "`r`n", "`n"
+
 # 1. Replace domain 'jichang365.com' with 'yunguidaohang.com'
 $html = $html.Replace("jichang365.com", "yunguidaohang.com")
 
@@ -148,8 +155,6 @@ $extraStyles = @"
 $html = $html.Replace("</style>", "$extraStyles`n</style>")
 
 # 4. Inject Module 1 and Module 2 using literal Replace
-$module1Html = $config.module1_html
-$module2Html = $config.module2_html
 $html = $html.Replace("<!-- Stats Bar -->", "$module1Html`n$module2Html`n<!-- Stats Bar -->")
 
 # 5. Construct Module 3: 20 FAQ Accordions
@@ -201,18 +206,7 @@ $html = $html.Replace($targetFaqText, $replaceFaqText)
 
 # Replace the footer block to contain the trigger button
 $btnExpand = $config.btn_expand_text
-$oldFooterBlock = @"
-            <div class="faq-v3-footer">
-              <a href="knowledge.html" class="faq-v3-more-link">查看全部 73+ 个问题 &rarr;</a>
-            </div>
-"@
-
-$newFooterBlock = @"
-            <div class="faq-v3-footer">
-              <a href="javascript:void(0)" id="faqToggleBtn" class="faq-v3-more-link" style="cursor: pointer;">$btnExpand</a>
-            </div>
-"@
-
+$newFooterBlock = $newFooterBlockTemplate -f $btnExpand
 $html = $html.Replace($oldFooterBlock, $newFooterBlock)
 
 # 6. Generate FAQ Schema (JSON-LD)
@@ -286,6 +280,9 @@ $toggleScript = @"
 "@
 
 $html = $html.Replace("</body>", "$toggleScript`n</body>")
+
+# Normalize back to CRLF (Windows standard)
+$html = $html -replace "`n", "`r`n"
 
 # 8. Write index.html back with no-BOM UTF-8
 $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
