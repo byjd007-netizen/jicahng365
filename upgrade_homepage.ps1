@@ -10,9 +10,9 @@ $faqs = $jsonContent | ConvertFrom-Json
 $configContent = [System.IO.File]::ReadAllText($configJsonPath, [System.Text.Encoding]::UTF8)
 $config = $configContent | ConvertFrom-Json
 
-# Restore index.html from git to start clean before applying changes
-Write-Output "Restoring index.html to clean git state..."
-& git checkout HEAD -- index.html
+# Restore index.html from layout-fix commit cf92b21 to start completely clean before applying changes
+Write-Output "Restoring index.html to layout-fix commit cf92b21..."
+& git checkout cf92b21 -- index.html
 
 # Load the current index.html content
 $html = [System.IO.File]::ReadAllText($htmlPath, [System.Text.Encoding]::UTF8)
@@ -162,12 +162,16 @@ foreach ($faq in $faqs) {
     $desc = $faq.desc
     $a = $faq.a
     $classes = "faq-v3-item"
+    $extraAttr = ""
     if ($i -gt 10) {
         $classes = "faq-v3-item faq-hidden-item faq-hidden-item-hide"
     }
+    if ($i -eq 11) {
+        $extraAttr = "id=`"faq-item-11`""
+    }
     $faqAccordionHtml += @"
               <!-- Item $num -->
-              <details class="$classes" name="faq-acc">
+              <details class="$classes" name="faq-acc" $extraAttr>
                 <summary class="faq-v3-q-box">
                   <div class="faq-v3-q-left">
                     <span class="faq-v3-num">$num</span>
@@ -204,9 +208,8 @@ $oldFooterBlock = @"
 "@
 
 $newFooterBlock = @"
-            <div class="faq-v3-footer" style="display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 20px;">
-              <button id="faqToggleBtn" class="faq-v3-more-link" style="background: #2563eb; color: #ffffff; border: none; padding: 10px 24px; border-radius: 20px; font-weight: 700; cursor: pointer; transition: all 0.2s ease; font-size: 0.9rem;">$btnExpand</button>
-              <a href="knowledge.html" class="faq-v3-more-link" style="font-size: 0.85rem; color: #64748b; text-decoration: none;">查看全部 73+ 个问题 &rarr;</a>
+            <div class="faq-v3-footer">
+              <a href="javascript:void(0)" id="faqToggleBtn" class="faq-v3-more-link" style="cursor: pointer;">$btnExpand</a>
             </div>
 "@
 
@@ -258,15 +261,23 @@ $toggleScript = @"
             hiddenItems.forEach(function(item) {
               item.classList.add('faq-hidden-item-hide');
             });
-            toggleBtn.textContent = btnExpandText;
+            toggleBtn.innerHTML = btnExpandText;
             toggleBtn.setAttribute('data-expanded', 'false');
           } else {
             // Expand
             hiddenItems.forEach(function(item) {
               item.classList.remove('faq-hidden-item-hide');
             });
-            toggleBtn.textContent = btnCollapseText;
+            toggleBtn.innerHTML = btnCollapseText;
             toggleBtn.setAttribute('data-expanded', 'true');
+            
+            // Smooth scroll to item 11 (internal jump)
+            var targetItem = document.getElementById('faq-item-11');
+            if (targetItem) {
+              setTimeout(function() {
+                targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }, 80);
+            }
           }
         });
       }
@@ -279,4 +290,4 @@ $html = $html.Replace("</body>", "$toggleScript`n</body>")
 # 8. Write index.html back with no-BOM UTF-8
 $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
 [System.IO.File]::WriteAllText($htmlPath, $html, $utf8NoBom)
-Write-Output "Successfully upgraded index.html with collapsed FAQ layout!"
+Write-Output "Successfully upgraded index.html with inline collapsed FAQ toggle link!"
