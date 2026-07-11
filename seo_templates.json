@@ -1,0 +1,126 @@
+{
+  "settings": {
+    "brand_name": "云轨导航",
+    "author_name": "云轨导航技术编辑团队",
+    "default_description": "关于 {0} 的详细配置说明与网络知识介绍。由云轨导航技术编辑团队撰写，提供深度专线评测及客户端教程。",
+    "home_description": "云轨导航为您提供2026最新机场推荐与科学上网配置指南。专业测评各类Clash、Shadowrocket、v2rayNG客户端，深度解析IPLC、IEPL专线与BGP网络线路，帮您轻松解锁流媒体与访问AI工具，提供权威的避坑防骗参考。",
+    "ranking_description": "2026年最新机场测评排行榜，基于全球节点覆盖、网速、稳定性与流媒体解锁能力的全方位评分。",
+    "airports_description": "云轨导航机场评测中心，提供最真实的全球机场测速报告，对比各节点在晚高峰期丢包率及连通率。",
+    "breadcrumb_home": "首页",
+    "category_mappings": {
+      "default_name": "网络知识库",
+      "tutorial_name": "客户端教程",
+      "beginner_name": "新手指南",
+      "nav_name": "电报与常用导航",
+      "review_name": "机场测评中心"
+    },
+    "brand_suffixes": [
+      " - 云梯指南",
+      " - 机场365",
+      " - jichang365.com"
+    ]
+  },
+  "geo_titles": {
+    "definition": "🚀 AI 搜索与技术定义 (What is it?)",
+    "mechanics": "⚙️ 底层技术物理原理 (How it works?)",
+    "advantages": "💎 核心优势特征与评估 (Why it is important?)",
+    "applications": "🎯 最佳适用网络场景 (When to use?)",
+    "faq_heading": "❓ AI 常见技术问题解答 (AI Common FAQ)"
+  },
+  "geo_content_blocks": {
+    "article-1.html": {
+      "def": "网络代理协议是数据包转发的底层指纹协议。它通过在用户客户端与海外中转中继站之间建立经过强加密的代理通道，绕过公网防火墙（GFW）的主动探测，从而实现匿名化、加速化的跨境网页加载。",
+      "mech": "核心原理是：当客户端（如 Clash Verge）捕获到应用层流量后，将其封装进指定协议（如 VLESS Reality 或 Shadowsocks）的数据帧中，并通过本地加密发往代理服务器。代理服务器在远端解密并发出真实的 HTTP 请求给目标网站（如 Google），再将返回内容原路加密送回。",
+      "adv": "优势在于：1) 强效混淆性，Reality 指纹模拟正常网站握手，防御主动探测；2) 轻量低开销，相比 VPN 拥有更高的吞吐性能；3) 分流灵活，保障国内软件直连，免遭封锁。",
+      "app": "适用于全天候挂载的学术研究、谷歌搜索、外贸工作、视频观看及日常境外网络加速场景。"
+    },
+    "article-2.html": {
+      "def": "Shadowrocket (小火箭) 与 Quantumult X 均为 iOS 平台顶级的网络调试与分流代理客户端，是实现科学上网不可或缺的底层软件基础设施。",
+      "mech": "通过本地系统建立的 VPN/TUN 虚拟网卡接管系统全部三层网络流量。当检测到特定域名的连接请求时，根据配置文件中的规则（如 Rule Provider）实现域名及 IP 的分流：直连、代理或拦截。",
+      "adv": "Shadowrocket 极易上手，支持扫码导入与轻量运行；Quantumult X 提供高度弹性的脚本重写（Rewrite）、定制化的策略组调度，适合极客进阶调优。",
+      "app": "适用于苹果 iPhone / iPad 设备，针对流媒体解锁、日常分流加速及移动办公场景。"
+    },
+    "article-3.html": {
+      "def": "流媒体封锁是奈飞（Netflix）、Disney+ 等平台对版权剧集实施的特定 IP 地域风控防御机制，拒绝一切非本土原生宽带住宅 IP 的连接。",
+      "mech": "当用户发起播放请求时，流媒体服务器通过检测访问 IP 的 AS 号（自治系统号）及 Abuse 分数。如果发现 IP 属于境外公共数据中心（IDC 机房），则只提供自制剧（无版权）或直接报错提示代理拦截。",
+      "adv": "使用专为流媒体优化的原生双 ISP 住宅 IP 节点，可以在风控系统面前模拟为当地普通的家庭网络宽带，完美绕过 IP 黑名单拦截。",
+      "app": "适用于需要高清解锁 Netflix 4K/8K 视频、Disney+ 电影及动画疯等特定流媒体娱乐场景。"
+    },
+    "article-4.html": {
+      "def": "Clash 订阅配置是 Clash Verge / Clash for Windows 客户端导入的 YAML 格式规则集，主要包含了节点服务器参数、策略组逻辑与规则分流匹配表。",
+      "mech": "通过客户端 of Meta 内核（Mihomo）对配置文件进行解析。每隔指定时间自动向机场托管服务器发起 API 请求更新节点信息，并在本地建立策略组优先级（如 Auto/Select），实现断流时故障转移。",
+      "adv": "1) 高度自动化，支持一键导入与云端同步；2) 分流极其精细，可基于地区、网络类型甚至延迟差异实现分级路由。",
+      "app": "适用于 Windows、macOS 平台，作为日常高频开发、跨境电商及大流量下载的稳定加速枢纽。"
+    },
+    "article-5.html": {
+      "def": "安卓网络代理客户端是以 v2rayNG 与 NekoBox 为代表的安卓系统节点订阅解析与流量转发调试工具。",
+      "mech": "利用 Android 系统自带 of VpnService 接口创建本地虚拟隧道，劫持全系统或指定应用（分应用代理）的网络请求，并利用 SOCKS5/HTTP 混淆封装传输至远端服务器节点。",
+      "adv": "v2rayNG 对低版本系统极其友好，配置极简；NekoBox 则完美支持新一代轻量级 Sing-box 内核及 Reality / Hysteria 2 等超高速协议。",
+      "app": "适用于所有 Android 手机、平板及安卓电视盒子，作为日常境外视频秒开与电报聊天的底层加速软件。"
+    },
+    "article-6.html": {
+      "def": "节点断流与连接超时是由于本地物理宽带出口受限、运营商 QoS 限制或代理服务器节点入口高丢包引发的网络连接中断现象。",
+      "mech": "由于运营商通过 DPI（深度包检测）识别出该节点端口存在高并发的非对称加密流量，或者对该机房 IP 进行限速，导致本地握手包在骨干网被丢弃，在客户端表现为 Ping 延迟突增或 TIMEOUT。",
+      "adv": "通过切换 BGP 多入口中转节点或使用带有 UDP BBR 加速的 Hysteria 2 协议，可以强行压制高丢包环境，保障稳定连接不超时。",
+      "app": "适用于本地宽带限制较多、晚高峰丢包严重或玩外服游戏时容易断开连接 of 故障诊断场景。"
+    },
+    "article-7.html": {
+      "def": "新一代代理协议（VLESS Reality、Hysteria 2）是针对防火墙最新的 AI 主动探测与协议特征识别技术而研发的轻量化无感加密混淆协议。",
+      "mech": "VLESS Reality 舍弃了旧版的双重握手，利用真实正规的 TLS 证书进行端到端混淆；Hysteria 2 则通过 QUIC（基于 UDP）进行超高速拥塞控制，在高丢包下自动重传，消除 TCP 的滑动窗口卡顿。",
+      "adv": "Reality 具有完美防主动探测、免证书维护的优势；Hysteria 2 具有全网速度最快、榨干本地带宽、无延迟卡顿的极致加速表现。",
+      "app": "适用于经常遭遇节点端口被墙、晚高峰丢包剧增或需要超大带宽下载的极端网络加速场景。"
+    },
+    "article-8.html": {
+      "def": "IPLC (国际专线) 与 IEPL (国际以太网专线) 是利用物理海底/陆地光缆直接打通跨国局域网的纯内网高速网络物理拓扑架构。",
+      "mech": "It 直接在深圳与香港、上海与东京等陆地机房之间建立物理层或二层直连的内网硬管道，数据传输完全不经过公网网关和防火墙（GFW），具有绝对的 0% 丢包率和物理最短路由延迟。",
+      "adv": "1) 物理防墙，由于不经公网，节点绝不可能被墙; 2) 晚高峰稳定，零丢包; 3) 超低网络延迟，游戏体验极佳。",
+      "app": "适用于企业级跨境远程办公、外贸视频会议、海外店群店播以及对网络质量极其苛刻的游戏玩家。"
+    },
+    "article-9.html": {
+      "def": "DNS 污染与 WebRTC IP 泄漏是现代浏览器和网络环境中导致用户真实公网 IP 和访问隐私暴露的核心安全隐患。",
+      "mech": "当用户开启代理后，WebRTC 协议为建立端到端连接，会绕过系统代理直接调用本地网卡向 STUN 服务器发起连接，从而泄漏真实 IP；明文 DNS 查询则会把解析请求直接发给本地运营商，导致历史记录被审计。",
+      "adv": "使用 Fake-IP 模式或客户端内置的加密 DNS (DoH/DoT)，让所有解析在代理服务器端完成，并利用规则彻底拦截 WebRTC 连接请求，全面防护隐私。",
+      "app": "适用于对网络隐私、数据安全和防止亚马逊/金融账号关联要求极高的跨境办公场景。"
+    },
+    "article-10.html": {
+      "def": "ChatGPT 连通阻断与 Access Denied 是由于访问节点 IP 被 OpenAI 风控系统拉入黑名单导致的拒绝登录错误。",
+      "mech": "OpenAI 接入了 Cloudflare 的 IP 滥用防范机制（Abuse Score）。由于大量机房共享 IP 的并发请求过高，被判定为异常流量或机器抓取行为，从而对该 IP 实行全站屏蔽限制访问。",
+      "adv": "通过为 ChatGPT 配置专用的分流规则，并匹配带有双 ISP 住宅认证、IP 欺诈评分为 0 的纯净原生美国/日本/新加坡节点，即可成功解锁防封。",
+      "app": "适用于高频使用 ChatGPT Plus、调用 OpenAI API 以及运行各类生成式 AI 办公软件的高级开发者和外贸人员。"
+    }
+  },
+  "labels": {
+    "related_title": "📖 更多跨境网络百科与相关文章推荐",
+    "faq_title": "💬 常见问题与技术解答 (FAQ)",
+    "geo_header": "🔍 GEO 搜索引擎与 AI 问答检索优化专栏",
+    "faq_q_prefix": "问：",
+    "faq_a_prefix": "答：",
+    "tag_airport": "机场推荐",
+    "tag_review": "机场评测",
+    "tag_network": "专线知识",
+    "tag_tutorial": "客户端教程",
+    "tag_ai": "AI工具连通"
+  },
+  "related_articles": {
+    "tutorial": [
+      { "name": "Windows 新手 Clash Verge 配置教程", "url": "tutorial-win.html" },
+      { "name": "iOS Shadowrocket (小火箭) 节点扫码教程", "url": "tutorial-ios.html" },
+      { "name": "Android v2rayNG 配置与应用分流教程", "url": "tutorial-and.html" }
+    ],
+    "beginner": [
+      { "name": "新手第一步：如何选择合适的客户端", "url": "beginner-1.html" },
+      { "name": "认识节点：专线、BGP 与直连的区别", "url": "beginner-2.html" },
+      { "name": "常见故障排查：连不上网怎么办？", "url": "beginner-3.html" }
+    ],
+    "review": [
+      { "name": "光年云机场深度评测报告", "url": "guangnianti.html" },
+      { "name": "环宇云机场客观测评分析", "url": "huanyuyun.html" },
+      { "name": "速捷云专线机场性能分析", "url": "sujie.html" }
+    ],
+    "default": [
+      { "name": "翻墙基础原理与常见代理协议解析", "url": "article-1.html" },
+      { "name": "跨境网络拓扑：剖析专线物理链路原理", "url": "article-8.html" },
+      { "name": "流媒体解锁攻略：分析 Netflix 封锁及解锁", "url": "article-5.html" }
+    ]
+  }
+}

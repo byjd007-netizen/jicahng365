@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>页面未找到 - 云轨导航 (404 Error)</title>
+  <link rel="stylesheet" href="index.css?v=6">
+  <style>
+    .error-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 70vh;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .error-code {
+      font-size: 8rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
+    }
+    .error-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+    .error-desc {
+      font-size: 1.1rem;
+      color: #64748b;
+      max-width: 500px;
+      margin: 0 auto 30px auto;
+      line-height: 1.6;
+    }
+    .error-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+    .error-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .error-btn-primary {
+      background: #2563eb;
+      color: #ffffff;
+    }
+    .error-btn-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+    .error-btn-secondary {
+      background: #f1f5f9;
+      color: #334155;
+      border: 1px solid #e2e8f0;
+    }
+    .error-btn-secondary:hover {
+      background: #e2e8f0;
+      transform: translateY(-1px);
+    }
+    .error-links {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 24px;
+      max-width: 600px;
+      width: 100%;
+    }
+    .error-links-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #334155;
+      margin-bottom: 15px;
+    }
+    .error-links-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 576px) {
+      .error-links-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .error-link-item {
+      color: #2563eb;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+    .error-link-item:hover {
+      background: #eff6ff;
+      border-color: #3b82f6;
+    }
+  </style>
+</head>
+<body class="home-v2-body">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo-container" style="text-decoration: none;">
+        <span class="logo-text">云轨导航</span>
+      </a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">首页探索</a>
+        <a href="airports.html" class="nav-link">机场测评</a>
+        <a href="ranking.html" class="nav-link">机场排行</a>
+        <a href="knowledge.html" class="nav-link">科普指南</a>
+        <a href="about.html" class="nav-link">关于我们</a>
+      </nav>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu"></button>
+    </div>
+  </header>
+
+  <!-- Error Content -->
+  <main class="container">
+    <div class="error-container">
+      <div class="error-code">404</div>
+      <h1 class="error-title">抱歉，页面未找到</h1>
+      <p class="error-desc">您访问的页面可能已被移动、删除，或者输入的 URL 拼写有误。请通过下方链接返回网站核心专栏。</p>
+      
+      <div class="error-actions">
+        <a href="index.html" class="error-btn error-btn-primary">返回网站首页</a>
+        <a href="knowledge.html" class="error-btn error-btn-secondary">查看科普指南</a>
+      </div>
+      
+      <div class="error-links">
+        <div class="error-links-title">📌 快速跳转至核心词条与分类</div>
+        <div class="error-links-grid">
+          <a href="airport/" class="error-link-item">机场推荐</a>
+          <a href="review/" class="error-link-item">机场评测</a>
+          <a href="network/" class="error-link-item">网络知识</a>
+          <a href="tutorial/" class="error-link-item">客户端教程</a>
+          <a href="ai/" class="error-link-item">AI工具连通</a>
+          <a href="avoid-scam/" class="error-link-item">防跑路雷达</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" style="margin-top: 60px;">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-text">云轨导航</span>
+        </div>
+        <div class="footer-links">
+          <a href="about.html">关于我们</a>
+          <a href="contact.html">联系方式</a>
+          <a href="privacy.html">隐私政策</a>
+          <a href="terms.html">服务条款</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 云轨导航. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

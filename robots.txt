@@ -1,4 +1,4 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
-Sitemap: https://jichang365.com/sitemap.xml
+Sitemap: https://yunguidaohang.com/sitemap.xml

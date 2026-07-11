@@ -1,0 +1,117 @@
+{
+  "airport": {
+    "title": "2026年最新稳定高速便宜网络机场推荐与节点排行榜 - 云轨导航",
+    "description": "云轨导航机场推荐中心为您收录2026年最新高速稳定且便宜的翻墙网络机场。提供中转专线机场推荐、平价机场对比、晚高峰网速测试及新手避坑排行。",
+    "h1": "✈️ 机场推荐中心",
+    "subtitle": "精选全球高速稳定、性价比高且不易跑路的企业级精品网络机场",
+    "articles": [
+      {
+        "name": "2026 全球稳定机场推荐 Top10",
+        "link": "../articles/article-1.html",
+        "desc": "精选2026年最优质的专线与BGP中转机场，保障晚高峰连接速度。"
+      },
+      {
+        "name": "认识节点：专线、BGP 与直连的区别",
+        "link": "../articles/beginner-2.html",
+        "desc": "深度解析IPLC/IEPL专线、多线BGP中转及直连网络节点性能差异。"
+      },
+      {
+        "name": "如何选择稳定且不易跑路的机场？",
+        "link": "../articles/beginner-1.html",
+        "desc": "从运营时长、线路架构、套餐结算等多维度解析机场避坑方针。"
+      }
+    ]
+  },
+  "review": {
+    "title": "机场测速、节点测试与跨境网络中转线路深度评测数据库 - 云轨导航",
+    "description": "云轨导航机场测评数据库提供对各大中转/专线机场节点的真实丢包率、Ping延迟、流媒体解锁度、晚高峰带宽速率的客观深度评测报告。",
+    "h1": "📊 机场评测数据库",
+    "subtitle": "每日真实网络丢包率、延迟抖动及流媒体/AI连通性深度测速评测报告",
+    "articles": [
+      {
+        "name": "光年云机场深度评测报告",
+        "link": "../articles/guangnianti.html",
+        "desc": "测试光年云IEPL企业专线的高峰期表现及流媒体连通情况。"
+      },
+      {
+        "name": "环宇云机场客观测评分析",
+        "link": "../articles/huanyuyun.html",
+        "desc": "环宇云多入口BGP中转分流及多设备连通稳定性数据实测。"
+      },
+      {
+        "name": "速捷云专线机场性能分析",
+        "link": "../articles/sujie.html",
+        "desc": "分析速捷云IPLC内网高速节点在游戏和网页加载中的延迟抖动表现。"
+      }
+    ]
+  },
+  "network": {
+    "title": "跨境网络知识百科：IPLC专线、IEPL以太网与BGP中转线路原理解析 - 云轨导航",
+    "description": "云轨导航网络知识百科为您系统化科普IPLC专线原理、IEPL传输层架构、BGP智能多线中转路由、CN2 GIA优化通道及DNS污染防御体系。",
+    "h1": "🌐 跨境网络知识百科",
+    "subtitle": "科普跨境网络底层物理拓扑、传输协议特征及AI智能防阻断技术原理",
+    "articles": [
+      {
+        "name": "跨境网络拓扑：剖析深港专线、沪日专线物理链路原理",
+        "link": "../articles/article-8.html",
+        "desc": "深度剖析跨国IPLC/IEPL专线物理链路的运作机制与防墙优势。"
+      },
+      {
+        "name": "翻墙基础原理：深入浅出讲解 Shadowsocks、V2Ray 等协议工作原理",
+        "link": "../articles/article-1.html",
+        "desc": "从零解析网络数据包加密、代理中转转发及主动指纹探测技术。"
+      },
+      {
+        "name": "隐私泄漏防范：防范 WebRTC 真实 IP 泄漏与解决 DNS 劫持",
+        "link": "../articles/article-9.html",
+        "desc": "系统化防御浏览器泄密、STUN直连暴露及明文DNS篡改与污染。"
+      }
+    ]
+  },
+  "tutorial": {
+    "title": "科学上网客户端教程中心：Clash, Shadowrocket, Stash配置指南 - 云轨导航",
+    "description": "云轨导航客户端教程中心提供Windows、Mac、iOS、Android及路由全平台科学上网客户端（Clash Verge, Shadowrocket, v2rayNG, Stash）的配置教程。",
+    "h1": "🔧 客户端教程中心",
+    "subtitle": "提供全平台开源科学上网客户端一键配置导入、策略分流和TUN网卡设置教程",
+    "articles": [
+      {
+        "name": "Clash Verge 导入订阅与系统代理设置教程",
+        "link": "../articles/tutorial-win.html",
+        "desc": "Windows下最推荐的Clash Verge客户端安装、订阅更新及TUN模式指南。"
+      },
+      {
+        "name": "Shadowrocket (小火箭) 节点扫码添加与规则分流设置",
+        "link": "../articles/tutorial-ios.html",
+        "desc": "iOS系统下Shadowrocket美区下载、二维码扫码添加节点及去广告规则配置。"
+      },
+      {
+        "name": "v2rayNG 安卓端配置教程与移动端优化方案",
+        "link": "../articles/tutorial-and.html",
+        "desc": "安卓系统v2rayNG安装包下载、订阅添加、更新测速及应用分流模式。"
+      }
+    ]
+  },
+  "ai": {
+    "title": "AI工具解锁与连通方案教程：ChatGPT, Claude, Gemini注册使用指南 - 云轨导航",
+    "description": "云轨导航AI工具导航为您提供ChatGPT注册、Claude手机验证封号排查、Gemini Advanced直接访问指南，提供住宅原生双ISP节点解锁方案。",
+    "h1": "🤖 AI工具连通百科",
+    "subtitle": "如何解决ChatGPT拒绝访问及Claude封号风控，精选AI解锁高纯净节点",
+    "articles": [
+      {
+        "name": "ChatGPT 注册与 Access Denied 报错排除方案",
+        "link": "../articles/article-10.html",
+        "desc": "分析ChatGPT注册网络风控、原生IP要求及WildCard虚拟卡代充值。"
+      },
+      {
+        "name": "防止隐私裸奔与AI登录防关联高级技巧",
+        "link": "../articles/article-12.html",
+        "desc": "如何清除Cookie冲突、开启系统安全策略并配置纯净住宅IP防止封号。"
+      },
+      {
+        "name": "流媒体与AI连通性检测脚本使用教程",
+        "link": "../articles/article-5.html",
+        "desc": "测试节点对OpenAI、Netflix、Disney+连通性的命令行脚本。"
+      }
+    ]
+  }
+}
