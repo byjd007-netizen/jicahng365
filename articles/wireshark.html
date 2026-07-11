@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wireshark 网络抓包分析工具入门使用与代理故障排除教程 - 云轨导航</title>
+  <link rel="stylesheet" href="../index.css?v=6">
+  <link rel="canonical" href="https://yunguidaohang.com/articles/wireshark.html">
+  <meta name="description" content="使用开源网络封包分析软件 Wireshark 捕捉流量，精确排除科学上网连接超时、DNS 泄漏、TLS 握手失败等代理网络故障。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://yunguidaohang.com/articles/wireshark.html">
+  <meta property="og:title" content="Wireshark 网络抓包分析工具入门使用与代理故障排除教程 - 云轨导航">
+  <meta property="og:description" content="使用开源网络封包分析软件 Wireshark 捕捉流量，精确排除科学上网连接超时、DNS 泄漏、TLS 握手失败等代理网络故障。">
+  <meta property="og:image" content="https://yunguidaohang.com/assets/images/new_logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wireshark 网络抓包分析工具入门使用与代理故障排除教程 - 云轨导航">
+  <meta name="twitter:description" content="使用开源网络封包分析软件 Wireshark 捕捉流量，精确排除科学上网连接超时、DNS 泄漏、TLS 握手失败等代理网络故障。">
+  <meta name="twitter:image" content="https://yunguidaohang.com/assets/images/new_logo.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Wireshark 网络抓包分析工具入门使用与代理故障排除教程",
+  "image": "https://yunguidaohang.com/assets/images/new_logo.png",
+  "datePublished": "2026-07-11T08:00:00+08:00",
+  "dateModified": "2026-07-11T08:00:00+08:00",
+  "description": "使用开源网络封包分析软件 Wireshark 捕捉流量，精确排除科学上网连接超时、DNS 泄漏、TLS 握手失败等代理网络故障。",
+  "author": {"@type": "Organization", "name": "云轨导航技术编辑团队", "url": "https://yunguidaohang.com/about.html"},
+  "publisher": {"@type": "Organization", "name": "云轨导航", "logo": {"@type": "ImageObject", "url": "https://yunguidaohang.com/assets/images/new_logo.png"}}
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Wireshark 新手应该如何开始学习？", "acceptedAnswer": {"@type": "Answer", "text": "建议先从捕获本机的 HTTP 流量开始，配合 ip.addr 和 tcp.port 过滤器学会基础过滤，再逐步学习 TLS 握手分析和 DNS 查询过滤。"}},
+    {"@type": "Question", "name": "用 Wireshark 能检测 DNS 泄漏吗？", "acceptedAnswer": {"@type": "Answer", "text": "可以。在代理开启状态下，使用过滤器 udp.port == 53 捕获流量，如果看到本机向国内 ISP 的 DNS 服务器（如 114.114.114.114）发出了国外网站的域名解析请求，即证明存在 DNS 泄漏。"}}
+  ]
+}
+  </script>
+</head>
+<body class="article-page">
+<header class="header">
+  <div class="container">
+    <a href="../index.html" class="logo-container"><span class="logo-text">云轨导航</span></a>
+    <nav class="nav-menu" id="navMenu">
+      <a href="../index.html" class="nav-link">首页探索</a>
+      <a href="../airports.html" class="nav-link">机场测评</a>
+      <a href="../ranking.html" class="nav-link">机场排行</a>
+      <a href="../knowledge.html" class="nav-link active">科普指南</a>
+      <a href="../about.html" class="nav-link">关于我们</a>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu"></button>
+  </div>
+</header>
+
+<div class="article-layout-container">
+  <aside class="sidebar-left">
+    <div class="widget toc-widget">
+      <h3 class="widget-title">文章目录</h3>
+      <nav id="toc" class="toc-nav"></nav>
+    </div>
+    <div class="widget" style="background:#fff; border-radius:12px; padding:20px; box-shadow:0 2px 12px rgba(0,0,0,0.06); margin-top:20px;">
+      <h3 class="widget-title" style="font-size:1rem; font-weight:700; color:#0f172a; margin:0 0 15px 0;">网络工具推荐</h3>
+      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;">
+        <li><a href="speedtest.html" style="color:#0ea5e9; text-decoration:none; font-size:0.9rem;">→ Speedtest 网络测速</a></li>
+        <li><a href="v2rayn.html" style="color:#0ea5e9; text-decoration:none; font-size:0.9rem;">→ V2RayN Windows 配置</a></li>
+        <li><a href="clash-verge.html" style="color:#0ea5e9; text-decoration:none; font-size:0.9rem;">→ Clash Verge 使用指南</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="breadcrumbs" style="margin-bottom:25px; font-size:0.95rem; color:#64748b; padding-bottom:15px; border-bottom:1px dashed #e2e8f0;">
+      <a href="../index.html" style="color:#0ea5e9; text-decoration:none; font-weight:500;">首页</a> &gt;
+      <a href="../knowledge.html" style="color:#0ea5e9; text-decoration:none; font-weight:500;">科普指南</a> &gt;
+      <span style="color:#94a3b8;">Wireshark 抓包工具</span>
+    </div>
+
+    <article class="article-box">
+      <header class="article-header" style="text-align:center; margin-bottom:40px;">
+        <h1 class="article-title" style="font-size:2.2rem; color:#0f172a; margin:0 0 20px 0; font-weight:800; line-height:1.3;">Wireshark 网络抓包分析工具入门使用与代理故障排除教程</h1>
+        <div class="article-meta" style="display:flex; justify-content:center; flex-wrap:wrap; gap:20px; color:#64748b; font-size:0.95rem; margin-bottom:25px;">
+          <span>作者: 技术编辑部</span>
+          <span>阅读时长: 约 9 分钟</span>
+          <span>发布于: 2026-07-11</span>
+        </div>
+        <div class="article-tags" style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px; padding-bottom:25px; border-bottom:1px solid #e2e8f0;">
+          <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">网络抓包分析</span>
+          <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">故障排查</span>
+          <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">Win macOS Linux</span>
+        </div>
+      </header>
+
+      <div class="article-body" id="articleBody">
+
+        <p>当代理节点显示延迟正常，却无法正常访问目标网站时，仅靠客户端日志往往只能看到模糊的"连接超时"或"握手失败"提示，无法定位真正的故障根源。此时，<strong>Wireshark</strong> 就是网络工程师和资深用户的终极排查利器——这款完全开源的网络协议分析仪，能将本机所有的网络通信数据转化为可读的封包结构，从 TCP 握手到 TLS 加密层，每一个细节都清晰可见。</p>
+
+        <div style="background:linear-gradient(135deg,#fef2f2,#fff7ed); border-left:4px solid #ef4444; border-radius:8px; padding:16px 20px; margin:20px 0;">
+          <strong style="color:#991b1b;">核心定位：</strong><span style="color:#374151;">专业级开源网络嗅探与协议分析工具，适用于 Windows、macOS 和 Linux，是网络工程师进行代理连接故障定位的标准工具。</span>
+        </div>
+
+        <h2>一、为什么代理排错需要 Wireshark？</h2>
+        <p>普通的 Ping 和 Traceroute 工具只能告诉你网络是否可达，却无法回答以下这些关键问题：</p>
+        <ul>
+          <li>GFW 是否向你发送了 <strong>TCP RST 重置包</strong> 主动断开连接？</li>
+          <li>代理客户端的 <strong>TLS 指纹（JA3/JA4）</strong> 是否暴露了代理特征，被防火墙识别？</li>
+          <li>DNS 查询是否在代理隧道建立之前就已向国内 ISP 泄露了目标域名？</li>
+          <li>服务器是否正确返回了 TLS 握手中的 <strong>Server Hello</strong> 响应？</li>
+        </ul>
+        <p>Wireshark 可以对上述每一个问题给出准确的封包级别答案。</p>
+
+        <h2>二、Wireshark 基础抓包操作</h2>
+        <ol>
+          <li><strong>选择网卡</strong>：启动 Wireshark，在主界面可以看到各网卡的实时流量波形。双击正在传输数据的网卡（以太网 / WLAN）开始捕获。</li>
+          <li><strong>设置显示过滤器</strong>：在顶部过滤器栏中输入过滤表达式，只显示感兴趣的数据包：
+            <ul style="margin-top:8px; font-family:monospace; font-size:0.9rem; background:#f8fafc; padding:12px; border-radius:8px; border:1px solid #e2e8f0;">
+              <li style="margin-bottom:6px;"><code>ip.addr == 1.2.3.4</code> — 仅捕获与特定 IP 的通信</li>
+              <li style="margin-bottom:6px;"><code>tcp.port == 443</code> — 仅看 HTTPS 流量</li>
+              <li style="margin-bottom:6px;"><code>udp.port == 53</code> — 捕获 DNS 查询</li>
+              <li><code>tcp.flags.reset == 1</code> — 找出所有 RST 重置包</li>
+            </ul>
+          </li>
+          <li><strong>停止与保存</strong>：点击红色停止按钮结束捕获，可将 .pcap 文件保存后离线分析或分享给他人协助排查。</li>
+        </ol>
+
+        <h2>三、三大高频代理故障的 Wireshark 排查方法</h2>
+
+        <h3>故障一：DNS 泄漏（DNS Leak）</h3>
+        <p>使用过滤器 <code>udp.port == 53</code>，观察代理运行期间的 DNS 查询目的地。若看到本机向 <code>114.114.114.114</code> 或 <code>8.8.8.8</code> 之类的 DNS 发出了境外网站的域名解析请求，即说明 DNS 查询绕过了代理隧道直接发出，存在 DNS 泄漏。</p>
+        <p><strong>解决方法：</strong>在代理客户端（如 Clash Verge）中开启 <strong>TUN 模式</strong>，配合 <code>fake-ip</code> 或 <code>redir-host</code> DNS 策略，可以从根本上拦截操作系统层面的原生 DNS 泄漏。</p>
+
+        <h3>故障二：TLS 握手被中断（GFW 主动探测）</h3>
+        <p>使用过滤器 <code>ip.addr == [你的节点IP]</code>。正常的 TLS 握手序列应该是：</p>
+        <p style="font-family:monospace; background:#f8fafc; padding:12px; border-radius:8px; border:1px solid #e2e8f0; font-size:0.9rem;">
+          Client Hello → Server Hello → Certificate → Key Exchange → Client Finished → Application Data
+        </p>
+        <p>如果只能看到 Client Hello 发出后，随即出现多个 <code>TCP Retransmission</code>（重传）或者收到来自节点 IP 的 <code>RST</code> 标志包，说明该节点 IP 已被防火墙屏蔽或服务端异常。</p>
+
+        <h3>故障三：本地端口冲突导致代理无法监听</h3>
+        <p>使用过滤器 <code>tcp.port == 7890</code>（或你的代理本地端口），如果完全没有任何本地流量经过该端口，说明代理客户端未能成功绑定本地监听端口，通常是端口被占用或系统代理设置未生效。</p>
+
+        <h2>四、隐私与安全注意事项</h2>
+        <p>Wireshark 会捕获本机网卡上流过的所有封包，包含敏感的网络通信内容。使用时请注意：</p>
+        <ul>
+          <li>不要在公用电脑上开启长时间全量捕获，可能会记录他人的敏感数据。</li>
+          <li>分享 .pcap 文件前，先使用 Wireshark 的"编辑 → 首选项 → 删除敏感数据"功能对文件进行脱敏处理。</li>
+          <li>在分析 TLS 加密流量时，若未导入私钥，Wireshark 只能看到握手元数据，无法解密加密内容，这是正常现象。</li>
+        </ul>
+
+        <div style="background:#f0fdf4; border:1px solid #22c55e; border-radius:10px; padding:20px; margin-top:30px;">
+          <h3 style="margin:0 0 12px 0; color:#15803d; font-size:1.1rem;">配套工具推荐</h3>
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <a href="speedtest.html" style="background:#fff; border:1px solid #d1fae5; color:#059669; padding:8px 14px; border-radius:8px; text-decoration:none; font-size:0.9rem; font-weight:500;">Speedtest 带宽测速 →</a>
+            <a href="v2rayn.html" style="background:#fff; border:1px solid #d1fae5; color:#059669; padding:8px 14px; border-radius:8px; text-decoration:none; font-size:0.9rem; font-weight:500;">V2RayN 配置指南 →</a>
+            <a href="clash-verge.html" style="background:#fff; border:1px solid #d1fae5; color:#059669; padding:8px 14px; border-radius:8px; text-decoration:none; font-size:0.9rem; font-weight:500;">Clash Verge TUN 模式 →</a>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </main>
+</div>
+
+<footer class="footer" style="margin-top:60px;">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo"><span class="logo-text">云轨导航</span></div>
+      <div class="footer-links">
+        <a href="../about.html">关于我们</a>
+        <a href="../privacy.html">隐私政策</a>
+        <a href="../terms.html">服务条款</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 云轨导航. All rights reserved.</p></div>
+  </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>
