@@ -257,6 +257,122 @@
     .faq-hidden-item-hide {
       display: none !important;
     }
+    
+    /* Recommended Tools Section Styles */
+    .tools-rec-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+    .tools-rec-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .tools-rec-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    .tools-rec-header-icon {
+      flex-shrink: 0;
+    }
+    .tools-rec-more {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #2563eb;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s ease;
+    }
+    .tools-rec-more:hover {
+      color: #1d4ed8;
+      transform: translateX(4px);
+    }
+    .tools-rec-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 1200px) {
+      .tools-rec-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 576px) {
+      .tools-rec-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .tool-card-item {
+      background: #f8fafc;
+      border: 1px solid #f1f5f9;
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .tool-card-item:hover {
+      background: #ffffff;
+      border-color: #2563eb;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+    }
+    .tool-card-icon {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tool-card-name {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+    .tool-card-desc {
+      font-size: 0.75rem;
+      color: #64748b;
+      line-height: 1.4;
+      margin-bottom: 12px;
+      flex-grow: 1;
+      min-height: 34px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .tool-card-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 4px;
+    }
+    .tool-card-badge {
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: #475569;
+      background: #e2e8f0;
+      padding: 2px 6px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
 </style>
   <script type="application/ld+json">
 {
@@ -940,7 +1056,7 @@
           </a>
           <a href="articles/article-8.html" class="wiki-card">
             <span class="wiki-card-q">什么是 IEPL 专线？</span>
-            <span class="wiki-card-a">IEPL是国际以太网私网专线。提供同IPLC一致的免阻断稳定性，但属于二层以太网链路，调度和带宽扩容更为弹性。</span>
+            <span class="wiki-card-a">IEPL是国际以太网私网专线。提供同IPLC一致的免阻断稳定性，但属于二层以太网链路，调度 and 带宽扩容更为弹性。</span>
             <span class="wiki-card-more">阅读百科词条 &rarr;</span>
           </a>
           <a href="articles/article-8.html" class="wiki-card">
@@ -1782,8 +1898,10 @@
             </div>
           </div>
           
-          <!-- Right Column: Anti-Scam Warn Card -->
-          <div class="scam-warn-card">
+          <!-- Right Column -->
+          <div class="faq-warning-right-col" style="display: flex; flex-direction: column; gap: 30px; width: 100%;">
+            <!-- Anti-Scam Warn Card -->
+            <div class="scam-warn-card">
             <div class="scam-warn-header">
               <div class="scam-warn-title">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="scam-warn-icon">
@@ -1840,6 +1958,94 @@
             <a href="avoid-scam/" class="scam-warn-btn">查看完整预警榜单 &rarr;</a>
           </div>
           
+          <!-- Module 4: 实用工具与软件推荐 -->
+                      <div class="tools-rec-card">
+              <div class="tools-rec-header">
+                <div class="tools-rec-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tools-rec-header-icon"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                  实用工具与软件推荐
+                </div>
+                <a href="articles/beginner-1.html" class="tools-rec-more">查看更多工具 &rarr;</a>
+              </div>
+              <div class="tools-rec-grid">
+                <!-- Tool 1: Clash Verge -->
+                <a href="articles/beginner-1.html" class="tool-card-item">
+                  <div class="tool-card-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1e293b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4.418 0-8-3.582-8-8 0-2.42 1.077-4.59 2.78-6.07L7 4l3 2 2-1 2 1 3-2.5.22 2.93C18.923 7.91 20 10.58 20 13c0 4.418-3.582 8-8 8z"></path><circle cx="9" cy="12" r="1.5" fill="#1e293b"></circle><circle cx="15" cy="12" r="1.5" fill="#1e293b"></circle><path d="M12 15a1 1 0 0 1-1-1h2a1 1 0 0 1-1 1z"></path></svg>
+                  </div>
+                  <span class="tool-card-name">Clash Verge</span>
+                  <span class="tool-card-desc">简洁强大的多协议代理客户端</span>
+                  <div class="tool-card-badges">
+                    <span class="tool-card-badge">Win</span>
+                    <span class="tool-card-badge">macOS</span>
+                    <span class="tool-card-badge">Linux</span>
+                  </div>
+                </a>
+                <!-- Tool 2: Shadowrocket -->
+                <a href="articles/beginner-1.html" class="tool-card-item">
+                  <div class="tool-card-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.25-2.5 3.5-2.5 3.5s2.25-1 3.5-2.5L16.5 6.5c1.5-1.5 1.5-3.5 1.5-3.5s-2 0-3.5 1.5L4.5 16.5z"></path><path d="M12 15l-3-3M19 19s-1.5-1-2-2.5M5 5s1 1.5 2.5 2"></path></svg>
+                  </div>
+                  <span class="tool-card-name">Shadowrocket</span>
+                  <span class="tool-card-desc">iOS 最强代理工具 支持多种协议</span>
+                  <div class="tool-card-badges">
+                    <span class="tool-card-badge">iOS</span>
+                  </div>
+                </a>
+                <!-- Tool 3: V2RayN -->
+                <a href="articles/beginner-1.html" class="tool-card-item">
+                  <div class="tool-card-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#005fb8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4l7 14 7-14"></path><path d="M12 18v3"></path></svg>
+                  </div>
+                  <span class="tool-card-name">V2RayN</span>
+                  <span class="tool-card-desc">Windows 平台 V2Ray 客户端</span>
+                  <div class="tool-card-badges">
+                    <span class="tool-card-badge">Windows</span>
+                  </div>
+                </a>
+                <!-- Tool 4: Hiddify Next -->
+                <a href="articles/beginner-1.html" class="tool-card-item">
+                  <div class="tool-card-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20V12M12 20V4M18 20V10"></path></svg>
+                  </div>
+                  <span class="tool-card-name">Hiddify Next</span>
+                  <span class="tool-card-desc">多平台科学上网工具 支持自动分流</span>
+                  <div class="tool-card-badges">
+                    <span class="tool-card-badge">Android</span>
+                    <span class="tool-card-badge">Win</span>
+                    <span class="tool-card-badge">macOS</span>
+                  </div>
+                </a>
+                <!-- Tool 5: Speedtest -->
+                <a href="https://www.speedtest.net" target="_blank" class="tool-card-item">
+                  <div class="tool-card-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L12 12"></path><circle cx="12" cy="12" r="9" stroke-dasharray="4 2"></circle><circle cx="12" cy="12" r="2" fill="#0f172a"></circle></svg>
+                  </div>
+                  <span class="tool-card-name">Speedtest</span>
+                  <span class="tool-card-desc">全球网络测速工具 检测真实网速</span>
+                  <div class="tool-card-badges">
+                    <span class="tool-card-badge">Web</span>
+                    <span class="tool-card-badge">Android</span>
+                    <span class="tool-card-badge">iOS</span>
+                  </div>
+                </a>
+                <!-- Tool 6: Wireshark -->
+                <a href="https://www.wireshark.org" target="_blank" class="tool-card-item">
+                  <div class="tool-card-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c4 0 6-4 8-10 2-6 5-8 7-8-1 2-2 5-2 8s2 6 3 10H4z"></path></svg>
+                  </div>
+                  <span class="tool-card-name">Wireshark</span>
+                  <span class="tool-card-desc">网络抓包分析工具 专业排查问题</span>
+                  <div class="tool-card-badges">
+                    <span class="tool-card-badge">Win</span>
+                    <span class="tool-card-badge">macOS</span>
+                    <span class="tool-card-badge">Linux</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          
+          </div>
         </div>
       </div>
     </section>

@@ -34,7 +34,7 @@ $html = $html.Replace("clash-tutorial/", "tutorial/")
 $html = $html.Replace("shadowrocket-tutorial/", "tutorial/")
 $html = $html.Replace("client-download/", "articles/beginner-1.html")
 
-# 3. Add styling for wiki cards, keyword tags, and FAQ adjustments in style block
+# 3. Add styling for wiki cards, keyword tags, FAQ adjustments, and Recommended Tools
 $extraStyles = @"
 
     /* SEO & GEO Upgrade Styles */
@@ -149,6 +149,122 @@ $extraStyles = @"
     .faq-hidden-item-hide {
       display: none !important;
     }
+    
+    /* Recommended Tools Section Styles */
+    .tools-rec-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+    .tools-rec-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .tools-rec-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    .tools-rec-header-icon {
+      flex-shrink: 0;
+    }
+    .tools-rec-more {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #2563eb;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s ease;
+    }
+    .tools-rec-more:hover {
+      color: #1d4ed8;
+      transform: translateX(4px);
+    }
+    .tools-rec-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 1200px) {
+      .tools-rec-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 576px) {
+      .tools-rec-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .tool-card-item {
+      background: #f8fafc;
+      border: 1px solid #f1f5f9;
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .tool-card-item:hover {
+      background: #ffffff;
+      border-color: #2563eb;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+    }
+    .tool-card-icon {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tool-card-name {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+    .tool-card-desc {
+      font-size: 0.75rem;
+      color: #64748b;
+      line-height: 1.4;
+      margin-bottom: 12px;
+      flex-grow: 1;
+      min-height: 34px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .tool-card-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 4px;
+    }
+    .tool-card-badge {
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: #475569;
+      background: #e2e8f0;
+      padding: 2px 6px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
 "@
 
 # Inject styles before </style> in the index.html
@@ -208,6 +324,17 @@ $html = $html.Replace($targetFaqText, $replaceFaqText)
 $btnExpand = $config.btn_expand_text
 $newFooterBlock = $newFooterBlockTemplate -f $btnExpand
 $html = $html.Replace($oldFooterBlock, $newFooterBlock)
+
+# Restructure right column of faq-warning-grid and inject Recommended Tools card
+$oldRightColStart = $config.old_right_col_start -replace "`r`n", "`n"
+$newRightColStart = $config.new_right_col_start -replace "`r`n", "`n"
+$html = $html.Replace($oldRightColStart, $newRightColStart)
+
+$oldRightColEnd = $config.old_right_col_end -replace "`r`n", "`n"
+$newRightColEndTemplate = $config.new_right_col_end_template -replace "`r`n", "`n"
+$toolsRecHtml = $config.tools_rec_html -replace "`r`n", "`n"
+$newRightColEnd = $newRightColEndTemplate -f $toolsRecHtml
+$html = $html.Replace($oldRightColEnd, $newRightColEnd)
 
 # 6. Generate FAQ Schema (JSON-LD)
 $mainEntityArray = @()
@@ -287,4 +414,4 @@ $html = $html -replace "`n", "`r`n"
 # 8. Write index.html back with no-BOM UTF-8
 $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
 [System.IO.File]::WriteAllText($htmlPath, $html, $utf8NoBom)
-Write-Output "Successfully upgraded index.html with inline collapsed FAQ toggle link!"
+Write-Output "Successfully upgraded index.html with Recommended Tools block!"
