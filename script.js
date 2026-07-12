@@ -73,38 +73,169 @@ document.addEventListener('DOMContentLoaded', () => {
       { name: "小火箭初学者", avatar: "X", time: "1 天前", content: "请问那个 Shadowrocket (小火箭) 的节点怎么配置订阅啊？找了好多教程都不如这里的详细，照着配置一次就成功了！", likes: 9, replies: [
         { name: "云轨编辑组", avatar: "编", isEditor: true, time: "18 小时前", content: "不客气！可以关注我们的‘客户端教程’板块，里面有针对 iOS、Windows、macOS 和 Android 的最全配置说明。" }
       ]}
-    ],
-    "sujie.html": [
-      { name: "游戏狂人", avatar: "Y", time: "3 小时前", content: "速界的 IPLC 专线打游戏确实爽，打 APEX 丢包率几乎是 0，延迟只有 40ms 左右，强烈推荐给需要联机的朋友！", likes: 15, replies: [] },
-      { name: "白天不懂夜的黑", avatar: "B", time: "8 小时前", content: "买了他家的月付套餐试试水，高峰期看 Netflix 4K 的加载速度很快，比我之前的普通中转要强不少。", likes: 7, replies: [] }
-    ],
-    "edgenova.html": [
-      { name: "学术研究员", avatar: "X", time: "1 小时前", content: "这家的流媒体 and ChatGPT 解锁非常完美，每次用都很顺利，适合我们需要查资料写论文的用户，稳定性首选。", likes: 32, replies: [] },
-      { name: "网络搬砖工", avatar: "W", time: "4 小时前", content: "EdgeNova 算是老牌子的天花板了，除了价格稍微贵一点，稳定性没得说，适合作为主力机场使用。", likes: 14, replies: [] }
-    ],
-    "guangnianti.html": [
-      { name: "追剧达人", avatar: "Z", time: "2 小时前", content: "光年梯的节点比较多，特别是亚太地区的节点，看 Disney+ 和 YouTube 4k 完全不卡，性价比很高！", likes: 11, replies: [] }
-    ],
-    "huanyuyun.html": [
-      { name: "大流量用户", avatar: "D", time: "6 小时前", content: "寰宇云的限速给得很宽，大带宽下载大文件或者看高清视频都很舒服，中转入口也很稳定。", likes: 19, replies: [] }
-    ],
-    "jilianyun.html": [
-      { name: "性价比之王", avatar: "J", time: "1 天前", content: "极连云的十元档套餐是真的香，节点多速度也不慢，对学生党或者轻度科学上网用户来说无敌了。", likes: 21, replies: [] }
-    ],
-    "kexinyun.html": [
-      { name: "备用小能手", avatar: "B", time: "12 小时前", content: "可信云的稳定性不错，用来做主力或者备用都很合适，这篇评测的数据很客观，给博主点赞！", likes: 8, replies: [] }
-    ],
-    "shunyun.html": [
-      { name: "快意恩仇", avatar: "K", time: "2 天前", content: "瞬云的按量计费套餐很划算，平时用得少的人买这个最省钱了，不用担心月度流量过期清零。", likes: 13, replies: [] }
     ]
   };
 
-  const generalComments = [
-    { name: "网络安全新手", avatar: "W", time: "4 小时前", content: "跟着教程一步步配置好了，Clash Verge 用起来比之前的客户端要顺手很多，多谢博主分享！", likes: 12, replies: [] },
-    { name: "爱思考的猫", avatar: "A", time: "1 天前", content: "请问一下，TUN 模式和普通系统代理模式相比，除了流量接管更全，会对网速有明显影响吗？", likes: 6, replies: [
-      { name: "云轨编辑组", avatar: "编", isEditor: true, time: "20 小时前", content: "通常情况下对网速没有可感知的负面影响，反而因为接管了所有底层流量，对很多不支持代理的软件和游戏非常有帮助。" }
-    ]}
-  ];
+  function generateSeededComments(pageKey) {
+    let seed = 0;
+    for (let i = 0; i < pageKey.length; i++) {
+      seed += pageKey.charCodeAt(i) * (i + 1);
+    }
+
+    function random() {
+      let x = Math.sin(seed++) * 10000;
+      return x - Math.floor(x);
+    }
+
+    function selectRandom(arr) {
+      let index = Math.floor(random() * arr.length);
+      return arr[index];
+    }
+
+    const names = ["科学探索者", "极客工坊", "追风少年", "学海无涯", "网络新手王", "游戏发烧友", "大白兔", "数字游民", "学术汪", "科技探路人", "行者无疆", "风口浪尖", "爱吃泡面的猫", "星河程序员", "云端旅行者"];
+    const times = ["2 小时前", "5 小时前", "12 小时前", "1 天前", "2 天前", "3 天前", "4 天前"];
+
+    // Detect airport name
+    let airportName = "该机场";
+    if (pageKey.includes("sujie")) airportName = "速界";
+    else if (pageKey.includes("edgenova")) airportName = "EdgeNova";
+    else if (pageKey.includes("guangnianti")) airportName = "光年梯";
+    else if (pageKey.includes("huanyuyun")) airportName = "寰宇云";
+    else if (pageKey.includes("jilianyun")) airportName = "极连云";
+    else if (pageKey.includes("kexinyun")) airportName = "可信云";
+    else if (pageKey.includes("shunyun")) airportName = "瞬云";
+    else if (pageKey.includes("kuaili")) airportName = "快狸";
+
+    const pools = {
+      tutorial: [
+        {
+          name: "Clash粉丝",
+          content: "请问下博主，这个配置在配置完规则之后，为什么部分国内网站也会走代理？是分流规则没选对吗？",
+          replies: [{ name: "云轨编辑组", isEditor: true, content: "建议检查下客户端的代理模式，是否设置成了“全局模式(Global)”。日常使用推荐选择“规则模式(Rule)”，这样国内流量就会自动直连，不会消耗代理流量。" }]
+        },
+        {
+          name: "苹果全家桶",
+          content: "感谢博主，终于找到一篇把 Shadowrocket 配置讲得这么简单明了的教程了！之前折腾的好久都没成功，给站长点个赞！",
+          replies: []
+        },
+        {
+          name: "极客工坊",
+          content: "Clash Verge 确实比旧版的好用很多，特别是支持新的内核，配置好 TUN 模式之后连一些不支持代理的客户端软件也能连上了，强推！",
+          replies: []
+        },
+        {
+          name: "学海无涯",
+          content: "请问在安卓上用哪个客户端最稳定啊？目前在用 v2rayNG，感觉切换节点的时候有点卡顿。",
+          replies: [{ name: "云轨编辑组", isEditor: true, content: "安卓平台目前首推 v2rayNG 作为基础版；如果需要更强的主题和分流策略组控制，可以尝试 Sing-box 或者 Clash Meta 系列。" }]
+        }
+      ],
+      scam: [
+        {
+          name: "爱吃泡面的猫",
+          content: "这个跑路雷达太及时了！最近正准备买个年付套餐，结果在这上面一查居然已经跑路或者失联了，差点交了学费，感谢博主！",
+          replies: []
+        },
+        {
+          name: "独行侠",
+          content: "大家买机场千万别贪便宜买年付，特别是那些低价年付！很多机场都是收一波钱就跑路，月付才是王道！",
+          replies: [{ name: "云轨编辑组", isEditor: true, content: "非常赞同！月付能最大程度降低用户的资金风险，即便跑路也只是损失一个月套餐钱。" }]
+        },
+        {
+          name: "数字游民",
+          content: "最近又有好几家老牌机场关站了，大家手里最好备一到两个按量计费的机场当做备用，防患于未然。",
+          replies: []
+        }
+      ],
+      review: [
+        {
+          name: "学术研究员",
+          content: `这篇关于 ${airportName} 的评测很中肯。我用这家的套餐三个月了，晚高峰的 IPLC 专线确实很稳，看 4K 不卡。`,
+          replies: []
+        },
+        {
+          name: "游戏狂人",
+          content: `请问 ${airportName} 现在的节点延迟一般是多少？玩海外服游戏丢包严重吗？`,
+          replies: [{ name: "云轨编辑组", isEditor: true, content: "实测他家的专线节点平均延迟在 30-50ms 左右，丢包率基本为零，非常适合游戏联机和网页秒开。" }]
+        },
+        {
+          name: "大流量用户",
+          content: `用了一周，速度没得说，就是客户端订阅有时候更新失败，需要重新导入一下才行。`,
+          replies: []
+        }
+      ],
+      knowledge: [
+        {
+          name: "技术先锋",
+          content: "这篇科普把 IPLC 和 IEPL 的物理链路区别讲得非常清楚。之前一直被各种机场商的宣传语唬住，现在终于明白原理了！",
+          replies: []
+        },
+        {
+          name: "行者无疆",
+          content: "请问 BGP 中转入口和普通直连相比，优势主要体现在哪里？",
+          replies: [{ name: "云轨编辑组", isEditor: true, content: "主要优势在于 BGP 入口可以自动根据用户网络（电信/联通/移动）分流，优化第一公里延迟，且中转网络的高带宽可以有效抵御高峰期丢包。" }]
+        },
+        {
+          name: "科技探路人",
+          content: "看完文章，终于知道为什么晚上八九点我的网络就变慢了。原来是公网国际出口拥堵，不得不服专线网络的稳定性。",
+          replies: []
+        }
+      ]
+    };
+
+    // Determine category
+    let cat = "knowledge";
+    if (pageKey.includes("tutorial") || pageKey.includes("clash") || pageKey.includes("rocket") || pageKey.includes("v2rayn") || pageKey.includes("verge") || pageKey.includes("mac") || pageKey.includes("win") || pageKey.includes("ios") || pageKey.includes("and")) {
+      cat = "tutorial";
+    } else if (pageKey.includes("scam") || pageKey.includes("blacklist")) {
+      cat = "scam";
+    } else if (airportName !== "该机场") {
+      cat = "review";
+    }
+
+    let pool = pools[cat];
+    
+    // Choose 2 distinct comments from the pool
+    let selectedIndices = [];
+    let attempts = 0;
+    while (selectedIndices.length < Math.min(2, pool.length) && attempts < 10) {
+      let idx = Math.floor(random() * pool.length);
+      if (!selectedIndices.includes(idx)) {
+        selectedIndices.push(idx);
+      }
+      attempts++;
+    }
+
+    let result = selectedIndices.map(idx => {
+      let c = pool[idx];
+      let name = c.name;
+      if (random() > 0.5) {
+        name = selectRandom(names);
+      }
+      let time = selectRandom(times);
+      let likes = Math.floor(random() * 30) + 2;
+      
+      let replies = c.replies.map(r => {
+        return {
+          name: r.name,
+          avatar: "编",
+          isEditor: true,
+          time: selectRandom(times),
+          content: r.content
+        };
+      });
+
+      return {
+        name: name,
+        avatar: name.substring(0, 1).toUpperCase(),
+        time: time,
+        content: c.content,
+        likes: likes,
+        replies: replies
+      };
+    });
+
+    return result;
+  }
 
   function getPageKey() {
     let path = window.location.pathname;
@@ -154,7 +285,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (comments) {
       comments = JSON.parse(comments);
     } else {
-      comments = defaultComments[pageKey] || generalComments;
+      if (pageKey === 'index.html') {
+        comments = defaultComments['index.html'];
+      } else {
+        comments = generateSeededComments(pageKey);
+      }
       localStorage.setItem(storageKey, JSON.stringify(comments));
     }
 
