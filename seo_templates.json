@@ -113,9 +113,9 @@
       { "name": "常见故障排查：连不上网怎么办？", "url": "beginner-3.html" }
     ],
     "review": [
-      { "name": "光年云机场深度评测报告", "url": "guangnianti.html" },
-      { "name": "环宇云机场客观测评分析", "url": "huanyuyun.html" },
-      { "name": "速捷云专线机场性能分析", "url": "sujie.html" }
+      { "name": "光年梯机场深度评测报告", "url": "guangnianti.html" },
+      { "name": "寰宇云机场客观测评分析", "url": "huanyuyun.html" },
+      { "name": "速界专线机场性能分析", "url": "sujie.html" }
     ],
     "default": [
       { "name": "翻墙基础原理与常见代理协议解析", "url": "article-1.html" },
