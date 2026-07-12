@@ -146,20 +146,99 @@ document.addEventListener('DOMContentLoaded', () => {
           replies: []
         }
       ],
-      review: [
+      sujie: [
         {
-          name: "学术研究员",
-          content: `这篇关于 ${airportName} 的评测很中肯。我用这家的套餐三个月了，晚高峰的 IPLC 专线确实很稳，看 4K 不卡。`,
+          name: "Apex玩家",
+          content: "速界的 IPLC 专线打游戏确实爽，打 APEX 丢包率几乎是 0，延迟只有 40ms 左右，联机体验拉满！",
           replies: []
         },
         {
-          name: "游戏狂人",
-          content: `请问 ${airportName} 现在的节点延迟一般是多少？玩海外服游戏丢包严重吗？`,
-          replies: [{ name: "云轨编辑组", isEditor: true, content: "实测他家的专线节点平均延迟在 30-50ms 左右，丢包率基本为零，非常适合游戏联机和网页秒开。" }]
+          name: "流媒体追剧党",
+          content: "买了他家的专业版套餐，晚高峰看 Netflix 4K 的加载速度特别快，比我之前的普通中转强太多了。",
+          replies: [{ name: "云轨编辑组", isEditor: true, content: "感谢支持！速界全节点均使用专线分流，对 Netflix、Disney+ 提供了原生解锁。" }]
+        }
+      ],
+      edgenova: [
+        {
+          name: "学术研究员",
+          content: "这家的 ChatGPT 和 Claude 解锁非常完美，平时查学术文献 and 进行 AI 对话非常稳定，适合办公首选。",
+          replies: []
         },
         {
-          name: "大流量用户",
-          content: `用了一周，速度没得说，就是客户端订阅有时候更新失败，需要重新导入一下才行。`,
+          name: "大流量搬砖工",
+          content: "EdgeNova 算是老牌子里的高天花板了，除了价格稍微贵一点之外，稳定性和可靠性确实无懈可击。",
+          replies: [{ name: "云轨编辑组", isEditor: true, content: "是的，EdgeNova 专注于商业办公与高端科研用户，服务质量在业内有口皆碑。" }]
+        }
+      ],
+      guangnianti: [
+        {
+          name: "追剧达人",
+          content: "光年梯的亚太节点丰富，新加坡和日本节点看 YouTube 4k 高清视频秒开，拖动进度条无卡顿。",
+          replies: []
+        },
+        {
+          name: "科技狂热者",
+          content: "测试了三天，晚高峰跑测速能到 300Mbps 以上，这性价比在同级别机场里算是非常高了。",
+          replies: []
+        }
+      ],
+      huanyuyun: [
+        {
+          name: "大流量下载党",
+          content: "寰宇云的限速给得很宽，用来同步几百G的云盘数据和下载外网大文件速度极快，中转入口相当扎实。",
+          replies: []
+        },
+        {
+          name: "跨境电商运营",
+          content: "用来运营 TikTok 和亚马逊店铺半个月了，IP 的干净度很高，没有遇到过验证码弹窗，稳定性过关。",
+          replies: [{ name: "云轨编辑组", isEditor: true, content: "寰宇云配置了住宅原生 IP 的原生解锁，非常适合有外贸、网店及跨境社交平台运营需求的用户。" }]
+        }
+      ],
+      jilianyun: [
+        {
+          name: "性价比之王",
+          content: "极连云的十元档月付套餐真的香，节点不仅多而且平时网页加载极快，对学生党来说太良心了！",
+          replies: []
+        },
+        {
+          name: "轻度用户",
+          content: "只是用来偶尔查查资料、刷刷推特，极连云的基础配置完全能满足我的日常需要，性价比较高。",
+          replies: []
+        }
+      ],
+      kexinyun: [
+        {
+          name: "备用小能手",
+          content: "可信云的主力专线很能打，拿来做双机场主备方案非常合适。看了这篇非常客观的评测才入手的，体验确实如文中所说。",
+          replies: []
+        },
+        {
+          name: "安全第一",
+          content: "购买体验很顺畅，订阅在 Shadowrocket 上一键导入，客服回复速度也很快，赞一个！",
+          replies: []
+        }
+      ],
+      shunyun: [
+        {
+          name: "快意恩仇",
+          content: "瞬云的按量计费套餐很良心，适合我这种平时不怎么看视频、只是偶尔谷歌查个资料的轻度用户，流量不过期。",
+          replies: []
+        },
+        {
+          name: "出差人士",
+          content: "他家的定制客户端一键直连，用起来非常省心，出差在外查个邮件或者登录海外账号从来没掉过链子。",
+          replies: []
+        }
+      ],
+      kuaili: [
+        {
+          name: "老司机",
+          content: "快狸机场的节点命名和地区划分非常清晰，香港和台湾节点在看巴哈姆特时特别流畅，晚高峰表现极佳。",
+          replies: []
+        },
+        {
+          name: "网速测试狂",
+          content: "支持多设备同时在线，用他家的家庭套餐和室友合租分摊下来非常划算，速度和稳定性挑不出毛病。",
           replies: []
         }
       ],
@@ -188,8 +267,14 @@ document.addEventListener('DOMContentLoaded', () => {
       cat = "tutorial";
     } else if (pageKey.includes("scam") || pageKey.includes("blacklist")) {
       cat = "scam";
-    } else if (airportName !== "该机场") {
-      cat = "review";
+    } else {
+      const airportsList = ["sujie", "edgenova", "guangnianti", "huanyuyun", "jilianyun", "kexinyun", "shunyun", "kuaili"];
+      for (const ap of airportsList) {
+        if (pageKey.includes(ap)) {
+          cat = ap;
+          break;
+        }
+      }
     }
 
     let pool = pools[cat];
