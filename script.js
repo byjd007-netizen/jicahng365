@@ -190,55 +190,55 @@ document.addEventListener('DOMContentLoaded', () => {
         </form>
 
         <div class="comments-list">
-          \${comments.map((comment, index) => {
+          ${comments.map((comment, index) => {
             const avatarColor = comment.isEditor ? '#ef4444' : getRandomAvatarColor();
-            return \`
+            return `
               <div class="comment-item">
-                <div class="comment-avatar" style="background-color: \${avatarColor}">
-                  \${comment.avatar || (comment.name ? comment.name.substring(0,1).toUpperCase() : '匿')}
+                <div class="comment-avatar" style="background-color: ${avatarColor}">
+                  ${comment.avatar || (comment.name ? comment.name.substring(0,1).toUpperCase() : '匿')}
                 </div>
                 <div class="comment-content">
                   <div class="comment-meta">
-                    <span class="comment-author-name">\${comment.name}</span>
-                    \${comment.isEditor ? \`<span class="comment-editor-badge">官方编辑</span>\` : ''}
-                    <span class="comment-time">\${comment.time}</span>
+                    <span class="comment-author-name">${comment.name}</span>
+                    ${comment.isEditor ? `<span class="comment-editor-badge">官方编辑</span>` : ''}
+                    <span class="comment-time">${comment.time}</span>
                   </div>
-                  <p class="comment-body">\${comment.content}</p>
+                  <p class="comment-body">${comment.content}</p>
                   <div class="comment-actions">
-                    <button class="comment-action-btn like-btn" data-index="\${index}">
+                    <button class="comment-action-btn like-btn" data-index="${index}">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
-                      赞 (\${comment.likes || 0})
+                      赞 (${comment.likes || 0})
                     </button>
-                    <button class="comment-action-btn reply-trigger" data-index="\${index}">
+                    <button class="comment-action-btn reply-trigger" data-index="${index}">
                       回复
                     </button>
                   </div>
                   
-                  \${comment.replies && comment.replies.length > 0 ? \`
+                  ${comment.replies && comment.replies.length > 0 ? `
                     <div class="comment-replies">
-                      \${comment.replies.map(reply => {
+                      ${comment.replies.map(reply => {
                         const replyAvatarColor = reply.isEditor ? '#ef4444' : getRandomAvatarColor();
-                        return \`
+                        return `
                           <div class="comment-reply-item">
-                            <div class="comment-reply-avatar" style="background-color: \${replyAvatarColor}">
-                              \${reply.avatar || (reply.name ? reply.name.substring(0,1).toUpperCase() : '匿')}
+                            <div class="comment-reply-avatar" style="background-color: ${replyAvatarColor}">
+                              ${reply.avatar || (reply.name ? reply.name.substring(0,1).toUpperCase() : '匿')}
                             </div>
                             <div class="comment-reply-content">
                               <div class="comment-meta">
-                                <span class="comment-author-name">\${reply.name}</span>
-                                \${reply.isEditor ? \`<span class="comment-editor-badge">官方编辑</span>\` : ''}
-                                <span class="comment-time">\${reply.time}</span>
+                                <span class="comment-author-name">${reply.name}</span>
+                                ${reply.isEditor ? `<span class="comment-editor-badge">官方编辑</span>` : ''}
+                                <span class="comment-time">${reply.time}</span>
                               </div>
-                              <p class="comment-body">\${reply.content}</p>
+                              <p class="comment-body">${reply.content}</p>
                             </div>
                           </div>
-                        \`;
+                        `;
                       }).join('')}
                     </div>
-                  \` : ''}
+                  ` : ''}
                 </div>
               </div>
-            \`;
+            `;
           }).join('')}
         </div>
       `;
