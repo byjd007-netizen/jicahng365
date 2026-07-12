@@ -144,116 +144,6 @@
     .faq-v3-item {
       margin-bottom: 0 !important;
     }
-
-    /* SEO & GEO Upgrade Styles */
-    .seo-tags-section {
-      background: #ffffff;
-      padding: 30px 0;
-      border-bottom: 1px solid #e2e8f0;
-      text-align: center;
-    }
-    .seo-tags-title {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: #0f172a;
-      margin-bottom: 15px;
-      letter-spacing: 0.5px;
-    }
-    .seo-tags-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .seo-tag-link {
-      background: #f1f5f9;
-      color: #334155;
-      font-size: 0.9rem;
-      font-weight: 600;
-      padding: 8px 16px;
-      border-radius: 20px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      border: 1px solid #e2e8f0;
-    }
-    .seo-tag-link:hover {
-      background: #2563eb;
-      color: #ffffff;
-      border-color: #2563eb;
-      transform: translateY(-1px);
-    }
-    
-    .wiki-entries-section {
-      background: #ffffff;
-      padding: 60px 0;
-      border-bottom: 1px solid #e2e8f0;
-    }
-    .wiki-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      margin-top: 30px;
-    }
-    @media (max-width: 991px) {
-      .wiki-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (max-width: 576px) {
-      .wiki-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    .wiki-card {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 24px;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-    }
-    .wiki-card:hover {
-      background: #ffffff;
-      border-color: #2563eb;
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-      transform: translateY(-2px);
-    }
-    .wiki-card-q {
-      font-size: 1.05rem;
-      font-weight: 800;
-      color: #0f172a;
-      margin-bottom: 8px;
-    }
-    .wiki-card:hover .wiki-card-q {
-      color: #2563eb;
-    }
-    .wiki-card-a {
-      font-size: 0.9rem;
-      color: #64748b;
-      line-height: 1.5;
-      flex-grow: 1;
-    }
-    .wiki-card-more {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: #2563eb;
-      margin-top: 15px;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .faq-v3-grid {
-      grid-template-columns: 1fr !important;
-      gap: 12px !important;
-    }
-    .faq-v3-item {
-      margin-bottom: 0 !important;
-    }
     .faq-hidden-item-hide {
       display: none !important;
     }
@@ -994,7 +884,7 @@
         </div>
       </div>
     </section>
-    <!-- Module 2: 知识百科入口 -->
+        <!-- Module 2: 知识百科入口 -->
     <section class="wiki-entries-section">
       <div class="home-v2-container">
         <div class="home-v2-sec-header">
@@ -1003,22 +893,22 @@
         <div class="wiki-grid">
           <a href="articles/article-8.html" class="wiki-card">
             <span class="wiki-card-q">什么是 IPLC 专线？</span>
-            <span class="wiki-card-a">IPLC是点对点跨国物理专线，内网传输不经过公网，完全绕过GFW，提供零丢包高稳定的终极访问体验。</span>
+            <span class="wiki-card-a">IPLC是国际私有物理专线，内网传输完全绕过GFW，提供零丢包、低延迟且免阻断的终极访问体验。</span>
             <span class="wiki-card-more">阅读百科词条 &rarr;</span>
           </a>
-          <a href="articles/article-8.html" class="wiki-card">
-            <span class="wiki-card-q">什么是 IEPL 专线？</span>
-            <span class="wiki-card-a">IEPL是国际以太网私网专线。提供同IPLC一致的免阻断稳定性，但属于二层以太网链路，调度和带宽扩容更为弹性。</span>
+          <a href="articles/article-9.html" class="wiki-card">
+            <span class="wiki-card-q">如何防止真实 IP 泄露？</span>
+            <span class="wiki-card-a">开启WebRTC禁用规则，启用安全DNS解析并使用防泄露代理规则，从根本上杜绝代理环境下的真实IP暴露风险。</span>
             <span class="wiki-card-more">阅读百科词条 &rarr;</span>
           </a>
-          <a href="articles/article-8.html" class="wiki-card">
-            <span class="wiki-card-q">什么是 BGP 中继线路？</span>
-            <span class="wiki-card-a">BGP中转是机场入口部署多线服务器，自动适配联通、移动、电信用户，消除跨运营商跨省的高延迟与网络丢包。</span>
+          <a href="articles/article-7.html" class="wiki-card">
+            <span class="wiki-card-q">什么是 Hysteria 2 协议？</span>
+            <span class="wiki-card-a">Hysteria 2是基于UDP的超快速代理协议，采用独特的拥堵控制算法，能在高丢包 and 恶劣网络下跑满带宽速度。</span>
             <span class="wiki-card-more">阅读百科词条 &rarr;</span>
           </a>
           <a href="articles/article-6.html" class="wiki-card">
-            <span class="wiki-card-q">机场晚上为什么慢？</span>
-            <span class="wiki-card-a">晚高峰20-23点是公网国际出口拥堵期。普通直连线路受QoS限速丢包严重，只有专线中转网络能保障全天不限速。</span>
+            <span class="wiki-card-q">如何彻底排查节点断流？</span>
+            <span class="wiki-card-a">从本地DNS污染、宽带QoS限速、中转入口拥堵及客户端内核版本兼容性四个维度逐步排查断流及超时问题。</span>
             <span class="wiki-card-more">阅读百科词条 &rarr;</span>
           </a>
         </div>
@@ -1039,36 +929,6 @@
           <a href="knowledge.html" class="seo-tag-link">v2rayNG配置</a>
           <a href="knowledge.html" class="seo-tag-link">ChatGPT登录</a>
           <a href="avoid-scam.html" class="seo-tag-link">机场跑路雷达</a>
-        </div>
-      </div>
-    </section>
-    <!-- Module 2: 知识百科入口 -->
-    <section class="wiki-entries-section">
-      <div class="home-v2-container">
-        <div class="home-v2-sec-header">
-          <h2 class="home-v2-sec-title">🌐 跨境网络知识百科词条</h2>
-        </div>
-        <div class="wiki-grid">
-          <a href="articles/article-8.html" class="wiki-card">
-            <span class="wiki-card-q">什么是 IPLC 专线？</span>
-            <span class="wiki-card-a">IPLC是点对点跨国物理专线，内网传输不经过公网，完全绕过GFW，提供零丢包高稳定的终极访问体验。</span>
-            <span class="wiki-card-more">阅读百科词条 &rarr;</span>
-          </a>
-          <a href="articles/article-8.html" class="wiki-card">
-            <span class="wiki-card-q">什么是 IEPL 专线？</span>
-            <span class="wiki-card-a">IEPL是国际以太网私网专线。提供同IPLC一致的免阻断稳定性，但属于二层以太网链路，调度 and 带宽扩容更为弹性。</span>
-            <span class="wiki-card-more">阅读百科词条 &rarr;</span>
-          </a>
-          <a href="articles/article-8.html" class="wiki-card">
-            <span class="wiki-card-q">什么是 BGP 中继线路？</span>
-            <span class="wiki-card-a">BGP中转是机场入口部署多线服务器，自动适配联通、移动、电信用户，消除跨运营商跨省的高延迟与网络丢包。</span>
-            <span class="wiki-card-more">阅读百科词条 &rarr;</span>
-          </a>
-          <a href="articles/article-6.html" class="wiki-card">
-            <span class="wiki-card-q">机场晚上为什么慢？</span>
-            <span class="wiki-card-a">晚高峰20-23点是公网国际出口拥堵期。普通直连线路受QoS限速丢包严重，只有专线中转网络能保障全天不限速。</span>
-            <span class="wiki-card-more">阅读百科词条 &rarr;</span>
-          </a>
         </div>
       </div>
     </section>
