@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YAML 配置导入失败怎么办？缩进、编码与字段错误排查指南 - 云轨导航</title>
+  <link rel="stylesheet" href="../index.css?v=6">
+  <link rel="canonical" href="https://yunguidaohang.com/articles/yaml-config-import-error.html">
+  <meta name="description" content="针对 Windows/Mac 平台 Clash 客户端导入订阅时出现的 YAML 配置文件解析失败、缩进错误等报错提供技术修复指引。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://yunguidaohang.com/articles/yaml-config-import-error.html">
+  <meta property="og:title" content="YAML 配置导入失败怎么办？缩进、编码与字段错误排查指南 - 云轨导航">
+  <meta property="og:description" content="针对 Windows/Mac 平台 Clash 客户端导入订阅时出现的 YAML 配置文件解析失败、缩进错误等报错提供技术修复指引。">
+  <meta property="og:image" content="https://yunguidaohang.com/assets/images/new_logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="YAML 配置导入失败怎么办？缩进、编码与字段错误排查指南 - 云轨导航">
+  <meta name="twitter:description" content="针对 Windows/Mac 平台 Clash 客户端导入订阅时出现的 YAML 配置文件解析失败、缩进错误等报错提供技术修复指引。">
+  <meta name="twitter:image" content="https://yunguidaohang.com/assets/images/new_logo.png">
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "YAML 配置导入失败怎么办？缩进、编码与字段错误排查指南",
+      "image": "https://yunguidaohang.com/assets/images/new_logo.png",
+      "datePublished": "2026-07-13T08:00:00+08:00",
+      "dateModified": "2026-07-13T08:00:00+08:00",
+      "description": "针对 Windows/Mac 平台 Clash 客户端导入订阅时出现的 YAML 配置文件解析失败、缩进错误等报错提供技术修复指引。",
+      "author": {
+          "@type": "Organization",
+          "name": "云轨导航技术编辑团队",
+          "url": "https://yunguidaohang.com/about.html"
+      },
+      "publisher": {
+          "@type": "Organization",
+          "name": "云轨导航",
+          "logo": {
+              "@type": "ImageObject",
+              "url": "https://yunguidaohang.com/assets/images/new_logo.png"
+          }
+      }
+  }
+  </script>
+</head>
+<body class="article-page">
+<header class="header">
+  <div class="container">
+    <a href="../index.html" class="logo-container">
+        <span class="logo-text">云轨导航</span>
+      </a>
+    <nav class="nav-menu" id="navMenu">
+      <a href="../index.html" class="nav-link">首页探索</a>
+      <a href="../airports.html" class="nav-link">机场测评</a>
+      <a href="../ranking.html" class="nav-link">机场排行</a>
+      <a href="../knowledge.html" class="nav-link active">科普指南</a>
+      <a href="../about.html" class="nav-link">关于我们</a>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu"></button>
+  </div>
+</header>
+
+<div class="article-layout-container">
+    <aside class="sidebar-left">
+        <div class="widget toc-widget">
+            <h3 class="widget-title">文章目录</h3>
+            <nav id="toc" class="toc-nav"></nav>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="breadcrumbs" style="margin-bottom: 25px; font-size: 0.95rem; color: #64748b; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0;">
+            <a href="../index.html" style="color: #0ea5e9; text-decoration: none; font-weight: 500;">首页</a> &gt; 
+            <a href="../knowledge.html" style="color: #0ea5e9; text-decoration: none; font-weight: 500;">科普指南</a> &gt; 
+            <span class="current" style="color: #94a3b8;">YAML配置导入报错排查</span>
+        </div>
+        
+        <article class="article-box">
+            <header class="article-header" style="text-align: center; margin-bottom: 40px;">
+                <h1 class="article-title" style="font-size: 2.2rem; color: #0f172a; margin: 0 0 20px 0; font-weight: 800; line-height: 1.3;">YAML 配置导入失败怎么办？缩进、编码与字段错误排查指南</h1>
+                <div class="article-meta" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px; color: #64748b; font-size: 0.95rem; margin-bottom: 25px;">
+                    <span>作者: 技术编辑部</span>
+                    <span>阅读时长: 约 6 分钟</span>
+                    <span>发布于: 2026-07-13</span>
+                </div>
+                <div class="article-tags" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; padding-bottom: 25px; border-bottom: 1px solid #e2e8f0;">
+                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">故障排查</span>
+                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">网络工具</span>
+                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">GEO优化</span>
+                </div>
+            </header>
+            
+            <div class="article-body" id="articleBody">
+                <p>在使用 Clash Verge 或 Clash for Windows 时，手动导入本地 YAML 配置文件经常会遇到“YAML Parse Error”、“invalid config”或者“配置为空”等导入失败的报错。这通常是由于文件格式不规范导致的。本文将手把手教您如何排查并修复。</p>
+
+<h2>一、缩进错误 (Indentation Errors) 导致的 YAML 解析失败</h2>
+<p>YAML 是一种对格式要求极其苛刻的标记语言，它完全依赖**缩进空格**来表示数据层级结构：</p>
+<ul>
+    <li><strong>严禁使用 Tab 键缩进</strong>：YAML 文件中只能使用纯空格（Space）进行缩进。如果你的编辑器在排版时使用了 Tab 键，Clash 解析内核会直接抛出解析错误。</li>
+    <li><strong>上下层级空格必须对齐</strong>：例如在 `proxies:` 列表下的每个节点配置，前面的空格数量必须完全一致。如果某一行多出一个空格，整段配置都会失效。</li>
+</ul>
+
+<h2>二、非 UTF-8 编码引起的字符集冲突</h2>
+<p>如果你的 YAML 配置文件中包含中文节点名称（如“深圳中转 1.0x”），而配置文件的文件保存编码格式是 Windows 默认的 ANSI 或 UTF-16：</p>
+<p>软件内核在读取中文汉字时会产生乱码，从而导致格式校验失败。请务必使用高级文本编辑器（如 VS Code 或 Notepad++），在保存时将文件编码格式显式选择为<strong>“UTF-8 without BOM（无BOM的UTF-8）”</strong>。</p>
+            </div>
+        </article>
+    </main>
+</div>
+
+<footer class="footer" style="margin-top: 60px;">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <span class="logo-text">云轨导航</span>
+      </div>
+      <div class="footer-links">
+        <a href="../about.html">关于我们</a>
+        <a href="../contact.html">联系方式</a>
+        <a href="../privacy.html">隐私政策</a>
+        <a href="../terms.html">服务条款</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 云轨导航. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>

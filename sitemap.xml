@@ -1,219 +1,387 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://yunguidaohang.com/</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/404.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/about.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/airports.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/article.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/avoid-scam.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/</loc>
+        <lastmod>2026-07-12</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/about.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/knowledge.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/airports.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/ranking.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/knowledge.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/article-1.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/ranking.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/article-10.html</loc>
+        <lastmod>2026-07-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/article-1.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/article-11.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/article-10.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/article-12.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/article-11.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/article-2.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/article-12.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/article-3.html</loc>
+        <lastmod>2026-07-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/article-2.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/article-4.html</loc>
+        <lastmod>2026-07-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/article-3.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/article-5.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/article-4.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/article-6.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/article-5.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/article-7.html</loc>
+        <lastmod>2026-07-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/article-6.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/article-8.html</loc>
+        <lastmod>2026-07-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/article-7.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/article-9.html</loc>
+        <lastmod>2026-07-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/article-8.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/beginner-1.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/article-9.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/beginner-2.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/beginner-1.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/beginner-3.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/beginner-2.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/browser-extension-vs-proxy-client.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/beginner-3.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/chatgpt-access-node-troubleshooting.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/edgenova.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/clash-verge.html</loc>
+        <lastmod>2026-07-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/guangnianti.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/edgenova.html</loc>
+        <lastmod>2026-07-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/huanyuyun.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/fake-official-site-phishing-check.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/jilianyun.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/game-accelerator-vs-proxy-node.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/kexinyun.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/guangnianti.html</loc>
+        <lastmod>2026-07-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/kuaili.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/hiddify-next.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/nav-1.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/huanyuyun.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/nav-2.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/ipv6-proxy-leak-troubleshooting.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/nav-3.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/jilianyun.html</loc>
+        <lastmod>2026-07-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/shunyun.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/kexinyun.html</loc>
+        <lastmod>2026-07-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/sujie.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/kuaili.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/tutorial-and.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/monthly-quarterly-yearly-plan-choice.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/tutorial-ios.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/multi-device-concurrent-connection-limit.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/tutorial-mac.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/native-residential-broadcast-ip.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/articles/tutorial-win.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/nav-1.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://yunguidaohang.com/avoid-scam.html</loc>
-        <lastmod>2026-07-11</lastmod>
+        <loc>https://jichang365.com/articles/nav-2.html</loc>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/nav-3.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/node-traffic-multiplier-guide.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/proxy-http-error-codes-guide.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/proxy-node-speed-test-method.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/proxy-service-exit-scam-warning-signs.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/public-wifi-proxy-security.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/relay-direct-dedicated-line-comparison.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/shadowrocket.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/shunyun.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/speedtest.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/subscription-converter-security.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/subscription-link-update-failed.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/sujie.html</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/system-proxy-global-tun-mode.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/system-time-tls-certificate-error.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/traffic-remaining-but-subscription-expired.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/tutorial-and.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/tutorial-ios.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/tutorial-mac.html</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/tutorial-win.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/v2rayn.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/wireshark.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/yaml-config-import-error.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
 </urlset>

@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>代理常见错误码 403、429、502 与连接重置分别怎么处理？ - 云轨导航</title>
+  <link rel="stylesheet" href="../index.css?v=6">
+  <link rel="canonical" href="https://yunguidaohang.com/articles/proxy-http-error-codes-guide.html">
+  <meta name="description" content="详解科学上网状态下出现的403 Forbidden、429 Too Many Requests、502 Bad Gateway及连接重置等HTTP错误代码的成因与解决方法。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://yunguidaohang.com/articles/proxy-http-error-codes-guide.html">
+  <meta property="og:title" content="代理常见错误码 403、429、502 与连接重置分别怎么处理？ - 云轨导航">
+  <meta property="og:description" content="详解科学上网状态下出现的403 Forbidden、429 Too Many Requests、502 Bad Gateway及连接重置等HTTP错误代码的成因与解决方法。">
+  <meta property="og:image" content="https://yunguidaohang.com/assets/images/new_logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="代理常见错误码 403、429、502 与连接重置分别怎么处理？ - 云轨导航">
+  <meta name="twitter:description" content="详解科学上网状态下出现的403 Forbidden、429 Too Many Requests、502 Bad Gateway及连接重置等HTTP错误代码的成因与解决方法。">
+  <meta name="twitter:image" content="https://yunguidaohang.com/assets/images/new_logo.png">
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "代理常见错误码 403、429、502 与连接重置分别怎么处理？",
+      "image": "https://yunguidaohang.com/assets/images/new_logo.png",
+      "datePublished": "2026-07-13T08:00:00+08:00",
+      "dateModified": "2026-07-13T08:00:00+08:00",
+      "description": "详解科学上网状态下出现的403 Forbidden、429 Too Many Requests、502 Bad Gateway及连接重置等HTTP错误代码的成因与解决方法。",
+      "author": {
+          "@type": "Organization",
+          "name": "云轨导航技术编辑团队",
+          "url": "https://yunguidaohang.com/about.html"
+      },
+      "publisher": {
+          "@type": "Organization",
+          "name": "云轨导航",
+          "logo": {
+              "@type": "ImageObject",
+              "url": "https://yunguidaohang.com/assets/images/new_logo.png"
+          }
+      }
+  }
+  </script>
+</head>
+<body class="article-page">
+<header class="header">
+  <div class="container">
+    <a href="../index.html" class="logo-container">
+        <span class="logo-text">云轨导航</span>
+      </a>
+    <nav class="nav-menu" id="navMenu">
+      <a href="../index.html" class="nav-link">首页探索</a>
+      <a href="../airports.html" class="nav-link">机场测评</a>
+      <a href="../ranking.html" class="nav-link">机场排行</a>
+      <a href="../knowledge.html" class="nav-link active">科普指南</a>
+      <a href="../about.html" class="nav-link">关于我们</a>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu"></button>
+  </div>
+</header>
+
+<div class="article-layout-container">
+    <aside class="sidebar-left">
+        <div class="widget toc-widget">
+            <h3 class="widget-title">文章目录</h3>
+            <nav id="toc" class="toc-nav"></nav>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="breadcrumbs" style="margin-bottom: 25px; font-size: 0.95rem; color: #64748b; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0;">
+            <a href="../index.html" style="color: #0ea5e9; text-decoration: none; font-weight: 500;">首页</a> &gt; 
+            <a href="../knowledge.html" style="color: #0ea5e9; text-decoration: none; font-weight: 500;">科普指南</a> &gt; 
+            <span class="current" style="color: #94a3b8;">代理常见错误码应对</span>
+        </div>
+        
+        <article class="article-box">
+            <header class="article-header" style="text-align: center; margin-bottom: 40px;">
+                <h1 class="article-title" style="font-size: 2.2rem; color: #0f172a; margin: 0 0 20px 0; font-weight: 800; line-height: 1.3;">代理常见错误码 403、429、502 与连接重置分别怎么处理？</h1>
+                <div class="article-meta" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px; color: #64748b; font-size: 0.95rem; margin-bottom: 25px;">
+                    <span>作者: 技术编辑部</span>
+                    <span>阅读时长: 约 7 分钟</span>
+                    <span>发布于: 2026-07-13</span>
+                </div>
+                <div class="article-tags" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; padding-bottom: 25px; border-bottom: 1px solid #e2e8f0;">
+                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">故障排查</span>
+                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">网络工具</span>
+                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">GEO优化</span>
+                </div>
+            </header>
+            
+            <div class="article-body" id="articleBody">
+                <p>在使用网络代理进行网页访问时，浏览器页面上经常会出现各种 HTTP 状态错误码，如“403 Forbidden”、“502 Bad Gateway”或“连接被重置 (Connection Reset)”。这些神秘的代码并非代表你的浏览器损坏，而是代理链的某个环节出了问题。本文教你如何看懂并快速修复它们。</p>
+
+<h2>一、403 Forbidden 与 429 Too Many Requests</h2>
+<ul>
+    <li><strong>403 Forbidden（被拒绝访问）</strong>：通常发生在访问 Cloudflare 防御的网站或 ChatGPT 时。这意味着网站服务器接受了你的代理请求，但读取了节点的 IP 属性后，判定该 IP 纯净度低、有黑客攻击风险，从而强制拉黑。**解决方法**：在客户端切换到该机场的其他冷门节点，或更换使用原生住宅 IP。</li>
+    <li><strong>429 Too Many Requests（请求频率过高）</strong>：多见于使用免费共享或大机场节点访问 Google 搜索时。因为该节点的 IP 同时有成千上万的用户在共享并拼命发送请求，导致 Google 服务器自动触发了接口保护限制。**解决方法**：等待几分钟，或者切换至冷门国家节点。</li>
+</ul>
+
+<h2>二、502 Bad Gateway 报错成因与排查</h2>
+<p>502（网关错误）在科学上网场景下，几乎 100% 代表**你的代理客户端与境外落地服务器失去了正常通信**：</p>
+<p>这可能是因为机场的该节点正在进行维护、服务器机房宕机，或是该节点的落地 IP 刚刚被防火墙封锁。您的本地客户端成功把网络请求递交给了中转入口，但中转入口无法连接境外的落地机器，从而返回了 502 报错。**解决方法**：建议在客户端中进行节点测速，选中其他有延迟返回的节点。</p>
+            </div>
+        </article>
+    </main>
+</div>
+
+<footer class="footer" style="margin-top: 60px;">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <span class="logo-text">云轨导航</span>
+      </div>
+      <div class="footer-links">
+        <a href="../about.html">关于我们</a>
+        <a href="../contact.html">联系方式</a>
+        <a href="../privacy.html">隐私政策</a>
+        <a href="../terms.html">服务条款</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 云轨导航. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>

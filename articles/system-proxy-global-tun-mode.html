@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>系统代理、全局模式与 TUN 模式有什么区别？新手选择与故障排查 - 云轨导航</title>
+  <link rel="stylesheet" href="../index.css?v=6">
+  <link rel="canonical" href="https://yunguidaohang.com/articles/system-proxy-global-tun-mode.html">
+  <meta name="description" content="详细分析科学上网客户端的系统代理、全局代理模式与虚拟网卡 TUN 模式之间的区别、工作原理以及使用场景。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://yunguidaohang.com/articles/system-proxy-global-tun-mode.html">
+  <meta property="og:title" content="系统代理、全局模式与 TUN 模式有什么区别？新手选择与故障排查 - 云轨导航">
+  <meta property="og:description" content="详细分析科学上网客户端的系统代理、全局代理模式与虚拟网卡 TUN 模式之间的区别、工作原理以及使用场景。">
+  <meta property="og:image" content="https://yunguidaohang.com/assets/images/new_logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="系统代理、全局模式与 TUN 模式有什么区别？新手选择与故障排查 - 云轨导航">
+  <meta name="twitter:description" content="详细分析科学上网客户端的系统代理、全局代理模式与虚拟网卡 TUN 模式之间的区别、工作原理以及使用场景。">
+  <meta name="twitter:image" content="https://yunguidaohang.com/assets/images/new_logo.png">
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "系统代理、全局模式与 TUN 模式有什么区别？新手选择与故障排查",
+      "image": "https://yunguidaohang.com/assets/images/new_logo.png",
+      "datePublished": "2026-07-13T08:00:00+08:00",
+      "dateModified": "2026-07-13T08:00:00+08:00",
+      "description": "详细分析科学上网客户端的系统代理、全局代理模式与虚拟网卡 TUN 模式之间的区别、工作原理以及使用场景。",
+      "author": {
+          "@type": "Organization",
+          "name": "云轨导航技术编辑团队",
+          "url": "https://yunguidaohang.com/about.html"
+      },
+      "publisher": {
+          "@type": "Organization",
+          "name": "云轨导航",
+          "logo": {
+              "@type": "ImageObject",
+              "url": "https://yunguidaohang.com/assets/images/new_logo.png"
+          }
+      }
+  }
+  </script>
+</head>
+<body class="article-page">
+<header class="header">
+  <div class="container">
+    <a href="../index.html" class="logo-container">
+        <span class="logo-text">云轨导航</span>
+      </a>
+    <nav class="nav-menu" id="navMenu">
+      <a href="../index.html" class="nav-link">首页探索</a>
+      <a href="../airports.html" class="nav-link">机场测评</a>
+      <a href="../ranking.html" class="nav-link">机场排行</a>
+      <a href="../knowledge.html" class="nav-link active">科普指南</a>
+      <a href="../about.html" class="nav-link">关于我们</a>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu"></button>
+  </div>
+</header>
+
+<div class="article-layout-container">
+    <aside class="sidebar-left">
+        <div class="widget toc-widget">
+            <h3 class="widget-title">文章目录</h3>
+            <nav id="toc" class="toc-nav"></nav>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="breadcrumbs" style="margin-bottom: 25px; font-size: 0.95rem; color: #64748b; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0;">
+            <a href="../index.html" style="color: #0ea5e9; text-decoration: none; font-weight: 500;">首页</a> &gt; 
+            <a href="../knowledge.html" style="color: #0ea5e9; text-decoration: none; font-weight: 500;">科普指南</a> &gt; 
+            <span class="current" style="color: #94a3b8;">系统代理/全局/TUN区别</span>
+        </div>
+        
+        <article class="article-box">
+            <header class="article-header" style="text-align: center; margin-bottom: 40px;">
+                <h1 class="article-title" style="font-size: 2.2rem; color: #0f172a; margin: 0 0 20px 0; font-weight: 800; line-height: 1.3;">系统代理、全局模式与 TUN 模式有什么区别？新手选择与故障排查</h1>
+                <div class="article-meta" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px; color: #64748b; font-size: 0.95rem; margin-bottom: 25px;">
+                    <span>作者: 技术编辑部</span>
+                    <span>阅读时长: 约 8 分钟</span>
+                    <span>发布于: 2026-07-13</span>
+                </div>
+                <div class="article-tags" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; padding-bottom: 25px; border-bottom: 1px solid #e2e8f0;">
+                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">客户端教程</span>
+                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">网络工具</span>
+                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">GEO优化</span>
+                </div>
+            </header>
+            
+            <div class="article-body" id="articleBody">
+                <p>在使用 Clash Verge、Stash 或 Shadowrocket 时，经常会遇到“系统代理”、“全局模式”、“配置/规则分流”以及“TUN 模式”等专业词汇。这些模式有什么区别？日常应该怎么选？本文将为您彻底梳理。</p>
+
+<h2>一、系统代理 (System Proxy)：轻量化分流的首选</h2>
+<p>这是最常规的工作模式。开启后，代理软件会在本机的操作系统级设置一个局域网代理服务器地址（如 `127.0.0.1:7890`）。</p>
+<ul>
+    <li><strong>工作原理</strong>：仅对“主动读取系统代理设置”的软件生效。例如 Chrome、Edge 浏览器和绝大多数现代应用程序，会自动将网络请求转发给代理软件进行规则分流。</li>
+    <li><strong>局限性</strong>：对于许多不遵循系统代理规则的底层软件（如命令行终端 CMD、部分海外联机游戏、以及一些老旧应用软件），系统代理是完全不生效的，流量依然会走本地宽带直连。</li>
+</ul>
+
+<h2>二、全局模式 (Global Mode) vs 规则分流 (Rule Mode)</h2>
+<p>这是在代理软件内部针对“已被接管的流量”进行分配的逻辑：</p>
+<ul>
+    <li><strong>规则分流（推荐）</strong>：软件根据内置的分流配置文件（如 ACL4SSR 规则），自动判断目标网站。国内网站（如淘宝、微信）直接放行直连；国外敏感或学术平台自动走代理节点。既省流量，又保证了国内应用的速度与安全。</li>
+    <li><strong>全局模式</strong>：强制所有被接管的网络封包都通过代理节点发送。适合在规则失效、或需要临时将 IP 伪装到特定地区时使用。不建议日常开启，否则访问国内网站会变慢并消耗大量套餐流量。</li>
+</ul>
+
+<h2>三、TUN 模式 (Virtual TUN)：接管所有底层流量的神器</h2>
+<p><strong>TUN 模式</strong>（虚拟网卡模式）是高阶用户的标配功能：</p>
+<p>它会在你的电脑中虚拟出一张名为 `clash` 或 `sing-box` 的物理网卡。操作系统会将所有进出网卡的数据流量强制路由给这张虚拟网卡。这意味着，即使软件本身不支持系统代理（如各种大型 3D 游戏客户端、UWP 应用、以及 CMD 命令行），也能够实现 100% 的代理接管与分流。是排除“游戏连不上、终端无法拉取代码”等疑难杂症的终极方案。</p>
+            </div>
+        </article>
+    </main>
+</div>
+
+<footer class="footer" style="margin-top: 60px;">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <span class="logo-text">云轨导航</span>
+      </div>
+      <div class="footer-links">
+        <a href="../about.html">关于我们</a>
+        <a href="../contact.html">联系方式</a>
+        <a href="../privacy.html">隐私政策</a>
+        <a href="../terms.html">服务条款</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 云轨导航. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>
