@@ -27,11 +27,6 @@ $pages += @{ "loc" = "$baseUrl/knowledge.html"; "priority" = "0.8"; "freq" = "we
 $pages += @{ "loc" = "$baseUrl/ranking.html"; "priority" = "0.8"; "freq" = "weekly" }
 
 # Add category landing pages
-$pages += @{ "loc" = "$baseUrl/airport/"; "priority" = "0.9"; "freq" = "weekly" }
-$pages += @{ "loc" = "$baseUrl/review/"; "priority" = "0.9"; "freq" = "weekly" }
-$pages += @{ "loc" = "$baseUrl/network/"; "priority" = "0.9"; "freq" = "weekly" }
-$pages += @{ "loc" = "$baseUrl/tutorial/"; "priority" = "0.9"; "freq" = "weekly" }
-$pages += @{ "loc" = "$baseUrl/ai/"; "priority" = "0.9"; "freq" = "weekly" }
 $pages += @{ "loc" = "$baseUrl/avoid-scam.html"; "priority" = "0.9"; "freq" = "weekly" }
 
 # Scan articles directory

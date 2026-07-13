@@ -119,19 +119,19 @@ function Process-File($filePath, $filename, $isRoot) {
 
     # 5.2 Breadcrumb Schema
     $categoryName = $templatesDb.settings.category_mappings.default_name
-    $categoryUrl = "$baseUrl/network/"
+    $categoryUrl = "$baseUrl/knowledge.html"
     if ($filename.StartsWith("tutorial-")) {
         $categoryName = $templatesDb.settings.category_mappings.tutorial_name
-        $categoryUrl = "$baseUrl/tutorial/"
+        $categoryUrl = "$baseUrl/knowledge.html"
     } elseif ($filename.StartsWith("beginner-")) {
         $categoryName = $templatesDb.settings.category_mappings.beginner_name
-        $categoryUrl = "$baseUrl/tutorial/"
+        $categoryUrl = "$baseUrl/knowledge.html"
     } elseif ($filename.StartsWith("nav-")) {
         $categoryName = $templatesDb.settings.category_mappings.nav_name
-        $categoryUrl = "$baseUrl/network/"
+        $categoryUrl = "$baseUrl/knowledge.html"
     } elseif ($filename -in @("edgenova.html", "guangnianti.html", "huanyuyun.html", "jilianyun.html", "kexinyun.html", "kuaili.html", "shunyun.html", "sujie.html")) {
         $categoryName = $templatesDb.settings.category_mappings.review_name
-        $categoryUrl = "$baseUrl/review/"
+        $categoryUrl = "$baseUrl/airports.html"
     }
 
     $breadcrumbSchema = @{
@@ -299,11 +299,11 @@ $faqSchemaJson
         # Build Injected tag cloud HTML
         $tagCloudHtml = @"
       <div class="article-tags-cloud" style="margin-top: 30px; display: flex; flex-wrap: wrap; gap: 8px;">
-        <a href="../airport/" style="background: #f1f5f9; color: #475569; padding: 6px 12px; border-radius: 15px; font-size: 0.8rem; text-decoration: none; font-weight: 600;">$($templatesDb.labels.tag_airport)</a>
-        <a href="../review/" style="background: #f1f5f9; color: #475569; padding: 6px 12px; border-radius: 15px; font-size: 0.8rem; text-decoration: none; font-weight: 600;">$($templatesDb.labels.tag_review)</a>
-        <a href="../network/" style="background: #f1f5f9; color: #475569; padding: 6px 12px; border-radius: 15px; font-size: 0.8rem; text-decoration: none; font-weight: 600;">$($templatesDb.labels.tag_network)</a>
-        <a href="../tutorial/" style="background: #f1f5f9; color: #475569; padding: 6px 12px; border-radius: 15px; font-size: 0.8rem; text-decoration: none; font-weight: 600;">$($templatesDb.labels.tag_tutorial)</a>
-        <a href="../ai/" style="background: #f1f5f9; color: #475569; padding: 6px 12px; border-radius: 15px; font-size: 0.8rem; text-decoration: none; font-weight: 600;">$($templatesDb.labels.tag_ai)</a>
+        <a href="../airports.html" style="background: #f1f5f9; color: #475569; padding: 6px 12px; border-radius: 15px; font-size: 0.8rem; text-decoration: none; font-weight: 600;">$($templatesDb.labels.tag_airport)</a>
+        <a href="../ranking.html" style="background: #f1f5f9; color: #475569; padding: 6px 12px; border-radius: 15px; font-size: 0.8rem; text-decoration: none; font-weight: 600;">$($templatesDb.labels.tag_review)</a>
+        <a href="../knowledge.html" style="background: #f1f5f9; color: #475569; padding: 6px 12px; border-radius: 15px; font-size: 0.8rem; text-decoration: none; font-weight: 600;">$($templatesDb.labels.tag_network)</a>
+        <a href="../knowledge.html" style="background: #f1f5f9; color: #475569; padding: 6px 12px; border-radius: 15px; font-size: 0.8rem; text-decoration: none; font-weight: 600;">$($templatesDb.labels.tag_tutorial)</a>
+        <a href="../knowledge.html" style="background: #f1f5f9; color: #475569; padding: 6px 12px; border-radius: 15px; font-size: 0.8rem; text-decoration: none; font-weight: 600;">$($templatesDb.labels.tag_ai)</a>
       </div>
 "@
 
