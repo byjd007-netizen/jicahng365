@@ -60,6 +60,7 @@
 
 <div class="article-layout-container">
     <aside class="sidebar-left">
+        <!-- TOC Widget -->
         <div class="widget toc-widget">
             <h3 class="widget-title">文章目录</h3>
             <nav id="toc" class="toc-nav"></nav>
@@ -80,55 +81,284 @@
                     <span>作者: 技术编辑部</span>
                     <span>阅读时长: 约 7 分钟</span>
                     <span>发布于: 2026-07-13</span>
+                    <span>更新于: 2026-07-13</span>
                 </div>
                 <div class="article-tags" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; padding-bottom: 25px; border-bottom: 1px solid #e2e8f0;">
                     <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">网络知识</span>
-                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">网络工具</span>
-                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">GEO优化</span>
+                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">科学上网</span>
+                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">网络科普</span>
+                    <span class="views" style="margin-left: 15px; color:#94a3b8; font-size:0.9rem;">阅读量: 9.8k</span>
                 </div>
             </header>
+
+            <div class="article-intro">
+                <strong style="display: block; margin-bottom: 10px;">为什么我的机场流量在几天内被莫名白嫖光？我的翻墙流量是否在被其他人默默监控？别再乱用免费的第三方“在线订阅转换”了，本文为您彻底揭露其中网络安全隐患。</strong>
+            </div>
             
             <div class="article-body" id="articleBody">
-                <p>当我们需要在不同客户端（如把 SS 订阅转换成 Clash 格式）之间切换时，很多用户会贪图省事，直接百度搜索并使用免费的“在线订阅转换”网站。这些工具方便的背后，隐藏着严重的用户隐私泄露与安全隐患。本文为您深度解析。</p>
+                      <p>在日常使用科学上网的过程中，我们为了配合不同的终端客户端（例如把 SS 订阅链接换成 Clash 使用的 YAML 配置文件格式），经常需要用到订阅转换工具。因为自建转换服务有技术门槛，绝大多数网民会直接在网上寻找各种免费的“在线订阅转换 API”。这些平台在给你带来方便的背后，却让你赤裸裸地暴露在极大的安全风险中。</p>
 
-<h2>一、订阅转换的运作原理</h2>
-<p>订阅转换的本质是：将你的原始机场订阅链接，提交给第三方订阅转换服务器。转换服务器在后台向你的机场拉取原始节点信息（包括节点服务器 IP、端口、密码、加密协议等），然后按照 Clash 或 Sing-box 的配置格式重新组装，返回一个新的配置文件链接给你的客户端。</p>
+      <h2>一、订阅转换的运作机理与信息对称暴露</h2>
+      <p>在了解安全隐患前，我们需要先看懂订阅转换的工作流：</p>
+      <p>当你把自己的机场原始订阅链接输入到转换网站并点击“生成”时，本质上是将你的**机场账号唯一密钥链接**直接递交给了该转换站的服务器后台。转换站服务器随后代表你，向机场的后端 API 发送 HTTP 请求，把你的所有节点服务器地址、端口、连接密码、TLS 加密证书等全部原始数据下载到它的服务器内存中，再按照你的要求转码，回传给你的代理客户端。</p>
+      <p>在这个过程中，<strong>转换站站长在后台拥有对你的订阅文件 100% 的明文访问与读取权限。</strong></p>
 
-<h2>二、免费订阅转换服务存在的隐私安全漏洞</h2>
-<p>在这一过程中，你的原始订阅链接完全对转换站的服务器所有者公开：</p>
-<ul>
-    <li><strong>订阅链接泄露与节点被白嫖</strong>：不怀好意的转换站站长可以直接从后台日志中提取你的机场订阅链接，盗用你的套餐流量，甚至将你的订阅放到网上共享，导致你的套餐在几小时内被彻底耗尽。</li>
-    <li><strong>恶意规则重定向与审计泄露</strong>：黑客或服务商可以在返回给你的 YAML 配置文件中插入恶意的分流规则，例如将你访问特定学术网站或支付工具的流量重定向到特定服务器，造成敏感信息泄露。</li>
-</ul>
+      <h2>二、免费订阅转换服务下的三大致命隐患</h2>
+      <p>对于在网上频繁用爱发电、甚至连备案和真实站长身份都没有公开的免费在线转换网站，你将直接面对以下风险：</p>
+      <ul>
+        <li><strong>订阅链接泄露与节点被“蹭网/白嫖”</strong>：不良站长可以直接使用脚本在后台批量提取所有用户上传的机场订阅链接，将其打包出售或作为自己小圈子里的“免费福利”共享出去。这就解释了为什么很多人的机场流量明明自己没怎么用，却在后台显示已经被瞬间消耗殆尽。</li>
+        <li><strong>劫持与恶意规则覆写（重定向风险）</strong>：在回传给你的 YAML 配置文件中，黑客可以在 `rules` 规则部分做手脚。例如将你访问特定学术平台、知名境外金融机构或电报的网络流量，通过自定义规则强制重定向到该黑客自己搭建的窃听落地节点上，进行中间人流量截获。</li>
+        <li><strong>审计日志泄露</strong>：大多数订阅转换站会记录用户的原始请求 IP 与解析记录，这对注重隐私的科学上网用户而言无疑是巨大的安全敞口。</li>
+      </ul>
 
-<h2>三、如何安全地进行订阅转换？</h2>
-<ul>
-    <li><strong>首选机场自带的客户端一键配置</strong>：大部分正规机场后台均提供直出的 Clash、Shadowrocket、Sing-box 原生配置文件，无需任何二次转换。</li>
-    <li><strong>使用开源工具本地搭建</strong>：对于极客用户，建议使用开源的 `subconverter` 项目，直接在本地电脑运行进行转换，确保数据完全在本地处理，绝不上传到公网。</li>
-</ul>
+      <h2>三、如何安全地进行订阅转换？</h2>
+      <ol>
+        <li><strong>首选大厂机场的原生一键配置</strong>：目前几乎所有的正规机场均在用户面板后台提供了 Clash、Shadowrocket、Sing-box 以及 v2rayN 等各大客户端的“原生一键订阅配置文件”，无需任何第三方转换。</li>
+        <li><strong>本地独立部署（极力推荐）</strong>：对于有多格式转换需求的极客用户，可以直接从 GitHub 下载开源的 `subconverter` 项目（Go 语言编写，内存占用极小），直接在自己电脑的 `127.0.0.1` 本地回环网络下运行。数据转换完全在本地离线闭环完成，保证原始链接绝不上传公网，彻底阻断隐私泄露。</li>
+      </ol>
             </div>
         </article>
     </main>
+
+    <aside class="sidebar-right">
+        <!-- Article Info Widget -->
+        <div class="widget info-widget">
+            <h3 class="widget-title">文章信息</h3>
+            <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
+                <span class="info-label">文章分类</span>
+                <span class="info-val" style="font-weight:600; color:#0f172a;">网络知识</span>
+            </div>
+            <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
+                <span class="info-label">阅读时长</span>
+                <span class="info-val" style="font-weight:600; color:#0f172a;">约 7 分钟</span>
+            </div>
+            <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
+                <span class="info-label">字数统计</span>
+                <span class="info-val" style="font-weight:600; color:#0f172a;">约 2310 字</span>
+            </div>
+            <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
+                <span class="info-label">最后更新</span>
+                <span class="info-val" style="font-weight:600; color:#0f172a;">2026-07-13</span>
+            </div>
+        </div>
+        <!-- Beginner Guide Widget -->
+        <div class="widget guide-widget" style="padding: 20px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 25px;">
+            <div class="guide-header" style="display: flex; align-items: center; margin-bottom: 20px;">
+                <span style="font-size: 1.4rem; margin-right: 8px;"></span>
+                <h3 class="widget-title" style="margin:0; border:none; padding:0; font-size: 1.1rem; color: #1e293b; font-weight: 700;">新手入门指南</h3>
+                <span class="guide-sub" style="margin-left: 10px; color:#64748b; font-size:0.85rem;">从零开始教你科学上网</span>
+            </div>
+            <ul class="guide-list" style="list-style:none; padding:0; margin:0 0 20px 0;">
+                <li style="margin-bottom:12px;">
+                    <a href="beginner-1.html" style="display:flex; align-items:center; background:#f8fafc; padding:12px; border-radius:8px; text-decoration:none; transition: all 0.2s;">
+                        <div style="background:#2563eb; color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:0.9rem; margin-right:12px; flex-shrink:0;">01</div>
+                        <div style="flex-grow:1;">
+                            <div style="color:#1e293b; font-weight:600; font-size:0.95rem; margin-bottom:2px;">机场如何选择</div>
+                            <div style="color:#64748b; font-size:0.8rem;">新手必看，轻松选到合适的机场</div>
+                        </div>
+                        <div style="color:#94a3b8; font-size:1.2rem;">›</div>
+                    </a>
+                </li>
+                <li style="margin-bottom:12px;">
+                    <a href="tutorial-win.html" style="display:flex; align-items:center; background:#f8fafc; padding:12px; border-radius:8px; text-decoration:none; transition: all 0.2s;">
+                        <div style="background:#2563eb; color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:0.9rem; margin-right:12px; flex-shrink:0;">02</div>
+                        <div style="flex-grow:1;">
+                            <div style="color:#1e293b; font-weight:600; font-size:0.95rem; margin-bottom:2px;">客户端安装教程</div>
+                            <div style="color:#64748b; font-size:0.8rem;">Clash / V2Ray / Shadowrocket 等</div>
+                        </div>
+                        <div style="color:#94a3b8; font-size:1.2rem;">›</div>
+                    </a>
+                </li>
+                <li style="margin-bottom:12px;">
+                    <a href="beginner-3.html" style="display:flex; align-items:center; background:#f8fafc; padding:12px; border-radius:8px; text-decoration:none; transition: all 0.2s;">
+                        <div style="background:#2563eb; color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:0.9rem; margin-right:12px; flex-shrink:0;">03</div>
+                        <div style="flex-grow:1;">
+                            <div style="color:#1e293b; font-weight:600; font-size:0.95rem; margin-bottom:2px;">订阅配置方法</div>
+                            <div style="color:#64748b; font-size:0.8rem;">手把手教你导入订阅与配置</div>
+                        </div>
+                        <div style="color:#94a3b8; font-size:1.2rem;">›</div>
+                    </a>
+                </li>
+                <li style="margin-bottom:0;">
+                    <a href="beginner-2.html" style="display:flex; align-items:center; background:#f8fafc; padding:12px; border-radius:8px; text-decoration:none; transition: all 0.2s;">
+                        <div style="background:#2563eb; color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:0.9rem; margin-right:12px; flex-shrink:0;">04</div>
+                        <div style="flex-grow:1;">
+                            <div style="color:#1e293b; font-weight:600; font-size:0.95rem; margin-bottom:2px;">常见问题解决</div>
+                            <div style="color:#64748b; font-size:0.8rem;">连接失败 / 速度慢等问题汇总</div>
+                        </div>
+                        <div style="color:#94a3b8; font-size:1.2rem;">›</div>
+                    </a>
+                </li>
+            </ul>
+            <a href="beginner-1.html" class="widget-btn" style="display:block; text-align:center; padding:12px; background:#2563eb; color:white; border-radius:8px; text-decoration:none; font-weight:600; font-size:1rem; transition: background 0.3s;">查看完整新手教程 →</a>
+        </div>
+
+        <!-- Related Recommendations Widget -->
+        <div class="widget related-widget">
+            <h3 class="widget-title">相关推荐</h3>
+            <div class="related-cards" style="display:flex; flex-direction:column; gap:10px;">
+                <a href="article-4.html" class="rel-card" style="text-decoration:none; display:block; padding:12px; background:#f8fafc; border-radius:8px;">
+                    <div class="rel-title" style="color:#1e293b; font-weight:600; margin-bottom:4px;">代理协议深度对比</div>
+                    <div class="rel-read" style="color:#94a3b8; font-size:0.8rem;">阅读 8.7k</div>
+                </a>
+                <a href="tutorial-win.html" class="rel-card" style="text-decoration:none; display:block; padding:12px; background:#f8fafc; border-radius:8px;">
+                    <div class="rel-title" style="color:#1e293b; font-weight:600; margin-bottom:4px;">Clash 核心规则详解</div>
+                    <div class="rel-read" style="color:#94a3b8; font-size:0.8rem;">阅读 6.2k</div>
+                </a>
+                <a href="tutorial-and.html" class="rel-card" style="text-decoration:none; display:block; padding:12px; background:#f8fafc; border-radius:8px;">
+                    <div class="rel-title" style="color:#1e293b; font-weight:600; margin-bottom:4px;">v2rayNG 入门教程</div>
+                    <div class="rel-read" style="color:#94a3b8; font-size:0.8rem;">阅读 5.1k</div>
+                </a>
+                <a href="article-10.html" class="rel-card" style="text-decoration:none; display:block; padding:12px; background:#f8fafc; border-radius:8px;">
+                    <div class="rel-title" style="color:#1e293b; font-weight:600; margin-bottom:4px;">WireGuard 协议优势分析</div>
+                    <div class="rel-read" style="color:#94a3b8; font-size:0.8rem;">阅读 4.3k</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Hot Articles Widget -->
+        <div class="widget hot-widget">
+            <h3 class="widget-title">热门文章</h3>
+            <ul class="hot-list" style="list-style:none; padding:0; margin:0;">
+                <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
+                    <span style="color:#ef4444; font-weight:bold; font-size:1.1rem; line-height:1.2;">1</span>
+                    <a href="../airports.html" style="color:#334155; text-decoration:none; line-height:1.4;">2026年稳定机场推荐 TOP10</a>
+                </li>
+                <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
+                    <span style="color:#f97316; font-weight:bold; font-size:1.1rem; line-height:1.2;">2</span>
+                    <a href="tutorial-win.html" style="color:#334155; text-decoration:none; line-height:1.4;">Clash 使用教程（Windows）</a>
+                </li>
+                <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
+                    <span style="color:#f59e0b; font-weight:bold; font-size:1.1rem; line-height:1.2;">3</span>
+                    <a href="tutorial-ios.html" style="color:#334155; text-decoration:none; line-height:1.4;">Shadowrocket 配置教程 (iOS)</a>
+                </li>
+                <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
+                    <span style="color:#94a3b8; font-weight:bold; font-size:1.1rem; line-height:1.2;">4</span>
+                    <a href="article-1.html" style="color:#334155; text-decoration:none; line-height:1.4;">节点延迟高怎么办？原因与解决方法</a>
+                </li>
+                <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
+                    <span style="color:#94a3b8; font-weight:bold; font-size:1.1rem; line-height:1.2;">5</span>
+                    <a href="article-5.html" style="color:#334155; text-decoration:none; line-height:1.4;">Netflix/Disney+ 跨区解锁攻略</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Premium Airport Widget -->
+        <div class="widget premium-widget ranking-promo-widget" style="padding: 20px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 25px;">
+            <div class="promo-ranking-header" style="display: flex; align-items: center; margin-bottom: 20px;">
+                <div style="background: #2563eb; color: white; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-right: 12px; flex-shrink: 0; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);"></div>
+                <div>
+                    <h3 class="widget-title" style="margin:0; border:none; padding:0; font-size: 1.2rem; color: #1e293b; font-weight: 800; letter-spacing: 0.5px;">机场排行榜</h3>
+                    <div style="color:#64748b; font-size:0.8rem; margin-top:4px;">精选优质机场，稳定高速，全球覆盖</div>
+                </div>
+            </div>
+            
+            <div class="ranking-content" style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+                <div class="ranking-features" style="flex: 1; min-width: 220px;">
+                    <div style="display:flex; align-items:center; margin-bottom:15px; position:relative;">
+                        <div style="background:#e0f2fe; color:#0284c7; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
+                        <div>
+                            <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">实时更新</div>
+                            <div style="color:#94a3b8; font-size:0.8rem;">每日检测，数据实时更新</div>
+                        </div>
+                    </div>
+                    <div style="border-bottom: 1px dashed #e2e8f0; margin: -5px 0 10px 48px;"></div>
+
+                    <div style="display:flex; align-items:center; margin-bottom:15px;">
+                        <div style="background:#dcfce7; color:#16a34a; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
+                        <div>
+                            <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">多维度评测</div>
+                            <div style="color:#94a3b8; font-size:0.8rem;">速度、稳定性、性价比综合评分</div>
+                        </div>
+                    </div>
+                    <div style="border-bottom: 1px dashed #e2e8f0; margin: -5px 0 10px 48px;"></div>
+
+                    <div style="display:flex; align-items:center; margin-bottom:15px;">
+                        <div style="background:#ffedd5; color:#ea580c; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
+                        <div>
+                            <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">优质机场</div>
+                            <div style="color:#94a3b8; font-size:0.8rem;">人工筛选，剔除不稳定节点</div>
+                        </div>
+                    </div>
+                    <div style="border-bottom: 1px dashed #e2e8f0; margin: -5px 0 10px 48px;"></div>
+
+                    <div style="display:flex; align-items:center; margin-bottom:0;">
+                        <div style="background:#f3e8ff; color:#9333ea; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
+                        <div>
+                            <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">全球覆盖</div>
+                            <div style="color:#94a3b8; font-size:0.8rem;">全球节点，高速访问无压力</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ranking-illustration" style="flex: 1; min-width: 180px; background:linear-gradient(to bottom, #eff6ff, #f8fafc); border-radius:12px; padding:20px 15px; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center; border: 1px solid #e2e8f0;">
+                    <img src="../assets/images/new_logo.png" alt="Ranking Podium" style="width:100%; max-width:140px; margin:0 auto 15px auto; display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none; font-size: 3rem; margin-bottom:15px;"></div>
+                    <div style="color:#475569; font-size:0.85rem; line-height:1.5;">
+                        找出最适合你的机场<br>
+                        从<span style="color:#2563eb; font-weight:700;">排行榜</span>开始了解
+                    </div>
+                </div>
+            </div>
+            
+            <a href="../ranking.html" class="widget-btn" style="display:block; text-align:center; padding:14px; background:#2563eb; color:white; border-radius:8px; text-decoration:none; font-weight:700; font-size:1.05rem; transition: background 0.3s; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);">查看机场排行榜 →</a>
+        </div>
+    </aside>
 </div>
 
-<footer class="footer" style="margin-top: 60px;">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-logo">
-        <span class="logo-text">云轨导航</span>
-      </div>
-      <div class="footer-links">
-        <a href="../about.html">关于我们</a>
-        <a href="../contact.html">联系方式</a>
-        <a href="../privacy.html">隐私政策</a>
-        <a href="../terms.html">服务条款</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 云轨导航. All rights reserved.</p>
-    </div>
-  </div>
+<footer style="text-align: center; padding: 40px; margin-top: 40px; color: #94a3b8; border-top: 1px solid #e2e8f0; grid-column: 1 / -1;">
+  <p>© 2026 云轨导航. All rights reserved.</p>
 </footer>
+
+<script>
+// Dynamic TOC Generation
+document.addEventListener("DOMContentLoaded", function() {
+    const articleBody = document.getElementById('articleBody');
+    const tocNav = document.getElementById('toc');
+    if(!articleBody || !tocNav) return;
+    
+    const headers = articleBody.querySelectorAll('h2, h3');
+    if(headers.length === 0) return;
+    
+    const ul = document.createElement('ul');
+    ul.className = 'toc-list';
+    
+    headers.forEach((header, index) => {
+        const id = 'heading-' + index;
+        header.id = id;
+        
+        const li = document.createElement('li');
+        li.className = header.tagName.toLowerCase() === 'h2' ? 'toc-h2' : 'toc-h3';
+        
+        const a = document.createElement('a');
+        a.href = '#' + id;
+        a.textContent = header.textContent;
+        
+        li.appendChild(a);
+        ul.appendChild(li);
+    });
+    
+    tocNav.appendChild(ul);
+    
+    // Highlight active TOC item on scroll
+    const tocLinks = tocNav.querySelectorAll('a');
+    window.addEventListener('scroll', () => {
+        let currentId = '';
+        headers.forEach(header => {
+            const rect = header.getBoundingClientRect();
+            if(rect.top <= 100) {
+                currentId = header.id;
+            }
+        });
+        
+        tocLinks.forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === '#' + currentId) {
+                link.classList.add('active');
+            }
+        });
+    });
+});
+</script>
 <script src="../script.js"></script>
 </body>
 </html>

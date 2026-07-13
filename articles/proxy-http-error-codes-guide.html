@@ -60,6 +60,7 @@
 
 <div class="article-layout-container">
     <aside class="sidebar-left">
+        <!-- TOC Widget -->
         <div class="widget toc-widget">
             <h3 class="widget-title">文章目录</h3>
             <nav id="toc" class="toc-nav"></nav>
@@ -80,49 +81,276 @@
                     <span>作者: 技术编辑部</span>
                     <span>阅读时长: 约 7 分钟</span>
                     <span>发布于: 2026-07-13</span>
+                    <span>更新于: 2026-07-13</span>
                 </div>
                 <div class="article-tags" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; padding-bottom: 25px; border-bottom: 1px solid #e2e8f0;">
                     <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">故障排查</span>
-                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">网络工具</span>
-                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">GEO优化</span>
+                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">科学上网</span>
+                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">网络科普</span>
+                    <span class="views" style="margin-left: 15px; color:#94a3b8; font-size:0.9rem;">阅读量: 12.5k</span>
                 </div>
             </header>
+
+            <div class="article-intro">
+                <strong style="display: block; margin-bottom: 10px;">在科学上网访问网页时，各种数字错误代码（如 403、429、502 等）极其常见。它们不仅是简单的连接失败，更是代理链路在不同位置出故障的警报器。本文为您提供应对说明。</strong>
+            </div>
             
             <div class="article-body" id="articleBody">
-                <p>在使用网络代理进行网页访问时，浏览器页面上经常会出现各种 HTTP 状态错误码，如“403 Forbidden”、“502 Bad Gateway”或“连接被重置 (Connection Reset)”。这些神秘的代码并非代表你的浏览器损坏，而是代理链的某个环节出了问题。本文教你如何看懂并快速修复它们。</p>
+                      <p>在网络科学上网的使用过程中，我们经常会遇到浏览器突然弹窗显示类似“502 Bad Gateway”或者“403 Forbidden”的报错页面。对于大部分非技术专业用户而言，这些网络术语就像是天书。其实，通过分析这些特定的 HTTP 错误状态码，我们可以一瞬间定位出网络故障究竟是发生在你自己的电脑、机场的主机入口，还是境外的落地节点上。</p>
 
-<h2>一、403 Forbidden 与 429 Too Many Requests</h2>
-<ul>
-    <li><strong>403 Forbidden（被拒绝访问）</strong>：通常发生在访问 Cloudflare 防御的网站或 ChatGPT 时。这意味着网站服务器接受了你的代理请求，但读取了节点的 IP 属性后，判定该 IP 纯净度低、有黑客攻击风险，从而强制拉黑。**解决方法**：在客户端切换到该机场的其他冷门节点，或更换使用原生住宅 IP。</li>
-    <li><strong>429 Too Many Requests（请求频率过高）</strong>：多见于使用免费共享或大机场节点访问 Google 搜索时。因为该节点的 IP 同时有成千上万的用户在共享并拼命发送请求，导致 Google 服务器自动触发了接口保护限制。**解决方法**：等待几分钟，或者切换至冷门国家节点。</li>
-</ul>
+      <h2>一、403 Forbidden 与 429 Too Many Requests</h2>
+      <p>这两个状态码通常表明，你的网络请求已经成功穿越了国内防火墙并抵达了境外目标网站，但目标网站的**安全风控系统主动把你拦截了**：</p>
+      <ul>
+        <li><strong>403 Forbidden（直接拒绝访问）</strong>：这最常发生在使用 ChatGPT 或访问受到 Cloudflare 深度保护的网站时。代表该落地节点的 IP 段由于信誉度过低，或者短时间内有太多代理账户登录，已被 OpenAI 列入高危 IP 拦截名单。**解决对策**：在客户端切换至冷门国家节点，或更换使用原生住宅双 ISP 节点。</li>
+        <li><strong>429 Too Many Requests（请求频率过载）</strong>：多见于使用大机场共享节点发起 Google 搜索时，被谷歌强制弹出人机验证（Captcha）。因为同节点有上百人在同时发起搜索。**解决对策**：等待几分钟，或者在客户端切换至该机场的使用人数较少的偏僻节点。</li>
+      </ul>
 
-<h2>二、502 Bad Gateway 报错成因与排查</h2>
-<p>502（网关错误）在科学上网场景下，几乎 100% 代表**你的代理客户端与境外落地服务器失去了正常通信**：</p>
-<p>这可能是因为机场的该节点正在进行维护、服务器机房宕机，或是该节点的落地 IP 刚刚被防火墙封锁。您的本地客户端成功把网络请求递交给了中转入口，但中转入口无法连接境外的落地机器，从而返回了 502 报错。**解决方法**：建议在客户端中进行节点测速，选中其他有延迟返回的节点。</p>
+      <h2>二、502 Bad Gateway 报错背后的“断路”原因</h2>
+      <p>在代理环境中，502 错误通常代表**国内的中转服务器与境外的落地服务器失去了通信**：</p>
+      <p>当你的 Clash 发送请求时，国内的中转入口（例如深圳中转机）响应了你的连接，但是当深圳中转机尝试把流量转发给香港或日本的落地服务器时，发现落地服务器已经宕机、或者该节点的落地 IP 被 GFW 防火墙彻底墙掉导致无法路由。此时，国内中转机就会对你的客户端返回一个“502 网关错误”。**解决对策**：说明该节点已瘫痪，请在客户端进行真连接延迟测试，选中其他测试延迟正常的节点即可。</p>
             </div>
         </article>
     </main>
+
+    <aside class="sidebar-right">
+        <!-- Article Info Widget -->
+        <div class="widget info-widget">
+            <h3 class="widget-title">文章信息</h3>
+            <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
+                <span class="info-label">文章分类</span>
+                <span class="info-val" style="font-weight:600; color:#0f172a;">故障排查</span>
+            </div>
+            <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
+                <span class="info-label">阅读时长</span>
+                <span class="info-val" style="font-weight:600; color:#0f172a;">约 7 分钟</span>
+            </div>
+            <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
+                <span class="info-label">字数统计</span>
+                <span class="info-val" style="font-weight:600; color:#0f172a;">约 2560 字</span>
+            </div>
+            <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
+                <span class="info-label">最后更新</span>
+                <span class="info-val" style="font-weight:600; color:#0f172a;">2026-07-13</span>
+            </div>
+        </div>
+        <!-- Beginner Guide Widget -->
+        <div class="widget guide-widget" style="padding: 20px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 25px;">
+            <div class="guide-header" style="display: flex; align-items: center; margin-bottom: 20px;">
+                <span style="font-size: 1.4rem; margin-right: 8px;"></span>
+                <h3 class="widget-title" style="margin:0; border:none; padding:0; font-size: 1.1rem; color: #1e293b; font-weight: 700;">新手入门指南</h3>
+                <span class="guide-sub" style="margin-left: 10px; color:#64748b; font-size:0.85rem;">从零开始教你科学上网</span>
+            </div>
+            <ul class="guide-list" style="list-style:none; padding:0; margin:0 0 20px 0;">
+                <li style="margin-bottom:12px;">
+                    <a href="beginner-1.html" style="display:flex; align-items:center; background:#f8fafc; padding:12px; border-radius:8px; text-decoration:none; transition: all 0.2s;">
+                        <div style="background:#2563eb; color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:0.9rem; margin-right:12px; flex-shrink:0;">01</div>
+                        <div style="flex-grow:1;">
+                            <div style="color:#1e293b; font-weight:600; font-size:0.95rem; margin-bottom:2px;">机场如何选择</div>
+                            <div style="color:#64748b; font-size:0.8rem;">新手必看，轻松选到合适的机场</div>
+                        </div>
+                        <div style="color:#94a3b8; font-size:1.2rem;">›</div>
+                    </a>
+                </li>
+                <li style="margin-bottom:12px;">
+                    <a href="tutorial-win.html" style="display:flex; align-items:center; background:#f8fafc; padding:12px; border-radius:8px; text-decoration:none; transition: all 0.2s;">
+                        <div style="background:#2563eb; color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:0.9rem; margin-right:12px; flex-shrink:0;">02</div>
+                        <div style="flex-grow:1;">
+                            <div style="color:#1e293b; font-weight:600; font-size:0.95rem; margin-bottom:2px;">客户端安装教程</div>
+                            <div style="color:#64748b; font-size:0.8rem;">Clash / V2Ray / Shadowrocket 等</div>
+                        </div>
+                        <div style="color:#94a3b8; font-size:1.2rem;">›</div>
+                    </a>
+                </li>
+                <li style="margin-bottom:12px;">
+                    <a href="beginner-3.html" style="display:flex; align-items:center; background:#f8fafc; padding:12px; border-radius:8px; text-decoration:none; transition: all 0.2s;">
+                        <div style="background:#2563eb; color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:0.9rem; margin-right:12px; flex-shrink:0;">03</div>
+                        <div style="flex-grow:1;">
+                            <div style="color:#1e293b; font-weight:600; font-size:0.95rem; margin-bottom:2px;">订阅配置方法</div>
+                            <div style="color:#64748b; font-size:0.8rem;">手把手教你导入订阅与配置</div>
+                        </div>
+                        <div style="color:#94a3b8; font-size:1.2rem;">›</div>
+                    </a>
+                </li>
+                <li style="margin-bottom:0;">
+                    <a href="beginner-2.html" style="display:flex; align-items:center; background:#f8fafc; padding:12px; border-radius:8px; text-decoration:none; transition: all 0.2s;">
+                        <div style="background:#2563eb; color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:0.9rem; margin-right:12px; flex-shrink:0;">04</div>
+                        <div style="flex-grow:1;">
+                            <div style="color:#1e293b; font-weight:600; font-size:0.95rem; margin-bottom:2px;">常见问题解决</div>
+                            <div style="color:#64748b; font-size:0.8rem;">连接失败 / 速度慢等问题汇总</div>
+                        </div>
+                        <div style="color:#94a3b8; font-size:1.2rem;">›</div>
+                    </a>
+                </li>
+            </ul>
+            <a href="beginner-1.html" class="widget-btn" style="display:block; text-align:center; padding:12px; background:#2563eb; color:white; border-radius:8px; text-decoration:none; font-weight:600; font-size:1rem; transition: background 0.3s;">查看完整新手教程 →</a>
+        </div>
+
+        <!-- Related Recommendations Widget -->
+        <div class="widget related-widget">
+            <h3 class="widget-title">相关推荐</h3>
+            <div class="related-cards" style="display:flex; flex-direction:column; gap:10px;">
+                <a href="article-4.html" class="rel-card" style="text-decoration:none; display:block; padding:12px; background:#f8fafc; border-radius:8px;">
+                    <div class="rel-title" style="color:#1e293b; font-weight:600; margin-bottom:4px;">代理协议深度对比</div>
+                    <div class="rel-read" style="color:#94a3b8; font-size:0.8rem;">阅读 8.7k</div>
+                </a>
+                <a href="tutorial-win.html" class="rel-card" style="text-decoration:none; display:block; padding:12px; background:#f8fafc; border-radius:8px;">
+                    <div class="rel-title" style="color:#1e293b; font-weight:600; margin-bottom:4px;">Clash 核心规则详解</div>
+                    <div class="rel-read" style="color:#94a3b8; font-size:0.8rem;">阅读 6.2k</div>
+                </a>
+                <a href="tutorial-and.html" class="rel-card" style="text-decoration:none; display:block; padding:12px; background:#f8fafc; border-radius:8px;">
+                    <div class="rel-title" style="color:#1e293b; font-weight:600; margin-bottom:4px;">v2rayNG 入门教程</div>
+                    <div class="rel-read" style="color:#94a3b8; font-size:0.8rem;">阅读 5.1k</div>
+                </a>
+                <a href="article-10.html" class="rel-card" style="text-decoration:none; display:block; padding:12px; background:#f8fafc; border-radius:8px;">
+                    <div class="rel-title" style="color:#1e293b; font-weight:600; margin-bottom:4px;">WireGuard 协议优势分析</div>
+                    <div class="rel-read" style="color:#94a3b8; font-size:0.8rem;">阅读 4.3k</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Hot Articles Widget -->
+        <div class="widget hot-widget">
+            <h3 class="widget-title">热门文章</h3>
+            <ul class="hot-list" style="list-style:none; padding:0; margin:0;">
+                <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
+                    <span style="color:#ef4444; font-weight:bold; font-size:1.1rem; line-height:1.2;">1</span>
+                    <a href="../airports.html" style="color:#334155; text-decoration:none; line-height:1.4;">2026年稳定机场推荐 TOP10</a>
+                </li>
+                <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
+                    <span style="color:#f97316; font-weight:bold; font-size:1.1rem; line-height:1.2;">2</span>
+                    <a href="tutorial-win.html" style="color:#334155; text-decoration:none; line-height:1.4;">Clash 使用教程（Windows）</a>
+                </li>
+                <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
+                    <span style="color:#f59e0b; font-weight:bold; font-size:1.1rem; line-height:1.2;">3</span>
+                    <a href="tutorial-ios.html" style="color:#334155; text-decoration:none; line-height:1.4;">Shadowrocket 配置教程 (iOS)</a>
+                </li>
+                <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
+                    <span style="color:#94a3b8; font-weight:bold; font-size:1.1rem; line-height:1.2;">4</span>
+                    <a href="article-1.html" style="color:#334155; text-decoration:none; line-height:1.4;">节点延迟高怎么办？原因与解决方法</a>
+                </li>
+                <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
+                    <span style="color:#94a3b8; font-weight:bold; font-size:1.1rem; line-height:1.2;">5</span>
+                    <a href="article-5.html" style="color:#334155; text-decoration:none; line-height:1.4;">Netflix/Disney+ 跨区解锁攻略</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Premium Airport Widget -->
+        <div class="widget premium-widget ranking-promo-widget" style="padding: 20px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 25px;">
+            <div class="promo-ranking-header" style="display: flex; align-items: center; margin-bottom: 20px;">
+                <div style="background: #2563eb; color: white; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-right: 12px; flex-shrink: 0; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);"></div>
+                <div>
+                    <h3 class="widget-title" style="margin:0; border:none; padding:0; font-size: 1.2rem; color: #1e293b; font-weight: 800; letter-spacing: 0.5px;">机场排行榜</h3>
+                    <div style="color:#64748b; font-size:0.8rem; margin-top:4px;">精选优质机场，稳定高速，全球覆盖</div>
+                </div>
+            </div>
+            
+            <div class="ranking-content" style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+                <div class="ranking-features" style="flex: 1; min-width: 220px;">
+                    <div style="display:flex; align-items:center; margin-bottom:15px; position:relative;">
+                        <div style="background:#e0f2fe; color:#0284c7; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
+                        <div>
+                            <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">实时更新</div>
+                            <div style="color:#94a3b8; font-size:0.8rem;">每日检测，数据实时更新</div>
+                        </div>
+                    </div>
+                    <div style="border-bottom: 1px dashed #e2e8f0; margin: -5px 0 10px 48px;"></div>
+
+                    <div style="display:flex; align-items:center; margin-bottom:15px;">
+                        <div style="background:#dcfce7; color:#16a34a; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
+                        <div>
+                            <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">多维度评测</div>
+                            <div style="color:#94a3b8; font-size:0.8rem;">速度、稳定性、性价比综合评分</div>
+                        </div>
+                    </div>
+                    <div style="border-bottom: 1px dashed #e2e8f0; margin: -5px 0 10px 48px;"></div>
+
+                    <div style="display:flex; align-items:center; margin-bottom:15px;">
+                        <div style="background:#ffedd5; color:#ea580c; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
+                        <div>
+                            <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">优质机场</div>
+                            <div style="color:#94a3b8; font-size:0.8rem;">人工筛选，剔除不稳定节点</div>
+                        </div>
+                    </div>
+                    <div style="border-bottom: 1px dashed #e2e8f0; margin: -5px 0 10px 48px;"></div>
+
+                    <div style="display:flex; align-items:center; margin-bottom:0;">
+                        <div style="background:#f3e8ff; color:#9333ea; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
+                        <div>
+                            <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">全球覆盖</div>
+                            <div style="color:#94a3b8; font-size:0.8rem;">全球节点，高速访问无压力</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ranking-illustration" style="flex: 1; min-width: 180px; background:linear-gradient(to bottom, #eff6ff, #f8fafc); border-radius:12px; padding:20px 15px; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center; border: 1px solid #e2e8f0;">
+                    <img src="../assets/images/new_logo.png" alt="Ranking Podium" style="width:100%; max-width:140px; margin:0 auto 15px auto; display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none; font-size: 3rem; margin-bottom:15px;"></div>
+                    <div style="color:#475569; font-size:0.85rem; line-height:1.5;">
+                        找出最适合你的机场<br>
+                        从<span style="color:#2563eb; font-weight:700;">排行榜</span>开始了解
+                    </div>
+                </div>
+            </div>
+            
+            <a href="../ranking.html" class="widget-btn" style="display:block; text-align:center; padding:14px; background:#2563eb; color:white; border-radius:8px; text-decoration:none; font-weight:700; font-size:1.05rem; transition: background 0.3s; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);">查看机场排行榜 →</a>
+        </div>
+    </aside>
 </div>
 
-<footer class="footer" style="margin-top: 60px;">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-logo">
-        <span class="logo-text">云轨导航</span>
-      </div>
-      <div class="footer-links">
-        <a href="../about.html">关于我们</a>
-        <a href="../contact.html">联系方式</a>
-        <a href="../privacy.html">隐私政策</a>
-        <a href="../terms.html">服务条款</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 云轨导航. All rights reserved.</p>
-    </div>
-  </div>
+<footer style="text-align: center; padding: 40px; margin-top: 40px; color: #94a3b8; border-top: 1px solid #e2e8f0; grid-column: 1 / -1;">
+  <p>© 2026 云轨导航. All rights reserved.</p>
 </footer>
+
+<script>
+// Dynamic TOC Generation
+document.addEventListener("DOMContentLoaded", function() {
+    const articleBody = document.getElementById('articleBody');
+    const tocNav = document.getElementById('toc');
+    if(!articleBody || !tocNav) return;
+    
+    const headers = articleBody.querySelectorAll('h2, h3');
+    if(headers.length === 0) return;
+    
+    const ul = document.createElement('ul');
+    ul.className = 'toc-list';
+    
+    headers.forEach((header, index) => {
+        const id = 'heading-' + index;
+        header.id = id;
+        
+        const li = document.createElement('li');
+        li.className = header.tagName.toLowerCase() === 'h2' ? 'toc-h2' : 'toc-h3';
+        
+        const a = document.createElement('a');
+        a.href = '#' + id;
+        a.textContent = header.textContent;
+        
+        li.appendChild(a);
+        ul.appendChild(li);
+    });
+    
+    tocNav.appendChild(ul);
+    
+    // Highlight active TOC item on scroll
+    const tocLinks = tocNav.querySelectorAll('a');
+    window.addEventListener('scroll', () => {
+        let currentId = '';
+        headers.forEach(header => {
+            const rect = header.getBoundingClientRect();
+            if(rect.top <= 100) {
+                currentId = header.id;
+            }
+        });
+        
+        tocLinks.forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === '#' + currentId) {
+                link.classList.add('active');
+            }
+        });
+    });
+});
+</script>
 <script src="../script.js"></script>
 </body>
 </html>

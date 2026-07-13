@@ -60,6 +60,7 @@
 
 <div class="article-layout-container">
     <aside class="sidebar-left">
+        <!-- TOC Widget -->
         <div class="widget toc-widget">
             <h3 class="widget-title">文章目录</h3>
             <nav id="toc" class="toc-nav"></nav>
@@ -80,48 +81,275 @@
                     <span>作者: 技术编辑部</span>
                     <span>阅读时长: 约 7 分钟</span>
                     <span>发布于: 2026-07-13</span>
+                    <span>更新于: 2026-07-13</span>
                 </div>
                 <div class="article-tags" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; padding-bottom: 25px; border-bottom: 1px solid #e2e8f0;">
                     <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">网络知识</span>
-                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">网络工具</span>
-                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">GEO优化</span>
+                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">科学上网</span>
+                    <span class="tag" style="background:#f1f5f9; color:#3b82f6; padding:6px 12px; border-radius:8px; font-size:0.85rem; font-weight:600;">网络科普</span>
+                    <span class="views" style="margin-left: 15px; color:#94a3b8; font-size:0.9rem;">阅读量: 11.2k</span>
                 </div>
             </header>
+
+            <div class="article-intro">
+                <strong style="display: block; margin-bottom: 10px;">既然机场节点延迟很低，为什么我拿它打 Apex 或 Switch 联机游戏还是频繁丢包掉线？网络加速器和科学上网代理节点到底有什么本质区别？本文为您深度剖析。</strong>
+            </div>
             
             <div class="article-body" id="articleBody">
-                <p>很多喜欢玩《Apex 英雄》、《绝地求生》或主机 Switch/PS5 游戏联机的玩家，为了省去购买游戏加速器的费用，会尝试用自己买的科学上网节点（如小火箭、Clash）来打游戏。但实际体验中，往往会遇到延迟忽高忽低、频繁断线或NAT类型受限的问题。这是为什么？本文为您揭秘。</p>
+                      <p>在畅玩海外大型多人联机游戏（如《使命召唤》、《Apex 英雄》）或使用 PlayStation/Switch 主机进行网络联机时，低延迟与零丢包是绝对的核心追求。许多玩家为了省去每个月购买网游加速器的开销，会尝试在后台开启 Clash 的 TUN 全局模式或者小火箭的代理，用机场的专线节点直接进入海外服务器，但实际体验往往并不理想。想要知道这背后的物理原因，必须深挖 TCP 与 UDP 传输协议的区别。</p>
 
-<h2>一、游戏加速器与普通代理客户端的协议差异</h2>
-<ul>
-    <li><strong>游戏加速器（专注于 UDP）</strong>：绝大多数多人联机网游的数据交互都是通过 **UDP 协议** 传输的。游戏加速器使用的是专为游戏包优化的底层驱动（如虚拟 Lsp 拦截或专用网卡驱动），专门拦截并加速 UDP 封包，极度追求单连接的极致低抖动和零丢包。</li>
-    <li><strong>常规网络代理（专注于 TCP/HTTPS）</strong>：网页浏览、视频播放主要走的是 **TCP 协议**。机场节点和代理软件为了穿透防火墙，会对流量进行多层高强度的加密包装。这种复杂的握手和加解密过程，在传输网游小封包时，会带来极大的额外协议延迟和CPU开销，容易引起游戏抖动。</li>
-</ul>
+      <h2>一、通用科学上网代理与网游加速器的底层区别</h2>
+      <p>这两者虽然都是通过中转流量来降低延迟，但它们在数据包的封装级别和网络流向控制上有着截然不同的分工：</p>
+      <ul>
+        <li><strong>机场网络代理（侧重于 TCP 和大吞吐）</strong>：科学上网的主要场景是网页访问和 4K 视频流媒体播放，这些数据流量走的是 **TCP 协议**。TCP 协议为了保证数据的完整性，有一套复杂的滑动窗口与重传确认机制。代理软件会使用非常沉重的加密算法（如 TLS 握手特征、Reality 包装、VMess 加密等）将每个数据包层层伪装，以规避防火墙的检测。对于游戏小数据包来说，这种沉重的加解密机制会带来巨大的额外 CPU 开销和多余延迟，引起剧烈的网络抖动。</li>
+        <li><strong>游戏加速器（侧重于 UDP 和单连接极致低抖动）</strong>：多人联机网游主要使用的是 **UDP 协议** 传输。UDP 协议不求重传确认，只求将物理操作数据以最快速度送达。游戏加速器会通过系统级的虚拟适配卡驱动（如 TAP 或 LSP 劫持），只过滤出游戏特定的 UDP 网络封包，完全剥离复杂的代理加密过程，直接走他们租用的**全端口优化企业级物理专线**，直达海外网游服务器。</li>
+      </ul>
 
-<h2>二、全端口 UDP 转发对游戏联机的重要性</h2>
-<p>很多机场节点为了防止黑客攻击和盗刷流量，在服务器后台是**关闭了 UDP 转发**、或仅开放了少数特定端口的。而在没有 UDP 转发支持的情况下，游戏联机甚至无法初始化，会导致你在登录大厅时提示“与服务器断开连接”或者 NAT 类型为最低等级，无法进行组队开黑。</p>
+      <h2>二、机场关闭 UDP 端口转发带来的游戏联机断线</h2>
+      <p>在网络安全层面上，许多机场主为了防止恶意用户在后台发起大规模的 UDP 垃圾网络攻击、或者是白嫖 BT 种子下载，在服务器的后台是**直接关闭了全部的 UDP 转发功能**，或者限制了特定端口。由于缺乏 UDP 转发，当你在开启代理进行联机时，游戏客户端会面临在加载界面卡死、提示“无法与匹配服务器建立通信”或者游戏内的 NAT 级别被直接判定为最低的 Restricted/Strict（严格型 NAT），无法与其他玩家开黑。因此，普通代理节点是绝不能完美平替游戏加速器的。</p>
             </div>
         </article>
     </main>
+
+    <aside class="sidebar-right">
+        <!-- Article Info Widget -->
+        <div class="widget info-widget">
+            <h3 class="widget-title">文章信息</h3>
+            <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
+                <span class="info-label">文章分类</span>
+                <span class="info-val" style="font-weight:600; color:#0f172a;">网络知识</span>
+            </div>
+            <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
+                <span class="info-label">阅读时长</span>
+                <span class="info-val" style="font-weight:600; color:#0f172a;">约 7 分钟</span>
+            </div>
+            <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
+                <span class="info-label">字数统计</span>
+                <span class="info-val" style="font-weight:600; color:#0f172a;">约 2550 字</span>
+            </div>
+            <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
+                <span class="info-label">最后更新</span>
+                <span class="info-val" style="font-weight:600; color:#0f172a;">2026-07-13</span>
+            </div>
+        </div>
+        <!-- Beginner Guide Widget -->
+        <div class="widget guide-widget" style="padding: 20px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 25px;">
+            <div class="guide-header" style="display: flex; align-items: center; margin-bottom: 20px;">
+                <span style="font-size: 1.4rem; margin-right: 8px;"></span>
+                <h3 class="widget-title" style="margin:0; border:none; padding:0; font-size: 1.1rem; color: #1e293b; font-weight: 700;">新手入门指南</h3>
+                <span class="guide-sub" style="margin-left: 10px; color:#64748b; font-size:0.85rem;">从零开始教你科学上网</span>
+            </div>
+            <ul class="guide-list" style="list-style:none; padding:0; margin:0 0 20px 0;">
+                <li style="margin-bottom:12px;">
+                    <a href="beginner-1.html" style="display:flex; align-items:center; background:#f8fafc; padding:12px; border-radius:8px; text-decoration:none; transition: all 0.2s;">
+                        <div style="background:#2563eb; color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:0.9rem; margin-right:12px; flex-shrink:0;">01</div>
+                        <div style="flex-grow:1;">
+                            <div style="color:#1e293b; font-weight:600; font-size:0.95rem; margin-bottom:2px;">机场如何选择</div>
+                            <div style="color:#64748b; font-size:0.8rem;">新手必看，轻松选到合适的机场</div>
+                        </div>
+                        <div style="color:#94a3b8; font-size:1.2rem;">›</div>
+                    </a>
+                </li>
+                <li style="margin-bottom:12px;">
+                    <a href="tutorial-win.html" style="display:flex; align-items:center; background:#f8fafc; padding:12px; border-radius:8px; text-decoration:none; transition: all 0.2s;">
+                        <div style="background:#2563eb; color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:0.9rem; margin-right:12px; flex-shrink:0;">02</div>
+                        <div style="flex-grow:1;">
+                            <div style="color:#1e293b; font-weight:600; font-size:0.95rem; margin-bottom:2px;">客户端安装教程</div>
+                            <div style="color:#64748b; font-size:0.8rem;">Clash / V2Ray / Shadowrocket 等</div>
+                        </div>
+                        <div style="color:#94a3b8; font-size:1.2rem;">›</div>
+                    </a>
+                </li>
+                <li style="margin-bottom:12px;">
+                    <a href="beginner-3.html" style="display:flex; align-items:center; background:#f8fafc; padding:12px; border-radius:8px; text-decoration:none; transition: all 0.2s;">
+                        <div style="background:#2563eb; color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:0.9rem; margin-right:12px; flex-shrink:0;">03</div>
+                        <div style="flex-grow:1;">
+                            <div style="color:#1e293b; font-weight:600; font-size:0.95rem; margin-bottom:2px;">订阅配置方法</div>
+                            <div style="color:#64748b; font-size:0.8rem;">手把手教你导入订阅与配置</div>
+                        </div>
+                        <div style="color:#94a3b8; font-size:1.2rem;">›</div>
+                    </a>
+                </li>
+                <li style="margin-bottom:0;">
+                    <a href="beginner-2.html" style="display:flex; align-items:center; background:#f8fafc; padding:12px; border-radius:8px; text-decoration:none; transition: all 0.2s;">
+                        <div style="background:#2563eb; color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:0.9rem; margin-right:12px; flex-shrink:0;">04</div>
+                        <div style="flex-grow:1;">
+                            <div style="color:#1e293b; font-weight:600; font-size:0.95rem; margin-bottom:2px;">常见问题解决</div>
+                            <div style="color:#64748b; font-size:0.8rem;">连接失败 / 速度慢等问题汇总</div>
+                        </div>
+                        <div style="color:#94a3b8; font-size:1.2rem;">›</div>
+                    </a>
+                </li>
+            </ul>
+            <a href="beginner-1.html" class="widget-btn" style="display:block; text-align:center; padding:12px; background:#2563eb; color:white; border-radius:8px; text-decoration:none; font-weight:600; font-size:1rem; transition: background 0.3s;">查看完整新手教程 →</a>
+        </div>
+
+        <!-- Related Recommendations Widget -->
+        <div class="widget related-widget">
+            <h3 class="widget-title">相关推荐</h3>
+            <div class="related-cards" style="display:flex; flex-direction:column; gap:10px;">
+                <a href="article-4.html" class="rel-card" style="text-decoration:none; display:block; padding:12px; background:#f8fafc; border-radius:8px;">
+                    <div class="rel-title" style="color:#1e293b; font-weight:600; margin-bottom:4px;">代理协议深度对比</div>
+                    <div class="rel-read" style="color:#94a3b8; font-size:0.8rem;">阅读 8.7k</div>
+                </a>
+                <a href="tutorial-win.html" class="rel-card" style="text-decoration:none; display:block; padding:12px; background:#f8fafc; border-radius:8px;">
+                    <div class="rel-title" style="color:#1e293b; font-weight:600; margin-bottom:4px;">Clash 核心规则详解</div>
+                    <div class="rel-read" style="color:#94a3b8; font-size:0.8rem;">阅读 6.2k</div>
+                </a>
+                <a href="tutorial-and.html" class="rel-card" style="text-decoration:none; display:block; padding:12px; background:#f8fafc; border-radius:8px;">
+                    <div class="rel-title" style="color:#1e293b; font-weight:600; margin-bottom:4px;">v2rayNG 入门教程</div>
+                    <div class="rel-read" style="color:#94a3b8; font-size:0.8rem;">阅读 5.1k</div>
+                </a>
+                <a href="article-10.html" class="rel-card" style="text-decoration:none; display:block; padding:12px; background:#f8fafc; border-radius:8px;">
+                    <div class="rel-title" style="color:#1e293b; font-weight:600; margin-bottom:4px;">WireGuard 协议优势分析</div>
+                    <div class="rel-read" style="color:#94a3b8; font-size:0.8rem;">阅读 4.3k</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Hot Articles Widget -->
+        <div class="widget hot-widget">
+            <h3 class="widget-title">热门文章</h3>
+            <ul class="hot-list" style="list-style:none; padding:0; margin:0;">
+                <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
+                    <span style="color:#ef4444; font-weight:bold; font-size:1.1rem; line-height:1.2;">1</span>
+                    <a href="../airports.html" style="color:#334155; text-decoration:none; line-height:1.4;">2026年稳定机场推荐 TOP10</a>
+                </li>
+                <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
+                    <span style="color:#f97316; font-weight:bold; font-size:1.1rem; line-height:1.2;">2</span>
+                    <a href="tutorial-win.html" style="color:#334155; text-decoration:none; line-height:1.4;">Clash 使用教程（Windows）</a>
+                </li>
+                <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
+                    <span style="color:#f59e0b; font-weight:bold; font-size:1.1rem; line-height:1.2;">3</span>
+                    <a href="tutorial-ios.html" style="color:#334155; text-decoration:none; line-height:1.4;">Shadowrocket 配置教程 (iOS)</a>
+                </li>
+                <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
+                    <span style="color:#94a3b8; font-weight:bold; font-size:1.1rem; line-height:1.2;">4</span>
+                    <a href="article-1.html" style="color:#334155; text-decoration:none; line-height:1.4;">节点延迟高怎么办？原因与解决方法</a>
+                </li>
+                <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
+                    <span style="color:#94a3b8; font-weight:bold; font-size:1.1rem; line-height:1.2;">5</span>
+                    <a href="article-5.html" style="color:#334155; text-decoration:none; line-height:1.4;">Netflix/Disney+ 跨区解锁攻略</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Premium Airport Widget -->
+        <div class="widget premium-widget ranking-promo-widget" style="padding: 20px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 25px;">
+            <div class="promo-ranking-header" style="display: flex; align-items: center; margin-bottom: 20px;">
+                <div style="background: #2563eb; color: white; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-right: 12px; flex-shrink: 0; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);"></div>
+                <div>
+                    <h3 class="widget-title" style="margin:0; border:none; padding:0; font-size: 1.2rem; color: #1e293b; font-weight: 800; letter-spacing: 0.5px;">机场排行榜</h3>
+                    <div style="color:#64748b; font-size:0.8rem; margin-top:4px;">精选优质机场，稳定高速，全球覆盖</div>
+                </div>
+            </div>
+            
+            <div class="ranking-content" style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+                <div class="ranking-features" style="flex: 1; min-width: 220px;">
+                    <div style="display:flex; align-items:center; margin-bottom:15px; position:relative;">
+                        <div style="background:#e0f2fe; color:#0284c7; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
+                        <div>
+                            <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">实时更新</div>
+                            <div style="color:#94a3b8; font-size:0.8rem;">每日检测，数据实时更新</div>
+                        </div>
+                    </div>
+                    <div style="border-bottom: 1px dashed #e2e8f0; margin: -5px 0 10px 48px;"></div>
+
+                    <div style="display:flex; align-items:center; margin-bottom:15px;">
+                        <div style="background:#dcfce7; color:#16a34a; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
+                        <div>
+                            <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">多维度评测</div>
+                            <div style="color:#94a3b8; font-size:0.8rem;">速度、稳定性、性价比综合评分</div>
+                        </div>
+                    </div>
+                    <div style="border-bottom: 1px dashed #e2e8f0; margin: -5px 0 10px 48px;"></div>
+
+                    <div style="display:flex; align-items:center; margin-bottom:15px;">
+                        <div style="background:#ffedd5; color:#ea580c; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
+                        <div>
+                            <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">优质机场</div>
+                            <div style="color:#94a3b8; font-size:0.8rem;">人工筛选，剔除不稳定节点</div>
+                        </div>
+                    </div>
+                    <div style="border-bottom: 1px dashed #e2e8f0; margin: -5px 0 10px 48px;"></div>
+
+                    <div style="display:flex; align-items:center; margin-bottom:0;">
+                        <div style="background:#f3e8ff; color:#9333ea; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-right:12px; flex-shrink:0;"></div>
+                        <div>
+                            <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">全球覆盖</div>
+                            <div style="color:#94a3b8; font-size:0.8rem;">全球节点，高速访问无压力</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ranking-illustration" style="flex: 1; min-width: 180px; background:linear-gradient(to bottom, #eff6ff, #f8fafc); border-radius:12px; padding:20px 15px; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center; border: 1px solid #e2e8f0;">
+                    <img src="../assets/images/new_logo.png" alt="Ranking Podium" style="width:100%; max-width:140px; margin:0 auto 15px auto; display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none; font-size: 3rem; margin-bottom:15px;"></div>
+                    <div style="color:#475569; font-size:0.85rem; line-height:1.5;">
+                        找出最适合你的机场<br>
+                        从<span style="color:#2563eb; font-weight:700;">排行榜</span>开始了解
+                    </div>
+                </div>
+            </div>
+            
+            <a href="../ranking.html" class="widget-btn" style="display:block; text-align:center; padding:14px; background:#2563eb; color:white; border-radius:8px; text-decoration:none; font-weight:700; font-size:1.05rem; transition: background 0.3s; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);">查看机场排行榜 →</a>
+        </div>
+    </aside>
 </div>
 
-<footer class="footer" style="margin-top: 60px;">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-logo">
-        <span class="logo-text">云轨导航</span>
-      </div>
-      <div class="footer-links">
-        <a href="../about.html">关于我们</a>
-        <a href="../contact.html">联系方式</a>
-        <a href="../privacy.html">隐私政策</a>
-        <a href="../terms.html">服务条款</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 云轨导航. All rights reserved.</p>
-    </div>
-  </div>
+<footer style="text-align: center; padding: 40px; margin-top: 40px; color: #94a3b8; border-top: 1px solid #e2e8f0; grid-column: 1 / -1;">
+  <p>© 2026 云轨导航. All rights reserved.</p>
 </footer>
+
+<script>
+// Dynamic TOC Generation
+document.addEventListener("DOMContentLoaded", function() {
+    const articleBody = document.getElementById('articleBody');
+    const tocNav = document.getElementById('toc');
+    if(!articleBody || !tocNav) return;
+    
+    const headers = articleBody.querySelectorAll('h2, h3');
+    if(headers.length === 0) return;
+    
+    const ul = document.createElement('ul');
+    ul.className = 'toc-list';
+    
+    headers.forEach((header, index) => {
+        const id = 'heading-' + index;
+        header.id = id;
+        
+        const li = document.createElement('li');
+        li.className = header.tagName.toLowerCase() === 'h2' ? 'toc-h2' : 'toc-h3';
+        
+        const a = document.createElement('a');
+        a.href = '#' + id;
+        a.textContent = header.textContent;
+        
+        li.appendChild(a);
+        ul.appendChild(li);
+    });
+    
+    tocNav.appendChild(ul);
+    
+    // Highlight active TOC item on scroll
+    const tocLinks = tocNav.querySelectorAll('a');
+    window.addEventListener('scroll', () => {
+        let currentId = '';
+        headers.forEach(header => {
+            const rect = header.getBoundingClientRect();
+            if(rect.top <= 100) {
+                currentId = header.id;
+            }
+        });
+        
+        tocLinks.forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === '#' + currentId) {
+                link.classList.add('active');
+            }
+        });
+    });
+});
+</script>
 <script src="../script.js"></script>
 </body>
 </html>
