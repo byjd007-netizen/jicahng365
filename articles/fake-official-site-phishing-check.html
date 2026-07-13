@@ -79,7 +79,7 @@
                 <h1 class="article-title" style="font-size: 2.2rem; color: #0f172a; margin: 0 0 20px 0; font-weight: 800; line-height: 1.3;">如何识别机场假官网与钓鱼页面？域名、证书和支付安全检查</h1>
                 <div class="article-meta" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px; color: #64748b; font-size: 0.95rem; margin-bottom: 25px;">
                     <span>作者: 技术编辑部</span>
-                    <span>阅读时长: 约 7 分钟</span>
+                    <span>阅读时长: 约 11 分钟</span>
                     <span>发布于: 2026-07-13</span>
                     <span>更新于: 2026-07-13</span>
                 </div>
@@ -96,7 +96,7 @@
             </div>
             
             <div class="article-body" id="articleBody">
-                      <p>因为一些业内极度知名的老牌高信誉机场（如 EdgeNova、速界 等）在科学上网圈中极具口碑，大量刚入门的新手用户会直接在搜索引擎中输入机场名字去寻找注册入口。这就给网络黑产和不法分子带来了可乘之机。他们往往会制作出外观 1:1 完美还原的山寨官网，并花钱投放搜索引擎广告引流，进而盗取用户的套餐或者骗取购买款项。以下是防范手段。</p>
+                      <p>因为一些业内极度知名的老牌高信誉机场（如 EdgeNova 等）在科学上网圈中极具口碑，大量刚入门的新手用户会直接在搜索引擎中输入机场名字去寻找注册入口。这就给网络黑产和不法分子带来了可乘之机。他们往往会制作出外观 1:1 完美还原的山寨官网，并花钱投放搜索引擎广告引流，进而盗取用户的套餐或者骗取购买款项。以下是防范手段。</p>
 
       <h2>一、搜索引擎中的“赞助商推广”广告重灾区</h2>
       <p>当你尝试在 Google 搜索某知名机场名字时，你会发现排在最前面的前两到三个搜索结果往往都写着“官方入口”。请格外注意：</p>
@@ -107,7 +107,26 @@
       <ol>
         <li><strong>甄别域名字符劫持（Typosquatting）</strong>：假冒网站的域名往往与官方域名极其相似，但会在某些字母上做小动作（例如将官方域名的 `yunguidaohang.com` 篡改为 `yunguldaohang.com`，即用小写的字母 `l` 代替小写的 `i`，或者在域名末尾多加 `aff` 或后缀换成无关的免费顶级域名后缀）。</li>
         <li><strong>核实 SSL 安全证书颁发日期</strong>：点击浏览器地址栏上的“锁头”安全标志，进入证书查看器。正规大机场的官网证书通常会有长期的历史签名，而假冒钓鱼网站的证书往往是刚申请了仅仅两三天的免费 Let's Encrypt 证书。</li>
-        <li><strong>支付网关与易支付收银台排查</strong>：在最后的支付阶段，正规的机场会自动调转到专门的易支付或第三方代付收银台。如果页面强制要求你扫描微信个人付款码、直接转账到私人支付宝账号、或者弹窗要求你直接输入银行卡的卡号、CVV 密码以及手机短信验证码，这是典型的信用卡钓鱼支付页面，千万不要支付！</li>
+        <li><strong>支付网关与易支付收银台排查</strong>：在最后的支付阶段，正规的机场会自动调转到专门的易支付或第三方代付收银台。如果页面强制要求你扫描微信个人付款码、直接转账到私人支付宝账号、或者弹窗要求你直接输入银行卡的卡号、CVV 密码以及手机短信验证码，这是典型的信用卡钓鱼支付页面，千万不要支付！一旦误操作付款，请立即冻结相关支付凭证并修改账号密码。</li>
+      </ol>      <h2>五、网络层面的深部追踪：追踪节点路由路径与 MTU 优化</h2>
+      <p>在故障排查的深水区，我们往往会遇到这样一种诡异现象：本地网络连接正常，系统代理和 DNS 都很准确，但某些大型境外文件或高频网页握手加载到一半就彻底卡死，没有任何特定的报错代码。这通常是由于网络最大传输单元（MTU）设置不当，或者是数据包分片被运营商骨干路由器过滤拦截导致的。</p>
+      <p>在科学上网的加密流量包装下，每一个 TCP 封包的头部由于被 Reality、Hysteria2 或 Trojan 协议包覆了多层冗余密钥与握手信息，其原本标准的 1500 字节 MTU 空间被大量蚕食，可用数据载荷减少。如果数据链路穿越的某处中间节点被强制设置了“禁止分段 (Don't Fragment)”，那么体积过大、超出剩余容载空间的加密网络数据包就会被路由器在半路上物理丢弃。</p>
+      <p>要诊断和解决此类物理层面的“疑难杂症”，我们可以遵循以下两个操作步骤：</p>
+      <ul>
+        <li><strong>手动降低客户端的 MTU 大小</strong>：以 Hysteria2 或 TUIC 等基于 UDP/QUIC 协议的新协议为例，在其配置文件中显式将 MTU 限制手动调低到 `1300` 甚至 `1250`。这能确保加密的 UDP 数据包在互联网骨干路由器上传输时，即使在极端流控阻断策略下也能顺利通过。</li>
+        <li><strong>利用命令行测试本地物理 MTU 极限</strong>：以 Windows 系统为例，打开命令行终端输入命令 `ping -f -l 1400 www.google.com` 进行发包测试。如果在 1400 字节下提示“需要进行数据包分段”，则逐渐降低该数值，直到测试出能顺利握手的物理极限大小，并在你的主网卡或者软路由设置中进行绑定限制。</li>
+      </ul>
+
+      <h2>六、科学上网客户端与杀毒软件冲突排查</h2>
+      <p>除了物理网卡和路由层的原因，系统级的安全防护软件也是导致网络代理经常卡死失效的幕后元凶之一。国内许多杀毒软件（如 360 安全卫士、腾讯电脑管家等）以及 Windows 10/11 系统自带的 Windows Defender，其前置的主动防御过滤驱动会高频拦截非系统证书颁发的网络套接字（Socket）握手连接。</p>
+      <p>代理软件在运作时（特别是开启了 TUN 网卡重定向或者系统代理时），会被杀毒软件的底层防火墙判定为“劫持系统流量的恶意木马程序”，从而在静默状态下直接阻断代理客户端与国内中转入口的连通性，或者将其端口通信强制关停。排查自救方法是：打开安全防护软件的“防骚扰白名单”或“信任区”，手动将 Clash Verge 软件目录以及主程序 `clash.meta.exe` 彻底排除在实时监控防御之外；如在使用过程中频繁遇到系统右下角弹窗警告，也必须给予完全的信任通过权限，以绝后患。</p>
+
+      <h2>七、总结与日常运维最佳习惯规约</h2>
+      <p>综上所述，排除网络订阅失效及网络连接故障，是一套从物理硬件、操作系统驱动、软件语法到服务器状态的环环相扣的验证过程。为了将此类网络中断事件的发生频率降到最低，建议每一位资深科学上网用户在日常使用中养成以下良好习惯：</p>
+      <ol>
+        <li><strong>避免滥用自动均衡负载</strong>：在客户端中尽量避免把所有节点放入轮询策略组，防止高频更换 IP 导致目标网站（如 ChatGPT、Paypal）账户被风控封锁。</li>
+        <li><strong>保持订阅域名与备用域名的同步</strong>：在官网正常开启时，主动将备用订阅导入备用策略组中，预留一条自救通路。</li>
+        <li><strong>软件的升级与备份</strong>：始终在本地保留一个不需要安装的免安装版（Portable）客户端（如 Sing-box 解压即用版），以防主力客户端因更新损坏或配置文件解析错误时无处求助。</li>
       </ol>
             </div>
         </article>
@@ -123,11 +142,11 @@
             </div>
             <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
                 <span class="info-label">阅读时长</span>
-                <span class="info-val" style="font-weight:600; color:#0f172a;">约 7 分钟</span>
+                <span class="info-val" style="font-weight:600; color:#0f172a;">约 11 分钟</span>
             </div>
             <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
                 <span class="info-label">字数统计</span>
-                <span class="info-val" style="font-weight:600; color:#0f172a;">约 2250 字</span>
+                <span class="info-val" style="font-weight:600; color:#0f172a;">约 4050 字</span>
             </div>
             <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
                 <span class="info-label">最后更新</span>

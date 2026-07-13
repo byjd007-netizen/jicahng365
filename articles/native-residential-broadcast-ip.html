@@ -79,7 +79,7 @@
                 <h1 class="article-title" style="font-size: 2.2rem; color: #0f172a; margin: 0 0 20px 0; font-weight: 800; line-height: 1.3;">原生 IP、住宅 IP、广播 IP 有什么区别？节点标签与实际用途解析</h1>
                 <div class="article-meta" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px; color: #64748b; font-size: 0.95rem; margin-bottom: 25px;">
                     <span>作者: 技术编辑部</span>
-                    <span>阅读时长: 约 6 分钟</span>
+                    <span>阅读时长: 约 10 分钟</span>
                     <span>发布于: 2026-07-13</span>
                     <span>更新于: 2026-07-13</span>
                 </div>
@@ -103,17 +103,29 @@
       <p>例如，机场在香港租用了一台物理服务器，且该服务器使用的公网 IP 经国际 Whois 组织查询，也是由香港本土互联网服务提供商注册、签发并广播的。这便是名副其实的原生香港 IP。原生 IP 的特点是：在访问谷歌学术、PayPal 以及各大流媒体服务时，地理定位绝对准确，不会触发跨区预警，且出口纯净度极佳。</p>
 
       <h2>二、什么是住宅双 ISP IP（Residential IP）？</h2>
-      <p>住宅 IP 是指由当地家用宽带运营商（如美国的 Comcast、日本的 So-net 或中国电信）分配给普通家庭用户的宽带网 IP 资源：</p>
+      <p>住宅 IP 是指由当地家用宽带运营商（如美国的 Comcast、日本的 So-net 或中国电信）分配给普通居民家庭使用的宽带网 IP 资源：</p>
       <p>与绝大部分机场节点使用的“机房数据中心（Datacenter）IP”相比，住宅 IP 拥有极高的**网络信誉度（IP Reputation）**。在 IP 属性检测中，它们会显示为 **“双 ISP”** 标志。因为对于海外的安全防护系统来说，住宅 IP 产生的流量在特征上和真实的当地居民在家中上网毫无区别。</p>
       <p>因此，如果你要运营 Tik Tok 账号、管理亚马逊或 eBay 店铺、使用境外本土的支付网关，或者想完美绕过 ChatGPT 验证码死循环，住宅双 ISP IP 是行业内公认的唯一安全硬通货。</p>
 
       <h2>三、什么是广播 IP（Broadcast IP）？</h2>
       <p>广播 IP 则是业内低成本代理服务的代名词。它是指将注册在 A 国家（通常是低成本或非洲小国）的 IP 地址，通过网络边界网关协议（BGP）宣告的方式，“广播”并绑定到位于 B 国家（如日本或香港机房）的物理服务器上使用。</p>
-      <p>广播 IP 的采购成本甚至只有原生 IP 的十分之一，但其后遗症极其严重：</p>
+      <p>广播 IP 的采购成本甚至只有原生 IP 的十分之一，但其后遗症极其严重：地理定位混乱（你连接了日本节点，但访问 Google 时却强制跳转到非洲的网站界面）、风控拉黑率极高（绝大部分海外流媒体，如 Netflix、Disney+，和风控平台会将这些低信誉的广播 IP 段一刀切封禁）。</p>
+      <p>为了保障自身的网络资产安全，我们需要利用一些专业的 IP 查询工具（如 ipinfo.io 或 scamalytics.com）对当前连接的 IP 进行欺诈值（Fraud Score）自查，尽量避免在关键业务上连接高风险的广播机房 IP。</p>      <h2>四、物理光缆拓扑与海底光纤断裂对链路质量的致命影响</h2>
+      <p>科学上网虽然走的是软件层面的加密，但其最终依然必须尊崇现实世界里的物理光纤地理排布。很多用户经常会有这样的疑惑：为什么我的节点今天速度特别快，到了下个月却突然卡得连视频都看不成？这往往是由于不可抗力——<strong>国际海底物理光纤光缆（Submarine Cable）</strong>断裂或大容量维护造成的。</p>
+      <p>亚太地区的主要跨国网络流量主要依赖于几条横跨太平洋或穿过南中国海的核心物理光缆，例如连接中国台湾至美国西海岸的 APG 光缆、以及连接香港、新加坡的 SJC2 光缆。在每年的台风季节、或者因为海上商船意外抛锚拖拉，这些物理海底光缆很容易发生断裂物理损坏。一旦其中一条高容量光纤断开：</p>
       <ul>
-        <li><strong>地理定位混乱</strong>：你连接了日本节点，但访问 Google 时却强制跳转到非洲的网站界面。</li>
-        <li><strong>风控拉黑率极高</strong>：绝大部分海外流媒体（如 Netflix、Disney+）和风控平台会将这些低信誉的广播 IP 段一刀切封禁。</li>
+        <li>原本走该光缆直达美国或日本的流量，会被各大运营商强行重定向到其他备用老旧光缆上（如通过超长的陆地公网路由绕道欧洲或中东）。</li>
+        <li>这就导致原本只需 50ms 延迟的日本节点，物理延迟瞬间暴增到 300ms 以上，且晚高峰丢包率会飙升到 20% 以上，造成网络瘫痪。</li>
+        <li>遇到这种情况，机场主也只能等待运营商长达数月之久的海上物理施工修复，用户需主动切换到其他物理备份线路上规避该受损光缆区域。</li>
       </ul>
+
+      <h2>五、公网 QoS 突发流控（限速与丢包机制）</h2>
+      <p>在网络大网传输中，即使海底光纤畅通无阻，运营商针对跨境公网流量也会执行严格的 <strong>QoS（Quality of Service，服务质量管理）</strong> 优先策略。我国各大运营商（电信、联通、移动）的出境骨干网出口，主要是按用户等级进行物理带宽隔离与分配的：</p>
+      <p>普通家庭宽带用户在连接国际公网时，被列为最低优先级（即 CN2 骨干网中的普通 163 直连段）。晚高峰期间，当出境流量总容量逼近物理带宽上限时，骨干网路由器会强行对这些低优先级的 IP 包进行随机丢弃（Drop），以保障政企专线、专网和跨国金融数据包的通过。这就是为什么在晚高峰期间，非专线的普通直连和普通中转节点会产生灾难性丢包的原因。而专线节点（如 IEPL）由于在底层被运营商设定为高优先级企业级网络流量，因此在物理层面上能够豁免这种 QoS 随机丢包洗礼。</p>
+
+      <h2>六、深入理解代理协议的加解密物理负担</h2>
+      <p>任何科学上网传输数据都需要进行加解密（Encryption / Decryption），这会在客户端和服务器端产生不同级别的 CPU 硬件开销。以基于 UDP/QUIC 协议的 Hysteria2 为例，它为了规避 GFW 的重放攻击与流量特征拦截，引入了高度复杂的混淆伪装算法和高频对称加密（如 AES-GCM 或 ChaCha20-Poly1305）。</p>
+      <p>如果用户使用的是配置较为落后的电视盒子、老旧手机或者低配软路由（如使用早期单核 ARM 处理器的千兆路由），当在晚高峰期间强行开启 4K 流媒体播放播放时，代理客户端在本地的解密吞吐开销可能会瞬间吃满处理器的 CPU 使用率，进而导致系统卡死、网络传输限速。这种由本地硬件瓶颈引发的网速变慢，往往常被用户误认为是机场线路不好。因此，在升级宽带与节点的同时，提升本地软路由或网卡硬件承载力也是不可忽略的环节。</p>
             </div>
         </article>
     </main>
@@ -128,11 +140,11 @@
             </div>
             <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
                 <span class="info-label">阅读时长</span>
-                <span class="info-val" style="font-weight:600; color:#0f172a;">约 6 分钟</span>
+                <span class="info-val" style="font-weight:600; color:#0f172a;">约 10 分钟</span>
             </div>
             <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
                 <span class="info-label">字数统计</span>
-                <span class="info-val" style="font-weight:600; color:#0f172a;">约 2280 字</span>
+                <span class="info-val" style="font-weight:600; color:#0f172a;">约 4080 字</span>
             </div>
             <div class="info-item" style="display:flex; justify-content:space-between; margin-bottom:12px;">
                 <span class="info-label">最后更新</span>
