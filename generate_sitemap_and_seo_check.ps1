@@ -1,5 +1,5 @@
 $basePath = "."
-$baseUrl = "https://jichang365.com"
+$baseUrl = "https://yunguidaohang.com"
 $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
 
 # Create robots.txt

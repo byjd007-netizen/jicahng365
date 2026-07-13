@@ -325,6 +325,9 @@ $faqSchemaJson
     # Clean links
     $content = Clean-HtmlLinks($content)
 
+    # Compress 3+ consecutive blank lines to 1 blank line
+    $content = [System.Text.RegularExpressions.Regex]::Replace($content, "(\r?\n[ \t]*){3,}", "`r`n`r`n")
+
     # Save file back in UTF-8 no BOM
     $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
     [System.IO.File]::WriteAllText($filePath, $content, $utf8NoBom)
