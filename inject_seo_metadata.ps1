@@ -291,7 +291,7 @@ $faqSchemaJson
 "@
         foreach ($rel in $otherArticles) {
             if ($rel.url -ne $filename) {
-                $relatedHtml += "`n          <li><a href=`"$($rel.url)`" style=`"color: #2563eb; text-decoration: none; font-weight: 600;`>$($rel.name)</a></li>"
+                $relatedHtml += "`n          <li><a href=`"$($rel.url)`" style=`"color: #2563eb; text-decoration: none; font-weight: 600;`">$($rel.name)</a></li>"
             }
         }
         $relatedHtml += "`n        </ul>`n      </div>"
@@ -337,7 +337,7 @@ foreach ($file in $files) {
 }
 
 # Run loop over root directory files
-$rootPages = @("ranking.html", "airports.html", "knowledge.html", "about.html", "article.html", "avoid-scam/index.html")
+$rootPages = @("ranking.html", "airports.html", "knowledge.html", "about.html", "article.html", "avoid-scam.html")
 foreach ($page in $rootPages) {
     $filePath = Join-Path $baseDir $page
     if (Test-Path $filePath) {
