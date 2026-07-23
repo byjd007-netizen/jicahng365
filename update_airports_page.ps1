@@ -1,4 +1,4 @@
-﻿$index_path = ".\index.html"
+$index_path = ".\index.html"
 $k_path = ".\knowledge.html"
 
 # Extract header from knowledge.html
@@ -65,7 +65,7 @@ $main = @"
     }
   </style>
 
-  <main class="container" style="max-width: 900px; margin: 60px auto; min-height: 60vh;">
+  <main class="container" style="max-width: 900px; margin: 100px auto 60px; min-height: 60vh;">
     <div style="margin-bottom: 40px;">
       <h1 style="font-size: 1.4rem; color: #64748b; font-weight: normal;">共计 <span id="totalCount" style="color: var(--text-primary); font-weight: bold;">8</span> 篇评测</h1>
     </div>

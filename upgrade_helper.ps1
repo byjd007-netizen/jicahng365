@@ -56,6 +56,7 @@ foreach ($cat in $categories) {
   
   <style>
     .cat-hero {
+      margin-top: var(--header-height);
       background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
       color: #ffffff;
       padding: 50px 20px;
